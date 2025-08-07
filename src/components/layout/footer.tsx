@@ -107,7 +107,7 @@ export function Footer() {
                   </Link>
               ))}
           </div>
-          <p className="text-foreground/70">&copy; {new Date().getFullYear()}, Islandbeauty | Developed by FRD Studio</p>
+          <p className="text-foreground/70">&copy; {new Date().getFullYear()}, Islandbeauty | Built By Krezine</p>
         </div>
       </div>
     </footer>
