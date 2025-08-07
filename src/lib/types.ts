@@ -1,0 +1,26 @@
+export interface Product {
+  id: string;
+  name: string;
+  price: number;
+  image: string;
+  aiHint?: string;
+}
+
+export interface Category {
+  name: string;
+  image: string;
+  aiHint?: string;
+}
+
+export interface Reel {
+  id: string;
+  videoPlaceholder: string;
+  aiHint?: string;
+  product: Product;
+}
+
+export interface InstagramPost {
+  id: string;
+  image: string;
+  aiHint?: string;
+}
