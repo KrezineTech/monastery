@@ -183,9 +183,9 @@ export default function Home() {
               }}
               className="w-full"
             >
-              <CarouselContent>
+              <CarouselContent className="-ml-5">
                 {reels.map((reel) => (
-                  <CarouselItem key={reel.id} className="md:basis-1/3 lg:basis-1/5">
+                  <CarouselItem key={reel.id} className="md:basis-1/3 lg:basis-1/5 pl-5">
                     <div className="p-1">
                       <Card className="relative group/reel overflow-hidden rounded-[26px] border-none h-full">
                         <video
