@@ -13,7 +13,7 @@ interface ProductCardProps {
 export function ProductCard({ product, className }: ProductCardProps) {
   return (
     <div className={cn("flex flex-col group", className)}>
-      <Card className="overflow-hidden border-none shadow-none rounded-[38px] bg-accent">
+      <Card className="overflow-hidden border-none shadow-none rounded-[26px] bg-accent">
         <div className="relative aspect-[1/1.25] w-full overflow-hidden">
           <Image
             src={product.image}
