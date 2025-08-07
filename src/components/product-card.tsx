@@ -25,11 +25,11 @@ export function ProductCard({ product, className }: ProductCardProps) {
         </div>
       </Card>
       <div className="pt-4">
-        <h3 className="font-semibold text-base text-foreground mt-1">{product.name}</h3>
+        <h3 className="font-semibold text-sm text-foreground mt-1">{product.name}</h3>
         <p className="font-bold text-foreground/90 mt-2">{product.price.toFixed(2)} P</p>
         <div className="flex items-center gap-2 mt-4">
           <Button variant="secondary" className="rounded-lg bg-pink-100 text-pink-800 hover:bg-pink-200 flex-1">
-            Подробнее
+            Details
           </Button>
           <Button variant="secondary" size="icon" className="rounded-lg bg-blue-100 text-blue-800 hover:bg-blue-200">
             <ShoppingCart className="w-5 h-5" />
