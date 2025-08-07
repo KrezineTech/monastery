@@ -12,14 +12,14 @@ interface ProductCardProps {
 
 export function ProductCard({ product, className }: ProductCardProps) {
   return (
-    <div className={cn("flex flex-col", className)}>
-      <Card className="overflow-hidden border-none shadow-none rounded-lg">
-        <div className="relative aspect-[1/1] w-full overflow-hidden p-4">
+    <div className={cn("flex flex-col group", className)}>
+      <Card className="overflow-hidden border-none shadow-none rounded-2xl bg-accent">
+        <div className="relative aspect-[1/1.25] w-full overflow-hidden">
           <Image
             src={product.image}
             alt={product.name}
             fill
-            className="object-contain transition-transform duration-300 group-hover:scale-105"
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
             data-ai-hint={product.aiHint}
           />
         </div>
