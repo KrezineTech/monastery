@@ -72,7 +72,7 @@ export function HeroCarousel() {
       <CarouselContent>
         {slides.map((slide, index) => (
           <CarouselItem key={index}>
-              <div className="relative w-full h-[70vh] rounded-3xl overflow-hidden">
+              <div className="relative w-full h-[600px] rounded-3xl overflow-hidden">
                 <Image
                     src={slide.image}
                     alt={slide.title}
