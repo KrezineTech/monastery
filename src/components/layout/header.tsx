@@ -21,7 +21,7 @@ export function Header() {
 
   return (
     <header className="sticky top-4 z-50 w-full">
-      <div className="w-[96%] mx-auto flex h-16 items-center justify-between rounded-2xl border-b border-border/40 bg-rose-50/80 backdrop-blur-lg px-8">
+      <div className="w-[96%] mx-auto flex h-16 items-center justify-between rounded-[26px] border-b border-border/40 bg-rose-50/80 backdrop-blur-lg px-8">
         <Link href="/" className="text-2xl font-bold text-gray-800">
           glowver
         </Link>
