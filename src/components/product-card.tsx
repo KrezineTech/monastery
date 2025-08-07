@@ -14,7 +14,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
   return (
     <div className={cn("flex flex-col group", className)}>
       <Card className="overflow-hidden border-none shadow-none rounded-[26px]">
-        <div className="relative aspect-[1/1.25] w-full overflow-hidden">
+        <div className="relative aspect-[1/1.25] w-full overflow-hidden rounded-[26px]">
           <Image
             src={product.image}
             alt={product.name}
@@ -26,7 +26,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
       </Card>
       <div className="pt-4">
         <h3 className="font-semibold text-sm text-foreground mt-1">{product.name}</h3>
-        <p className="font-bold text-foreground/90 mt-2">{product.price.toFixed(2)} P</p>
+        <p className="font-bold text-foreground/90 mt-2">₹{product.price.toFixed(2)}</p>
         <div className="flex items-center gap-2 mt-4">
           <Button variant="secondary" className="rounded-lg bg-pink-100 text-pink-800 hover:bg-pink-200 flex-1">
             Details

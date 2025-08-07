@@ -14,11 +14,11 @@ const categories: Category[] = [
 ];
 
 const featuredProducts: Product[] = [
-  { id: '1', name: 'Round Lab 1025 Dokdo Cleanser', price: 1450.00, image: 'https://placehold.co/400x500.png', aiHint: 'serum bottle', category: 'cleanser' },
-  { id: '2', name: 'Beauty of Joseon Relief Sun Rice...', price: 1790.00, image: 'https://placehold.co/400x500.png', aiHint: 'cleanser bottle', category: 'sunscreen' },
-  { id: '3', name: 'Q+A Hyaluronic Acid Daily Moisturiser', price: 1300.00, image: 'https://placehold.co/400x500.png', aiHint: 'moisturizer jar', category: 'cream' },
-  { id: '4', name: 'Round Lab Birch Juice Moisturizing Sun...', price: 1500.00, image: 'https://placehold.co/400x500.png', aiHint: 'mist bottle', category: 'sunscreen' },
-  { id: '5', name: 'Round Lab Soybean Nourishing Toner', price: 2490.00, image: 'https://placehold.co/400x500.png', aiHint: 'eye cream', category: 'toner' },
+  { id: '1', name: 'Round Lab 1025 Dokdo Cleanser', price: 1450.00, image: 'https://placehold.co/400x500.png', aiHint: 'serum bottle' },
+  { id: '2', name: 'Beauty of Joseon Relief Sun Rice...', price: 1790.00, image: 'https://placehold.co/400x500.png', aiHint: 'cleanser bottle' },
+  { id: '3', name: 'Q+A Hyaluronic Acid Daily Moisturiser', price: 1300.00, image: 'https://placehold.co/400x500.png', aiHint: 'moisturizer jar' },
+  { id: '4', name: 'Round Lab Birch Juice Moisturizing Sun...', price: 1500.00, image: 'https://placehold.co/400x500.png', aiHint: 'mist bottle' },
+  { id: '5', name: 'Round Lab Soybean Nourishing Toner', price: 2490.00, image: 'https://placehold.co/400x500.png', aiHint: 'eye cream' },
 ];
 
 const reels: Reel[] = [
@@ -172,7 +172,7 @@ export default function Home() {
                       />
                       <div className="flex-1">
                         <h4 className="font-semibold text-sm text-primary">{reel.product.name}</h4>
-                        <p className="text-sm text-foreground/80">${reel.product.price.toFixed(2)}</p>
+                        <p className="text-sm text-foreground/80">₹{reel.product.price.toFixed(2)}</p>
                       </div>
                       <Button size="sm" className="shrink-0">View</Button>
                     </Card>
