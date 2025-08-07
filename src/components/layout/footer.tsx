@@ -40,7 +40,7 @@ export function Footer() {
                     alt="glowver logo" 
                     width={1200} 
                     height={240} 
-                    className="mx-auto w-full max-w-2xl"
+                    className="mx-auto w-full"
                 />
             </Link>
         </div>
