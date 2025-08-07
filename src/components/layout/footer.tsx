@@ -38,9 +38,9 @@ export function Footer() {
                 <Image 
                     src="https://www.islandbeauty.in/cdn/shop/files/bog_logo.svg?v=1751106444" 
                     alt="glowver logo" 
-                    width={500} 
-                    height={100} 
-                    className="mx-auto"
+                    width={1200} 
+                    height={240} 
+                    className="mx-auto w-full max-w-2xl"
                 />
             </Link>
         </div>
