@@ -86,7 +86,7 @@ export default function Home() {
       </section>
 
       {/* Category Display Section */}
-      <section className="py-5">
+      <section className="pb-5">
         <div className="w-[96%] mx-auto">
           <div className="flex flex-wrap md:flex-nowrap gap-5">
             <div className="w-full md:w-[42%]">
