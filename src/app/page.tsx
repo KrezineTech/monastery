@@ -148,7 +148,7 @@ export default function Home() {
           <div className="flex flex-wrap items-start justify-center gap-8">
             {reels.map((reel) => (
               <div key={reel.id} className="w-full max-w-[320px]">
-                <Card className="relative group overflow-hidden rounded-lg shadow-xl border-none h-full">
+                <Card className="relative group overflow-hidden rounded-[20px] shadow-xl border-none h-full">
                   <Image
                     src={reel.videoPlaceholder}
                     alt="Reel video"
@@ -161,13 +161,13 @@ export default function Home() {
                     <PlayCircle className="w-16 h-16 text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-2">
-                    <Card className="flex items-center gap-3 p-2 rounded-lg bg-white/80 backdrop-blur-sm shadow-md transition-all duration-300 hover:shadow-lg">
+                    <Card className="flex items-center gap-3 p-2 rounded-[20px] bg-white/80 backdrop-blur-sm shadow-md transition-all duration-300 hover:shadow-lg">
                       <Image
                         src={reel.product.image}
                         alt={reel.product.name}
                         width={64}
                         height={64}
-                        className="rounded-md object-cover"
+                        className="rounded-[12px] object-cover"
                         data-ai-hint={reel.product.aiHint}
                       />
                       <div className="flex-1">
