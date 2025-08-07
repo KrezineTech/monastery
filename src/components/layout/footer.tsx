@@ -98,7 +98,7 @@ export function Footer() {
             </form>
           </div>
         </div>
-        <div className="mt-8 pt-4 border-t border-primary/30 flex justify-between items-center text-xs">
+        <div className="mt-8 pt-4 border-t border-primary/10 flex justify-between items-center text-xs">
           <div className="flex space-x-4">
               {socialLinks.map((social) => (
                   <Link key={social.name} href={social.href} className="text-foreground/70 hover:text-primary transition-colors">
