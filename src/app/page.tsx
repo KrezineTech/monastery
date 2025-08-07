@@ -18,6 +18,7 @@ const featuredProducts: Product[] = [
   { id: '2', name: 'Beauty of Joseon Relief Sun Rice...', price: 1790.00, image: 'https://placehold.co/400x500.png', aiHint: 'cleanser bottle', category: 'солнцезащитный крем' },
   { id: '3', name: 'Q+A Hyaluronic Acid Daily Moisturiser', price: 1300.00, image: 'https://placehold.co/400x500.png', aiHint: 'moisturizer jar', category: 'крем' },
   { id: '4', name: 'Round Lab Birch Juice Moisturizing Sun...', price: 1500.00, image: 'https://placehold.co/400x500.png', aiHint: 'mist bottle', category: 'солнцезащитный крем' },
+  { id: '5', name: 'Round Lab Soybean Nourishing Toner', price: 2490.00, image: 'https://placehold.co/400x500.png', aiHint: 'eye cream', category: 'тонер' },
 ];
 
 const reels: Reel[] = [
@@ -108,7 +109,7 @@ export default function Home() {
       <section className="py-16 sm:py-24">
         <div className="w-[96%] mx-auto">
           <h2 className="text-3xl font-bold text-center text-primary mb-12">Our Best-Sellers</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
             {featuredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
