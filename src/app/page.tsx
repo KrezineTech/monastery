@@ -48,14 +48,14 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="w-full py-6">
+      <section className="w-full pt-6">
         <div className="w-[96%] mx-auto px-0">
             <HeroCarousel />
         </div>
       </section>
 
       {/* Category Display Section */}
-      <section className="py-16 sm:py-24">
+      <section className="py-5">
         <div className="w-[96%] mx-auto">
           <div className="flex flex-wrap md:flex-nowrap gap-5">
             <div className="w-full md:w-[42%]">
