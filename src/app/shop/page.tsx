@@ -14,7 +14,7 @@ const allProducts: Product[] = [
 
 export default function ShopPage() {
   return (
-    <div className="bg-background">
+    <div className="w-[96%] mx-auto">
       <div className="container py-16 sm:py-24">
         <div className="text-center mb-12">
             <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">All Products</h1>

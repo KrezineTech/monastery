@@ -49,14 +49,14 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="w-full py-6">
-        <div className="container px-0">
+        <div className="w-[96%] mx-auto px-0">
             <HeroCarousel />
         </div>
       </section>
 
       {/* Category Display Section */}
-      <section className="py-16 sm:py-24 bg-white">
-        <div className="container">
+      <section className="py-16 sm:py-24">
+        <div className="w-[96%] mx-auto">
           <h2 className="text-3xl font-bold text-center text-primary mb-12">Shop by Category</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {categories.map((category) => (
@@ -82,8 +82,8 @@ export default function Home() {
       </section>
 
       {/* Featured Products Section */}
-      <section className="py-16 sm:py-24 bg-secondary">
-        <div className="container">
+      <section className="py-16 sm:py-24">
+        <div className="w-[96%] mx-auto">
           <h2 className="text-3xl font-bold text-center text-primary mb-12">Our Best-Sellers</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {featuredProducts.map((product) => (
@@ -108,7 +108,7 @@ export default function Home() {
           data-ai-hint="ocean waves"
         />
         <div className="relative z-10 flex h-full items-center justify-center text-center text-primary-foreground">
-          <div className="container">
+          <div className="w-[96%] mx-auto">
             <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">The Islandbeauty Difference</h2>
             <p className="mt-4 max-w-2xl mx-auto text-lg">
               We believe in the power of nature to restore and rejuvenate. See how we harness it.
@@ -118,8 +118,8 @@ export default function Home() {
       </section>
 
       {/* Smart Product Placement in Reels Section */}
-      <section className="py-16 sm:py-24 bg-white">
-        <div className="container">
+      <section className="py-16 sm:py-24">
+        <div className="w-[96%] mx-auto">
           <h2 className="text-3xl font-bold text-center text-primary mb-12">As Seen On Reels</h2>
           <div className="flex flex-wrap items-start justify-center gap-8">
             {reels.map((reel) => (
@@ -161,8 +161,8 @@ export default function Home() {
       </section>
 
       {/* Instagram Feed Section */}
-      <section className="py-16 sm:py-24 bg-secondary">
-        <div className="container">
+      <section className="py-16 sm:py-24">
+        <div className="w-[96%] mx-auto">
           <h2 className="text-3xl font-bold text-center text-primary mb-4">Follow us on Instagram</h2>
           <p className="text-center text-foreground/80 mb-12">@islandbeauty</p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-4">
