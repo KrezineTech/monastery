@@ -57,23 +57,18 @@ export default function Home() {
       {/* Category Display Section */}
       <section className="py-16 sm:py-24">
         <div className="w-[96%] mx-auto">
-          <h2 className="text-3xl font-bold text-center text-primary mb-12">Shop by Category</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {categories.map((category) => (
+            {categories.map((category, index) => (
               <Link href="/shop" key={category.name} className="group relative block">
-                <Card className="overflow-hidden rounded-lg shadow-md border-none">
+                <Card className={`relative overflow-hidden rounded-2xl shadow-md border-none aspect-[4/3] ${index === 0 ? 'bg-blue-100' : 'bg-pink-100'}`}>
+                   <h3 className="absolute top-6 left-6 text-2xl font-semibold text-gray-800 z-10">{category.name}</h3>
                   <Image
                     src={category.image}
                     alt={category.name}
-                    width={400}
-                    height={400}
-                    className="object-cover w-full h-full aspect-square transition-transform duration-300 group-hover:scale-105"
+                    fill
+                    className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
                     data-ai-hint={category.aiHint}
                   />
-                  <div className="absolute inset-0 bg-black/30 transition-colors duration-300 group-hover:bg-black/40" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <h3 className="text-2xl font-semibold text-white">{category.name}</h3>
-                  </div>
                 </Card>
               </Link>
             ))}
