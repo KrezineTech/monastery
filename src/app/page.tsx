@@ -148,7 +148,7 @@ export default function Home() {
           <div className="flex flex-wrap items-start justify-center gap-8">
             {reels.map((reel) => (
               <div key={reel.id} className="w-full max-w-[320px]">
-                <Card className="relative group overflow-hidden rounded-[20px] shadow-xl border-none h-full">
+                <Card className="relative group overflow-hidden rounded-[26px] shadow-xl border-none h-full">
                   <Image
                     src={reel.videoPlaceholder}
                     alt="Reel video"
