@@ -8,9 +8,9 @@ import type { Product, Category, Reel, InstagramPost } from '@/lib/types';
 import { HeroCarousel } from '@/components/hero-carousel';
 
 const categories: Category[] = [
-  { name: 'Cleansers', image: 'https://placehold.co/400x400.png', aiHint: 'skincare cleanser' },
-  { name: 'Serums', image: 'https://placehold.co/400x400.png', aiHint: 'skincare serum' },
-  { name: 'Moisturizers', image: 'https://placehold.co/400x400.png', aiHint: 'skincare moisturizer' },
+  { name: 'Cleansers', image: 'https://placehold.co/840x400.png', aiHint: 'skincare cleanser' },
+  { name: 'Serums', image: 'https://placehold.co/460x400.png', aiHint: 'skincare serum' },
+  { name: 'Moisturizers', image: 'https://placehold.co/660x400.png', aiHint: 'skincare moisturizer' },
 ];
 
 const featuredProducts: Product[] = [
@@ -57,33 +57,49 @@ export default function Home() {
       {/* Category Display Section */}
       <section className="py-16 sm:py-24">
         <div className="w-[96%] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <Link href="/shop" className="group relative block md:col-span-2">
-              <Card className="relative overflow-hidden rounded-2xl shadow-md border-none aspect-video md:aspect-[2/1]">
-                  <h3 className="absolute top-6 left-6 text-2xl font-semibold text-gray-800 z-10">{categories[0].name}</h3>
-                <Image
-                  src={categories[0].image}
-                  alt={categories[0].name}
-                  fill
-                  className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-                  data-ai-hint={categories[0].aiHint}
-                />
-              </Card>
-            </Link>
-            {categories.slice(1).map((category, index) => (
-              <Link href="/shop" key={category.name} className="group relative block">
-                <Card className={`relative overflow-hidden rounded-2xl shadow-md border-none aspect-video md:aspect-square`}>
-                   <h3 className="absolute top-6 left-6 text-2xl font-semibold text-gray-800 z-10">{category.name}</h3>
+          <div className="flex flex-wrap md:flex-nowrap gap-8">
+            <div className="w-full md:w-[42%]">
+              <Link href="/shop" className="group relative block h-full">
+                <Card className="relative overflow-hidden rounded-2xl shadow-md border-none h-full aspect-[4/3] sm:aspect-auto">
+                    <h3 className="absolute top-6 left-6 text-2xl font-semibold text-gray-800 z-10">{categories[0].name}</h3>
                   <Image
-                    src={category.image}
-                    alt={category.name}
+                    src={categories[0].image}
+                    alt={categories[0].name}
                     fill
                     className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-                    data-ai-hint={category.aiHint}
+                    data-ai-hint={categories[0].aiHint}
                   />
                 </Card>
               </Link>
-            ))}
+            </div>
+            <div className="w-full md:w-[23%]">
+              <Link href="/shop" className="group relative block h-full">
+                <Card className="relative overflow-hidden rounded-2xl shadow-md border-none h-full aspect-[4/3] sm:aspect-auto">
+                   <h3 className="absolute top-6 left-6 text-2xl font-semibold text-gray-800 z-10">{categories[1].name}</h3>
+                  <Image
+                    src={categories[1].image}
+                    alt={categories[1].name}
+                    fill
+                    className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                    data-ai-hint={categories[1].aiHint}
+                  />
+                </Card>
+              </Link>
+            </div>
+            <div className="w-full md:w-[33%]">
+              <Link href="/shop" className="group relative block h-full">
+                <Card className="relative overflow-hidden rounded-2xl shadow-md border-none h-full aspect-[4/3] sm:aspect-auto">
+                   <h3 className="absolute top-6 left-6 text-2xl font-semibold text-gray-800 z-10">{categories[2].name}</h3>
+                  <Image
+                    src={categories[2].image}
+                    alt={categories[2].name}
+                    fill
+                    className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                    data-ai-hint={categories[2].aiHint}
+                  />
+                </Card>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
