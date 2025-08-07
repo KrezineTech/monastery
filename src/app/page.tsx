@@ -187,7 +187,7 @@ export default function Home() {
                 {reels.map((reel) => (
                   <CarouselItem key={reel.id} className="md:basis-1/3 lg:basis-1/5">
                     <div className="p-1">
-                      <Card className="relative group/reel overflow-hidden rounded-[16px] border-none h-full">
+                      <Card className="relative group/reel overflow-hidden rounded-[26px] border-none h-full">
                         <video
                           src={reel.videoUrl}
                           autoPlay
