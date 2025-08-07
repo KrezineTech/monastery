@@ -2,45 +2,55 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Instagram, Facebook, Twitter } from 'lucide-react';
+import { Instagram, Linkedin, ArrowRight } from 'lucide-react';
 
-const navLinks = [
+const usefulLinks = [
   { href: '/shop', label: 'Shop' },
   { href: '/about', label: 'About' },
   { href: '/ingredients', label: 'Ingredients' },
-  { href: '/blogs', label: 'Blogs' },
+  { href: '/blogs', label: 'Blog' },
 ];
+
+const supportLinks = [
+    { href: '#', label: 'Privacy Policy' },
+    { href: '#', label: 'Shipping Policy' },
+    { href: '#', label: 'Refund Policy' },
+    { href: '#', label: 'Terms of Service' },
+];
+
+const informationLinks = [
+    { href: '/ingredients', label: 'Ingredients' },
+    { href: '/blogs', label: 'Blog' },
+];
+
 
 const socialLinks = [
   { name: 'Instagram', href: '#', icon: Instagram },
-  { name: 'Facebook', href: '#', icon: Facebook },
-  { name: 'Twitter', href: '#', icon: Twitter },
+  { name: 'Linkedin', href: '#', icon: Linkedin },
 ]
 
 export function Footer() {
   return (
-    <footer className="w-[96%] mx-auto text-foreground/80 bg-[#F6F6F3] rounded-t-[26px]">
-      <div className="container py-12">
-        <div className="mb-8">
+    <footer className="w-full mx-auto text-foreground/80 bg-[#F6F6F3]">
+      <div className="container py-16">
+        <div className="mb-12 text-center">
             <Link href="/">
-                <Image src="https://www.islandbeauty.in/cdn/shop/files/bog_logo.svg?v=1751106444" alt="glowver logo" width={180} height={50} />
+                <Image 
+                    src="https://www.islandbeauty.in/cdn/shop/files/bog_logo.svg?v=1751106444" 
+                    alt="glowver logo" 
+                    width={500} 
+                    height={100} 
+                    className="mx-auto"
+                />
             </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-2">
-            <h3 className="text-lg font-semibold text-primary mb-4">Join our newsletter</h3>
-            <p className="mb-4 text-sm">Get exclusive offers and skincare tips.</p>
-            <form className="flex w-full max-w-sm items-center space-x-2">
-              <Input type="email" placeholder="Email" className="bg-background border-primary/20 focus:border-primary" />
-              <Button type="submit" variant="default">Subscribe</Button>
-            </form>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 text-sm">
           <div>
-            <h3 className="text-lg font-semibold text-primary mb-4">Quick Links</h3>
+            <h3 className="font-semibold text-foreground mb-4">USEFUL LINK</h3>
             <ul className="space-y-2">
-              {navLinks.map((link) => (
+              {usefulLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm hover:text-primary transition-colors">
+                  <Link href={link.href} className="text-foreground/70 hover:text-primary transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -48,22 +58,56 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-primary mb-4">Connect</h3>
-            <div className="space-y-2">
-                <p className="text-sm">contact@glowver.com</p>
-                <div className="flex space-x-4 pt-2">
-                    {socialLinks.map((social) => (
-                        <Link key={social.name} href={social.href} className="text-foreground/80 hover:text-primary transition-colors">
-                            <social.icon className="h-5 w-5" />
-                            <span className="sr-only">{social.name}</span>
-                        </Link>
-                    ))}
-                </div>
-            </div>
+            <h3 className="font-semibold text-foreground mb-4">SUPPORT</h3>
+            <ul className="space-y-2">
+              {supportLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-foreground/70 hover:text-primary transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-semibold text-foreground mb-4">INFOMATION</h3>
+            <ul className="space-y-2">
+              {informationLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-foreground/70 hover:text-primary transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="md:col-span-2">
+            <h3 className="font-semibold text-foreground mb-4">SIGN UP TO OUR NEWSLETTER</h3>
+            <p className="mb-6 text-foreground/70">Give your inbox some love with new products, tips, & more.</p>
+            <form>
+              <div className="relative">
+                <Input 
+                  type="email" 
+                  placeholder="Enter your email address" 
+                  className="bg-transparent border-0 border-b-2 border-foreground/20 rounded-none px-0 focus:ring-0 focus:border-primary"
+                />
+                <Button type="submit" variant="ghost" size="icon" className="absolute right-0 top-1/2 -translate-y-1/2 text-foreground/70 hover:text-primary">
+                  <ArrowRight className="w-5 h-5" />
+                </Button>
+              </div>
+            </form>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-border/40 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} glowver. All rights reserved.</p>
+        <div className="mt-16 pt-8 border-t border-border/40 flex justify-between items-center text-xs">
+          <div className="flex space-x-4">
+              {socialLinks.map((social) => (
+                  <Link key={social.name} href={social.href} className="text-foreground/70 hover:text-primary transition-colors">
+                      <social.icon className="h-5 w-5" />
+                      <span className="sr-only">{social.name}</span>
+                  </Link>
+              ))}
+          </div>
+          <p className="text-foreground/70">&copy; {new Date().getFullYear()}, Islandbeauty | Developed by FRD Studio</p>
         </div>
       </div>
     </footer>
