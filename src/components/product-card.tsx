@@ -11,8 +11,8 @@ interface ProductCardProps {
 
 export function ProductCard({ product, className }: ProductCardProps) {
   return (
-    <Card className={cn("overflow-hidden border-none shadow-md transition-all duration-300 hover:shadow-xl bg-accent group", className)}>
-      <div className="relative aspect-[4/5] w-full">
+    <Card className={cn("overflow-hidden border-none shadow-md transition-all duration-300 hover:shadow-xl bg-card group", className)}>
+      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-t-lg bg-accent">
         <Image
           src={product.image}
           alt={product.name}
@@ -21,10 +21,10 @@ export function ProductCard({ product, className }: ProductCardProps) {
           data-ai-hint={product.aiHint}
         />
       </div>
-      <CardContent className="p-4 text-center">
+      <CardContent className="p-4 text-center bg-accent/30 rounded-b-lg">
         <h3 className="font-semibold text-lg text-primary">{product.name}</h3>
         <p className="text-foreground/80 mb-4">${product.price.toFixed(2)}</p>
-        <Button variant="outline" className="w-full bg-background hover:bg-background/90 text-primary border-primary hover:border-primary/90">Quick View</Button>
+        <Button variant="outline" className="w-full bg-background hover:bg-background/90 text-primary border-primary/40 hover:border-primary/90">Quick View</Button>
       </CardContent>
     </Card>
   );

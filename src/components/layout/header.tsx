@@ -17,7 +17,7 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-secondary/90 backdrop-blur-lg">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-secondary/80 backdrop-blur-lg">
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="text-xl font-bold text-primary">
           Islandbeauty

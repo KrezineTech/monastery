@@ -25,7 +25,7 @@ export function Footer() {
             <h3 className="text-lg font-semibold text-primary mb-4">Join our newsletter</h3>
             <p className="mb-4 text-sm">Get exclusive offers and skincare tips.</p>
             <form className="flex w-full max-w-sm items-center space-x-2">
-              <Input type="email" placeholder="Email" className="bg-background" />
+              <Input type="email" placeholder="Email" className="bg-background border-primary/20 focus:border-primary" />
               <Button type="submit" variant="default">Subscribe</Button>
             </form>
           </div>
