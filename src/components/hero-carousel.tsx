@@ -64,7 +64,11 @@ export function HeroCarousel() {
   }, [api])
 
   return (
-    <Carousel setApi={setApi} className="relative group">
+    <Carousel
+      opts={{ loop: true }}
+      setApi={setApi}
+      className="relative group"
+    >
       <CarouselContent>
         {slides.map((slide, index) => (
           <CarouselItem key={index}>
