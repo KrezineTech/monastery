@@ -109,7 +109,7 @@ export default function Home() {
       <section className="py-16 sm:py-24">
         <div className="w-[96%] mx-auto">
           <h2 className="text-3xl font-bold text-center text-primary mb-12">Our Best-Sellers</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {featuredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
