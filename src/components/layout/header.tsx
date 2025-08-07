@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, ShoppingCart, X, Search, Heart, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -22,8 +23,8 @@ export function Header() {
   return (
     <header className="sticky top-4 z-50 w-full">
       <div className="w-[96%] mx-auto flex h-16 items-center justify-between rounded-[26px] border-b border-border/40 bg-rose-50/80 backdrop-blur-lg px-8">
-        <Link href="/" className="text-2xl font-bold text-gray-800">
-          glowver
+        <Link href="/">
+          <Image src="https://www.islandbeauty.in/cdn/shop/files/bog_logo.svg?v=1751106444" alt="glowver logo" width={150} height={40} />
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (

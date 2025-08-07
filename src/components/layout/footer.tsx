@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Instagram, Facebook, Twitter } from 'lucide-react';
@@ -20,6 +21,11 @@ export function Footer() {
   return (
     <footer className="w-[96%] mx-auto text-foreground/80">
       <div className="container py-12">
+        <div className="mb-8">
+            <Link href="/">
+                <Image src="https://www.islandbeauty.in/cdn/shop/files/bog_logo.svg?v=1751106444" alt="glowver logo" width={180} height={50} />
+            </Link>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <h3 className="text-lg font-semibold text-primary mb-4">Join our newsletter</h3>
