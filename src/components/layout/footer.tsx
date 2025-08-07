@@ -18,7 +18,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-secondary text-foreground/80">
+    <footer className="bg-white text-foreground/80">
       <div className="container py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
@@ -44,7 +44,7 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold text-primary mb-4">Connect</h3>
             <div className="space-y-2">
-                <p className="text-sm">contact@islandbeauty.com</p>
+                <p className="text-sm">contact@glowver.com</p>
                 <div className="flex space-x-4 pt-2">
                     {socialLinks.map((social) => (
                         <Link key={social.name} href={social.href} className="text-foreground/80 hover:text-primary transition-colors">
@@ -57,7 +57,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-border/40 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} Islandbeauty. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} glowver. All rights reserved.</p>
         </div>
       </div>
     </footer>

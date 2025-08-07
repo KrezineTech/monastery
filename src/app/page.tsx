@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { ProductCard } from '@/components/product-card';
 import { PlayCircle } from 'lucide-react';
 import type { Product, Category, Reel, InstagramPost } from '@/lib/types';
+import { HeroCarousel } from '@/components/hero-carousel';
 
 const categories: Category[] = [
   { name: 'Cleansers', image: 'https://placehold.co/400x400.png', aiHint: 'skincare cleanser' },
@@ -47,35 +48,14 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[80vh] w-full bg-accent/30">
-        <Image
-          src="https://placehold.co/1800x900.png"
-          alt="Woman on a beach"
-          fill
-          className="object-cover"
-          priority
-          data-ai-hint="serene beach"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-        <div className="relative z-10 flex h-full items-end pb-20 justify-center text-center">
-          <div className="container px-4">
-            <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl md:text-6xl">
-              Radiance, Inspired by Nature
-            </h1>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80 md:text-xl">
-              Discover pure, effective skincare crafted from the finest island botanicals.
-            </p>
-            <div className="mt-8">
-              <Button asChild size="lg">
-                <Link href="/shop">Shop Now</Link>
-              </Button>
-            </div>
-          </div>
+      <section className="w-full py-6">
+        <div className="container px-4 md:px-6">
+            <HeroCarousel />
         </div>
       </section>
 
       {/* Category Display Section */}
-      <section className="py-16 sm:py-24 bg-background">
+      <section className="py-16 sm:py-24 bg-white">
         <div className="container">
           <h2 className="text-3xl font-bold text-center text-primary mb-12">Shop by Category</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -138,7 +118,7 @@ export default function Home() {
       </section>
 
       {/* Smart Product Placement in Reels Section */}
-      <section className="py-16 sm:py-24 bg-background">
+      <section className="py-16 sm:py-24 bg-white">
         <div className="container">
           <h2 className="text-3xl font-bold text-center text-primary mb-12">As Seen On Reels</h2>
           <div className="flex flex-wrap items-start justify-center gap-8">
