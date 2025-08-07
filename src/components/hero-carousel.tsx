@@ -54,44 +54,42 @@ export function HeroCarousel() {
   }, [api])
 
   return (
-    <div>
-      <Carousel setApi={setApi} className="relative">
-        <CarouselContent>
-          {slides.map((slide, index) => (
-            <CarouselItem key={index}>
-                <div className="relative w-full h-[60vh] rounded-3xl overflow-hidden">
-                    <Image
-                        src={slide.image}
-                        alt={slide.title}
-                        fill
-                        className="object-cover"
-                        data-ai-hint={slide.aiHint}
-                    />
-                    <div className="absolute inset-0 bg-black/30" />
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-6">
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold">
-                            {slide.title}
-                        </h2>
-                        <p className="mt-4 text-lg max-w-md">
-                            {slide.subtitle}
-                        </p>
-                        <Button size="lg" className="mt-8 rounded-full bg-primary hover:bg-primary/90">
-                            {slide.buttonText}
-                        </Button>
-                    </div>
-               </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <div className="absolute left-4 top-1/2 -translate-y-1/2">
-            <CarouselPrevious className="bg-white/50 hover:bg-white border-none text-primary" />
-        </div>
-        <div className="absolute right-4 top-1/2 -translate-y-1/2">
-            <CarouselNext className="bg-white/50 hover:bg-white border-none text-primary" />
-        </div>
-      </Carousel>
-      <div className="py-2 text-center text-sm text-muted-foreground">
-        <div className="flex justify-center gap-2 mt-4">
+    <Carousel setApi={setApi} className="relative group">
+      <CarouselContent>
+        {slides.map((slide, index) => (
+          <CarouselItem key={index}>
+              <div className="relative w-full h-[60vh] rounded-3xl overflow-hidden">
+                  <Image
+                      src={slide.image}
+                      alt={slide.title}
+                      fill
+                      className="object-cover"
+                      data-ai-hint={slide.aiHint}
+                  />
+                  <div className="absolute inset-0 bg-black/30" />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-6">
+                      <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold">
+                          {slide.title}
+                      </h2>
+                      <p className="mt-4 text-lg max-w-md">
+                          {slide.subtitle}
+                      </p>
+                      <Button size="lg" className="mt-8 rounded-full bg-primary hover:bg-primary/90">
+                          {slide.buttonText}
+                      </Button>
+                  </div>
+             </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <div className="absolute left-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <CarouselPrevious className="bg-white/50 hover:bg-white border-none text-primary" />
+      </div>
+      <div className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <CarouselNext className="bg-white/50 hover:bg-white border-none text-primary" />
+      </div>
+       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 py-2 text-center text-sm text-muted-foreground">
+        <div className="flex justify-center gap-2">
             {slides.map((_, i) => (
                 <button
                     key={i}
@@ -102,6 +100,6 @@ export function HeroCarousel() {
             ))}
         </div>
       </div>
-    </div>
+    </Carousel>
   )
 }
