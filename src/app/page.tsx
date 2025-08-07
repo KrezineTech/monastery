@@ -198,7 +198,7 @@ export default function Home() {
                           data-ai-hint={reel.aiHint}
                         />
                         <div className="absolute bottom-0 left-0 right-0 p-2">
-                          <Card className="flex items-center gap-3 p-2 rounded-[16px] bg-white/80 backdrop-blur-sm transition-all duration-300">
+                          <Card className="flex items-center gap-3 p-2 rounded-[18px] bg-white/80 backdrop-blur-sm transition-all duration-300">
                             <Image
                               src={reel.product.image}
                               alt={reel.product.name}
