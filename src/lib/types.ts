@@ -15,7 +15,7 @@ export interface Category {
 
 export interface Reel {
   id: string;
-  videoPlaceholder: string;
+  videoUrl: string;
   aiHint?: string;
   product: Product;
 }

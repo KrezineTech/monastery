@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { ProductCard } from '@/components/product-card';
-import { PlayCircle } from 'lucide-react';
 import type { Product, Category, Reel, InstagramPost } from '@/lib/types';
 import { HeroCarousel } from '@/components/hero-carousel';
 import {
@@ -31,37 +30,37 @@ const featuredProducts: Product[] = [
 const reels: Reel[] = [
   {
     id: '1',
-    videoPlaceholder: 'https://placehold.co/400x700.png',
+    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
     aiHint: 'woman skincare',
     product: { id: '1', name: 'Glow Serum', price: 45.00, image: 'https://placehold.co/100x100.png', aiHint: 'serum bottle' },
   },
   {
     id: '2',
-    videoPlaceholder: 'https://placehold.co/400x700.png',
+    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
     aiHint: 'beach relaxation',
     product: { id: '3', name: 'Daily Moisturizer', price: 35.00, image: 'https://placehold.co/100x100.png', aiHint: 'moisturizer jar' },
   },
   {
     id: '3',
-    videoPlaceholder: 'https://placehold.co/400x700.png',
+    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4',
     aiHint: 'makeup tutorial',
     product: { id: '2', name: 'Sunscreen', price: 25.00, image: 'https://placehold.co/100x100.png', aiHint: 'sunscreen bottle' },
   },
   {
     id: '4',
-    videoPlaceholder: 'https://placehold.co/400x700.png',
+    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
     aiHint: 'morning routine',
     product: { id: '4', name: 'Hydrating Mist', price: 20.00, image: 'https://placehold.co/100x100.png', aiHint: 'mist bottle' },
   },
   {
     id: '5',
-    videoPlaceholder: 'https://placehold.co/400x700.png',
+    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
     aiHint: 'evening skincare',
     product: { id: '5', name: 'Nourishing Toner', price: 28.00, image: 'https://placehold.co/100x100.png', aiHint: 'toner bottle' },
   },
    {
     id: '6',
-    videoPlaceholder: 'https://placehold.co/400x700.png',
+    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4',
     aiHint: 'self-care day',
     product: { id: '1', name: 'Glow Serum', price: 45.00, image: 'https://placehold.co/100x100.png', aiHint: 'serum bottle' },
   },
@@ -188,18 +187,16 @@ export default function Home() {
                 {reels.map((reel) => (
                   <CarouselItem key={reel.id} className="md:basis-1/3 lg:basis-1/5">
                     <div className="p-1">
-                      <Card className="relative group overflow-hidden rounded-[26px] border-none h-full">
-                        <Image
-                          src={reel.videoPlaceholder}
-                          alt="Reel video"
-                          width={400}
-                          height={700}
-                          className="object-cover w-full h-full aspect-[9/16] transition-transform duration-300 group-hover:scale-105"
+                      <Card className="relative group/reel overflow-hidden rounded-[26px] border-none h-full">
+                        <video
+                          src={reel.videoUrl}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          className="object-cover w-full h-full aspect-[9/16]"
                           data-ai-hint={reel.aiHint}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 flex items-center justify-center">
-                          <PlayCircle className="w-16 h-16 text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        </div>
                         <div className="absolute bottom-0 left-0 right-0 p-2">
                           <Card className="flex items-center gap-3 p-2 rounded-[26px] bg-white/80 backdrop-blur-sm transition-all duration-300">
                             <Image
