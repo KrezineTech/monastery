@@ -79,7 +79,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="w-full pt-6 mb-5">
+      <section className="w-full pt-12 mb-5">
         <div className="w-[96%] mx-auto px-0">
             <HeroCarousel />
         </div>
