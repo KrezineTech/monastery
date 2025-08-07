@@ -32,7 +32,7 @@ const socialLinks = [
 export function Footer() {
   return (
     <footer className="w-full mb-4">
-      <div className="w-[96%] mx-auto pt-12 pb-8 text-foreground/80 rounded-[26px] border border-border/40 bg-[#F6F6F3]/80 backdrop-blur-lg px-8">
+      <div className="w-[96%] mx-auto pt-12 pb-6 text-foreground/80 rounded-[26px] border border-border/40 bg-[#F6F6F3]/80 backdrop-blur-lg px-8">
         <div className="mb-12 text-center">
             <Link href="/">
                 <Image 
