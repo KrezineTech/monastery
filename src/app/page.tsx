@@ -57,7 +57,7 @@ export default function Home() {
       {/* Category Display Section */}
       <section className="py-16 sm:py-24">
         <div className="w-[96%] mx-auto">
-          <div className="flex flex-wrap md:flex-nowrap gap-8">
+          <div className="flex flex-wrap md:flex-nowrap gap-5">
             <div className="w-full md:w-[42%]">
               <Link href="/shop" className="group relative block h-[500px]">
                 <Card className="relative overflow-hidden rounded-2xl shadow-md border-none h-full">
