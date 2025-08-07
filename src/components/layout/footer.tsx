@@ -19,7 +19,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="w-[96%] mx-auto text-foreground/80">
+    <footer className="w-[96%] mx-auto text-foreground/80 bg-[#F6F6F3] rounded-t-[26px]">
       <div className="container py-12">
         <div className="mb-8">
             <Link href="/">

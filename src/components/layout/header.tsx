@@ -22,7 +22,7 @@ export function Header() {
 
   return (
     <header className="sticky top-4 z-50 w-full">
-      <div className="w-[96%] mx-auto flex h-16 items-center justify-between rounded-[26px] border-b border-border/40 bg-rose-50/80 backdrop-blur-lg px-8">
+      <div className="w-[96%] mx-auto flex h-16 items-center justify-between rounded-[26px] border-b border-border/40 bg-[#F6F6F3]/80 backdrop-blur-lg px-8">
         <Link href="/">
           <Image src="https://www.islandbeauty.in/cdn/shop/files/bog_logo.svg?v=1751106444" alt="glowver logo" width={150} height={40} />
         </Link>
