@@ -31,8 +31,8 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="w-full mx-auto text-foreground/80 bg-[#F6F6F3]">
-      <div className="container py-16">
+    <footer className="w-full text-foreground/80 bg-[#F6F6F3]">
+      <div className="w-[96%] mx-auto py-16">
         <div className="mb-12 text-center">
             <Link href="/">
                 <Image 
