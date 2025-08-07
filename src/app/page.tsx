@@ -6,6 +6,13 @@ import { ProductCard } from '@/components/product-card';
 import { PlayCircle } from 'lucide-react';
 import type { Product, Category, Reel, InstagramPost } from '@/lib/types';
 import { HeroCarousel } from '@/components/hero-carousel';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 
 const categories: Category[] = [
   { name: 'Cleansers', image: 'https://placehold.co/840x400.png', aiHint: 'skincare cleanser' },
@@ -33,6 +40,30 @@ const reels: Reel[] = [
     videoPlaceholder: 'https://placehold.co/400x700.png',
     aiHint: 'beach relaxation',
     product: { id: '3', name: 'Daily Moisturizer', price: 35.00, image: 'https://placehold.co/100x100.png', aiHint: 'moisturizer jar' },
+  },
+  {
+    id: '3',
+    videoPlaceholder: 'https://placehold.co/400x700.png',
+    aiHint: 'makeup tutorial',
+    product: { id: '2', name: 'Sunscreen', price: 25.00, image: 'https://placehold.co/100x100.png', aiHint: 'sunscreen bottle' },
+  },
+  {
+    id: '4',
+    videoPlaceholder: 'https://placehold.co/400x700.png',
+    aiHint: 'morning routine',
+    product: { id: '4', name: 'Hydrating Mist', price: 20.00, image: 'https://placehold.co/100x100.png', aiHint: 'mist bottle' },
+  },
+  {
+    id: '5',
+    videoPlaceholder: 'https://placehold.co/400x700.png',
+    aiHint: 'evening skincare',
+    product: { id: '5', name: 'Nourishing Toner', price: 28.00, image: 'https://placehold.co/100x100.png', aiHint: 'toner bottle' },
+  },
+   {
+    id: '6',
+    videoPlaceholder: 'https://placehold.co/400x700.png',
+    aiHint: 'self-care day',
+    product: { id: '1', name: 'Glow Serum', price: 45.00, image: 'https://placehold.co/100x100.png', aiHint: 'serum bottle' },
   },
 ];
 
@@ -145,42 +176,54 @@ export default function Home() {
       <section className="py-16 sm:py-24">
         <div className="w-[96%] mx-auto">
           <h2 className="text-3xl font-bold text-center text-primary mb-12">As Seen On Reels</h2>
-          <div className="flex flex-wrap items-start justify-center gap-8">
-            {reels.map((reel) => (
-              <div key={reel.id} className="w-full max-w-[320px]">
-                <Card className="relative group overflow-hidden rounded-[26px] shadow-xl border-none h-full">
-                  <Image
-                    src={reel.videoPlaceholder}
-                    alt="Reel video"
-                    width={400}
-                    height={700}
-                    className="object-cover w-full h-full aspect-[9/16] transition-transform duration-300 group-hover:scale-105"
-                    data-ai-hint={reel.aiHint}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 flex items-center justify-center">
-                    <PlayCircle className="w-16 h-16 text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-2">
-                    <Card className="flex items-center gap-3 p-2 rounded-[20px] bg-white/80 backdrop-blur-sm shadow-md transition-all duration-300 hover:shadow-lg">
+          <Carousel
+            opts={{
+              align: 'start',
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent>
+              {reels.map((reel) => (
+                <CarouselItem key={reel.id} className="md:basis-1/3 lg:basis-1/5">
+                  <div className="p-1">
+                    <Card className="relative group overflow-hidden rounded-[26px] border-none h-full">
                       <Image
-                        src={reel.product.image}
-                        alt={reel.product.name}
-                        width={64}
-                        height={64}
-                        className="rounded-[12px] object-cover"
-                        data-ai-hint={reel.product.aiHint}
+                        src={reel.videoPlaceholder}
+                        alt="Reel video"
+                        width={400}
+                        height={700}
+                        className="object-cover w-full h-full aspect-[9/16] transition-transform duration-300 group-hover:scale-105"
+                        data-ai-hint={reel.aiHint}
                       />
-                      <div className="flex-1">
-                        <h4 className="font-semibold text-sm text-primary">{reel.product.name}</h4>
-                        <p className="text-sm text-foreground/80">₹{reel.product.price.toFixed(2)}</p>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 flex items-center justify-center">
+                        <PlayCircle className="w-16 h-16 text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </div>
-                      <Button size="sm" className="shrink-0">View</Button>
+                      <div className="absolute bottom-0 left-0 right-0 p-2">
+                        <Card className="flex items-center gap-3 p-2 rounded-[20px] bg-white/80 backdrop-blur-sm transition-all duration-300">
+                          <Image
+                            src={reel.product.image}
+                            alt={reel.product.name}
+                            width={64}
+                            height={64}
+                            className="rounded-[12px] object-cover"
+                            data-ai-hint={reel.product.aiHint}
+                          />
+                          <div className="flex-1">
+                            <h4 className="font-semibold text-sm text-primary">{reel.product.name}</h4>
+                            <p className="text-sm text-foreground/80">₹{reel.product.price.toFixed(2)}</p>
+                          </div>
+                          <Button size="sm" className="shrink-0">View</Button>
+                        </Card>
+                      </div>
                     </Card>
                   </div>
-                </Card>
-              </div>
-            ))}
-          </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-8" />
+            <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-8" />
+          </Carousel>
         </div>
       </section>
 
