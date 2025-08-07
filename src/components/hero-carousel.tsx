@@ -15,22 +15,22 @@ import { Button } from "@/components/ui/button"
 
 const slides = [
   {
-    image: "https://placehold.co/500x500.png",
-    aiHint: "skincare product",
+    image: "https://placehold.co/1600x600.png",
+    aiHint: "skincare products lifestyle",
     title: "2 for the price of 1",
     subtitle: "Hurry up! The offer is valid until April 1, 2024",
     buttonText: "BUY NOW",
   },
   {
-    image: "https://placehold.co/500x500.png",
-    aiHint: "serum bottle",
+    image: "https://placehold.co/1600x600.png",
+    aiHint: "woman applying serum",
     title: "New Arrival: Glow Serum",
     subtitle: "Unlock radiant skin with our new potent formula.",
     buttonText: "Discover",
   },
     {
-    image: "https://placehold.co/500x500.png",
-    aiHint: "moisturizer jar",
+    image: "https://placehold.co/1600x600.png",
+    aiHint: "flatlay of moisturizers",
     title: "Hydration Boost",
     subtitle: "24-hour moisture for a fresh and dewy look.",
     buttonText: "Shop Moisturizers",
@@ -59,33 +59,27 @@ export function HeroCarousel() {
         <CarouselContent>
           {slides.map((slide, index) => (
             <CarouselItem key={index}>
-              <div className="p-1">
-                <div className="relative flex items-center justify-center p-6 sm:p-10 md:p-16 rounded-3xl bg-blue-100 overflow-hidden">
-                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                        <div className="relative w-full aspect-square max-w-md mx-auto">
-                            <Image
-                                src={slide.image}
-                                alt={slide.title}
-                                width={500}
-                                height={500}
-                                className="object-contain"
-                                data-ai-hint={slide.aiHint}
-                            />
-                        </div>
-                        <div className="text-center md:text-left">
-                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary" style={{color: '#4C5FE7'}}>
-                                {slide.title}
-                            </h2>
-                            <p className="mt-4 text-lg text-gray-600 max-w-md mx-auto md:mx-0">
-                                {slide.subtitle}
-                            </p>
-                            <Button size="lg" className="mt-8 rounded-full" style={{backgroundColor: '#6A7BFF'}}>
-                                {slide.buttonText}
-                            </Button>
-                        </div>
-                   </div>
-                </div>
-              </div>
+                <div className="relative w-full h-[60vh] rounded-3xl overflow-hidden">
+                    <Image
+                        src={slide.image}
+                        alt={slide.title}
+                        fill
+                        className="object-cover"
+                        data-ai-hint={slide.aiHint}
+                    />
+                    <div className="absolute inset-0 bg-black/30" />
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-6">
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold">
+                            {slide.title}
+                        </h2>
+                        <p className="mt-4 text-lg max-w-md">
+                            {slide.subtitle}
+                        </p>
+                        <Button size="lg" className="mt-8 rounded-full bg-primary hover:bg-primary/90">
+                            {slide.buttonText}
+                        </Button>
+                    </div>
+               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -102,7 +96,7 @@ export function HeroCarousel() {
                 <button
                     key={i}
                     onClick={() => api?.scrollTo(i)}
-                    className={`h-2 w-2 rounded-full ${i === current - 1 ? 'bg-primary' : 'bg-gray-300'}`}
+                    className={`h-2 w-2 rounded-full transition-colors ${i === current - 1 ? 'bg-primary' : 'bg-gray-300'}`}
                     aria-label={`Go to slide ${i + 1}`}
                 />
             ))}
