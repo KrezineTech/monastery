@@ -176,54 +176,56 @@ export default function Home() {
       <section className="py-16 sm:py-24">
         <div className="w-[96%] mx-auto">
           <h2 className="text-3xl font-bold text-center text-primary mb-12">As Seen On Reels</h2>
-          <Carousel
-            opts={{
-              align: 'start',
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent>
-              {reels.map((reel) => (
-                <CarouselItem key={reel.id} className="md:basis-1/3 lg:basis-1/5">
-                  <div className="p-1">
-                    <Card className="relative group overflow-hidden rounded-[26px] border-none h-full">
-                      <Image
-                        src={reel.videoPlaceholder}
-                        alt="Reel video"
-                        width={400}
-                        height={700}
-                        className="object-cover w-full h-full aspect-[9/16] transition-transform duration-300 group-hover:scale-105"
-                        data-ai-hint={reel.aiHint}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 flex items-center justify-center">
-                        <PlayCircle className="w-16 h-16 text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      </div>
-                      <div className="absolute bottom-0 left-0 right-0 p-2">
-                        <Card className="flex items-center gap-3 p-2 rounded-[20px] bg-white/80 backdrop-blur-sm transition-all duration-300">
-                          <Image
-                            src={reel.product.image}
-                            alt={reel.product.name}
-                            width={64}
-                            height={64}
-                            className="rounded-[12px] object-cover"
-                            data-ai-hint={reel.product.aiHint}
-                          />
-                          <div className="flex-1">
-                            <h4 className="font-semibold text-sm text-primary">{reel.product.name}</h4>
-                            <p className="text-sm text-foreground/80">₹{reel.product.price.toFixed(2)}</p>
-                          </div>
-                          <Button size="sm" className="shrink-0">View</Button>
-                        </Card>
-                      </div>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 h-10 w-10 bg-white border-2 border-gray-200 text-gray-800 hover:bg-gray-100" />
-            <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 h-10 w-10 bg-white border-2 border-gray-200 text-gray-800 hover:bg-gray-100" />
-          </Carousel>
+          <div className="relative group">
+            <Carousel
+              opts={{
+                align: 'start',
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent>
+                {reels.map((reel) => (
+                  <CarouselItem key={reel.id} className="md:basis-1/3 lg:basis-1/5">
+                    <div className="p-1">
+                      <Card className="relative group overflow-hidden rounded-[26px] border-none h-full">
+                        <Image
+                          src={reel.videoPlaceholder}
+                          alt="Reel video"
+                          width={400}
+                          height={700}
+                          className="object-cover w-full h-full aspect-[9/16] transition-transform duration-300 group-hover:scale-105"
+                          data-ai-hint={reel.aiHint}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 flex items-center justify-center">
+                          <PlayCircle className="w-16 h-16 text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        </div>
+                        <div className="absolute bottom-0 left-0 right-0 p-2">
+                          <Card className="flex items-center gap-3 p-2 rounded-[26px] bg-white/80 backdrop-blur-sm transition-all duration-300">
+                            <Image
+                              src={reel.product.image}
+                              alt={reel.product.name}
+                              width={64}
+                              height={64}
+                              className="rounded-[12px] object-cover"
+                              data-ai-hint={reel.product.aiHint}
+                            />
+                            <div className="flex-1">
+                              <h4 className="font-semibold text-sm text-primary">{reel.product.name}</h4>
+                              <p className="text-sm text-foreground/80">₹{reel.product.price.toFixed(2)}</p>
+                            </div>
+                            <Button size="sm" className="shrink-0">View</Button>
+                          </Card>
+                        </div>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 h-10 w-10 bg-white border-2 border-gray-200 text-gray-800 hover:bg-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 h-10 w-10 bg-white border-2 border-gray-200 text-gray-800 hover:bg-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </Carousel>
+          </div>
         </div>
       </section>
 
