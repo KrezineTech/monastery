@@ -14,10 +14,10 @@ const categories: Category[] = [
 ];
 
 const featuredProducts: Product[] = [
-  { id: '1', name: 'Glow Serum', price: 45.00, image: 'https://placehold.co/400x500.png', aiHint: 'serum bottle' },
-  { id: '2', name: 'Hydrating Cleanser', price: 28.00, image: 'https://placehold.co/400x500.png', aiHint: 'cleanser bottle' },
-  { id: '3', name: 'Daily Moisturizer', price: 35.00, image: 'https://placehold.co/400x500.png', aiHint: 'moisturizer jar' },
-  { id: '4', name: 'Vitamin C Mist', price: 22.00, image: 'https://placehold.co/400x500.png', aiHint: 'mist bottle' },
+  { id: '1', name: 'Round Lab 1025 Dokdo Cleanser', price: 1450.00, image: 'https://placehold.co/400x500.png', aiHint: 'serum bottle', category: 'пенка' },
+  { id: '2', name: 'Beauty of Joseon Relief Sun Rice...', price: 1790.00, image: 'https://placehold.co/400x500.png', aiHint: 'cleanser bottle', category: 'солнцезащитный крем' },
+  { id: '3', name: 'Q+A Hyaluronic Acid Daily Moisturiser', price: 1300.00, image: 'https://placehold.co/400x500.png', aiHint: 'moisturizer jar', category: 'крем' },
+  { id: '4', name: 'Round Lab Birch Juice Moisturizing Sun...', price: 1500.00, image: 'https://placehold.co/400x500.png', aiHint: 'mist bottle', category: 'солнцезащитный крем' },
 ];
 
 const reels: Reel[] = [
@@ -48,7 +48,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="w-full pt-6">
+      <section className="w-full pt-6 mb-5">
         <div className="w-[96%] mx-auto px-0">
             <HeroCarousel />
         </div>

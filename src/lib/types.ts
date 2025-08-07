@@ -4,6 +4,7 @@ export interface Product {
   price: number;
   image: string;
   aiHint?: string;
+  category?: string;
 }
 
 export interface Category {
