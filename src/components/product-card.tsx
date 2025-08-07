@@ -25,7 +25,6 @@ export function ProductCard({ product, className }: ProductCardProps) {
         </div>
       </Card>
       <div className="pt-4">
-        <p className="text-sm text-muted-foreground">{product.category}</p>
         <h3 className="font-semibold text-base text-foreground mt-1">{product.name}</h3>
         <p className="font-bold text-foreground/90 mt-2">{product.price.toFixed(2)} P</p>
         <div className="flex items-center gap-2 mt-4">
