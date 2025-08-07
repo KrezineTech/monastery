@@ -59,8 +59,8 @@ export default function Home() {
         <div className="w-[96%] mx-auto">
           <div className="flex flex-wrap md:flex-nowrap gap-8">
             <div className="w-full md:w-[42%]">
-              <Link href="/shop" className="group relative block h-full">
-                <Card className="relative overflow-hidden rounded-2xl shadow-md border-none h-full aspect-[4/3] sm:aspect-auto">
+              <Link href="/shop" className="group relative block h-[500px]">
+                <Card className="relative overflow-hidden rounded-2xl shadow-md border-none h-full">
                     <h3 className="absolute top-6 left-6 text-2xl font-semibold text-gray-800 z-10">{categories[0].name}</h3>
                   <Image
                     src={categories[0].image}
@@ -73,8 +73,8 @@ export default function Home() {
               </Link>
             </div>
             <div className="w-full md:w-[23%]">
-              <Link href="/shop" className="group relative block h-full">
-                <Card className="relative overflow-hidden rounded-2xl shadow-md border-none h-full aspect-[4/3] sm:aspect-auto">
+              <Link href="/shop" className="group relative block h-[500px]">
+                <Card className="relative overflow-hidden rounded-2xl shadow-md border-none h-full">
                    <h3 className="absolute top-6 left-6 text-2xl font-semibold text-gray-800 z-10">{categories[1].name}</h3>
                   <Image
                     src={categories[1].image}
@@ -87,8 +87,8 @@ export default function Home() {
               </Link>
             </div>
             <div className="w-full md:w-[33%]">
-              <Link href="/shop" className="group relative block h-full">
-                <Card className="relative overflow-hidden rounded-2xl shadow-md border-none h-full aspect-[4/3] sm:aspect-auto">
+              <Link href="/shop" className="group relative block h-[500px]">
+                <Card className="relative overflow-hidden rounded-2xl shadow-md border-none h-full">
                    <h3 className="absolute top-6 left-6 text-2xl font-semibold text-gray-800 z-10">{categories[2].name}</h3>
                   <Image
                     src={categories[2].image}
