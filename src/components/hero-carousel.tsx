@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button"
 
 const slides = [
   {
-    image: "https://placehold.co/1600x900.png",
+    image: "https://cdn.shopify.com/s/files/1/0723/1376/6028/files/WEBSITE_REVAMP_DESIGNS_4.webp?v=1754619697",
     aiHint: "skincare products lifestyle",
     title: "2 for the price of 1",
     subtitle: "Hurry up! The offer is valid until April 1, 2024",
@@ -24,7 +24,7 @@ const slides = [
     buttonLink: "/shop",
   },
   {
-    image: "https://placehold.co/1600x900.png",
+    image: "https://cdn.shopify.com/s/files/1/0723/1376/6028/files/banner_2-100.webp?v=1754619697",
     aiHint: "woman applying serum",
     title: "New Arrival: Glow Serum",
     subtitle: "Unlock radiant skin with our new potent formula.",
@@ -32,11 +32,19 @@ const slides = [
     buttonLink: "/shop/glow-serum",
   },
     {
-    image: "https://placehold.co/1600x900.png",
+    image: "https://cdn.shopify.com/s/files/1/0723/1376/6028/files/WEBSITE_REVAMP_DESIGNS_3.webp?v=1754619697",
     aiHint: "flatlay of moisturizers",
     title: "Hydration Boost",
     subtitle: "24-hour moisture for a fresh and dewy look.",
     buttonText: "Shop Moisturizers",
+    buttonLink: "/shop",
+  },
+  {
+    image: "https://cdn.shopify.com/s/files/1/0723/1376/6028/files/WEBSITE_REVAMP_DESIGNS-19.webp?v=1754619697",
+    aiHint: "skincare on display",
+    title: "Free Shipping",
+    subtitle: "On all orders over $50.",
+    buttonText: "Shop Now",
     buttonLink: "/shop",
   },
 ]
