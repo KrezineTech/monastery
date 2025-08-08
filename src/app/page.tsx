@@ -90,7 +90,51 @@ export default function Home() {
 
       {/* Category Display Section */}
       <section className="pb-5">
-        <div className="w-[96%] mx-auto">
+        <div className="w-[96%] mx-auto md:hidden">
+            <div className="flex flex-col gap-5">
+                <div className="grid grid-cols-2 gap-5 h-[216px]">
+                    <Link href="/shop" className="group relative block w-full h-full">
+                        <Card className="relative overflow-hidden rounded-[26px] border-none h-full">
+                            <h3 className="absolute top-6 left-6 text-xl font-semibold text-gray-800 z-10">{categories[0].name}</h3>
+                            <Image
+                                src={categories[0].image}
+                                alt={categories[0].name}
+                                fill
+                                className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                                data-ai-hint={categories[0].aiHint}
+                            />
+                        </Card>
+                    </Link>
+                    <Link href="/shop" className="group relative block w-full h-full">
+                        <Card className="relative overflow-hidden rounded-[26px] border-none h-full">
+                            <h3 className="absolute top-6 left-6 text-xl font-semibold text-gray-800 z-10">{categories[1].name}</h3>
+                            <Image
+                                src={categories[1].image}
+                                alt={categories[1].name}
+                                fill
+                                className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                                data-ai-hint={categories[1].aiHint}
+                            />
+                        </Card>
+                    </Link>
+                </div>
+                <div className="h-[216px]">
+                    <Link href="/shop" className="group relative block w-full h-full">
+                        <Card className="relative overflow-hidden rounded-[26px] border-none h-full">
+                            <h3 className="absolute top-6 left-6 text-xl font-semibold text-gray-800 z-10">{categories[2].name}</h3>
+                            <Image
+                                src={categories[2].image}
+                                alt={categories[2].name}
+                                fill
+                                className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                                data-ai-hint={categories[2].aiHint}
+                            />
+                        </Card>
+                    </Link>
+                </div>
+            </div>
+        </div>
+        <div className="w-[96%] mx-auto hidden md:block">
           <div className="flex flex-wrap md:flex-nowrap gap-5">
             <div className="w-full md:w-[42%]">
               <Link href="/shop" className="group relative block h-[500px] md:h-full">
