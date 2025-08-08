@@ -14,7 +14,6 @@ export function QuietEscapeSection() {
           className="object-cover w-full h-full"
           data-ai-hint="sandy beach waves"
         />
-        <div className="absolute inset-0 bg-white/30 backdrop-blur-sm" />
         <div className="relative h-full flex items-center justify-center text-center">
           <div className="max-w-2xl mx-auto px-4">
             <h2 className="text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl">
