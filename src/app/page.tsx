@@ -14,7 +14,6 @@ import {
 } from '@/components/ui/carousel';
 import { FeaturedTrio } from '@/components/featured-trio';
 import { QuietEscapeSection } from '@/components/quiet-escape';
-import { CleanAuthenticRadiantSection } from '@/components/clean-authentic-radiant';
 
 const categories: Category[] = [
   { name: 'Cleansers', image: 'https://placehold.co/840x400.png', aiHint: 'skincare cleanser' },
@@ -139,28 +138,10 @@ export default function Home() {
       </section>
 
       <QuietEscapeSection />
-      <CleanAuthenticRadiantSection />
       <FeaturedTrio />
 
-      {/* Featured Products Section */}
-      {/* <section className="py-16 sm:py-24">
-        <div className="w-[96%] mx-auto">
-          <h2 className="text-3xl font-bold text-center text-primary mb-12">Our Best-Sellers</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
-            {featuredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-          <div className="mt-12 text-center">
-            <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/5">
-              <Link href="/shop">Shop All Products</Link>
-            </Button>
-          </div>
-        </div>
-      </section> */}
-
       {/* Brand Video Section */}
-      <section className="relative h-[70vh] w-full overflow-hidden mt-[120px]">
+      <section className="relative w-full overflow-hidden mt-[120px] py-16 sm:py-24">
         <video
           src="https://cdn.shopify.com/videos/c/o/v/d51f4351ed6e48b7a58c729b183c0a2f.mp4"
           autoPlay
@@ -171,11 +152,26 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 flex h-full items-center justify-center text-center text-white">
-          <div className="w-[96%] mx-auto">
-            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">The Islandbeauty Difference</h2>
-            <p className="mt-4 max-w-2xl mx-auto text-lg">
-              We believe in the power of nature to restore and rejuvenate. See how we harness it.
-            </p>
+          <div className="w-[96%] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                CLEAN. AUTHENTIC. RADIANT
+              </h2>
+              <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
+                <div className="text-left">
+                  <h3 className="text-xl font-bold text-white">Island Beauty with Purpose</h3>
+                  <p className="mt-4 text-lg text-white/80">
+                    At Island, skincare isn't just a routine, it's a return. A return to calm, to care, to skin that feels like home. Inspired by "this IS your LAND," we see skin as a living landscape-shaped by seasons, stories, and self. It needs less noise, more nourishment. Fewer layers, deeper rest. With nature at our core, we craft clean, gentle rituals that restore balance and bring out your skin's quiet glow.
+                  </p>
+                </div>
+                <div className="text-left">
+                  <h3 className="text-xl font-bold text-white">Korean Rice Water: A Timeless Glow</h3>
+                  <p className="mt-4 text-lg text-white/80">
+                    Rooted in Joseon-era beauty, rice water has long been used for soft, clear, radiant skin. We bring that tradition from Korea to you, freshly sourced, thoughtfully paired with India's golden turmeric. A gentle union of heritage and healing - two cultures, one radiant story, written on your skin.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
