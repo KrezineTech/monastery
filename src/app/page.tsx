@@ -142,7 +142,7 @@ export default function Home() {
       <FeaturedTrio />
 
       {/* Brand Video Section */}
-      <section className="relative w-full overflow-hidden mt-[120px] py-16 sm:py-24">
+      <section className="relative w-full overflow-hidden mt-[120px] h-[800px] flex items-center justify-center">
         <video
           src="https://cdn.shopify.com/videos/c/o/v/d51f4351ed6e48b7a58c729b183c0a2f.mp4"
           autoPlay
