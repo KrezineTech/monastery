@@ -66,12 +66,10 @@ export function Header() {
                      <Link href="/" className="text-xl font-bold text-primary" onClick={() => setIsMenuOpen(false)}>
                         glowver
                      </Link>
-                     <SheetTrigger asChild>
-                        <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(false)}>
-                           <X className="h-6 w-6" />
-                           <span className="sr-only">Close menu</span>
-                        </Button>
-                     </SheetTrigger>
+                    <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(false)}>
+                       <X className="h-6 w-6" />
+                       <span className="sr-only">Close menu</span>
+                    </Button>
                   </div>
                   <nav className="flex flex-col gap-4 p-4">
                     {navLinks.map((link) => (
