@@ -160,11 +160,11 @@ export default function Home() {
               </h2>
               <div className="mt-12">
                   <h3 className="text-xl font-bold text-white">Island Beauty with Purpose</h3>
-                  <p className="mt-2 text-lg text-white/80">
+                  <p className="mt-1 text-lg text-white/80">
                     At Island, skincare isn't just a routine, it's a return. A return to calm, to care, to skin that feels like home. Inspired by "this IS your LAND," we see skin as a living landscape-shaped by seasons, stories, and self. It needs less noise, more nourishment. Fewer layers, deeper rest. With nature at our core, we craft clean, gentle rituals that restore balance and bring out your skin's quiet glow.
                   </p>
                   <h3 className="mt-8 text-xl font-bold text-white">Korean Rice Water: A Timeless Glow</h3>
-                  <p className="mt-2 text-lg text-white/80">
+                  <p className="mt-1 text-lg text-white/80">
                     Rooted in Joseon-era beauty, rice water has long been used for soft, clear, radiant skin. We bring that tradition from Korea to you, freshly sourced, thoughtfully paired with India's golden turmeric. A gentle union of heritage and healing - two cultures, one radiant story, written on your skin.
                   </p>
               </div>
