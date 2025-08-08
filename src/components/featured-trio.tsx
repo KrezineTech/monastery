@@ -19,11 +19,6 @@ export function FeaturedTrio() {
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
-        <div className="mt-12 text-center">
-          <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/5">
-            <Link href="/shop">Shop All Products</Link>
-          </Button>
-        </div>
       </div>
     </section>
   );
