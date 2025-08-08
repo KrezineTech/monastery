@@ -158,15 +158,16 @@ export default function Home() {
       </section> */}
 
       {/* Brand Video Section */}
-      <section className="relative h-[70vh] w-full overflow-hidden bg-primary/80 mt-[120px]">
+      <section className="relative h-[70vh] w-full overflow-hidden mt-[120px]">
         <Image
-          src="https://placehold.co/1800x1000.png"
+          src="https://cdn.shopify.com/s/files/1/0723/1376/6028/files/breaker-100.jpg?v=1754620531"
           alt="Brand video background"
           fill
-          className="object-cover opacity-20"
+          className="object-cover"
           data-ai-hint="ocean waves"
         />
-        <div className="relative z-10 flex h-full items-center justify-center text-center text-primary-foreground">
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="relative z-10 flex h-full items-center justify-center text-center text-white">
           <div className="w-[96%] mx-auto">
             <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">The Islandbeauty Difference</h2>
             <p className="mt-4 max-w-2xl mx-auto text-lg">
