@@ -10,6 +10,7 @@ export function QuietEscapeSection() {
           src="https://cdn.shopify.com/s/files/1/0723/1376/6028/files/breaker-100.jpg?v=1754620531"
           alt="Sandy beach with gentle waves"
           fill
+          quality={100}
           className="object-cover w-full h-full"
           data-ai-hint="sandy beach waves"
         />
