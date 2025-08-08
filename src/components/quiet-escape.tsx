@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 export function QuietEscapeSection() {
   return (
-    <section className="relative w-full py-24 sm:py-32">
+    <section className="relative w-full mt-[120px]">
       <Image
         src="https://placehold.co/1920x600.png"
         alt="Sandy beach with gentle waves"
@@ -14,7 +14,7 @@ export function QuietEscapeSection() {
       />
       <div className="absolute inset-0 bg-white/30 backdrop-blur-sm" />
       <div className="relative container mx-auto px-4 text-center">
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-2xl mx-auto py-24 sm:py-32">
           <h2 className="text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl">
             A QUIET ESCAPE, BOTTLED.
           </h2>
