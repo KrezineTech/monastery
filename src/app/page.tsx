@@ -12,6 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import { FeaturedTrio } from '@/components/featured-trio';
 
 const categories: Category[] = [
   { name: 'Cleansers', image: 'https://placehold.co/840x400.png', aiHint: 'skincare cleanser' },
@@ -79,7 +80,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="w-full pt-12 mb-5">
+      <section className="w-full pt-20 mb-5">
         <div className="w-[96%] mx-auto px-0">
             <HeroCarousel />
         </div>
@@ -135,8 +136,10 @@ export default function Home() {
         </div>
       </section>
 
+      <FeaturedTrio />
+
       {/* Featured Products Section */}
-      <section className="py-16 sm:py-24">
+      {/* <section className="py-16 sm:py-24">
         <div className="w-[96%] mx-auto">
           <h2 className="text-3xl font-bold text-center text-primary mb-12">Our Best-Sellers</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
@@ -150,7 +153,7 @@ export default function Home() {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Brand Video Section */}
       <section className="relative h-[70vh] w-full overflow-hidden bg-primary/80">
