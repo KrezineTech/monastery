@@ -89,7 +89,6 @@ export function HeroCarousel() {
                     className="object-cover w-full h-full"
                     data-ai-hint={slide.aiHint}
                 />
-                <div className="absolute inset-0 bg-gradient-to-l from-black/60 to-transparent" />
                 <div className="relative z-10 h-full flex flex-col justify-center items-end text-white">
                     <div className="container mx-auto px-8 md:px-12 lg:px-24">
                         <div className="max-w-md md:max-w-lg">
