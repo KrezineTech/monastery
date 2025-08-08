@@ -6,8 +6,8 @@ import { Footer } from '@/components/layout/footer';
 import { SmoothScroll } from '@/components/layout/smooth-scroll';
 
 export const metadata: Metadata = {
-  title: 'Glowver',
-  description: 'Natural skincare for a radiant glow.',
+  title: 'Islandbeauty',
+  description: 'A quiet escape, bottled ... Thoughtfully made for Indian skin — where Korean simplicity meets homegrown care. Inspired by everyday skin stress',
 };
 
 export default function RootLayout({
