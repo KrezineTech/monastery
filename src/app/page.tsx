@@ -159,12 +159,13 @@ export default function Home() {
 
       {/* Brand Video Section */}
       <section className="relative h-[70vh] w-full overflow-hidden mt-[120px]">
-        <Image
-          src="https://cdn.shopify.com/s/files/1/0723/1376/6028/files/breaker-100.jpg?v=1754620531"
-          alt="Brand video background"
-          fill
-          className="object-cover"
-          data-ai-hint="ocean waves"
+        <video
+          src="https://cdn.shopify.com/videos/c/o/v/d51f4351ed6e48b7a58c729b183c0a2f.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 flex h-full items-center justify-center text-center text-white">
