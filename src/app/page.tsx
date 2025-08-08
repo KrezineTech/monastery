@@ -91,8 +91,8 @@ export default function Home() {
       {/* Category Display Section */}
       <section className="pb-5">
         <div className="w-[96%] mx-auto md:hidden">
-            <div className="flex flex-col gap-5">
-                <div className="grid grid-cols-2 gap-5 h-[216px]">
+            <div className="flex flex-col gap-3">
+                <div className="grid grid-cols-2 gap-3 h-[216px]">
                     <Link href="/shop" className="group relative block w-full h-full">
                         <Card className="relative overflow-hidden rounded-[26px] border-none h-full">
                             <h3 className="absolute top-6 left-6 text-xl font-semibold text-gray-800 z-10">{categories[0].name}</h3>
