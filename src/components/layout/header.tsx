@@ -9,12 +9,10 @@ import { useState } from 'react';
 import { Input } from '../ui/input';
 
 const navLinks = [
-    { href: '/about', label: 'About Us' },
-    { href: '/blogs', label: 'Blog' },
-    { href: '#', label: 'Payment and delivery' },
-    { href: '/shop', label: 'Catalog' },
-    { href: '#', label: 'Brands' },
-    { href: '#', label: 'Promotions' },
+    { href: '/shop', label: 'Shop' },
+    { href: '/about', label: 'About' },
+    { href: '/ingredients', label: 'Ingredients' },
+    { href: '/blogs', label: 'Blogs' },
 ];
 
 export function Header() {
@@ -40,7 +38,7 @@ export function Header() {
         <div className="flex items-center gap-2">
            <div className="relative hidden md:block">
              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
-             <Input type="search" placeholder="Search..." className="w-full rounded-full bg-transparent pl-9 focus-visible:ring-0 focus-visible:ring-offset-0" />
+             <Input type="search" placeholder="Search..." className="w-full rounded-full border border-input bg-transparent pl-9 focus-visible:ring-0 focus-visible:ring-offset-0" />
            </div>
           <Button variant="ghost" size="icon">
             <Heart className="h-5 w-5 text-gray-600" />
