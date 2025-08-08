@@ -158,7 +158,7 @@ export default function Home() {
       </section> */}
 
       {/* Brand Video Section */}
-      <section className="relative h-[70vh] w-full overflow-hidden bg-primary/80">
+      <section className="relative h-[70vh] w-full overflow-hidden bg-primary/80 mt-[120px]">
         <Image
           src="https://placehold.co/1800x1000.png"
           alt="Brand video background"
