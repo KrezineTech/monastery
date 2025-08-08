@@ -13,6 +13,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { FeaturedTrio } from '@/components/featured-trio';
+import { QuietEscapeSection } from '@/components/quiet-escape';
 
 const categories: Category[] = [
   { name: 'Cleansers', image: 'https://placehold.co/840x400.png', aiHint: 'skincare cleanser' },
@@ -136,6 +137,7 @@ export default function Home() {
         </div>
       </section>
 
+      <QuietEscapeSection />
       <FeaturedTrio />
 
       {/* Featured Products Section */}
