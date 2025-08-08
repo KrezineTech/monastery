@@ -82,7 +82,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="w-full pt-20 mb-5">
+      <section className="w-full md:pt-20 pt-2 mb-5">
         <div className="w-[96%] mx-auto px-0">
             <HeroCarousel />
         </div>
@@ -93,7 +93,7 @@ export default function Home() {
         <div className="w-[96%] mx-auto">
           <div className="flex flex-wrap md:flex-nowrap gap-5">
             <div className="w-full md:w-[42%]">
-              <Link href="/shop" className="group relative block h-[500px]">
+              <Link href="/shop" className="group relative block h-[500px] md:h-full">
                 <Card className="relative overflow-hidden rounded-[26px] border-none h-full">
                     <h3 className="absolute top-6 left-6 text-2xl font-semibold text-gray-800 z-10">{categories[0].name}</h3>
                   <Image
@@ -106,8 +106,8 @@ export default function Home() {
                 </Card>
               </Link>
             </div>
-            <div className="w-full md:w-[23%]">
-              <Link href="/shop" className="group relative block h-[500px]">
+            <div className="w-full md:w-[23%] flex flex-col gap-5">
+              <Link href="/shop" className="group relative block h-[240px] md:h-[500px]">
                 <Card className="relative overflow-hidden rounded-[26px] border-none h-full">
                    <h3 className="absolute top-6 left-6 text-2xl font-semibold text-gray-800 z-10">{categories[1].name}</h3>
                   <Image
@@ -121,7 +121,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="w-full md:w-[33%]">
-              <Link href="/shop" className="group relative block h-[500px]">
+              <Link href="/shop" className="group relative block h-[240px] md:h-[500px]">
                 <Card className="relative overflow-hidden rounded-[26px] border-none h-full">
                    <h3 className="absolute top-6 left-6 text-2xl font-semibold text-gray-800 z-10">{categories[2].name}</h3>
                   <Image
