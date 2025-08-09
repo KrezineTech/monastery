@@ -95,7 +95,7 @@ export function HeroCarousel() {
                              <h2 className="text-4xl md:text-[52px] font-extrabold text-primary">
                                 {slide.title}
                             </h2>
-                            <p className="mt-4 text-lg md:text-xl text-primary/90">
+                            <p className="mt-4 text-lg md:text-2xl text-primary/90">
                                 {slide.subtitle}
                             </p>
                             <Button size="lg" className="mt-8 rounded-full bg-white text-primary hover:bg-white/90" asChild>
