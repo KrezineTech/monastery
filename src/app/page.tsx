@@ -82,7 +82,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="w-full md:pt-20 pt-7 md:mb-5 mb-3">
+      <section className="w-full md:pt-8 pt-7 md:mb-5 mb-3">
         <div className="w-[96%] mx-auto px-0">
             <HeroCarousel />
         </div>
@@ -300,6 +300,7 @@ export default function Home() {
     
 
     
+
 
 
 
