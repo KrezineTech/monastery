@@ -8,7 +8,7 @@ export function HarmonySection() {
           <p className="text-sm text-primary mb-4">Empower Your Skin care</p>
           <h2 className="text-4xl font-serif text-primary leading-snug">
             The harmony between powerful{' '}
-            <span className="inline-block align-middle">
+            <span className="inline-block align-middle -mt-2 mx-1">
               <Image
                 src="https://cdn.shopify.com/s/files/1/0723/1376/6028/files/WEBSITE_REVAMP_DESIGNS-20.webp?v=1754619697"
                 alt="ingredient texture"
@@ -19,7 +19,7 @@ export function HarmonySection() {
               />
             </span>{' '}
             high-performance ingredients and exceptionally simple{' '}
-            <span className="inline-block align-middle">
+            <span className="inline-block align-middle -mt-2 mx-1">
               <Image
                 src="https://cdn.shopify.com/s/files/1/0723/1376/6028/files/WEBSITE_REVAMP_DESIGNS-21.webp?v=1754619697"
                 alt="cream texture"
@@ -29,7 +29,7 @@ export function HarmonySection() {
                 data-ai-hint="cream texture"
               />
             </span>{' '}
-            <span className="inline-block align-middle">
+            <span className="inline-block align-middle -mt-2 mx-1">
               <Image
                 src="https://cdn.shopify.com/s/files/1/0723/1376/6028/files/WEBSITE_REVAMP_DESIGNS-22.webp?v=1754619697"
                 alt="woman applying cream"
