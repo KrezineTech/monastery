@@ -41,7 +41,7 @@ export function StickyPromoSection() {
       <div className="w-[96%] mx-auto">
         <div className="space-y-8">
           {promoData.map((promo, index) => (
-            <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-[30px] items-start">
               {promo.isImageFirst ? (
                 <>
                   <div className="relative h-[60vh] rounded-lg overflow-hidden">
