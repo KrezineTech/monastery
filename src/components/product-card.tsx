@@ -50,7 +50,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
   if (product.videoUrl) {
     return (
       <Link href={`/shop/${product.id}`} className={cn("flex flex-col group h-full", className)}>
-         <div className="relative w-full h-[90vh] overflow-hidden rounded-[26px] group">
+         <div className="relative w-full h-[85vh] overflow-hidden rounded-[26px] group">
             {cardContent}
          </div>
       </Link>
