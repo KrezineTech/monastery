@@ -15,7 +15,6 @@ import {
 } from '@/components/ui/carousel';
 import { FeaturedTrio } from '@/components/featured-trio';
 import { QuietEscapeSection } from '@/components/quiet-escape';
-import { HarmonySection } from '@/components/harmony-section';
 import { StickyPromoSection } from '@/components/sticky-promo-section';
 
 const categories: Category[] = [
@@ -185,7 +184,6 @@ export default function Home() {
       </section>
 
       <QuietEscapeSection />
-      <HarmonySection />
       <FeaturedTrio />
 
       {/* Brand Video Section */}
