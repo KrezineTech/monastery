@@ -16,6 +16,7 @@ import {
 import { FeaturedTrio } from '@/components/featured-trio';
 import { QuietEscapeSection } from '@/components/quiet-escape';
 import { HarmonySection } from '@/components/harmony-section';
+import { StickyPromoSection } from '@/components/sticky-promo-section';
 
 const categories: Category[] = [
   { name: 'Cleansers', image: 'https://placehold.co/840x400.png', aiHint: 'skincare cleanser' },
@@ -277,6 +278,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <StickyPromoSection />
 
       {/* Instagram Feed Section */}
       <section className="py-16 sm:py-24">
