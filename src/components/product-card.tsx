@@ -14,7 +14,7 @@ interface ProductCardProps {
 export function ProductCard({ product, className }: ProductCardProps) {
   const cardContent = (
     <Card className="overflow-hidden border-none shadow-none rounded-[26px] h-full">
-      <div className="relative w-full h-[80vh] overflow-hidden rounded-[26px]">
+      <div className="relative w-full h-full overflow-hidden rounded-[26px]">
         {product.videoUrl ? (
           <>
             <video
@@ -29,7 +29,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
             <div className="absolute inset-0 bg-black/20 flex flex-col items-center justify-end text-center text-white p-4 pb-12">
               <h3 className="text-2xl font-bold">{product.title}</h3>
               {product.subtitle && <p className="text-sm mt-1">{product.subtitle}</p>}
-              <Button variant="outline" className="mt-4 bg-transparent border-white text-white hover:bg-white hover:text-black">
+              <Button variant="outline" className="mt-4 bg-white/20 border-white text-white backdrop-blur-sm hover:bg-white hover:text-black">
                 BUY NOW
               </Button>
             </div>
@@ -50,7 +50,9 @@ export function ProductCard({ product, className }: ProductCardProps) {
   if (product.videoUrl) {
     return (
       <Link href={`/shop/${product.id}`} className={cn("flex flex-col group h-full", className)}>
-        {cardContent}
+         <div className="relative w-full h-[80vh] overflow-hidden rounded-[26px] group">
+            {cardContent}
+         </div>
       </Link>
     );
   }
@@ -59,7 +61,9 @@ export function ProductCard({ product, className }: ProductCardProps) {
   return (
     <div className={cn("flex flex-col group", className)}>
       <Link href={`/shop/${product.id}`} className="block w-full">
-        {cardContent}
+        <div className="relative w-full h-[500px] overflow-hidden rounded-[26px]">
+            {cardContent}
+        </div>
       </Link>
       <div className="pt-4">
         <h3 className="font-semibold text-sm text-foreground mt-1">{product.name}</h3>
