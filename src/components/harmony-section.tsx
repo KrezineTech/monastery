@@ -8,9 +8,9 @@ export function HarmonySection() {
         <p className="text-sm font-medium text-primary uppercase tracking-widest mb-4">
           Empower Your Skin Care
         </p>
-        <h2 className="text-[36px] font-bold text-primary leading-tight mx-auto">
+        <h2 className="text-[36px] font-bold text-primary leading-tight mx-auto max-w-4xl">
           The harmony between powerful{' '}
-          <Link href="/shop" className="inline-block align-middle mx-2 w-12 h-12">
+          <Link href="/shop" className="inline-block align-middle mx-2">
             <Image
               src="https://placehold.co/48x48.png"
               alt="oil"
@@ -21,7 +21,7 @@ export function HarmonySection() {
             />
           </Link>{' '}
           high-performance ingredients{' '}
-          <Link href="/shop" className="inline-block align-middle mx-2 w-12 h-12">
+          <Link href="/shop" className="inline-block align-middle mx-2">
             <Image
               src="https://placehold.co/48x48.png"
               alt="cream"
@@ -32,7 +32,7 @@ export function HarmonySection() {
             />
           </Link>{' '}
           and exceptionally simple{' '}
-          <Link href="/shop" className="inline-block align-middle mx-2 w-12 h-12">
+          <Link href="/shop" className="inline-block align-middle mx-2">
             <Image
               src="https://placehold.co/48x48.png"
               alt="woman"
