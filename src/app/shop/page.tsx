@@ -1,3 +1,4 @@
+
 import { ProductCard } from '@/components/product-card';
 import type { Product } from '@/lib/types';
 import Image from 'next/image';
@@ -22,7 +23,7 @@ export default function ShopPage() {
         <div className="w-[96%] mx-auto px-0">
           <div className="relative w-full h-[322px] md:h-[65vh] rounded-[26px] overflow-hidden">
             <Image
-                src="https://cdn.shopify.com/s/files/1/0723/1376/6028/files/WEBSITE_REVAMP_DESIGNS_4.webp?v=1754619697"
+                src="https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled_design.webp?v=1754813718"
                 alt="Shop hero image"
                 fill
                 priority
