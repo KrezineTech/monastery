@@ -8,40 +8,39 @@ export function HarmonySection() {
         <p className="text-sm font-medium text-primary uppercase tracking-widest mb-4">
           Empower Your Skin Care
         </p>
-        <h2 className="text-4xl md:text-5xl font-bold text-primary leading-tight max-w-5xl mx-auto">
+        <h2 className="text-[36px] font-bold text-primary leading-tight max-w-5xl mx-auto">
           The harmony between powerful{' '}
-          <Link href="/shop" className="inline-block align-middle mx-2 w-16 h-16 rounded-full overflow-hidden">
+          <Link href="/shop" className="inline-block align-middle mx-2 w-12 h-12">
             <Image
-              src="https://placehold.co/80x80.png"
+              src="https://placehold.co/48x48.png"
               alt="oil"
-              width={64}
-              height={64}
-              className="object-cover w-full h-full"
+              width={48}
+              height={48}
+              className="object-cover rounded-full"
               data-ai-hint="oil drop"
             />
           </Link>{' '}
-          high-performance ingredients{' '}
-          <span className="inline-block align-middle mx-2 w-16 h-16 rounded-full overflow-hidden">
+          high-performance ingredients and exceptionally simple{' '}
+          <Link href="/shop" className="inline-block align-middle mx-2 w-12 h-12">
             <Image
-              src="https://placehold.co/80x80.png"
+              src="https://placehold.co/48x48.png"
               alt="cream"
-              width={64}
-              height={64}
-              className="object-cover w-full h-full"
+              width={48}
+              height={48}
+              className="object-cover rounded-full"
               data-ai-hint="cream texture"
             />
-          </span>{' '}
-          and exceptionally simple{' '}
-          <span className="inline-block align-middle mx-2 w-16 h-16 rounded-full overflow-hidden">
+          </Link>{' '}
+          <Link href="/shop" className="inline-block align-middle mx-2 w-12 h-12">
             <Image
-              src="https://placehold.co/80x80.png"
+              src="https://placehold.co/48x48.png"
               alt="woman"
-              width={64}
-              height={64}
-              className="object-cover w-full h-full"
+              width={48}
+              height={48}
+              className="object-cover rounded-full"
               data-ai-hint="woman face"
             />
-          </span>{' '}
+          </Link>{' '}
           skincare routines.
         </h2>
       </div>
