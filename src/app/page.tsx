@@ -16,6 +16,7 @@ import {
 import { FeaturedTrio } from '@/components/featured-trio';
 import { QuietEscapeSection } from '@/components/quiet-escape';
 import { StickyPromoSection } from '@/components/sticky-promo-section';
+import { HarmonySection } from '@/components/harmony-section';
 
 const categories: Category[] = [
   { name: 'Cleansers', image: 'https://placehold.co/840x400.png', aiHint: 'skincare cleanser' },
@@ -185,6 +186,7 @@ export default function Home() {
 
       <QuietEscapeSection />
       <FeaturedTrio />
+      <HarmonySection />
 
       {/* Brand Video Section */}
       <section className="relative w-full overflow-hidden mt-[120px] h-[85vh]">
