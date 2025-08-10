@@ -197,7 +197,7 @@ export default function Home() {
         />
         <div className="relative z-10 flex h-full items-center justify-start text-left">
           <div className="w-[96%] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-xl bg-background/90 p-12 rounded-lg text-foreground">
+            <div className="max-w-xl bg-background/90 p-5 rounded-lg text-foreground">
               <h2 className="text-3xl font-bold tracking-wider text-primary">
                 CLEAN. AUTHENTIC. <br />
                 RADIANT
@@ -304,6 +304,7 @@ export default function Home() {
     
 
     
+
 
 
 
