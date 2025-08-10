@@ -6,6 +6,8 @@ export interface Product {
   videoUrl?: string;
   aiHint?: string;
   category?: string;
+  title?: string;
+  subtitle?: string;
 }
 
 export interface Category {
@@ -22,7 +24,7 @@ export interface Reel {
 }
 
 export interface InstagramPost {
-  id: string;
+  id:string;
   image: string;
   aiHint?: string;
 }
