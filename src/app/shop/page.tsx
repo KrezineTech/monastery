@@ -30,9 +30,9 @@ export default function ShopPage() {
                 className="object-cover w-full h-full"
                 data-ai-hint="skincare products lifestyle"
             />
-            <div className="absolute inset-0 z-10 h-full flex flex-col justify-center items-center text-center text-primary">
-                <div className="container mx-auto px-8 md:px-12 lg:px-24">
-                    <div className="max-w-md md:max-w-lg mx-auto">
+            <div className="absolute inset-0 z-10 h-full flex flex-col justify-start items-start text-left text-primary">
+                <div className="container mx-auto px-8 md:px-12 lg:px-24 h-full flex flex-col justify-center">
+                    <div className="max-w-md md:max-w-lg">
                          <h2 className="text-4xl md:text-[52px] font-extrabold text-primary">
                             Discover Your Glow
                         </h2>
