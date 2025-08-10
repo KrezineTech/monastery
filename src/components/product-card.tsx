@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import { Card, CardContent } from '@/components/ui/card';
+import Link from 'next/link';
+import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import type { Product } from '@/lib/types';
 import { cn } from '@/lib/utils';
@@ -11,19 +12,45 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product, className }: ProductCardProps) {
-  return (
-    <div className={cn("flex flex-col group", className)}>
-      <Card className="overflow-hidden border-none shadow-none rounded-[26px]">
-        <div className="relative aspect-[1/1.25] w-full overflow-hidden rounded-[26px]">
+  const cardContent = (
+    <Card className="overflow-hidden border-none shadow-none rounded-[26px] h-full">
+      <div className="relative aspect-[1/1.25] w-full h-full overflow-hidden rounded-[26px]">
+        {product.videoUrl ? (
+          <video
+            src={product.videoUrl}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+            data-ai-hint={product.aiHint}
+          />
+        ) : (
           <Image
             src={product.image}
             alt={product.name}
             fill
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
             data-ai-hint={product.aiHint}
           />
-        </div>
-      </Card>
+        )}
+      </div>
+    </Card>
+  );
+
+  // If it's a video, the whole card is a link without text details
+  if (product.videoUrl) {
+    return (
+      <Link href={`/shop/${product.id}`} className={cn("flex flex-col group h-full", className)}>
+        {cardContent}
+      </Link>
+    );
+  }
+
+  // Original card with details for non-video products
+  return (
+    <div className={cn("flex flex-col group", className)}>
+      {cardContent}
       <div className="pt-4">
         <h3 className="font-semibold text-sm text-foreground mt-1">{product.name}</h3>
         <p className="font-bold text-foreground/90 mt-2">₹{product.price.toFixed(2)}</p>
