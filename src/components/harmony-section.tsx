@@ -8,7 +8,7 @@ export function HarmonySection() {
         <p className="text-sm font-medium text-primary uppercase tracking-widest mb-4">
           Empower Your Skin Care
         </p>
-        <h2 className="text-[36px] font-bold text-primary leading-tight max-w-5xl mx-auto">
+        <h2 className="text-[36px] font-bold text-primary leading-tight mx-auto">
           The harmony between powerful{' '}
           <Link href="/shop" className="inline-block align-middle mx-2 w-12 h-12">
             <Image
