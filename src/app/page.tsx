@@ -198,8 +198,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 flex h-full items-center justify-center text-center text-white">
           <div className="w-[96%] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center bg-black/20 backdrop-blur-md p-8 rounded-lg">
-              <h2 className="text-[48px] font-extrabold tracking-tight text-white">
+            <div className="max-w-6xl mx-auto text-center bg-black/20 backdrop-blur-md p-8 rounded-lg">
+              <h2 className="text-4xl font-extrabold tracking-tight text-white">
                 CLEAN. AUTHENTIC. RADIANT
               </h2>
               <div className="mt-12">
@@ -300,6 +300,7 @@ export default function Home() {
     
 
     
+
 
 
 
