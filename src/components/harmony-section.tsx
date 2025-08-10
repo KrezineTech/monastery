@@ -20,7 +20,7 @@ export function HarmonySection() {
               data-ai-hint="oil drop"
             />
           </Link>{' '}
-          high-performance ingredients and exceptionally simple{' '}
+          high-performance ingredients{' '}
           <Link href="/shop" className="inline-block align-middle mx-2 w-12 h-12">
             <Image
               src="https://placehold.co/48x48.png"
@@ -31,6 +31,7 @@ export function HarmonySection() {
               data-ai-hint="cream texture"
             />
           </Link>{' '}
+          and exceptionally simple{' '}
           <Link href="/shop" className="inline-block align-middle mx-2 w-12 h-12">
             <Image
               src="https://placehold.co/48x48.png"
