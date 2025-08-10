@@ -14,7 +14,7 @@ interface ProductCardProps {
 export function ProductCard({ product, className }: ProductCardProps) {
   const cardContent = (
     <Card className="overflow-hidden border-none shadow-none rounded-[26px] h-full">
-      <div className="relative aspect-[1/1.25] w-full h-full overflow-hidden rounded-[26px]">
+      <div className="relative w-full h-[80vh] overflow-hidden rounded-[26px]">
         {product.videoUrl ? (
           <>
             <video
