@@ -18,6 +18,7 @@ const promoData = [
       description: 'Indulge in feel-good beauty essentials at irresistible prices and give your routine the glow-up it deserves.',
     },
     isImageFirst: true,
+    cardHeight: 'h-[30vh]',
   },
   {
     image: 'https://placehold.co/800x1000.png',
@@ -30,6 +31,7 @@ const promoData = [
       description: "Gentle, plant-powered formulas that nourish deeply and bring out your skin's natural radiance—just as nature intended.",
     },
     isImageFirst: false,
+    cardHeight: 'h-[40vh]',
   },
 ];
 
@@ -52,7 +54,7 @@ export function StickyPromoSection() {
                     />
                   </div>
                   <div className="md:sticky md:top-24">
-                    <Card className={`p-10 rounded-lg ${promo.bgColor} ${promo.textColor} border-none h-[30vh] flex flex-col justify-center`}>
+                    <Card className={`p-10 rounded-lg ${promo.bgColor} ${promo.textColor} border-none ${promo.cardHeight} flex flex-col justify-center`}>
                       <span className="inline-block bg-white/20 px-3 py-1 text-sm rounded-md mb-4 self-start">{promo.content.tag}</span>
                       <h2 className="text-4xl font-bold mb-4">{promo.content.title}</h2>
                       <p className="mb-6">{promo.content.description}</p>
@@ -65,7 +67,7 @@ export function StickyPromoSection() {
               ) : (
                 <>
                   <div className="md:sticky md:top-24">
-                    <Card className={`p-10 rounded-lg ${promo.bgColor} ${promo.textColor} border-none h-[30vh] flex flex-col justify-center`}>
+                    <Card className={`p-10 rounded-lg ${promo.bgColor} ${promo.textColor} border-none ${promo.cardHeight} flex flex-col justify-center`}>
                       <span className="inline-block bg-black/10 px-3 py-1 text-sm rounded-md mb-4 self-start">{promo.content.tag}</span>
                       <h2 className="text-4xl font-bold mb-4">{promo.content.title}</h2>
                       <p className="mb-6">{promo.content.description}</p>
