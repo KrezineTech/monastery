@@ -15,6 +15,7 @@ import {
 } from '@/components/ui/carousel';
 import { FeaturedTrio } from '@/components/featured-trio';
 import { QuietEscapeSection } from '@/components/quiet-escape';
+import { HarmonySection } from '@/components/harmony-section';
 
 const categories: Category[] = [
   { name: 'Cleansers', image: 'https://placehold.co/840x400.png', aiHint: 'skincare cleanser' },
@@ -183,6 +184,7 @@ export default function Home() {
       </section>
 
       <QuietEscapeSection />
+      <HarmonySection />
       <FeaturedTrio />
 
       {/* Brand Video Section */}
