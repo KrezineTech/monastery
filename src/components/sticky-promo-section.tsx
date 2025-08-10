@@ -17,7 +17,7 @@ const promoData = [
       title: 'Self-Care Sale Starts Here.',
       description: 'Indulge in feel-good beauty essentials at irresistible prices and give your routine the glow-up it deserves.',
     },
-    isImageFirst: false,
+    isImageFirst: true,
   },
   {
     image: 'https://placehold.co/800x1000.png',
@@ -29,7 +29,7 @@ const promoData = [
       title: "Nature's touch, skin's glow.",
       description: "Gentle, plant-powered formulas that nourish deeply and bring out your skin's natural radiance—just as nature intended.",
     },
-    isImageFirst: true,
+    isImageFirst: false,
   },
 ];
 
@@ -53,10 +53,10 @@ export function StickyPromoSection() {
                   </div>
                   <div className="md:sticky md:top-24">
                     <Card className={`p-10 rounded-lg ${promo.bgColor} ${promo.textColor} border-none`}>
-                      <span className="inline-block bg-black/10 px-3 py-1 text-sm rounded-md mb-4">{promo.content.tag}</span>
+                      <span className="inline-block bg-white/20 px-3 py-1 text-sm rounded-md mb-4">{promo.content.tag}</span>
                       <h2 className="text-4xl font-bold mb-4">{promo.content.title}</h2>
                       <p className="mb-6">{promo.content.description}</p>
-                      <Button variant="secondary" className="bg-black/20 hover:bg-black/30">
+                      <Button variant="secondary" className="bg-white/20 hover:bg-white/30 text-white">
                         Shop Now <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </Card>
@@ -66,10 +66,10 @@ export function StickyPromoSection() {
                 <>
                   <div className="md:sticky md:top-24">
                     <Card className={`p-10 rounded-lg ${promo.bgColor} ${promo.textColor} border-none`}>
-                      <span className="inline-block bg-white/20 px-3 py-1 text-sm rounded-md mb-4">{promo.content.tag}</span>
+                      <span className="inline-block bg-black/10 px-3 py-1 text-sm rounded-md mb-4">{promo.content.tag}</span>
                       <h2 className="text-4xl font-bold mb-4">{promo.content.title}</h2>
                       <p className="mb-6">{promo.content.description}</p>
-                      <Button variant="secondary" className="bg-white/20 hover:bg-white/30 text-white">
+                      <Button variant="secondary" className="bg-black/20 hover:bg-black/30">
                         Shop Now <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </Card>
