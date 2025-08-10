@@ -18,7 +18,7 @@ const promoData = [
       description: 'Indulge in feel-good beauty essentials at irresistible prices and give your routine the glow-up it deserves.',
     },
     isImageFirst: true,
-    cardHeight: 'h-[30vh]',
+    cardHeight: 'h-[35vh]',
   },
   {
     image: 'https://placehold.co/800x1000.png',
