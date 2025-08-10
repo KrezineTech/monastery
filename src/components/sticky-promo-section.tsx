@@ -17,8 +17,8 @@ const promoData = [
       title: 'Self-Care Sale Starts Here.',
       description: 'Indulge in feel-good beauty essentials at irresistible prices and give your routine the glow-up it deserves.',
     },
-    isImageFirst: true,
-    cardHeight: 'h-[35vh]',
+    isImageFirst: false,
+    cardHeight: 'h-[30vh]',
   },
   {
     image: 'https://placehold.co/800x1000.png',
@@ -30,7 +30,7 @@ const promoData = [
       title: "Nature's touch, skin's glow.",
       description: "Gentle, plant-powered formulas that nourish deeply and bring out your skin's natural radiance—just as nature intended.",
     },
-    isImageFirst: false,
+    isImageFirst: true,
     cardHeight: 'h-[40vh]',
   },
 ];
