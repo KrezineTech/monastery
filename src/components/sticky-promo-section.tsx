@@ -17,7 +17,7 @@ const promoData = [
       title: 'Self-Care Sale Starts Here.',
       description: 'Indulge in feel-good beauty essentials at irresistible prices and give your routine the glow-up it deserves.',
     },
-    isImageFirst: true,
+    isImageFirst: false,
   },
   {
     image: 'https://placehold.co/800x1000.png',
@@ -29,7 +29,7 @@ const promoData = [
       title: "Nature's touch, skin's glow.",
       description: "Gentle, plant-powered formulas that nourish deeply and bring out your skin's natural radiance—just as nature intended.",
     },
-    isImageFirst: false,
+    isImageFirst: true,
   },
 ];
 
@@ -42,7 +42,7 @@ export function StickyPromoSection() {
             <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
               {promo.isImageFirst ? (
                 <>
-                  <div className="relative h-[600px] md:h-auto md:aspect-[4/5] rounded-lg overflow-hidden">
+                  <div className="relative h-[40vh] rounded-lg overflow-hidden">
                     <Image
                       src={promo.image}
                       alt={promo.content.title}
@@ -74,7 +74,7 @@ export function StickyPromoSection() {
                       </Button>
                     </Card>
                   </div>
-                  <div className="relative h-[600px] md:h-auto md:aspect-[4/5] rounded-lg overflow-hidden">
+                  <div className="relative h-[40vh] rounded-lg overflow-hidden">
                     <Image
                       src={promo.image}
                       alt={promo.content.title}
