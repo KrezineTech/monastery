@@ -61,7 +61,7 @@ export function Footer() {
             <h3 className="font-semibold text-foreground mb-4">SUPPORT</h3>
             <ul className="space-y-2">
               {supportLinks.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <Link href={link.href} className="text-foreground/70 hover:text-primary transition-colors">
                     {link.label}
                   </Link>
@@ -73,7 +73,7 @@ export function Footer() {
             <h3 className="font-semibold text-foreground mb-4">INFOMATION</h3>
             <ul className="space-y-2">
               {informationLinks.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <Link href={link.href} className="text-foreground/70 hover:text-primary transition-colors">
                     {link.label}
                   </Link>
