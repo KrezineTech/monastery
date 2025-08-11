@@ -2,7 +2,7 @@
 'use client';
 
 import { Instagram } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import {
   Carousel,
   CarouselContent,
@@ -23,10 +23,7 @@ const reviews = [
       },
       {
         type: 'image',
-        images: [
-            { src: 'https://placehold.co/200x250.png', aiHint: 'before skincare' },
-            { src: 'https://placehold.co/200x250.png', aiHint: 'after skincare' }
-        ],
+        image: { src: 'https://placehold.co/400x500.png', aiHint: 'before and after skincare' },
       },
       {
         type: 'text',
@@ -45,9 +42,7 @@ const reviews = [
       },
       {
         type: 'image',
-        images: [
-          { src: 'https://placehold.co/400x300.png', aiHint: 'happy customer' }
-        ],
+        image: { src: 'https://placehold.co/400x300.png', aiHint: 'happy customer' },
       },
     ]
   },
@@ -61,10 +56,7 @@ const reviews = [
       },
       {
         type: 'image',
-        images: [
-            { src: 'https://placehold.co/200x250.png', aiHint: 'skin texture before' },
-            { src: 'https://placehold.co/200x250.png', aiHint: 'skin texture after' }
-        ],
+        image: { src: 'https://placehold.co/400x500.png', aiHint: 'skin texture comparison' },
       },
     ]
   },
@@ -116,19 +108,16 @@ export function ReviewSection() {
                               </div>
                             </div>
                           )}
-                          {item.type === 'image' && item.images && (
-                            <div className="flex justify-center gap-2 mt-2">
-                              {item.images.map((img, imgIndex) => (
+                          {item.type === 'image' && item.image && (
+                            <div className="flex justify-center mt-2">
                                 <Image
-                                  key={imgIndex}
-                                  src={img.src}
+                                  src={item.image.src}
                                   alt="review image"
-                                  width={150}
-                                  height={180}
-                                  className="rounded-lg object-cover"
-                                  data-ai-hint={img.aiHint}
+                                  width={400}
+                                  height={500}
+                                  className="rounded-lg object-cover w-full"
+                                  data-ai-hint={item.image.aiHint}
                                 />
-                              ))}
                             </div>
                           )}
                         </div>
