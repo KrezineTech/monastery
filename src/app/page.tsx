@@ -20,8 +20,8 @@ import { HarmonySection } from '@/components/harmony-section';
 import { ReviewSection } from '@/components/review-section';
 
 const categories: Category[] = [
-  { name: 'Cleansers', image: 'https://placehold.co/840x400.png', aiHint: 'skincare cleanser' },
-  { name: 'Serums', image: 'https://placehold.co/460x400.png', aiHint: 'skincare serum' },
+  { name: 'essence', image: 'https://placehold.co/840x400.png', aiHint: 'skincare essence' },
+  { name: 'serum', image: 'https://placehold.co/460x400.png', aiHint: 'skincare serum' },
   { name: 'Moisturizers', image: 'https://placehold.co/660x400.png', aiHint: 'skincare moisturizer' },
 ];
 
