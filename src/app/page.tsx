@@ -284,12 +284,14 @@ export default function Home() {
       {/* Instagram Feed Section */}
       <section className="py-16 sm:py-24">
         <div className="w-[96%] mx-auto">
-          <div className="text-center mb-12">
+          <div className="flex justify-between items-center mb-12">
+            <div>
               <h2 className="text-3xl font-bold text-primary mb-4">ON THE GRAM</h2>
-              <p className="text-foreground/80 mt-2">Tag @islandbeauty.in in your Instagram photos for a chance to be featured here.</p>
-              <Button asChild className="mt-6">
-                <Link href="#">FOLLOW US</Link>
-              </Button>
+              <p className="text-foreground/80">Tag @islandbeauty.in in your Instagram photos for a chance to be featured here.</p>
+            </div>
+            <Button asChild>
+              <Link href="#">FOLLOW US</Link>
+            </Button>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-4">
             {instagramPosts.map((post) => (
