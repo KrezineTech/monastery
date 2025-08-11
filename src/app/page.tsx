@@ -227,7 +227,7 @@ export default function Home() {
       {/* Smart Product Placement in Reels Section */}
       <section className="py-16 sm:py-24">
         <div className="w-[96%] mx-auto">
-          <h2 className="text-3xl font-bold text-center text-primary mb-12">As Seen On Reels</h2>
+          <h2 className="text-3xl font-bold text-center text-primary mb-12">You + Island</h2>
           <div className="relative group">
             <Carousel
               opts={{
