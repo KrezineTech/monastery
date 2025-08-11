@@ -1,7 +1,7 @@
 
 'use client';
 
-import { Star } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import {
   Carousel,
@@ -10,58 +10,54 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import Image from 'next/image';
 
 const reviews = [
   {
-    name: 'Sarah K.',
-    title: 'Verified Buyer',
-    rating: 5,
-    review: 'This is the best skincare product I have ever used. My skin has never felt so soft and looked so radiant. I will definitely be repurchasing!',
-    image: 'https://placehold.co/100x100.png',
-    aiHint: 'woman smiling',
+    source: 'instagram',
+    image: 'https://placehold.co/400x600.png',
+    aiHint: 'review screenshot',
   },
   {
-    name: 'Emily L.',
-    title: 'Beauty Blogger',
-    rating: 5,
-    review: "I'm obsessed! The texture is so luxurious and it absorbs so quickly. It has completely transformed my dry, dull skin into a dewy, glowing complexion.",
-    image: 'https://placehold.co/100x100.png',
-    aiHint: 'woman happy',
+    source: 'instagram',
+    image: 'https://placehold.co/400x600.png',
+    aiHint: 'user testimonial',
   },
   {
-    name: 'Jessica P.',
-    title: 'Dermatologist',
-    rating: 4,
-    review: 'A solid product with high-quality ingredients. I appreciate that it is fragrance-free and suitable for sensitive skin. My patients have seen great results.',
-    image: 'https://placehold.co/100x100.png',
-    aiHint: 'doctor smiling',
+    source: 'instagram',
+    image: 'https://placehold.co/400x600.png',
+    aiHint: 'social media post',
   },
   {
-    name: 'Mike R.',
-    title: 'Skincare Enthusiast',
-    rating: 5,
-    review: 'Finally, a moisturizer that doesn\'t feel greasy! My skin feels hydrated all day long. This has become a staple in my daily routine. Highly recommend!',
-    image: 'https://placehold.co/100x100.png',
-    aiHint: 'man smiling',
+    source: 'amazon',
+    image: 'https://placehold.co/400x600.png',
+    aiHint: 'product review',
   },
   {
-    name: 'Chloe G.',
-    title: 'Verified Buyer',
-    rating: 5,
-    review: "The glow is real! I've received so many compliments on my skin since I started using this serum. It's lightweight, effective, and worth every penny.",
-    image: 'https://placehold.co/100x100.png',
-    aiHint: 'woman touching face',
+    source: 'instagram',
+    image: 'https://placehold.co/400x600.png',
+    aiHint: 'customer feedback',
+  },
+  {
+    source: 'instagram',
+    image: 'https://placehold.co/400x600.png',
+    aiHint: 'before and after',
   },
 ];
 
+const sourceIcons: { [key: string]: React.ReactNode } = {
+    instagram: <Instagram className="w-5 h-5 text-black" />,
+    amazon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-amazon"><path d="M14.74 15.02s-1.42.33-2.25.31c-.83-.02-3.41-1.33-3.41-1.33s-1.25.92-1.25 2.5c0 1.58.94 2.47 2.04 2.47s2.21-.92 2.21-.92.83 1.59 2.59 1.5c1.76-.09 2.54-1.62 2.54-2.54s-.92-2.01-2.47-2.01zm3.89-1.45c.44-.02 1.13-1.42 1.13-1.42s-1.8-1.54-3.5-.79c-1.7.75-2.08 2.22-2.08 2.22s1.42.44 2.25.29c.83-.15 2.2-.29 2.2-.29zM22 12c0-5.52-4.48-10-10-10S2 6.48 2 12s4.48 10 10 10 10-4.48 10-10zM5.42 10.42s.78-1.17.65-2.04c-.13-.87-.82-1.58-.82-1.58s1.62-.22 2.58.93c.96 1.14.79 2.5.79 2.5s-1.58.55-2.13.38c-.55-.18-1.07-1.13-1.07-1.13z"/></svg>
+};
+
 export function ReviewSection() {
   return (
-    <section className="py-16 sm:py-24 bg-muted/30">
+    <section className="py-16 sm:py-24 bg-background">
       <div className="w-[96%] mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-primary">What Our Community Says</h2>
-          <p className="text-foreground/80 mt-2 max-w-2xl mx-auto">
-            Real reviews from real customers. Discover why they love Island Beauty.
+          <h2 className="text-4xl font-bold text-primary tracking-tight">Real people, real reviews.</h2>
+          <p className="text-foreground/80 mt-4 max-w-2xl mx-auto">
+            Join our global community of 50,000+ people reaching their health + confidence goals.
           </p>
         </div>
         <Carousel
@@ -73,25 +69,22 @@ export function ReviewSection() {
         >
           <CarouselContent className="-ml-4">
             {reviews.map((review, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 pl-4">
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4 pl-4">
                 <div className="p-1 h-full">
-                  <Card className="h-full flex flex-col justify-between p-8 rounded-[26px] border-none shadow-sm bg-background">
-                    <div>
-                      <div className="flex items-center mb-4">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`w-5 h-5 ${
-                              i < review.rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'
-                            }`}
-                          />
-                        ))}
-                      </div>
-                      <p className="text-foreground/90 italic">"{review.review}"</p>
+                  <Card className="h-full flex flex-col justify-between p-6 rounded-[26px] border border-border/50 shadow-sm bg-muted/20">
+                    <div className="flex justify-center mb-4">
+                        <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border-2 border-border/60">
+                            {sourceIcons[review.source]}
+                        </div>
                     </div>
-                    <div className="mt-6">
-                      <p className="font-bold text-primary">{review.name}</p>
-                      <p className="text-sm text-muted-foreground">{review.title}</p>
+                    <div className="relative w-full h-[450px] rounded-lg overflow-hidden">
+                      <Image 
+                        src={review.image} 
+                        alt="Review"
+                        fill
+                        className="object-cover" 
+                        data-ai-hint={review.aiHint}
+                      />
                     </div>
                   </Card>
                 </div>
