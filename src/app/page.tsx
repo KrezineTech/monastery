@@ -190,35 +190,37 @@ export default function Home() {
       <HarmonySection />
 
       {/* Brand Video Section */}
-      <section className="relative w-full overflow-hidden mt-[120px] h-[85vh]">
-        <video
-          src="https://cdn.shopify.com/videos/c/o/v/d51f4351ed6e48b7a58c729b183c0a2f.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="relative z-10 flex h-full items-center justify-start text-left">
-          <div className="w-[96%] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-xl bg-background/90 p-10 rounded-lg text-foreground">
-              <h2 className="text-3xl font-bold tracking-wider text-primary">
-                CLEAN. AUTHENTIC. <br />
-                RADIANT
-              </h2>
-              <div className="mt-8 space-y-6 text-foreground/80">
-                  <div>
-                    <h3 className="text-base font-semibold text-foreground">Island Beauty with Purpose</h3>
-                    <p className="mt-1 text-sm">
-                      At Island, skincare isn't just a routine, it's a return. A return to calm, to care, to skin that feels like home. Inspired by "this IS your LAND," we see skin as a living landscape-shaped by seasons, stories, and self. It needs less noise, more nourishment. Fewer layers, deeper rest. With nature at our core, we craft clean, gentle rituals that restore balance and bring out your skin's quiet glow.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-base font-semibold text-foreground">Korean Rice Water: A Timeless Glow</h3>
-                    <p className="mt-1 text-sm">
-                      Rooted in Joseon-era beauty, rice water has long been used for soft, clear, radiant skin. We bring that tradition from Korea to you, freshly sourced, thoughtfully paired with India's golden turmeric. A gentle union of heritage and healing - two cultures, one radiant story, written on your skin.
-                    </p>
-                  </div>
+       <section className="w-full mt-[120px]">
+        <div className="w-[96%] mx-auto relative rounded-[26px] overflow-hidden h-[85vh]">
+          <video
+            src="https://cdn.shopify.com/videos/c/o/v/d51f4351ed6e48b7a58c729b183c0a2f.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="relative z-10 flex h-full items-center justify-start text-left">
+            <div className="w-full px-4 sm:px-6 lg:px-8">
+              <div className="max-w-xl bg-background/90 p-10 rounded-lg text-foreground">
+                <h2 className="text-3xl font-bold tracking-wider text-primary">
+                  CLEAN. AUTHENTIC. <br />
+                  RADIANT
+                </h2>
+                <div className="mt-8 space-y-6 text-foreground/80">
+                    <div>
+                      <h3 className="text-base font-semibold text-foreground">Island Beauty with Purpose</h3>
+                      <p className="mt-1 text-sm">
+                        At Island, skincare isn't just a routine, it's a return. A return to calm, to care, to skin that feels like home. Inspired by "this IS your LAND," we see skin as a living landscape-shaped by seasons, stories, and self. It needs less noise, more nourishment. Fewer layers, deeper rest. With nature at our core, we craft clean, gentle rituals that restore balance and bring out your skin's quiet glow.
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-base font-semibold text-foreground">Korean Rice Water: A Timeless Glow</h3>
+                      <p className="mt-1 text-sm">
+                        Rooted in Joseon-era beauty, rice water has long been used for soft, clear, radiant skin. We bring that tradition from Korea to you, freshly sourced, thoughtfully paired with India's golden turmeric. A gentle union of heritage and healing - two cultures, one radiant story, written on your skin.
+                      </p>
+                    </div>
+                </div>
               </div>
             </div>
           </div>
