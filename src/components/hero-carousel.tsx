@@ -1,8 +1,10 @@
+
 "use client"
 
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
+import Autoplay from "embla-carousel-autoplay"
 
 import {
   Carousel,
@@ -52,6 +54,10 @@ const slides = [
 export function HeroCarousel() {
   const [api, setApi] = React.useState<CarouselApi>()
   const [current, setCurrent] = React.useState(0)
+  const plugin = React.useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: true })
+  )
+
 
   React.useEffect(() => {
     if (!api) {
@@ -74,8 +80,11 @@ export function HeroCarousel() {
   return (
     <Carousel
       opts={{ loop: true }}
+      plugins={[plugin.current]}
       setApi={setApi}
       className="relative group"
+      onMouseEnter={plugin.current.stop}
+      onMouseLeave={plugin.current.reset}
     >
       <CarouselContent>
         {slides.map((slide, index) => (
