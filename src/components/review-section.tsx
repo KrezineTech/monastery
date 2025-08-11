@@ -56,7 +56,7 @@ export function ReviewSection() {
                       <Instagram className="w-5 h-5" />
                     </div>
                   <Card className="h-full overflow-hidden p-4 rounded-[26px] border-none shadow-sm">
-                      <div className="relative w-full h-[35vh] rounded-[18px] overflow-hidden">
+                      <div className="relative w-full h-[45vh] rounded-[18px] overflow-hidden">
                           <Image
                               src={review.image.src}
                               alt="review image"
