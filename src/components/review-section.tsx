@@ -14,57 +14,22 @@ import Image from 'next/image';
 
 const reviews = [
   {
-    source: 'instagram',
-    content: [
-      {
-        type: 'text',
-        avatar: 'https://placehold.co/40x40.png',
-        text: "After 3 weeks - these were my results and they truely speak for themselves! Ps. I never thought I would ever share a photo of myself without make up on, but here we go :)",
-      },
-      {
-        type: 'image',
-        image: { src: 'https://placehold.co/400x500.png', aiHint: 'before and after skincare' },
-      },
-      {
-        type: 'text',
-        avatar: 'https://placehold.co/40x40.png',
-        text: "I couldn't find anywhere to leave a photo with my review :/",
-      },
-    ]
+    image: { src: 'https://placehold.co/400x500.png', aiHint: 'before and after skincare' },
   },
   {
-    source: 'instagram',
-    content: [
-      {
-        type: 'text',
-        avatar: 'https://placehold.co/40x40.png',
-        text: "This product is amazing! My skin has never felt better. I'm glowing!",
-      },
-      {
-        type: 'image',
-        image: { src: 'https://placehold.co/400x300.png', aiHint: 'happy customer' },
-      },
-    ]
+    image: { src: 'https://placehold.co/400x300.png', aiHint: 'happy customer' },
   },
   {
-    source: 'instagram',
-    content: [
-      {
-        type: 'text',
-        avatar: 'https://placehold.co/40x40.png',
-        text: "I was skeptical at first, but now I'm a believer. Look at the difference!",
-      },
-      {
-        type: 'image',
-        image: { src: 'https://placehold.co/400x500.png', aiHint: 'skin texture comparison' },
-      },
-    ]
+    image: { src: 'https://placehold.co/400x500.png', aiHint: 'skin texture comparison' },
+  },
+   {
+    image: { src: 'https://placehold.co/400x500.png', aiHint: 'before and after results' },
+  },
+   {
+    image: { src: 'https://placehold.co/400x300.png', aiHint: 'smiling person' },
   },
 ];
 
-const sourceIcons: { [key: string]: React.ReactNode } = {
-    instagram: <Instagram className="w-6 h-6 text-black" />,
-};
 
 export function ReviewSection() {
   return (
@@ -86,45 +51,17 @@ export function ReviewSection() {
           <CarouselContent className="-ml-4">
             {reviews.map((review, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 pl-4">
-                <div className="p-1 h-full">
-                  <Card className="h-full flex flex-col p-6 rounded-[26px] border border-border/50 shadow-sm bg-muted/20 relative">
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center border-2 border-black">
-                        {sourceIcons[review.source]}
+                <Card className="h-full overflow-hidden p-0 rounded-[26px] border-none shadow-sm">
+                    <div className="relative w-full h-[500px]">
+                        <Image
+                            src={review.image.src}
+                            alt="review image"
+                            fill
+                            className="object-cover w-full h-full"
+                            data-ai-hint={review.image.aiHint}
+                        />
                     </div>
-                    <div className="mt-8 space-y-4">
-                      {review.content.map((item, itemIndex) => (
-                        <div key={itemIndex}>
-                          {item.type === 'text' && (
-                            <div className="flex items-start gap-3">
-                              <Image 
-                                src={item.avatar!}
-                                alt="avatar"
-                                width={32}
-                                height={32}
-                                className="rounded-full mt-1"
-                              />
-                              <div className="bg-white p-3 rounded-lg rounded-tl-none">
-                                <p className="text-sm text-foreground/90">{item.text}</p>
-                              </div>
-                            </div>
-                          )}
-                          {item.type === 'image' && item.image && (
-                            <div className="flex justify-center mt-2">
-                                <Image
-                                  src={item.image.src}
-                                  alt="review image"
-                                  width={400}
-                                  height={500}
-                                  className="rounded-lg object-cover w-full"
-                                  data-ai-hint={item.image.aiHint}
-                                />
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </Card>
-                </div>
+                </Card>
               </CarouselItem>
             ))}
           </CarouselContent>
