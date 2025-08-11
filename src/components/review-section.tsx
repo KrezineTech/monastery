@@ -15,39 +15,63 @@ import Image from 'next/image';
 const reviews = [
   {
     source: 'instagram',
-    image: 'https://placehold.co/400x600.png',
-    aiHint: 'review screenshot',
+    content: [
+      {
+        type: 'text',
+        avatar: 'https://placehold.co/40x40.png',
+        text: "After 3 weeks - these were my results and they truely speak for themselves! Ps. I never thought I would ever share a photo of myself without make up on, but here we go :)",
+      },
+      {
+        type: 'image',
+        images: [
+            { src: 'https://placehold.co/200x250.png', aiHint: 'before skincare' },
+            { src: 'https://placehold.co/200x250.png', aiHint: 'after skincare' }
+        ],
+      },
+      {
+        type: 'text',
+        avatar: 'https://placehold.co/40x40.png',
+        text: "I couldn't find anywhere to leave a photo with my review :/",
+      },
+    ]
   },
   {
     source: 'instagram',
-    image: 'https://placehold.co/400x600.png',
-    aiHint: 'user testimonial',
+    content: [
+      {
+        type: 'text',
+        avatar: 'https://placehold.co/40x40.png',
+        text: "This product is amazing! My skin has never felt better. I'm glowing!",
+      },
+      {
+        type: 'image',
+        images: [
+          { src: 'https://placehold.co/400x300.png', aiHint: 'happy customer' }
+        ],
+      },
+    ]
   },
   {
     source: 'instagram',
-    image: 'https://placehold.co/400x600.png',
-    aiHint: 'social media post',
-  },
-  {
-    source: 'amazon',
-    image: 'https://placehold.co/400x600.png',
-    aiHint: 'product review',
-  },
-  {
-    source: 'instagram',
-    image: 'https://placehold.co/400x600.png',
-    aiHint: 'customer feedback',
-  },
-  {
-    source: 'instagram',
-    image: 'https://placehold.co/400x600.png',
-    aiHint: 'before and after',
+    content: [
+      {
+        type: 'text',
+        avatar: 'https://placehold.co/40x40.png',
+        text: "I was skeptical at first, but now I'm a believer. Look at the difference!",
+      },
+      {
+        type: 'image',
+        images: [
+            { src: 'https://placehold.co/200x250.png', aiHint: 'skin texture before' },
+            { src: 'https://placehold.co/200x250.png', aiHint: 'skin texture after' }
+        ],
+      },
+    ]
   },
 ];
 
 const sourceIcons: { [key: string]: React.ReactNode } = {
-    instagram: <Instagram className="w-5 h-5 text-black" />,
-    amazon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-amazon"><path d="M14.74 15.02s-1.42.33-2.25.31c-.83-.02-3.41-1.33-3.41-1.33s-1.25.92-1.25 2.5c0 1.58.94 2.47 2.04 2.47s2.21-.92 2.21-.92.83 1.59 2.59 1.5c1.76-.09 2.54-1.62 2.54-2.54s-.92-2.01-2.47-2.01zm3.89-1.45c.44-.02 1.13-1.42 1.13-1.42s-1.8-1.54-3.5-.79c-1.7.75-2.08 2.22-2.08 2.22s1.42.44 2.25.29c.83-.15 2.2-.29 2.2-.29zM22 12c0-5.52-4.48-10-10-10S2 6.48 2 12s4.48 10 10 10 10-4.48 10-10zM5.42 10.42s.78-1.17.65-2.04c-.13-.87-.82-1.58-.82-1.58s1.62-.22 2.58.93c.96 1.14.79 2.5.79 2.5s-1.58.55-2.13.38c-.55-.18-1.07-1.13-1.07-1.13z"/></svg>
+    instagram: <Instagram className="w-6 h-6 text-black" />,
 };
 
 export function ReviewSection() {
@@ -69,22 +93,46 @@ export function ReviewSection() {
         >
           <CarouselContent className="-ml-4">
             {reviews.map((review, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4 pl-4">
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 pl-4">
                 <div className="p-1 h-full">
-                  <Card className="h-full flex flex-col justify-between p-6 rounded-[26px] border border-border/50 shadow-sm bg-muted/20">
-                    <div className="flex justify-center mb-4">
-                        <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border-2 border-border/60">
-                            {sourceIcons[review.source]}
-                        </div>
+                  <Card className="h-full flex flex-col p-6 rounded-[26px] border border-border/50 shadow-sm bg-muted/20 relative">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center border-2 border-black">
+                        {sourceIcons[review.source]}
                     </div>
-                    <div className="relative w-full h-[450px] rounded-lg overflow-hidden">
-                      <Image 
-                        src={review.image} 
-                        alt="Review"
-                        fill
-                        className="object-cover" 
-                        data-ai-hint={review.aiHint}
-                      />
+                    <div className="mt-8 space-y-4">
+                      {review.content.map((item, itemIndex) => (
+                        <div key={itemIndex}>
+                          {item.type === 'text' && (
+                            <div className="flex items-start gap-3">
+                              <Image 
+                                src={item.avatar!}
+                                alt="avatar"
+                                width={32}
+                                height={32}
+                                className="rounded-full mt-1"
+                              />
+                              <div className="bg-white p-3 rounded-lg rounded-tl-none">
+                                <p className="text-sm text-foreground/90">{item.text}</p>
+                              </div>
+                            </div>
+                          )}
+                          {item.type === 'image' && item.images && (
+                            <div className="flex justify-center gap-2 mt-2">
+                              {item.images.map((img, imgIndex) => (
+                                <Image
+                                  key={imgIndex}
+                                  src={img.src}
+                                  alt="review image"
+                                  width={150}
+                                  height={180}
+                                  className="rounded-lg object-cover"
+                                  data-ai-hint={img.aiHint}
+                                />
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
                     </div>
                   </Card>
                 </div>
