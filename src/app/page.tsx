@@ -267,7 +267,6 @@ export default function Home() {
                               <h4 className="font-semibold text-sm text-primary">{reel.product.name}</h4>
                               <p className="text-sm text-foreground/80">₹{reel.product.price.toFixed(2)}</p>
                             </div>
-                            <Button size="sm" className="shrink-0">View</Button>
                           </Card>
                         </div>
                       </Card>
