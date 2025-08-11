@@ -22,7 +22,7 @@ import { ReviewSection } from '@/components/review-section';
 const categories: Category[] = [
   { name: 'Moisturizers', image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-1.webp?v=1754914138', mobileImage: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-1.webp?v=1754914138', aiHint: 'skincare moisturizer' },
   { name: 'Serum', image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Serum.webp?v=1754933298', aiHint: 'skincare serum' },
-  { name: 'Essence', image: 'https://placehold.co/660x400.png', aiHint: 'skincare essence' },
+  { name: 'Essence', image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Toner.webp?v=1754934725', aiHint: 'skincare essence' },
 ];
 
 const featuredProducts: Product[] = [
