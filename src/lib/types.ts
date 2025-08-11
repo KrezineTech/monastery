@@ -13,6 +13,7 @@ export interface Product {
 export interface Category {
   name: string;
   image: string;
+  mobileImage?: string;
   aiHint?: string;
 }
 

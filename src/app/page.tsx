@@ -20,7 +20,7 @@ import { HarmonySection } from '@/components/harmony-section';
 import { ReviewSection } from '@/components/review-section';
 
 const categories: Category[] = [
-  { name: 'Essence', image: 'https://placehold.co/840x400.png', aiHint: 'skincare essence' },
+  { name: 'Essence', image: 'https://placehold.co/840x400.png', mobileImage: 'https://placehold.co/340x400.png', aiHint: 'skincare essence' },
   { name: 'Serum', image: 'https://placehold.co/460x400.png', aiHint: 'skincare serum' },
   { name: 'Moisturizers', image: 'https://placehold.co/660x400.png', aiHint: 'skincare moisturizer' },
 ];
@@ -100,7 +100,7 @@ export default function Home() {
                         <Card className="relative overflow-hidden rounded-[26px] border-none h-full">
                             <h3 className="absolute top-6 left-6 text-xl font-semibold text-gray-800 z-10">{categories[0].name}</h3>
                             <Image
-                                src={categories[0].image}
+                                src={categories[0].mobileImage || categories[0].image}
                                 alt={categories[0].name}
                                 fill
                                 className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
