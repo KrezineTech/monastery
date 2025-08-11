@@ -284,7 +284,7 @@ export default function Home() {
       {/* Instagram Feed Section */}
       <section className="py-16 sm:py-24">
         <div className="w-[96%] mx-auto">
-          <div className="flex justify-between items-center mb-12">
+          <div className="flex justify-between items-end mb-12">
             <div>
               <h2 className="text-3xl font-bold text-primary mb-4">ON THE GRAM</h2>
               <p className="text-foreground/80">Tag @islandbeauty.in in your Instagram photos for a chance to be featured here.</p>
