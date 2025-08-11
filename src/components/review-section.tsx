@@ -55,8 +55,8 @@ export function ReviewSection() {
                    <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 bg-black text-white rounded-full p-3 flex items-center justify-center shadow-lg">
                       <Instagram className="w-5 h-5" />
                     </div>
-                  <Card className="h-full overflow-hidden p-0 rounded-[26px] border-none shadow-sm">
-                      <div className="relative w-full h-[500px]">
+                  <Card className="h-full overflow-hidden p-4 rounded-[26px] border-none shadow-sm">
+                      <div className="relative w-full h-[468px] rounded-[18px] overflow-hidden">
                           <Image
                               src={review.image.src}
                               alt="review image"
