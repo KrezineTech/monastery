@@ -48,20 +48,25 @@ export function ReviewSection() {
           }}
           className="w-full relative group"
         >
-          <CarouselContent className="-ml-4">
+          <CarouselContent className="-ml-4 pt-8">
             {reviews.map((review, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 pl-4">
-                <Card className="h-full overflow-hidden p-0 rounded-[26px] border-none shadow-sm">
-                    <div className="relative w-full h-[500px]">
-                        <Image
-                            src={review.image.src}
-                            alt="review image"
-                            fill
-                            className="object-cover w-full h-full"
-                            data-ai-hint={review.image.aiHint}
-                        />
+                <div className="relative pt-6">
+                   <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 bg-black text-white rounded-full p-3 flex items-center justify-center border-4 border-background shadow-lg">
+                      <Instagram className="w-5 h-5" />
                     </div>
-                </Card>
+                  <Card className="h-full overflow-hidden p-0 rounded-[26px] border-none shadow-sm">
+                      <div className="relative w-full h-[500px]">
+                          <Image
+                              src={review.image.src}
+                              alt="review image"
+                              fill
+                              className="object-cover w-full h-full"
+                              data-ai-hint={review.image.aiHint}
+                          />
+                      </div>
+                  </Card>
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>
