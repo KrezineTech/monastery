@@ -20,7 +20,7 @@ import { HarmonySection } from '@/components/harmony-section';
 import { ReviewSection } from '@/components/review-section';
 
 const categories: Category[] = [
-  { name: 'Essence', image: 'https://placehold.co/840x400.png', mobileImage: 'https://placehold.co/340x400.png', aiHint: 'skincare essence' },
+  { name: 'Essence', image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-1.webp?v=1754914138', mobileImage: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-1.webp?v=1754914138', aiHint: 'skincare essence' },
   { name: 'Serum', image: 'https://placehold.co/460x400.png', aiHint: 'skincare serum' },
   { name: 'Moisturizers', image: 'https://placehold.co/660x400.png', aiHint: 'skincare moisturizer' },
 ];
