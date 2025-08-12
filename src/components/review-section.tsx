@@ -52,7 +52,7 @@ export function ReviewSection() {
             {reviews.map((review, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 pl-4">
                 <div className="relative pt-6">
-                   <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 bg-black text-white rounded-full p-3 flex items-center justify-center shadow-lg">
+                   <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 bg-black text-white rounded-full p-3 flex items-center justify-center">
                       <Instagram className="w-5 h-5" />
                     </div>
                   <Card className="h-full overflow-hidden p-4 rounded-[26px] border-none shadow-sm">
