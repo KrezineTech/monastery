@@ -51,12 +51,12 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
       <div className="grid md:grid-cols-2 gap-x-[30px]">
         {/* Product Gallery */}
         <div>
-          <div className="relative aspect-square w-full rounded-2xl mb-4">
+          <div className="relative aspect-square w-full rounded-2xl mb-4 overflow-hidden">
             <Image
               src={mainImage}
               alt={product.name}
               fill
-              className="object-cover transition-transform duration-300 hover:scale-105"
+              className="object-cover transition-transform duration-300"
             />
           </div>
           <Carousel
