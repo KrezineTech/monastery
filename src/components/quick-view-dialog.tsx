@@ -106,23 +106,22 @@ export function QuickViewDialog({ open, onOpenChange, product }: QuickViewDialog
                 ))}
               </div>
             </div>
-
-            <div className="mt-6">
-              <p className="text-sm font-medium text-foreground mb-2">Quantity</p>
-              <div className="flex items-center border rounded-md w-fit">
-                <Button variant="ghost" size="icon" onClick={() => handleQuantityChange(-1)}>
-                  <Minus className="w-4 h-4" />
-                </Button>
-                <span className="w-10 text-center">{quantity}</span>
-                <Button variant="ghost" size="icon" onClick={() => handleQuantityChange(1)}>
-                  <Plus className="w-4 h-4" />
-                </Button>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4 mt-8">
-              <Button size="lg">Add to cart</Button>
-              <Button size="lg" variant="outline">Buy it now</Button>
+            
+            <div className="mt-8 space-y-4">
+               <p className="text-sm font-medium text-foreground">Quantity</p>
+               <div className="flex items-center gap-4">
+                    <div className="flex items-center border rounded-full w-fit">
+                        <Button variant="ghost" size="icon" className="rounded-full" onClick={() => handleQuantityChange(-1)}>
+                        <Minus className="w-4 h-4" />
+                        </Button>
+                        <span className="w-10 text-center">{quantity}</span>
+                        <Button variant="ghost" size="icon" className="rounded-full" onClick={() => handleQuantityChange(1)}>
+                        <Plus className="w-4 h-4" />
+                        </Button>
+                    </div>
+                    <Button size="lg" variant="outline" className="flex-1 rounded-full">Add To Cart</Button>
+                </div>
+                <Button size="lg" className="w-full rounded-full">Buy it now</Button>
             </div>
             
             <div className="mt-6 p-4 bg-muted/50 rounded-lg flex items-start gap-4 text-sm">
