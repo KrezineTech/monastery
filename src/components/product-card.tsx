@@ -8,7 +8,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import type { Product } from '@/lib/types';
 import { cn } from '@/lib/utils';
-import { ShoppingCart, Eye, Star } from 'lucide-react';
+import { ShoppingCart, Eye, Star, Heart } from 'lucide-react';
 import { QuickViewDialog } from './quick-view-dialog';
 
 interface ProductCardProps {
@@ -18,6 +18,7 @@ interface ProductCardProps {
 
 export function ProductCard({ product, className }: ProductCardProps) {
   const [isQuickViewOpen, setIsQuickViewOpen] = useState(false);
+  const [isWishlisted, setIsWishlisted] = useState(false);
 
   const cardContent = (
     <Card className="overflow-hidden border-none shadow-none rounded-[26px] h-full">
@@ -42,6 +43,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
             </div>
           </>
         ) : (
+          <>
           <Image
             src={product.image}
             alt={product.name}
@@ -49,6 +51,17 @@ export function ProductCard({ product, className }: ProductCardProps) {
             className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
             data-ai-hint={product.aiHint}
           />
+           <Button 
+              size="icon" 
+              className="absolute top-4 right-4 bg-white/80 hover:bg-white text-primary rounded-full h-10 w-10 backdrop-blur-sm"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsWishlisted(!isWishlisted)
+              }}
+            >
+              <Heart className={cn("w-5 h-5", isWishlisted && "fill-primary")} />
+            </Button>
+          </>
         )}
       </div>
     </Card>
@@ -86,14 +99,22 @@ export function ProductCard({ product, className }: ProductCardProps) {
         <div className="flex items-center gap-2 mt-4">
           <Button 
             variant="secondary" 
-            className="rounded-lg bg-pink-100 text-pink-800 hover:bg-pink-200 flex-1"
+            className="rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/80 flex-1"
             onClick={() => setIsQuickViewOpen(true)}
           >
             <Eye className="w-4 h-4 mr-2" />
             Quick view
           </Button>
-          <Button variant="secondary" size="icon" className="rounded-lg bg-blue-100 text-blue-800 hover:bg-blue-200">
+          <Button variant="secondary" size="icon" className="rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/80">
             <ShoppingCart className="w-5 h-5" />
+          </Button>
+          <Button 
+            variant="secondary" 
+            size="icon" 
+            className="rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/80"
+            onClick={() => setIsWishlisted(!isWishlisted)}
+          >
+            <Heart className={cn("w-5 h-5", isWishlisted && "fill-primary text-primary")} />
           </Button>
         </div>
       </div>
