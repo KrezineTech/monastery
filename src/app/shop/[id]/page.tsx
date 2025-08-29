@@ -72,6 +72,14 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
           <div>
             <p className="text-sm font-medium text-primary">Island</p>
             <h1 className="text-3xl lg:text-4xl font-bold text-foreground mt-1">{product.name}</h1>
+            <div className="flex items-center gap-1 mt-2">
+              <div className="flex items-center">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                ))}
+              </div>
+              <p className="text-sm text-muted-foreground ml-1">15 reviews</p>
+            </div>
           </div>
 
            <div className="flex items-baseline gap-2 mt-4">
