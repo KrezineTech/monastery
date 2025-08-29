@@ -38,7 +38,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
       <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
         {/* Product Gallery */}
         <div>
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl mb-4">
+          <div className="relative aspect-square w-full overflow-hidden rounded-2xl mb-4">
             <Image
               src={mainImage}
               alt={product.name}
