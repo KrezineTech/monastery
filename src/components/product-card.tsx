@@ -8,7 +8,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import type { Product } from '@/lib/types';
 import { cn } from '@/lib/utils';
-import { ShoppingCart, Eye } from 'lucide-react';
+import { ShoppingCart, Eye, Star } from 'lucide-react';
 import { QuickViewDialog } from './quick-view-dialog';
 
 interface ProductCardProps {
@@ -74,6 +74,14 @@ export function ProductCard({ product, className }: ProductCardProps) {
       </Link>
       <div className="pt-4">
         <h3 className="font-semibold text-sm text-foreground mt-1">{product.name}</h3>
+        <div className="flex items-center mt-2">
+            <div className="flex items-center">
+                {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                ))}
+            </div>
+            <p className="text-xs text-muted-foreground ml-2">(15 reviews)</p>
+        </div>
         <p className="font-bold text-foreground/90 mt-2">₹{product.price.toFixed(2)}</p>
         <div className="flex items-center gap-2 mt-4">
           <Button 
