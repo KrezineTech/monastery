@@ -191,7 +191,7 @@ export default function Home() {
 
       {/* Brand Video Section */}
       <section className="w-full mt-[120px]">
-        <div className="w-[96%] mx-auto pt-12 pb-4 text-foreground/80 rounded-[26px] border border-border/40 bg-[#F6F6F3]/80 backdrop-blur-lg px-8">
+        <div className="w-[96%] mx-auto">
             <div className="relative rounded-[26px] overflow-hidden h-[85vh]">
                 <video
                     src="https://cdn.shopify.com/videos/c/o/v/d51f4351ed6e48b7a58c729b183c0a2f.mp4"
