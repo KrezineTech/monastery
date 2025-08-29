@@ -51,7 +51,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
               <div
                 key={index}
                 className={cn(
-                  'relative aspect-square cursor-pointer rounded-2xl overflow-hidden border-2 transition-all',
+                  'relative aspect-square cursor-pointer rounded-lg overflow-hidden border-2 transition-all',
                   mainImage === img ? 'border-primary' : 'border-transparent hover:border-primary/50'
                 )}
                 onClick={() => setMainImage(img)}
@@ -74,55 +74,53 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
             <h1 className="text-3xl lg:text-4xl font-bold text-foreground mt-1">{product.name}</h1>
           </div>
 
-          <div className="flex items-baseline gap-2">
-            <p className="text-3xl font-semibold text-foreground">₹{product.price.toFixed(2)}</p>
-            {product.originalPrice && (
-              <p className="text-xl text-muted-foreground line-through">₹{product.originalPrice.toFixed(2)}</p>
+           <div className="flex items-baseline gap-2 mt-4">
+                <p className="text-2xl font-semibold text-foreground">₹{product.price.toFixed(2)}</p>
+                {product.originalPrice && (
+                    <p className="text-muted-foreground line-through">₹{product.originalPrice.toFixed(2)}</p>
+                )}
+            </div>
+
+            {product.description && (
+              <p className="text-sm text-muted-foreground mt-4">{product.description}</p>
             )}
-          </div>
-          
-          {product.description && (
-              <p className="text-foreground/80 leading-relaxed">
-                {product.description}
-              </p>
-            )}
+            <Separator className="my-6" />
 
           <div className="flex items-center gap-2 text-sm text-green-600 font-medium">
             <CheckCircle className="w-5 h-5" />
             <span>53 in stock</span>
           </div>
 
-          <div>
-            <p className="text-sm font-medium text-foreground mb-2">VOLUME: {selectedVolume}</p>
-            <div className="flex gap-2">
+          <div className="mt-6">
+            <p className="text-sm font-medium text-foreground">VOLUME : {selectedVolume}</p>
+            <div className="flex gap-2 mt-2">
               {volumes.map(v => (
-                <Button
+                 <Button 
                   key={v}
                   variant={selectedVolume === v ? 'default' : 'outline'}
                   onClick={() => setSelectedVolume(v)}
-                  className="rounded-full"
-                >
-                  {v}
-                </Button>
+                  >
+                    {v}
+                  </Button>
               ))}
             </div>
           </div>
 
-          <div className="space-y-4">
-            <p className="text-sm font-medium text-foreground">Quantity</p>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="flex items-center border rounded-full w-fit">
-                <Button variant="ghost" size="icon" className="rounded-full" onClick={() => handleQuantityChange(-1)}>
-                  <Minus className="w-4 h-4" />
-                </Button>
-                <span className="w-10 text-center font-medium">{quantity}</span>
-                <Button variant="ghost" size="icon" className="rounded-full" onClick={() => handleQuantityChange(1)}>
-                  <Plus className="w-4 h-4" />
-                </Button>
+          <div className="mt-8 space-y-2">
+             <p className="text-sm font-medium text-foreground">Quantity</p>
+             <div className="flex items-center gap-2">
+                  <div className="flex items-center border rounded-full w-fit">
+                      <Button variant="ghost" size="icon" className="rounded-full" onClick={() => handleQuantityChange(-1)}>
+                      <Minus className="w-4 h-4" />
+                      </Button>
+                      <span className="w-10 text-center">{quantity}</span>
+                      <Button variant="ghost" size="icon" className="rounded-full" onClick={() => handleQuantityChange(1)}>
+                      <Plus className="w-4 h-4" />
+                      </Button>
+                  </div>
+                  <Button size="lg" variant="outline" className="flex-1 rounded-full">Add To Cart</Button>
               </div>
-              <Button size="lg" variant="outline" className="w-full rounded-full">Add To Cart</Button>
-            </div>
-            <Button size="lg" className="w-full rounded-full">Buy it now</Button>
+              <Button size="lg" className="w-full rounded-full">Buy it now</Button>
           </div>
 
           <div className="mt-6 p-4 bg-muted/50 rounded-lg flex items-start gap-4 text-sm">
@@ -136,35 +134,34 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
               </div>
           </div>
 
-          <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground mt-4">
+          <div className="mt-4 flex items-center gap-4 text-sm">
             <div className="flex items-center gap-2">
-              <Truck className="w-5 h-5" />
+              <Truck className="w-5 h-5 text-muted-foreground" />
               <p>Free delivery on February 7th - 13th</p>
             </div>
             <div className="flex items-center gap-2">
-              <RefreshCw className="w-5 h-5" />
+              <RefreshCw className="w-5 h-5 text-muted-foreground" />
               <p>Free + easy returns</p>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Product Information Accordion */}
-      <div className="mt-16 lg:mt-24">
-        <Accordion type="single" collapsible defaultValue="description" className="w-full max-w-3xl mx-auto">
-          <AccordionItem value="ingredients">
-            <AccordionTrigger className="text-lg font-medium">Ingredients</AccordionTrigger>
-            <AccordionContent className="text-base text-foreground/80 leading-relaxed">
-              Full ingredients list: Aqua, Glycerin, Niacinamide, Oryza Sativa (Rice) Bran Water, Curcuma Longa (Turmeric) Root Extract, Sodium Hyaluronate, Phenoxyethanol, Ethylhexylglycerin.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="how-to-use">
-            <AccordionTrigger className="text-lg font-medium">How to use</AccordionTrigger>
-            <AccordionContent className="text-base text-foreground/80 leading-relaxed">
-              After cleansing, apply a few drops to your palms and gently pat onto your face and neck. Follow with your favorite serum and moisturizer. Use morning and night for best results.
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
+          <div className="pt-6">
+            <Accordion type="single" collapsible defaultValue="description" className="w-full">
+              <AccordionItem value="ingredients">
+                <AccordionTrigger className="text-base font-medium">Ingredients</AccordionTrigger>
+                <AccordionContent className="text-sm text-foreground/80 leading-relaxed">
+                  Full ingredients list: Aqua, Glycerin, Niacinamide, Oryza Sativa (Rice) Bran Water, Curcuma Longa (Turmeric) Root Extract, Sodium Hyaluronate, Phenoxyethanol, Ethylhexylglycerin.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="how-to-use">
+                <AccordionTrigger className="text-base font-medium">How to use</AccordionTrigger>
+                <AccordionContent className="text-sm text-foreground/80 leading-relaxed">
+                  After cleansing, apply a few drops to your palms and gently pat onto your face and neck. Follow with your favorite serum and moisturizer. Use morning and night for best results.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
       </div>
     </div>
   );
