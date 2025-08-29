@@ -108,14 +108,6 @@ export function ProductCard({ product, className }: ProductCardProps) {
           <Button variant="secondary" size="icon" className="rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/80">
             <ShoppingCart className="w-5 h-5" />
           </Button>
-          <Button 
-            variant="secondary" 
-            size="icon" 
-            className="rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/80"
-            onClick={() => setIsWishlisted(!isWishlisted)}
-          >
-            <Heart className={cn("w-5 h-5", isWishlisted && "fill-primary text-primary")} />
-          </Button>
         </div>
       </div>
     </div>
