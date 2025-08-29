@@ -47,7 +47,9 @@ export function ProductLightbox({
     const onSelect = () => {
       const newIndex = mainApi.selectedScrollSnap();
       setSelectedIndex(newIndex);
-      thumbApi.scrollTo(newIndex);
+      if (thumbApi.scrollSnapList().length > newIndex) {
+        thumbApi.scrollTo(newIndex);
+      }
     };
 
     mainApi.on('select', onSelect);
@@ -66,15 +68,15 @@ export function ProductLightbox({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-none w-full h-full p-0 bg-black/90 border-none flex flex-col items-center justify-center">
-        <div className="relative w-full h-full flex flex-col items-center justify-center p-4 lg:p-12">
+      <DialogContent className="max-w-6xl w-full max-h-[90vh] p-0 bg-background border-none flex flex-col items-center justify-center rounded-lg">
+        <div className="relative w-full h-full flex flex-col items-center justify-center p-4">
             <div className="relative w-full h-[75%]">
                 <Carousel setApi={setMainApi} className="w-full h-full">
                 <CarouselContent className="h-full">
                     {media.map((item, index) => (
                     <CarouselItem key={index} className="flex items-center justify-center">
                         {item.type === 'video' ? (
-                        <video src={item.src} controls autoPlay className="max-h-full max-w-full" />
+                        <video src={item.src} controls autoPlay className="max-h-full max-w-full rounded-md" />
                         ) : (
                         <Image
                             src={item.src}
@@ -86,8 +88,8 @@ export function ProductLightbox({
                     </CarouselItem>
                     ))}
                 </CarouselContent>
-                <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-white/20 hover:bg-white/30" />
-                <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-white/20 hover:bg-white/30" />
+                <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 text-foreground bg-white/50 hover:bg-white/80" />
+                <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 text-foreground bg-white/50 hover:bg-white/80" />
                 </Carousel>
             </div>
             <div className="w-full max-w-4xl p-4 mt-4">
