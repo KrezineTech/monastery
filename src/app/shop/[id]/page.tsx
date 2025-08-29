@@ -74,21 +74,18 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
             <h1 className="text-3xl lg:text-4xl font-bold text-foreground mt-1">{product.name}</h1>
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="flex items-center">
-                {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                ))}
-            </div>
-            <p className="text-sm text-muted-foreground">(15 reviews)</p>
-          </div>
-
           <div className="flex items-baseline gap-2">
             <p className="text-3xl font-semibold text-foreground">₹{product.price.toFixed(2)}</p>
             {product.originalPrice && (
               <p className="text-xl text-muted-foreground line-through">₹{product.originalPrice.toFixed(2)}</p>
             )}
           </div>
+          
+          {product.description && (
+              <p className="text-foreground/80 leading-relaxed">
+                {product.description}
+              </p>
+            )}
 
           <Separator />
 
@@ -151,12 +148,6 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
       {/* Product Information Accordion */}
       <div className="mt-16 lg:mt-24">
         <Accordion type="single" collapsible defaultValue="description" className="w-full max-w-3xl mx-auto">
-          <AccordionItem value="description">
-            <AccordionTrigger className="text-lg font-medium">Description</AccordionTrigger>
-            <AccordionContent className="text-base text-foreground/80 leading-relaxed">
-              {product.description}
-            </AccordionContent>
-          </AccordionItem>
           <AccordionItem value="ingredients">
             <AccordionTrigger className="text-lg font-medium">Ingredients</AccordionTrigger>
             <AccordionContent className="text-base text-foreground/80 leading-relaxed">
@@ -171,18 +162,6 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
           </AccordionItem>
         </Accordion>
       </div>
-
-      {/* Related Products */}
-      {relatedProducts.length > 0 && (
-        <div className="mt-16 lg:mt-24">
-          <h2 className="text-3xl font-bold text-center text-primary mb-12">You Might Also Like</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {relatedProducts.map((relatedProduct) => (
-              <ProductCard key={relatedProduct.id} product={relatedProduct} />
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   );
 }
