@@ -53,7 +53,7 @@ export default function ShopPage() {
                   Explore our full collection of natural skincare.
               </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {allProducts.map((product) => (
                   <ProductCard key={product.id} product={product} />
               ))}
