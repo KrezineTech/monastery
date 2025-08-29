@@ -7,6 +7,7 @@ export const allProducts: Product[] = [
       name: 'Purity in a Drop Toner & Essence', 
       price: 1450.00, 
       image: 'https://placehold.co/800x1000.png',
+      videoUrl: 'https://cdn.shopify.com/videos/c/o/v/c319ba0f716a4c01b43fccbf4232aa13.mp4',
       gallery: [
         'https://placehold.co/800x1000.png',
         'https://placehold.co/800x1001.png',
@@ -28,6 +29,7 @@ export const allProducts: Product[] = [
       price: 999.00, 
       originalPrice: 1299.00, 
       image: 'https://placehold.co/800x1000.png',
+      videoUrl: 'https://cdn.shopify.com/videos/c/o/v/b3c5d81c41e84fa0a5c9bb3c2502cdb2.mp4',
       gallery: [
         'https://placehold.co/800x1000.png',
         'https://placehold.co/800x1001.png',
@@ -52,6 +54,7 @@ Perfect under makeup or on bare skin. No greasiness, just glow.`
       name: 'Morning Dew Moisturizer with SPF 15', 
       price: 1300.00, 
       image: 'https://placehold.co/800x1000.png',
+      videoUrl: 'https://cdn.shopify.com/videos/c/o/v/8be0e8a971384750a438fe3622c65683.mp4',
       gallery: [
         'https://placehold.co/800x1000.png',
         'https://placehold.co/800x1001.png',

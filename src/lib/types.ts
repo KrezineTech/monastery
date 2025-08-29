@@ -33,3 +33,9 @@ export interface InstagramPost {
   image: string;
   aiHint?: string;
 }
+
+export type ProductMedia = {
+    type: 'image' | 'video';
+    src: string;
+    thumbnail: string;
+}

@@ -4,15 +4,12 @@
 import { useState } from 'react';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import Link from 'next/link';
 import { allProducts } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { Star, CheckCircle, Minus, Plus, Truck, RefreshCw, Package, Share2, Heart } from 'lucide-react';
+import { Star, CheckCircle, Minus, Plus, Truck, RefreshCw, Package, Share2, Heart, PlayCircle } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { cn } from '@/lib/utils';
-import { ProductCard } from '@/components/product-card';
-import { ProductReviews } from '@/components/product-reviews';
 import {
   Carousel,
   CarouselContent,
@@ -21,20 +18,27 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { useToast } from '@/hooks/use-toast';
+import { ProductLightbox } from '@/components/product-lightbox';
 
 export default function ProductDetailPage({ params }: { params: { id: string } }) {
   const product = allProducts.find((p) => p.id === params.id);
   const [quantity, setQuantity] = useState(1);
   const [selectedVolume, setSelectedVolume] = useState('250ML');
   const [isWishlisted, setIsWishlisted] = useState(false);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [lightboxStartIndex, setLightboxStartIndex] = useState(0);
   const { toast } = useToast();
   
   if (!product) {
     notFound();
   }
 
-  const gallery = product.gallery || [product.image];
-  const [mainImage, setMainImage] = useState(gallery[0]);
+  const gallery = [
+      ...(product.videoUrl ? [{ type: 'video', src: product.videoUrl, thumbnail: product.image }] : []),
+      ...(product.gallery || []).map(src => ({ type: 'image', src, thumbnail: src }))
+  ];
+  
+  const [mainMedia, setMainMedia] = useState(gallery[0]);
 
   const handleQuantityChange = (amount: number) => {
     setQuantity((prev) => Math.max(1, prev + amount));
@@ -66,26 +70,50 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
     });
   };
 
-  const volumes = ['250ML', '300ML', '500ML'];
+  const openLightbox = (index: number) => {
+    setLightboxStartIndex(index);
+    setIsLightboxOpen(true);
+  };
 
-  const relatedProducts = allProducts.filter(p => p.id !== product.id).slice(0, 2);
+  const volumes = ['250ML', '300ML', '500ML'];
 
   const descriptionParts = product.description?.split('\n\n');
   const descriptionTitle = descriptionParts?.[0];
   const descriptionBody = descriptionParts?.slice(1).join('\n\n');
 
   return (
+    <>
     <div className="w-full px-4 sm:px-6 lg:px-8 py-5 sm:py-8 lg:py-10">
       <div className="grid md:grid-cols-2 gap-x-[30px]">
         {/* Product Gallery */}
         <div>
-          <div className="relative aspect-square w-full rounded-[26px] mb-4 overflow-hidden">
-            <Image
-              src={mainImage}
-              alt={product.name}
-              fill
-              className="object-cover transition-transform duration-300"
-            />
+           <div 
+             className="relative aspect-square w-full rounded-[26px] mb-4 overflow-hidden cursor-pointer group"
+             onClick={() => openLightbox(gallery.findIndex(item => item.src === mainMedia.src))}
+           >
+            {mainMedia.type === 'video' ? (
+                <>
+                    <video
+                        key={mainMedia.src}
+                        src={mainMedia.src}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="object-cover w-full h-full"
+                    />
+                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <PlayCircle className="w-16 h-16 text-white" />
+                    </div>
+                </>
+            ) : (
+                <Image
+                src={mainMedia.src}
+                alt={product.name}
+                fill
+                className="object-cover transition-transform duration-300"
+                />
+            )}
           </div>
           <Carousel
             opts={{
@@ -95,21 +123,26 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
             className="w-full"
           >
             <CarouselContent className="-ml-2">
-              {gallery.map((img, index) => (
+              {gallery.map((media, index) => (
                 <CarouselItem key={index} className="basis-1/5 pl-2">
                   <div
                     className={cn(
                       'relative aspect-square cursor-pointer rounded-lg',
-                      mainImage === img ? 'border-2 border-primary' : 'border-2 border-transparent'
+                      mainMedia.src === media.src ? 'border-2 border-primary' : 'border-2 border-transparent'
                     )}
-                    onClick={() => setMainImage(img)}
+                    onClick={() => setMainMedia(media)}
                   >
                     <Image
-                      src={img}
+                      src={media.thumbnail}
                       alt={`${product.name} thumbnail ${index + 1}`}
                       fill
                       className="object-cover rounded-lg"
                     />
+                    {media.type === 'video' && (
+                        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                            <PlayCircle className="w-6 h-6 text-white" />
+                        </div>
+                    )}
                   </div>
                 </CarouselItem>
               ))}
@@ -240,7 +273,12 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
         <ProductReviews productId={product.id} />
       </div>
     </div>
+    <ProductLightbox 
+        media={gallery} 
+        open={isLightboxOpen} 
+        onOpenChange={setIsLightboxOpen}
+        startIndex={lightboxStartIndex}
+    />
+    </>
   );
 }
-
-    
