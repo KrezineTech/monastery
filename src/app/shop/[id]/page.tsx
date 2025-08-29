@@ -38,7 +38,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
   const descriptionBody = descriptionParts?.slice(1).join('\n\n');
 
   return (
-    <div className="w-full px-4 sm:px-6 lg:px-8 py-5 sm:py-16 lg:py-20">
+    <div className="w-full px-4 sm:px-6 lg:px-8 py-5 sm:py-8 lg:py-10">
       <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
         {/* Product Gallery */}
         <div>
