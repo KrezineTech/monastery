@@ -51,7 +51,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
       <div className="grid md:grid-cols-2 gap-x-[30px]">
         {/* Product Gallery */}
         <div>
-          <div className="relative aspect-square w-full rounded-2xl mb-4 overflow-hidden">
+          <div className="relative aspect-square w-full rounded-[26px] mb-4 overflow-hidden">
             <Image
               src={mainImage}
               alt={product.name}
