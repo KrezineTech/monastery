@@ -202,7 +202,7 @@ export default function Home() {
                 />
                 <div className="relative z-10 flex h-full items-center justify-start text-left">
                     <div className="w-full px-4 sm:px-6 lg:px-8">
-                    <div className="max-w-xl p-10 rounded-lg text-foreground">
+                    <div className="max-w-xl p-10 rounded-lg text-foreground bg-white/20 backdrop-blur-md">
                         <h2 className="text-3xl font-bold tracking-wider text-primary">
                         CLEAN. AUTHENTIC. <br />
                         RADIANT
