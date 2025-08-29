@@ -69,7 +69,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                 <CarouselItem key={index} className="basis-1/5 pl-2">
                   <div
                     className={cn(
-                      'relative aspect-square cursor-pointer rounded-lg overflow-hidden transition-all',
+                      'relative aspect-square cursor-pointer rounded-lg transition-all',
                       mainImage === img ? 'border-2 border-primary' : 'border-2 border-transparent hover:border-primary/50'
                     )}
                     onClick={() => setMainImage(img)}
@@ -78,7 +78,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                       src={img}
                       alt={`${product.name} thumbnail ${index + 1}`}
                       fill
-                      className="object-cover"
+                      className="object-cover rounded-lg"
                     />
                   </div>
                 </CarouselItem>
