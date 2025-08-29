@@ -78,15 +78,15 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
             <div className="flex justify-between items-start mt-1">
                 <h1 className="text-3xl lg:text-4xl font-bold text-foreground">{product.name}</h1>
                 <div className="flex items-center gap-2 flex-shrink-0">
-                    <Button variant="outline" size="icon" className="rounded-[12px] border-gray-300">
-                        <Share2 className="w-5 h-5 text-gray-600" />
+                    <Button variant="outline" size="icon" className="rounded-[12px] border-gray-300 hover:bg-primary text-gray-600 hover:text-white">
+                        <Share2 className="w-5 h-5" />
                     </Button>
-                    <Button variant="outline" size="icon" className="rounded-[12px] border-gray-300">
-                        <Heart className="w-5 h-5 text-gray-600" />
+                    <Button variant="outline" size="icon" className="rounded-[12px] border-gray-300 hover:bg-primary text-gray-600 hover:text-white">
+                        <Heart className="w-5 h-5" />
                     </Button>
                 </div>
             </div>
-            <div className="flex items-center gap-1 mt-1.5">
+            <div className="flex items-center gap-1 mt-1.5 pt-[6px]">
               <div className="flex items-center">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
