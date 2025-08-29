@@ -37,7 +37,7 @@ export default function ProductDetailPage() {
 
   const gallery = [
       ...(product.videoUrl ? [{ type: 'video', src: product.videoUrl, thumbnail: product.image }] : []),
-      ...(product.gallery || []).map(src => ({ type: 'image', src, thumbnail: src }))
+      ...((product.gallery || [product.image]).map(src => ({ type: 'image', src, thumbnail: src })))
   ];
   
   const [mainMedia, setMainMedia] = useState(gallery[0]);
@@ -138,10 +138,10 @@ export default function ProductDetailPage() {
                       src={media.thumbnail}
                       alt={`${product.name} thumbnail ${index + 1}`}
                       fill
-                      className="object-cover rounded-lg"
+                      className="object-cover rounded-md"
                     />
                     {media.type === 'video' && (
-                        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                        <div className="absolute inset-0 bg-black/30 flex items-center justify-center rounded-md">
                             <PlayCircle className="w-6 h-6 text-white" />
                         </div>
                     )}
@@ -284,5 +284,3 @@ export default function ProductDetailPage() {
     </>
   );
 }
-
-    

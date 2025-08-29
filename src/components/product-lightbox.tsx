@@ -14,6 +14,7 @@ import {
 } from '@/components/ui/carousel';
 import { cn } from '@/lib/utils';
 import type { ProductMedia } from '@/lib/types';
+import { PlayCircle } from 'lucide-react';
 
 interface ProductLightboxProps {
   media: ProductMedia[];
@@ -33,13 +34,13 @@ export function ProductLightbox({
   const [selectedIndex, setSelectedIndex] = React.useState(startIndex);
 
   React.useEffect(() => {
+    if (!mainApi) return;
     if (open) {
+      mainApi.scrollTo(startIndex, true);
       setSelectedIndex(startIndex);
-      if (mainApi) mainApi.scrollTo(startIndex, true);
-      if (thumbApi) thumbApi.scrollTo(startIndex, true);
     }
-  }, [open, startIndex, mainApi, thumbApi]);
-
+  }, [open, startIndex, mainApi]);
+  
   React.useEffect(() => {
     if (!mainApi || !thumbApi) return;
 
@@ -65,53 +66,60 @@ export function ProductLightbox({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-screen-xl w-full h-full max-h-screen p-0 bg-black/90 border-none flex flex-col">
-        <div className="flex-1 flex items-center justify-center p-4 relative">
-            <Carousel setApi={setMainApi} className="w-full h-full">
-            <CarouselContent className="h-full">
-                {media.map((item, index) => (
-                <CarouselItem key={index} className="flex items-center justify-center">
-                    {item.type === 'video' ? (
-                    <video src={item.src} controls autoPlay className="max-h-full max-w-full" />
-                    ) : (
-                    <Image
-                        src={item.src}
-                        alt={`Product image ${index + 1}`}
-                        fill
-                        className="object-contain"
-                    />
-                    )}
-                </CarouselItem>
-                ))}
-            </CarouselContent>
-            <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-white/20 hover:bg-white/30" />
-            <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-white/20 hover:bg-white/30" />
-            </Carousel>
-        </div>
-        <div className="p-4 bg-black/50">
-            <Carousel setApi={setThumbApi} opts={{ align: 'start', slidesToScroll: 1, containScroll: 'trimSnaps' }}>
-            <CarouselContent className="-ml-2">
-                {media.map((item, index) => (
-                <CarouselItem key={index} className="pl-2 basis-1/8 md:basis-1/12">
-                    <div
-                    onClick={() => onThumbClick(index)}
-                    className={cn(
-                        'relative aspect-square cursor-pointer rounded-md overflow-hidden',
-                        'border-2',
-                        index === selectedIndex ? 'border-primary' : 'border-transparent'
-                    )}
-                    >
-                    <Image
-                        src={item.thumbnail}
-                        alt={`Thumbnail ${index + 1}`}
-                        fill
-                        className="object-cover"
-                    />
-                    </div>
-                </CarouselItem>
-                ))}
-            </CarouselContent>
-            </Carousel>
+      <DialogContent className="max-w-none w-full h-full p-0 bg-black/90 border-none flex flex-col items-center justify-center">
+        <div className="relative w-full h-full flex flex-col items-center justify-center p-4 lg:p-12">
+            <div className="relative w-full h-[75%]">
+                <Carousel setApi={setMainApi} className="w-full h-full">
+                <CarouselContent className="h-full">
+                    {media.map((item, index) => (
+                    <CarouselItem key={index} className="flex items-center justify-center">
+                        {item.type === 'video' ? (
+                        <video src={item.src} controls autoPlay className="max-h-full max-w-full" />
+                        ) : (
+                        <Image
+                            src={item.src}
+                            alt={`Product image ${index + 1}`}
+                            fill
+                            className="object-contain"
+                        />
+                        )}
+                    </CarouselItem>
+                    ))}
+                </CarouselContent>
+                <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-white/20 hover:bg-white/30" />
+                <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-white/20 hover:bg-white/30" />
+                </Carousel>
+            </div>
+            <div className="w-full max-w-4xl p-4 mt-4">
+                <Carousel setApi={setThumbApi} opts={{ align: 'start', slidesToScroll: 1, containScroll: 'trimSnaps' }}>
+                <CarouselContent className="-ml-2">
+                    {media.map((item, index) => (
+                    <CarouselItem key={index} className="pl-2 basis-1/6 md:basis-1/8 lg:basis-[10%]">
+                        <div
+                        onClick={() => onThumbClick(index)}
+                        className={cn(
+                            'relative aspect-square cursor-pointer rounded-md overflow-hidden',
+                            'border-2',
+                            index === selectedIndex ? 'border-primary' : 'border-transparent'
+                        )}
+                        >
+                        <Image
+                            src={item.thumbnail}
+                            alt={`Thumbnail ${index + 1}`}
+                            fill
+                            className="object-cover"
+                        />
+                        {item.type === 'video' && (
+                            <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                                <PlayCircle className="w-6 h-6 text-white" />
+                            </div>
+                        )}
+                        </div>
+                    </CarouselItem>
+                    ))}
+                </CarouselContent>
+                </Carousel>
+            </div>
         </div>
       </DialogContent>
     </Dialog>

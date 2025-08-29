@@ -38,4 +38,4 @@ export type ProductMedia = {
     type: 'image' | 'video';
     src: string;
     thumbnail: string;
-}
+};
