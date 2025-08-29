@@ -45,8 +45,8 @@ export default function ShopPage() {
         </div>
       </section>
 
-      <div id="products" className="w-[96%] mx-auto">
-        <div className="container py-16 sm:py-24">
+      <div id="products">
+        <div className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
               <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">All Products</h1>
               <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
