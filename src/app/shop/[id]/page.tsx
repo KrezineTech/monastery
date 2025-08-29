@@ -33,6 +33,10 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
 
   const relatedProducts = allProducts.filter(p => p.id !== product.id).slice(0, 2);
 
+  const descriptionParts = product.description?.split('\n\n');
+  const descriptionTitle = descriptionParts?.[0];
+  const descriptionBody = descriptionParts?.slice(1).join('\n\n');
+
   return (
     <div className="container mx-auto px-4 py-12 sm:py-16 lg:py-20">
       <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
@@ -90,7 +94,10 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
             </div>
 
             {product.description && (
-              <p className="text-sm text-muted-foreground mt-4">{product.description}</p>
+              <div className="text-sm text-muted-foreground mt-4 space-y-4">
+                {descriptionTitle && <p className="font-bold uppercase text-foreground">{descriptionTitle}</p>}
+                {descriptionBody && <p className="whitespace-pre-line">{descriptionBody}</p>}
+              </div>
             )}
             <Separator className="my-6" />
 

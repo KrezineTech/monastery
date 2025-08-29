@@ -1,3 +1,4 @@
+
 import type { Product } from '@/lib/types';
 
 export const allProducts: Product[] = [
@@ -30,7 +31,11 @@ export const allProducts: Product[] = [
       ],
       aiHint: 'serum bottle', 
       category: 'serum', 
-      description: 'This lightweight serum targets uneven skin tone and texture. Packed with powerful antioxidants, it brightens the complexion and reduces the appearance of dark spots for a dewy, even glow.' 
+      description: `THE GLOW BALANCER
+
+Your skin, only smoother. This daily serum primes, hydrates, and visibly evens tone in one silky step. Powered by 50% Korean rice water, Niacinamide, Turmeric, and Hyaluronic acid, the lightweight gel-serum texture sinks in instantly - softening the look of pores and leaving a dewy, balanced finish.
+
+Perfect under makeup or on bare skin. No greasiness, just glow.`
     },
     { 
       id: '3', 
