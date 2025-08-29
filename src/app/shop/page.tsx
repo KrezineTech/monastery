@@ -1,16 +1,9 @@
 
 import { ProductCard } from '@/components/product-card';
-import type { Product } from '@/lib/types';
+import { allProducts } from '@/lib/data';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-
-const allProducts: Product[] = [
-    { id: '1', name: 'Purity in a Drop Toner & Essence', price: 1450.00, image: 'https://placehold.co/400x500.png', aiHint: 'toner essence bottle', category: 'essence', description: 'A dual-action formula that hydrates like a toner and nourishes like an essence. It purifies pores and preps the skin to absorb serums and moisturizers more effectively, leaving it soft and supple.' },
-    { id: '2', name: 'DewDrop Evenness Boost Serum', price: 999.00, originalPrice: 1299.00, image: 'https://placehold.co/400x500.png', aiHint: 'serum bottle', category: 'serum', description: 'This lightweight serum targets uneven skin tone and texture. Packed with powerful antioxidants, it brightens the complexion and reduces the appearance of dark spots for a dewy, even glow.' },
-    { id: '3', name: 'Morning Dew Moisturizer with SPF 15', price: 1300.00, image: 'https://placehold.co/400x500.png', aiHint: 'moisturizer bottle', category: 'moisturizer', description: 'A daily moisturizer that provides essential hydration and sun protection. Its non-greasy formula leaves the skin feeling fresh and dewy, perfect for a morning skincare routine.' },
-    { id: '4', name: 'Yusuru Radiance Combo Set', price: 2490.00, image: 'https://placehold.co/400x500.png', aiHint: 'skincare combo set', category: 'set', description: 'The ultimate radiance-boosting collection. This set includes our best-selling products to cleanse, tone, treat, and moisturize, revealing a brighter, more luminous complexion.' },
-];
 
 export default function ShopPage() {
   return (

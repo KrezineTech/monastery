@@ -21,7 +21,7 @@ interface QuickViewDialogProps {
 }
 
 export function QuickViewDialog({ open, onOpenChange, product }: QuickViewDialogProps) {
-  const galleryImages = [
+  const galleryImages = product.gallery || [
     product.image,
     'https://placehold.co/800x1000.png',
     'https://placehold.co/800x1000.png',
@@ -78,7 +78,7 @@ export function QuickViewDialog({ open, onOpenChange, product }: QuickViewDialog
             </Carousel>
           </div>
           <div className="p-8 bg-background rounded-r-lg">
-            <p className="text-sm text-muted-foreground">Island</p>
+            <p className="text-sm text-primary">Island</p>
             <h1 className="text-3xl font-bold text-foreground mt-1">{product.name}</h1>
             <div className="flex items-baseline gap-2 mt-4">
                 <p className="text-2xl font-semibold text-foreground">₹{product.price.toFixed(2)}</p>

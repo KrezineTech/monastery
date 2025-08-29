@@ -1,0 +1,188 @@
+
+'use client';
+
+import { useState } from 'react';
+import { notFound } from 'next/navigation';
+import Image from 'next/image';
+import Link from 'next/link';
+import { allProducts } from '@/lib/data';
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import { Star, CheckCircle, Minus, Plus, Truck, RefreshCw } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { cn } from '@/lib/utils';
+import { ProductCard } from '@/components/product-card';
+
+export default function ProductDetailPage({ params }: { params: { id: string } }) {
+  const product = allProducts.find((p) => p.id === params.id);
+  const [quantity, setQuantity] = useState(1);
+  const [selectedVolume, setSelectedVolume] = useState('250ML');
+  
+  if (!product) {
+    notFound();
+  }
+
+  const gallery = product.gallery || [product.image];
+  const [mainImage, setMainImage] = useState(gallery[0]);
+
+  const handleQuantityChange = (amount: number) => {
+    setQuantity((prev) => Math.max(1, prev + amount));
+  };
+  
+  const volumes = ['250ML', '300ML', '500ML'];
+
+  const relatedProducts = allProducts.filter(p => p.id !== product.id).slice(0, 2);
+
+  return (
+    <div className="container mx-auto px-4 py-12 sm:py-16 lg:py-20">
+      <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
+        {/* Product Gallery */}
+        <div>
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl mb-4 shadow-lg">
+            <Image
+              src={mainImage}
+              alt={product.name}
+              fill
+              className="object-cover transition-transform duration-300 hover:scale-105"
+            />
+          </div>
+          <div className="grid grid-cols-4 gap-2">
+            {gallery.map((img, index) => (
+              <div
+                key={index}
+                className={cn(
+                  'relative aspect-square cursor-pointer rounded-lg overflow-hidden border-2 transition-all',
+                  mainImage === img ? 'border-primary' : 'border-transparent hover:border-primary/50'
+                )}
+                onClick={() => setMainImage(img)}
+              >
+                <Image
+                  src={img}
+                  alt={`${product.name} thumbnail ${index + 1}`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Product Details */}
+        <div className="space-y-6">
+          <div>
+            <p className="text-sm font-medium text-primary">Island</p>
+            <h1 className="text-3xl lg:text-4xl font-bold text-foreground mt-1">{product.name}</h1>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <div className="flex items-center">
+                {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                ))}
+            </div>
+            <p className="text-sm text-muted-foreground">(15 reviews)</p>
+          </div>
+
+          <div className="flex items-baseline gap-2">
+            <p className="text-3xl font-semibold text-foreground">₹{product.price.toFixed(2)}</p>
+            {product.originalPrice && (
+              <p className="text-xl text-muted-foreground line-through">₹{product.originalPrice.toFixed(2)}</p>
+            )}
+          </div>
+
+          <Separator />
+
+          <div className="space-y-4">
+            <div className="flex items-center gap-2 text-sm text-green-600 font-medium">
+              <CheckCircle className="w-5 h-5" />
+              <span>In stock and ready to ship</span>
+            </div>
+
+            <div>
+              <p className="text-sm font-medium text-foreground mb-2">VOLUME: {selectedVolume}</p>
+              <div className="flex gap-2">
+                {volumes.map(v => (
+                  <Button
+                    key={v}
+                    variant={selectedVolume === v ? 'default' : 'outline'}
+                    onClick={() => setSelectedVolume(v)}
+                    className="rounded-full"
+                  >
+                    {v}
+                  </Button>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <p className="text-sm font-medium text-foreground">Quantity</p>
+              <div className="flex items-center gap-2">
+                <div className="flex items-center border rounded-full w-fit">
+                  <Button variant="ghost" size="icon" className="rounded-full" onClick={() => handleQuantityChange(-1)}>
+                    <Minus className="w-4 h-4" />
+                  </Button>
+                  <span className="w-10 text-center font-medium">{quantity}</span>
+                  <Button variant="ghost" size="icon" className="rounded-full" onClick={() => handleQuantityChange(1)}>
+                    <Plus className="w-4 h-4" />
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-3">
+            <Button size="lg" className="w-full rounded-full">Add To Cart</Button>
+            <Button size="lg" variant="secondary" className="w-full rounded-full">Buy it now</Button>
+          </div>
+
+          <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground mt-4">
+            <div className="flex items-center gap-2">
+              <Truck className="w-5 h-5" />
+              <p>Free Shipping</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <RefreshCw className="w-5 h-5" />
+              <p>Easy Returns</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Product Information Accordion */}
+      <div className="mt-16 lg:mt-24">
+        <Accordion type="single" collapsible defaultValue="description" className="w-full max-w-3xl mx-auto">
+          <AccordionItem value="description">
+            <AccordionTrigger className="text-lg font-medium">Description</AccordionTrigger>
+            <AccordionContent className="text-base text-foreground/80 leading-relaxed">
+              {product.description}
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="ingredients">
+            <AccordionTrigger className="text-lg font-medium">Ingredients</AccordionTrigger>
+            <AccordionContent className="text-base text-foreground/80 leading-relaxed">
+              Full ingredients list: Aqua, Glycerin, Niacinamide, Oryza Sativa (Rice) Bran Water, Curcuma Longa (Turmeric) Root Extract, Sodium Hyaluronate, Phenoxyethanol, Ethylhexylglycerin.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="how-to-use">
+            <AccordionTrigger className="text-lg font-medium">How to use</AccordionTrigger>
+            <AccordionContent className="text-base text-foreground/80 leading-relaxed">
+              After cleansing, apply a few drops to your palms and gently pat onto your face and neck. Follow with your favorite serum and moisturizer. Use morning and night for best results.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </div>
+
+      {/* Related Products */}
+      {relatedProducts.length > 0 && (
+        <div className="mt-16 lg:mt-24">
+          <h2 className="text-3xl font-bold text-center text-primary mb-12">You Might Also Like</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {relatedProducts.map((relatedProduct) => (
+              <ProductCard key={relatedProduct.id} product={relatedProduct} />
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
