@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { allProducts } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { Star, CheckCircle, Minus, Plus, Truck, RefreshCw } from 'lucide-react';
+import { Star, CheckCircle, Minus, Plus, Truck, RefreshCw, Package } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { cn } from '@/lib/utils';
 import { ProductCard } from '@/components/product-card';
@@ -38,7 +38,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
       <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
         {/* Product Gallery */}
         <div>
-          <div className="relative aspect-square w-full overflow-hidden rounded-2xl mb-4">
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl mb-4">
             <Image
               src={mainImage}
               alt={product.name}
@@ -46,12 +46,12 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
               className="object-cover transition-transform duration-300 hover:scale-105"
             />
           </div>
-          <div className="grid grid-cols-4 gap-2">
+          <div className="grid grid-cols-4 gap-4">
             {gallery.map((img, index) => (
               <div
                 key={index}
                 className={cn(
-                  'relative aspect-square cursor-pointer rounded-lg overflow-hidden border-2 transition-all',
+                  'relative aspect-square cursor-pointer rounded-2xl overflow-hidden border-2 transition-all',
                   mainImage === img ? 'border-primary' : 'border-transparent hover:border-primary/50'
                 )}
                 onClick={() => setMainImage(img)}
@@ -87,59 +87,63 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
               </p>
             )}
 
-          <Separator />
+          <div className="flex items-center gap-2 text-sm text-green-600 font-medium">
+            <CheckCircle className="w-5 h-5" />
+            <span>53 in stock</span>
+          </div>
 
-          <div className="space-y-4">
-            <div className="flex items-center gap-2 text-sm text-green-600 font-medium">
-              <CheckCircle className="w-5 h-5" />
-              <span>In stock and ready to ship</span>
-            </div>
-
-            <div>
-              <p className="text-sm font-medium text-foreground mb-2">VOLUME: {selectedVolume}</p>
-              <div className="flex gap-2">
-                {volumes.map(v => (
-                  <Button
-                    key={v}
-                    variant={selectedVolume === v ? 'default' : 'outline'}
-                    onClick={() => setSelectedVolume(v)}
-                    className="rounded-full"
-                  >
-                    {v}
-                  </Button>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <p className="text-sm font-medium text-foreground">Quantity</p>
-              <div className="flex items-center gap-2">
-                <div className="flex items-center border rounded-full w-fit">
-                  <Button variant="ghost" size="icon" className="rounded-full" onClick={() => handleQuantityChange(-1)}>
-                    <Minus className="w-4 h-4" />
-                  </Button>
-                  <span className="w-10 text-center font-medium">{quantity}</span>
-                  <Button variant="ghost" size="icon" className="rounded-full" onClick={() => handleQuantityChange(1)}>
-                    <Plus className="w-4 h-4" />
-                  </Button>
-                </div>
-              </div>
+          <div>
+            <p className="text-sm font-medium text-foreground mb-2">VOLUME: {selectedVolume}</p>
+            <div className="flex gap-2">
+              {volumes.map(v => (
+                <Button
+                  key={v}
+                  variant={selectedVolume === v ? 'default' : 'outline'}
+                  onClick={() => setSelectedVolume(v)}
+                  className="rounded-full"
+                >
+                  {v}
+                </Button>
+              ))}
             </div>
           </div>
 
-          <div className="space-y-3">
-            <Button size="lg" className="w-full rounded-full">Add To Cart</Button>
-            <Button size="lg" variant="secondary" className="w-full rounded-full">Buy it now</Button>
+          <div className="space-y-4">
+            <p className="text-sm font-medium text-foreground">Quantity</p>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="flex items-center border rounded-full w-fit">
+                <Button variant="ghost" size="icon" className="rounded-full" onClick={() => handleQuantityChange(-1)}>
+                  <Minus className="w-4 h-4" />
+                </Button>
+                <span className="w-10 text-center font-medium">{quantity}</span>
+                <Button variant="ghost" size="icon" className="rounded-full" onClick={() => handleQuantityChange(1)}>
+                  <Plus className="w-4 h-4" />
+                </Button>
+              </div>
+              <Button size="lg" variant="outline" className="w-full rounded-full">Add To Cart</Button>
+            </div>
+            <Button size="lg" className="w-full rounded-full">Buy it now</Button>
+          </div>
+
+          <div className="mt-6 p-4 bg-muted/50 rounded-lg flex items-start gap-4 text-sm">
+              <Package className="w-6 h-6 text-muted-foreground mt-1"/>
+              <div>
+                  <div className="flex justify-between items-center">
+                      <p className="font-medium">Pickup available at United State</p>
+                      <Button variant="link" className="p-0 h-auto text-xs">View store information</Button>
+                  </div>
+                  <p className="text-muted-foreground">Usually ready in 24 hours</p>
+              </div>
           </div>
 
           <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground mt-4">
             <div className="flex items-center gap-2">
               <Truck className="w-5 h-5" />
-              <p>Free Shipping</p>
+              <p>Free delivery on February 7th - 13th</p>
             </div>
             <div className="flex items-center gap-2">
               <RefreshCw className="w-5 h-5" />
-              <p>Easy Returns</p>
+              <p>Free + easy returns</p>
             </div>
           </div>
         </div>
