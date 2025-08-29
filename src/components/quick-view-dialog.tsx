@@ -107,9 +107,9 @@ export function QuickViewDialog({ open, onOpenChange, product }: QuickViewDialog
               </div>
             </div>
             
-            <div className="mt-8 space-y-4">
+            <div className="mt-8 space-y-2">
                <p className="text-sm font-medium text-foreground">Quantity</p>
-               <div className="flex items-center gap-4">
+               <div className="flex items-center gap-2">
                     <div className="flex items-center border rounded-full w-fit">
                         <Button variant="ghost" size="icon" className="rounded-full" onClick={() => handleQuantityChange(-1)}>
                         <Minus className="w-4 h-4" />
