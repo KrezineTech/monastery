@@ -1,5 +1,4 @@
 
-
 import { ProductCard } from '@/components/product-card';
 import type { Product } from '@/lib/types';
 import Image from 'next/image';
@@ -7,17 +6,17 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 const allProducts: Product[] = [
-    { id: '1', name: 'Round Lab 1025 Dokdo Cleanser', price: 1450.00, image: 'https://placehold.co/400x500.png', aiHint: 'serum bottle', category: 'cleanser', description: 'A gentle, award-winning cleanser that whisks away impurities and makeup while maintaining skin\'s natural moisture balance. Formulated with deep-sea water from Dokdo Island, it\'s rich in minerals to soothe and hydrate.' },
-    { id: '2', name: 'Beauty of Joseon Relief Sun Rice...', price: 1790.00, image: 'https://placehold.co/400x500.png', aiHint: 'cleanser bottle', category: 'sunscreen', description: 'A lightweight, creamy sunscreen that feels comfortable on the skin. Infused with 30% rice extract and grain-derived probiotics, it provides broad-spectrum UV protection while deeply hydrating and nourishing the skin.' },
-    { id: '3', name: 'Q+A Hyaluronic Acid Daily Moisturiser', price: 1300.00, image: 'https://placehold.co/400x500.png', aiHint: 'moisturizer jar', category: 'cream', description: 'An ultra-hydrating daily moisturizer powered by hyaluronic acid to quench thirsty skin. This non-greasy formula absorbs quickly, leaving your skin feeling soft, supple, and perfectly prepped for the day.' },
-    { id: '4', name: 'Round Lab Birch Juice Moisturizing Sun...', price: 1500.00, image: 'https://placehold.co/400x500.png', aiHint: 'mist bottle', category: 'sunscreen', description: 'A refreshing and hydrating sunscreen that doubles as a moisturizer. Formulated with birch tree sap, it helps to keep skin cool and hydrated while offering robust protection against harmful UV rays.' },
+    { id: '1', name: 'Purity in a Drop Toner & Essence', price: 1450.00, image: 'https://placehold.co/400x500.png', aiHint: 'toner essence bottle', category: 'essence', description: 'A dual-action formula that hydrates like a toner and nourishes like an essence. It purifies pores and preps the skin to absorb serums and moisturizers more effectively, leaving it soft and supple.' },
+    { id: '2', name: 'DewDrop Evenness Boost Serum', price: 1790.00, image: 'https://placehold.co/400x500.png', aiHint: 'serum bottle', category: 'serum', description: 'This lightweight serum targets uneven skin tone and texture. Packed with powerful antioxidants, it brightens the complexion and reduces the appearance of dark spots for a dewy, even glow.' },
+    { id: '3', name: 'Morning Dew Moisturizer with SPF 15', price: 1300.00, image: 'https://placehold.co/400x500.png', aiHint: 'moisturizer bottle', category: 'moisturizer', description: 'A daily moisturizer that provides essential hydration and sun protection. Its non-greasy formula leaves the skin feeling fresh and dewy, perfect for a morning skincare routine.' },
+    { id: '4', name: 'Yusuru Radiance Combo Set', price: 2490.00, image: 'https://placehold.co/400x500.png', aiHint: 'skincare combo set', category: 'set', description: 'The ultimate radiance-boosting collection. This set includes our best-selling products to cleanse, tone, treat, and moisturize, revealing a brighter, more luminous complexion.' },
 ];
 
 export default function ShopPage() {
   return (
     <>
       <section className="w-full md:pt-8 pt-7 md:mb-5 mb-3">
-        <div className="w-[96%] mx-auto px-0">
+        <div className="px-0">
           <div className="relative w-full h-[322px] md:h-[65vh] rounded-[26px] overflow-hidden">
             <Image
                 src="https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled_design.webp?v=1754813718"

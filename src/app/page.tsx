@@ -26,11 +26,10 @@ const categories: Category[] = [
 ];
 
 const featuredProducts: Product[] = [
-  { id: '1', name: 'Round Lab 1025 Dokdo Cleanser', price: 1450.00, image: 'https://placehold.co/400x500.png', aiHint: 'serum bottle' },
-  { id: '2', name: 'Beauty of Joseon Relief Sun Rice...', price: 1790.00, image: 'https://placehold.co/400x500.png', aiHint: 'cleanser bottle' },
-  { id: '3', name: 'Q+A Hyaluronic Acid Daily Moisturiser', price: 1300.00, image: 'https://placehold.co/400x500.png', aiHint: 'moisturizer jar' },
-  { id: '4', name: 'Round Lab Birch Juice Moisturizing Sun...', price: 1500.00, image: 'https://placehold.co/400x500.png', aiHint: 'mist bottle' },
-  { id: '5', name: 'Round Lab Soybean Nourishing Toner', price: 2490.00, image: 'https://placehold.co/400x500.png', aiHint: 'eye cream' },
+  { id: '1', name: 'Purity in a Drop Toner & Essence', price: 1450.00, image: 'https://placehold.co/400x500.png', aiHint: 'toner essence bottle' },
+  { id: '2', name: 'DewDrop Evenness Boost Serum', price: 1790.00, image: 'https://placehold.co/400x500.png', aiHint: 'serum bottle' },
+  { id: '3', name: 'Morning Dew Moisturizer with SPF 15', price: 1300.00, image: 'https://placehold.co/400x500.png', aiHint: 'moisturizer bottle' },
+  { id: '4', name: 'Yusuru Radiance Combo Set', price: 2490.00, image: 'https://placehold.co/400x500.png', aiHint: 'skincare combo set' },
 ];
 
 const reels: Reel[] = [
@@ -203,7 +202,7 @@ export default function Home() {
                 />
                 <div className="relative z-10 flex h-full items-center justify-start text-left">
                     <div className="w-full px-4 sm:px-6 lg:px-8">
-                    <div className="max-w-xl bg-background/90 p-10 rounded-lg text-foreground">
+                    <div className="max-w-xl p-10 rounded-lg text-foreground">
                         <h2 className="text-3xl font-bold tracking-wider text-primary">
                         CLEAN. AUTHENTIC. <br />
                         RADIANT
