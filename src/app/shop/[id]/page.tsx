@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import { useState } from 'react';
@@ -12,6 +13,7 @@ import { Star, CheckCircle, Minus, Plus, Truck, RefreshCw, Package, Share2, Hear
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { cn } from '@/lib/utils';
 import { ProductCard } from '@/components/product-card';
+import { ProductReviews } from '@/components/product-reviews';
 import {
   Carousel,
   CarouselContent,
@@ -49,7 +51,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
       <div className="grid md:grid-cols-2 gap-x-[30px]">
         {/* Product Gallery */}
         <div>
-          <div className="relative aspect-square w-full overflow-hidden rounded-2xl mb-4">
+          <div className="relative aspect-square w-full rounded-2xl mb-4">
             <Image
               src={mainImage}
               alt={product.name}
@@ -69,7 +71,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                 <CarouselItem key={index} className="basis-1/5 pl-2">
                   <div
                     className={cn(
-                      'relative aspect-square cursor-pointer rounded-lg transition-all',
+                      'relative aspect-square cursor-pointer rounded-lg',
                       mainImage === img ? 'border-2 border-primary' : 'border-2 border-transparent hover:border-primary/50'
                     )}
                     onClick={() => setMainImage(img)}
@@ -205,6 +207,9 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
             </Accordion>
           </div>
         </div>
+      </div>
+      <div className="mt-16 sm:mt-24">
+        <ProductReviews productId={product.id} />
       </div>
     </div>
   );
