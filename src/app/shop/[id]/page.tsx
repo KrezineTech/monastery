@@ -12,6 +12,13 @@ import { Star, CheckCircle, Minus, Plus, Truck, RefreshCw, Package, Share2, Hear
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { cn } from '@/lib/utils';
 import { ProductCard } from '@/components/product-card';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 
 export default function ProductDetailPage({ params }: { params: { id: string } }) {
   const product = allProducts.find((p) => p.id === params.id);
@@ -39,7 +46,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
 
   return (
     <div className="w-full px-4 sm:px-6 lg:px-8 py-5 sm:py-8 lg:py-10">
-      <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
+      <div className="grid md:grid-cols-2 gap-x-[30px]">
         {/* Product Gallery */}
         <div>
           <div className="relative aspect-square w-full overflow-hidden rounded-2xl mb-4">
@@ -50,25 +57,36 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
               className="object-cover transition-transform duration-300 hover:scale-105"
             />
           </div>
-          <div className="grid grid-cols-4 gap-4">
-            {gallery.map((img, index) => (
-              <div
-                key={index}
-                className={cn(
-                  'relative aspect-square cursor-pointer rounded-lg overflow-hidden border-2 transition-all',
-                  mainImage === img ? 'border-primary' : 'border-transparent hover:border-primary/50'
-                )}
-                onClick={() => setMainImage(img)}
-              >
-                <Image
-                  src={img}
-                  alt={`${product.name} thumbnail ${index + 1}`}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
+          <Carousel
+            opts={{
+              align: 'start',
+              slidesToScroll: 1,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2">
+              {gallery.map((img, index) => (
+                <CarouselItem key={index} className="basis-1/5 pl-2">
+                  <div
+                    className={cn(
+                      'relative aspect-square cursor-pointer rounded-lg overflow-hidden transition-all',
+                      mainImage === img ? 'border-2 border-primary' : 'border-2 border-transparent hover:border-primary/50'
+                    )}
+                    onClick={() => setMainImage(img)}
+                  >
+                    <Image
+                      src={img}
+                      alt={`${product.name} thumbnail ${index + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2" />
+            <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2" />
+          </Carousel>
         </div>
 
         {/* Product Details */}
