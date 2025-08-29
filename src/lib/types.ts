@@ -1,9 +1,11 @@
+
 export interface Product {
   id: string;
   name: string;
   price: number;
   image: string;
   videoUrl?: string;
+  description?: string;
   aiHint?: string;
   category?: string;
   title?: string;

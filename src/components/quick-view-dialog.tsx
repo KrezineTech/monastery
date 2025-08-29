@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import { useState } from 'react';
@@ -81,6 +82,9 @@ export function QuickViewDialog({ open, onOpenChange, product }: QuickViewDialog
             <p className="text-sm text-muted-foreground">Aura Naturals</p>
             <h1 className="text-3xl font-bold text-foreground mt-1">{product.name}</h1>
             <p className="text-2xl font-semibold text-foreground mt-4">₹{product.price.toFixed(2)}</p>
+            {product.description && (
+              <p className="text-sm text-muted-foreground mt-4">{product.description}</p>
+            )}
             <Separator className="my-6" />
             
             <div className="flex items-center gap-2 text-sm text-green-600 font-medium">

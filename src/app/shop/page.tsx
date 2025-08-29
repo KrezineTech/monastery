@@ -1,4 +1,5 @@
 
+
 import { ProductCard } from '@/components/product-card';
 import type { Product } from '@/lib/types';
 import Image from 'next/image';
@@ -6,10 +7,10 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 const allProducts: Product[] = [
-    { id: '1', name: 'Round Lab 1025 Dokdo Cleanser', price: 1450.00, image: 'https://placehold.co/400x500.png', aiHint: 'serum bottle', category: 'cleanser' },
-    { id: '2', name: 'Beauty of Joseon Relief Sun Rice...', price: 1790.00, image: 'https://placehold.co/400x500.png', aiHint: 'cleanser bottle', category: 'sunscreen' },
-    { id: '3', name: 'Q+A Hyaluronic Acid Daily Moisturiser', price: 1300.00, image: 'https://placehold.co/400x500.png', aiHint: 'moisturizer jar', category: 'cream' },
-    { id: '4', name: 'Round Lab Birch Juice Moisturizing Sun...', price: 1500.00, image: 'https://placehold.co/400x500.png', aiHint: 'mist bottle', category: 'sunscreen' },
+    { id: '1', name: 'Round Lab 1025 Dokdo Cleanser', price: 1450.00, image: 'https://placehold.co/400x500.png', aiHint: 'serum bottle', category: 'cleanser', description: 'A gentle, award-winning cleanser that whisks away impurities and makeup while maintaining skin\'s natural moisture balance. Formulated with deep-sea water from Dokdo Island, it\'s rich in minerals to soothe and hydrate.' },
+    { id: '2', name: 'Beauty of Joseon Relief Sun Rice...', price: 1790.00, image: 'https://placehold.co/400x500.png', aiHint: 'cleanser bottle', category: 'sunscreen', description: 'A lightweight, creamy sunscreen that feels comfortable on the skin. Infused with 30% rice extract and grain-derived probiotics, it provides broad-spectrum UV protection while deeply hydrating and nourishing the skin.' },
+    { id: '3', name: 'Q+A Hyaluronic Acid Daily Moisturiser', price: 1300.00, image: 'https://placehold.co/400x500.png', aiHint: 'moisturizer jar', category: 'cream', description: 'An ultra-hydrating daily moisturizer powered by hyaluronic acid to quench thirsty skin. This non-greasy formula absorbs quickly, leaving your skin feeling soft, supple, and perfectly prepped for the day.' },
+    { id: '4', name: 'Round Lab Birch Juice Moisturizing Sun...', price: 1500.00, image: 'https://placehold.co/400x500.png', aiHint: 'mist bottle', category: 'sunscreen', description: 'A refreshing and hydrating sunscreen that doubles as a moisturizer. Formulated with birch tree sap, it helps to keep skin cool and hydrated while offering robust protection against harmful UV rays.' },
 ];
 
 export default function ShopPage() {
