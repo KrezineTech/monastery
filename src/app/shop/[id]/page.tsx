@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { allProducts } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { Star, CheckCircle, Minus, Plus, Truck, RefreshCw, Package } from 'lucide-react';
+import { Star, CheckCircle, Minus, Plus, Truck, RefreshCw, Package, Share2, Heart } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { cn } from '@/lib/utils';
 import { ProductCard } from '@/components/product-card';
@@ -75,7 +75,17 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
         <div className="space-y-6">
           <div>
             <p className="text-sm font-medium text-primary">Island</p>
-            <h1 className="text-3xl lg:text-4xl font-bold text-foreground mt-1">{product.name}</h1>
+            <div className="flex justify-between items-start mt-1">
+                <h1 className="text-3xl lg:text-4xl font-bold text-foreground">{product.name}</h1>
+                <div className="flex items-center gap-2 flex-shrink-0">
+                    <Button variant="outline" size="icon" className="rounded-lg border-gray-300">
+                        <Share2 className="w-5 h-5 text-gray-600" />
+                    </Button>
+                    <Button variant="outline" size="icon" className="rounded-lg border-gray-300">
+                        <Heart className="w-5 h-5 text-gray-600" />
+                    </Button>
+                </div>
+            </div>
             <div className="flex items-center gap-1 mt-1.5">
               <div className="flex items-center">
                 {[...Array(5)].map((_, i) => (
