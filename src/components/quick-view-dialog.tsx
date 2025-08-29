@@ -119,6 +119,11 @@ export function QuickViewDialog({ open, onOpenChange, product }: QuickViewDialog
                 </Button>
               </div>
             </div>
+
+            <div className="grid grid-cols-2 gap-4 mt-8">
+              <Button size="lg">Add to cart</Button>
+              <Button size="lg" variant="outline">Buy it now</Button>
+            </div>
             
             <div className="mt-6 p-4 bg-muted/50 rounded-lg flex items-start gap-4 text-sm">
                 <Package className="w-6 h-6 text-muted-foreground mt-1"/>
@@ -140,11 +145,6 @@ export function QuickViewDialog({ open, onOpenChange, product }: QuickViewDialog
                 <RefreshCw className="w-5 h-5 text-muted-foreground" />
                 <p>Free + easy returns</p>
               </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4 mt-8">
-              <Button size="lg">Add to cart</Button>
-              <Button size="lg" variant="outline">Buy it now</Button>
             </div>
 
           </div>
