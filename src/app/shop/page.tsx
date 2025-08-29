@@ -10,10 +10,6 @@ const allProducts: Product[] = [
     { id: '2', name: 'Beauty of Joseon Relief Sun Rice...', price: 1790.00, image: 'https://placehold.co/400x500.png', aiHint: 'cleanser bottle', category: 'sunscreen' },
     { id: '3', name: 'Q+A Hyaluronic Acid Daily Moisturiser', price: 1300.00, image: 'https://placehold.co/400x500.png', aiHint: 'moisturizer jar', category: 'cream' },
     { id: '4', name: 'Round Lab Birch Juice Moisturizing Sun...', price: 1500.00, image: 'https://placehold.co/400x500.png', aiHint: 'mist bottle', category: 'sunscreen' },
-    { id: '5', name: 'Round Lab Soybean Nourishing Toner', price: 2490.00, image: 'https://placehold.co/400x500.png', aiHint: 'eye cream', category: 'toner' },
-    { id: '6', name: 'Exfoliating Toner', price: 30.00, image: 'https://placehold.co/400x500.png', aiHint: 'toner bottle', category: 'toner' },
-    { id: '7', name: 'Overnight Repair Mask', price: 55.00, image: 'https://placehold.co/400x500.png', aiHint: 'face mask', category: 'mask' },
-    { id: '8', name: 'Soothing Face Oil', price: 48.00, image: 'https://placehold.co/400x500.png', aiHint: 'face oil', category: 'oil' },
 ];
 
 export default function ShopPage() {
@@ -57,7 +53,7 @@ export default function ShopPage() {
                   Explore our full collection of natural skincare.
               </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
               {allProducts.map((product) => (
                   <ProductCard key={product.id} product={product} />
               ))}
