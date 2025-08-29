@@ -1,5 +1,4 @@
 
-
 'use client';
 
 import { useState } from 'react';
@@ -21,11 +20,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import { useToast } from '@/hooks/use-toast';
 
 export default function ProductDetailPage({ params }: { params: { id: string } }) {
   const product = allProducts.find((p) => p.id === params.id);
   const [quantity, setQuantity] = useState(1);
   const [selectedVolume, setSelectedVolume] = useState('250ML');
+  const [isWishlisted, setIsWishlisted] = useState(false);
+  const { toast } = useToast();
   
   if (!product) {
     notFound();
@@ -38,6 +40,32 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
     setQuantity((prev) => Math.max(1, prev + amount));
   };
   
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: product.name,
+          text: `Check out ${product.name}`,
+          url: window.location.href,
+        });
+        toast({ title: 'Shared successfully!' });
+      } catch (error) {
+        console.error('Error sharing:', error);
+        toast({ title: 'Could not share', variant: 'destructive' });
+      }
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      toast({ title: 'Link copied to clipboard' });
+    }
+  };
+
+  const handleWishlist = () => {
+    setIsWishlisted(!isWishlisted);
+    toast({
+        title: !isWishlisted ? 'Added to wishlist' : 'Removed from wishlist',
+    });
+  };
+
   const volumes = ['250ML', '300ML', '500ML'];
 
   const relatedProducts = allProducts.filter(p => p.id !== product.id).slice(0, 2);
@@ -72,7 +100,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                   <div
                     className={cn(
                       'relative aspect-square cursor-pointer rounded-lg',
-                      mainImage === img ? 'border-2 border-primary' : 'border-2 border-transparent hover:border-primary/50'
+                      mainImage === img ? 'border-2 border-primary' : 'border-2 border-transparent'
                     )}
                     onClick={() => setMainImage(img)}
                   >
@@ -98,11 +126,11 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
             <div className="flex justify-between items-start mt-1">
                 <h1 className="text-3xl lg:text-4xl font-bold text-foreground">{product.name}</h1>
                 <div className="flex items-center gap-2 flex-shrink-0">
-                    <Button variant="outline" size="icon" className="rounded-[12px] border-gray-300 hover:bg-primary text-gray-600 hover:text-white hover:border-primary">
+                    <Button variant="outline" size="icon" className="rounded-[12px] border-gray-300 hover:bg-primary text-gray-600 hover:text-white hover:border-primary" onClick={handleShare}>
                         <Share2 className="w-5 h-5" />
                     </Button>
-                    <Button variant="outline" size="icon" className="rounded-[12px] border-gray-300 hover:bg-primary text-gray-600 hover:text-white hover:border-primary">
-                        <Heart className="w-5 h-5" />
+                    <Button variant="outline" size="icon" className="rounded-[12px] border-gray-300 hover:bg-primary text-gray-600 hover:text-white hover:border-primary" onClick={handleWishlist}>
+                        <Heart className={cn("w-5 h-5", isWishlisted && "fill-destructive text-destructive")} />
                     </Button>
                 </div>
             </div>
@@ -214,3 +242,5 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
     </div>
   );
 }
+
+    
