@@ -95,7 +95,12 @@ export function ProductCard({ product, className }: ProductCardProps) {
             </div>
             <p className="text-xs text-muted-foreground ml-2">(15 reviews)</p>
         </div>
-        <p className="font-bold text-foreground/90 mt-2">₹{product.price.toFixed(2)}</p>
+        <div className="flex items-center gap-2 mt-2">
+            <p className="font-bold text-foreground/90">₹{product.price.toFixed(2)}</p>
+            {product.originalPrice && (
+                <p className="text-muted-foreground line-through text-sm">₹{product.originalPrice.toFixed(2)}</p>
+            )}
+        </div>
         <div className="flex items-center gap-2 mt-4">
           <Button 
             variant="secondary" 

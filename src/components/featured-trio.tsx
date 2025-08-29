@@ -5,7 +5,7 @@ import type { Product } from '@/lib/types';
 
 const trioProducts: Product[] = [
     { id: '1', name: 'Purity in a Drop Toner & Essence', price: 1450.00, image: '', videoUrl: 'https://cdn.shopify.com/videos/c/o/v/c319ba0f716a4c01b43fccbf4232aa13.mp4', aiHint: 'toner essence bottle', title: 'PURITY IN A DROP', subtitle: 'Toner & Essence' },
-    { id: '2', name: 'DewDrop Evenness Boost Serum', price: 1790.00, image: '', videoUrl: 'https://cdn.shopify.com/videos/c/o/v/b3c5d81c41e84fa0a5c9bb3c2502cdb2.mp4', aiHint: 'serum bottle', title: 'DEWDROP EVENNESS', subtitle: 'Serum' },
+    { id: '2', name: 'DewDrop Evenness Boost Serum', price: 999.00, originalPrice: 1299.00, image: '', videoUrl: 'https://cdn.shopify.com/videos/c/o/v/b3c5d81c41e84fa0a5c9bb3c2502cdb2.mp4', aiHint: 'serum bottle', title: 'DEWDROP EVENNESS', subtitle: 'Serum' },
     { id: '3', name: 'Morning Dew Moisturizer with SPF 15', price: 1300.00, image: '', videoUrl: 'https://cdn.shopify.com/videos/c/o/v/8be0e8a971384750a438fe3622c65683.mp4', aiHint: 'moisturizer bottle', title: 'MORNING DEW', subtitle: 'Moisturiser' },
 ];
 
