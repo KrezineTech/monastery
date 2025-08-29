@@ -2,7 +2,7 @@
 'use client';
 
 import { useState } from 'react';
-import { notFound } from 'next/navigation';
+import { notFound, useParams } from 'next/navigation';
 import Image from 'next/image';
 import { allProducts } from '@/lib/data';
 import { Button } from '@/components/ui/button';
@@ -19,8 +19,10 @@ import {
 } from '@/components/ui/carousel';
 import { useToast } from '@/hooks/use-toast';
 import { ProductLightbox } from '@/components/product-lightbox';
+import { ProductReviews } from '@/components/product-reviews';
 
-export default function ProductDetailPage({ params }: { params: { id: string } }) {
+export default function ProductDetailPage() {
+  const params = useParams();
   const product = allProducts.find((p) => p.id === params.id);
   const [quantity, setQuantity] = useState(1);
   const [selectedVolume, setSelectedVolume] = useState('250ML');
@@ -270,7 +272,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
         </div>
       </div>
       <div className="mt-16 sm:mt-24">
-        <ProductReviews productId={product.id} />
+        <ProductReviews productId={product.id as string} />
       </div>
     </div>
     <ProductLightbox 
@@ -282,3 +284,5 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
     </>
   );
 }
+
+    
