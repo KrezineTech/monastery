@@ -5,7 +5,7 @@ export default function IngredientsPage() {
   return (
     <>
       <section className="w-full md:pt-8 pt-7 md:mb-5 mb-3">
-        <div className="px-0">
+        <div className="w-[96%] mx-auto px-0">
           <div className="relative w-full h-[322px] md:h-[55vh] rounded-[26px] overflow-hidden">
             <Image
                 src="https://placehold.co/1920x500.png"
