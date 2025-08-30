@@ -261,14 +261,15 @@ export default function Home() {
                         />
                         <div className="absolute bottom-0 left-0 right-0 p-2">
                           <Card className="flex items-center gap-3 p-2 rounded-[18px] bg-white/80 backdrop-blur-sm transition-all duration-300">
-                            <Image
-                              src={reel.product.image}
-                              alt={reel.product.name}
-                              width={64}
-                              height={64}
-                              className="rounded-[12px] object-cover"
-                              data-ai-hint={reel.product.aiHint}
-                            />
+                             <div className="relative w-16 h-16 shrink-0">
+                                <Image
+                                  src={reel.product.image}
+                                  alt={reel.product.name}
+                                  fill
+                                  className="rounded-[12px] object-cover"
+                                  data-ai-hint={reel.product.aiHint}
+                                />
+                             </div>
                             <div className="flex-1">
                               <h4 className="font-semibold font-headline text-sm text-primary">{reel.product.name}</h4>
                               <p className="text-sm text-foreground/80">₹{reel.product.price.toFixed(2)}</p>
