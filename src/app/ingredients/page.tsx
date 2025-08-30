@@ -7,13 +7,13 @@ export default function IngredientsPage() {
       <section className="w-full md:pt-8 pt-7 md:mb-5 mb-3">
         <div className="w-[96%] mx-auto px-0">
           <div className="relative w-full h-[322px] md:h-[55vh] rounded-[26px] overflow-hidden">
-            <Image
-                src="https://placehold.co/1920x500.png"
-                alt="Ingredients hero image"
-                fill
-                priority
-                className="object-cover w-full h-full"
-                data-ai-hint="herbs spices"
+            <video
+              src="https://cdn.shopify.com/videos/c/o/v/9062cc9db8eb4a1f91e1ec951209c4c2.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/30 z-10 h-full flex flex-col justify-center items-center text-center text-white">
                 <div className="container mx-auto px-8 md:px-12 lg:px-24">
