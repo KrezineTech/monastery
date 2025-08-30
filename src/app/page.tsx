@@ -36,7 +36,7 @@ const featuredProducts: Product[] = [
 ];
 
 const reels: Reel[] = [
-  {
+    {
     id: '1',
     videoUrl: 'https://cdn.shopify.com/videos/c/o/v/6daa81250e864682a3201786b32605e5.mp4',
     aiHint: 'woman skincare',
@@ -48,25 +48,25 @@ const reels: Reel[] = [
     aiHint: 'morning routine',
     product: { id: '4', name: 'Yusuru Radiance Combo Set', price: 2490.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/22212.webp?v=1756537844', aiHint: 'skincare combo set' },
   },
-  {
-    id: '5',
-    videoUrl: 'https://cdn.shopify.com/videos/c/o/v/9fc98e5a0d084eb997463f23858bc2bf.mp4',
-    aiHint: 'evening skincare',
-    product: { id: '1', name: 'Purity in a Drop Toner & Essence', price: 999.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-2.webp?v=1756537408', aiHint: 'toner essence bottle' },
-  },
    {
     id: '6',
     videoUrl: 'https://cdn.shopify.com/videos/c/o/v/447e0a9c99884170bae3422569ca9ccf.mp4',
     aiHint: 'self-care day',
     product: { id: '2', name: 'DewDrop Evenness Boost Serum', price: 999.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Serum_copy.webp?v=1754934890', aiHint: 'serum bottle' },
   },
-  {
-    id: '8',
+    {
+    id: '2',
+    videoUrl: 'https://cdn.shopify.com/videos/c/o/v/9062cc9db8eb4a1f91e1ec951209c4c2.mp4',
+    aiHint: 'woman skincare routine',
+    product: { id: '1', name: 'Purity in a Drop Toner & Essence', price: 999.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-2.webp?v=1756537408', aiHint: 'toner essence bottle' },
+  },
+    {
+    id: '7',
     videoUrl: 'https://cdn.shopify.com/videos/c/o/v/fee42022b7be464a9abd52faecb38f72.mp4',
-    aiHint: 'skincare routine',
+    aiHint: 'beach relaxation',
     product: { id: '3', name: 'Morning Dew Moisturizer with SPF 15', price: 1300.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-1.webp?v=1754914138', aiHint: 'moisturizer bottle' },
   },
-  {
+    {
     id: '3',
     videoUrl: 'https://cdn.shopify.com/videos/c/o/v/b8286706707a485b897d7342be75d29d.mp4',
     aiHint: 'makeup tutorial',
@@ -75,12 +75,12 @@ const reels: Reel[] = [
 ];
 
 const instagramPosts: InstagramPost[] = [
-    { id: '1', image: 'https://placehold.co/400x400.png', aiHint: 'skincare flatlay' },
-    { id: '2', image: 'https://placehold.co/400x400.png', aiHint: 'person smiling' },
-    { id: '3', image: 'https://placehold.co/400x400.png', aiHint: 'product texture' },
-    { id: '4', image: 'https://placehold.co/400x400.png', aiHint: 'beach waves' },
-    { id: '5', image: 'https://placehold.co/400x400.png', aiHint: 'tropical leaves' },
-    { id: '6', image: 'https://placehold.co/400x400.png', aiHint: 'skincare shelfie' },
+    { id: '1', image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/537681584_17944965150030654_2479612721285834810_n.jpg?v=1756546526', aiHint: 'skincare flatlay' },
+    { id: '2', image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/537370959_17944829415030654_8867004499440604631_n.jpg?v=1756547108', aiHint: 'person smiling' },
+    { id: '3', image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/521539886_18523303228058318_2791011476793025254_n.jpg?v=1756547205', aiHint: 'product texture' },
+    { id: '4', image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/522277164_18523303261058318_557105110798080717_n.jpg?v=1756547228', aiHint: 'beach waves' },
+    { id: '5', image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/518273101_18521153305058318_1061965752163149808_n.jpg?v=1756547258', aiHint: 'tropical leaves' },
+    { id: '6', image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/516743105_18521153341058318_8396075805249994544_n.jpg?v=1756547276', aiHint: 'skincare shelfie' },
 ];
 
 const latestBlogs = allBlogs.slice(0, 3);
