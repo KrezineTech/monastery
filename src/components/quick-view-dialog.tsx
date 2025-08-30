@@ -32,13 +32,13 @@ export function QuickViewDialog({ open, onOpenChange, product }: QuickViewDialog
 
   const [mainImage, setMainImage] = useState(galleryImages[0]);
   const [quantity, setQuantity] = useState(1);
-  const [selectedVolume, setSelectedVolume] = useState('250ML');
+  const [selectedVolume, setSelectedVolume] = useState(product.volumes?.[0] || '');
 
   const handleQuantityChange = (amount: number) => {
     setQuantity((prev) => Math.max(1, prev + amount));
   };
   
-  const volumes = ['250ML', '300ML', '500ML'];
+  const volumes = product.volumes || [];
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -98,20 +98,22 @@ export function QuickViewDialog({ open, onOpenChange, product }: QuickViewDialog
               <span>53 in stock</span>
             </div>
 
-            <div className="mt-6">
-              <p className="text-sm font-medium text-foreground">VOLUME : {selectedVolume}</p>
-              <div className="flex gap-2 mt-2">
-                {volumes.map(v => (
-                   <Button 
-                    key={v}
-                    variant={selectedVolume === v ? 'default' : 'outline'}
-                    onClick={() => setSelectedVolume(v)}
+            {volumes.length > 0 && (
+              <div className="mt-6">
+                <p className="text-sm font-medium text-foreground">VOLUME : {selectedVolume}</p>
+                <div className="flex gap-2 mt-2">
+                  {volumes.map(v => (
+                    <Button 
+                      key={v}
+                      variant={selectedVolume === v ? 'default' : 'outline'}
+                      onClick={() => setSelectedVolume(v)}
                     >
                       {v}
                     </Button>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
             
             <div className="mt-8 space-y-2">
                <p className="text-sm font-medium text-foreground">Quantity</p>

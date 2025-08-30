@@ -21,7 +21,8 @@ export const allProducts: Product[] = [
       ],
       aiHint: 'toner essence bottle', 
       category: 'essence', 
-      description: 'A dual-action formula that hydrates like a toner and nourishes like an essence. It purifies pores and preps the skin to absorb serums and moisturizers more effectively, leaving it soft and supple.' 
+      description: 'A dual-action formula that hydrates like a toner and nourishes like an essence. It purifies pores and preps the skin to absorb serums and moisturizers more effectively, leaving it soft and supple.',
+      volumes: ['250ML', '300ML', '500ML'],
     },
     { 
       id: '2', 
@@ -47,7 +48,8 @@ export const allProducts: Product[] = [
 
 Your skin, only smoother. This daily serum primes, hydrates, and visibly evens tone in one silky step. Powered by 50% Korean rice water, Niacinamide, Turmeric, and Hyaluronic acid, the lightweight gel-serum texture sinks in instantly - softening the look of pores and leaving a dewy, balanced finish.
 
-Perfect under makeup or on bare skin. No greasiness, just glow.`
+Perfect under makeup or on bare skin. No greasiness, just glow.`,
+      volumes: ['100ML'],
     },
     { 
       id: '3', 
@@ -68,7 +70,8 @@ Perfect under makeup or on bare skin. No greasiness, just glow.`
       ],
       aiHint: 'moisturizer bottle', 
       category: 'moisturizer', 
-      description: 'A daily moisturizer that provides essential hydration and sun protection. Its non-greasy formula leaves the skin feeling fresh and dewy, perfect for a morning skincare routine.' 
+      description: 'A daily moisturizer that provides essential hydration and sun protection. Its non-greasy formula leaves the skin feeling fresh and dewy, perfect for a morning skincare routine.',
+      volumes: ['250ML', '300ML', '500ML'],
     },
     { 
       id: '4', 
@@ -88,6 +91,7 @@ Perfect under makeup or on bare skin. No greasiness, just glow.`
       ],
       aiHint: 'skincare combo set', 
       category: 'set', 
-      description: 'The ultimate radiance-boosting collection. This set includes our best-selling products to cleanse, tone, treat, and moisturize, revealing a brighter, more luminous complexion.' 
+      description: 'The ultimate radiance-boosting collection. This set includes our best-selling products to cleanse, tone, treat, and moisturize, revealing a brighter, more luminous complexion.',
+      volumes: ['250ML', '300ML', '500ML'],
     },
 ];

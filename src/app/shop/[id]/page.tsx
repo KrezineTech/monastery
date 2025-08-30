@@ -27,7 +27,7 @@ export default function ProductDetailPage() {
   const params = useParams();
   const product = allProducts.find((p) => p.id === params.id);
   const [quantity, setQuantity] = useState(1);
-  const [selectedVolume, setSelectedVolume] = useState('250ML');
+  const [selectedVolume, setSelectedVolume] = useState(product?.volumes?.[0] || '');
   const [isWishlisted, setIsWishlisted] = useState(false);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [lightboxStartIndex, setLightboxStartIndex] = useState(0);
@@ -79,7 +79,7 @@ export default function ProductDetailPage() {
     setIsLightboxOpen(true);
   };
 
-  const volumes = ['250ML', '300ML', '500ML'];
+  const volumes = product.volumes || [];
 
   const descriptionParts = product.description?.split('\n\n');
   const descriptionTitle = descriptionParts?.[0];
@@ -201,20 +201,22 @@ export default function ProductDetailPage() {
             <span>53 in stock</span>
           </div>
 
-          <div className="mt-6">
-            <p className="text-sm font-medium text-foreground">VOLUME : {selectedVolume}</p>
-            <div className="flex gap-2 mt-2">
-              {volumes.map(v => (
-                 <Button 
-                  key={v}
-                  variant={selectedVolume === v ? 'default' : 'outline'}
-                  onClick={() => setSelectedVolume(v)}
+          {volumes.length > 0 && (
+            <div className="mt-6">
+              <p className="text-sm font-medium text-foreground">VOLUME : {selectedVolume}</p>
+              <div className="flex gap-2 mt-2">
+                {volumes.map(v => (
+                  <Button 
+                    key={v}
+                    variant={selectedVolume === v ? 'default' : 'outline'}
+                    onClick={() => setSelectedVolume(v)}
                   >
                     {v}
                   </Button>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="mt-8 space-y-2">
              <p className="text-sm font-medium text-foreground">Quantity</p>
