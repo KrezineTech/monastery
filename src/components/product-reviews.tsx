@@ -213,13 +213,19 @@ function ReviewFormDialog({ open, onOpenChange, onSubmit }: { open: boolean, onO
 export function ProductReviews({ productId }: { productId: string }) {
   const [reviews, setReviews] = useState<Review[]>(initialReviews);
   const [isReviewFormOpen, setIsReviewFormOpen] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(4);
 
   const handleAddReview = (newReview: Review) => {
     setReviews([newReview, ...reviews]);
   };
 
+  const handleLoadMore = () => {
+    setVisibleCount(prevCount => prevCount + 4);
+  };
+
   const totalReviews = reviews.length;
   const averageRating = reviews.reduce((acc, review) => acc + review.rating, 0) / totalReviews || 0;
+  const visibleReviews = reviews.slice(0, visibleCount);
 
   return (
     <div className="w-full">
@@ -228,47 +234,49 @@ export function ProductReviews({ productId }: { productId: string }) {
         onOpenChange={setIsReviewFormOpen}
         onSubmit={handleAddReview}
       />
-      <div className="grid md:grid-cols-12 gap-8">
+      <div className="grid md:grid-cols-12 gap-x-8 gap-y-12">
         <div className="md:col-span-4">
-          <Card className="p-6 rounded-lg bg-muted/50 border-none">
-            <h3 className="text-lg font-bold text-foreground">Customer Reviews</h3>
-            <div className="flex items-center gap-2 mt-2">
-              <div className="flex items-center">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <Star
-                    key={star}
-                    className={cn('w-5 h-5', averageRating >= star ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300')}
-                  />
+          <div className="md:sticky md:top-24">
+            <Card className="p-6 rounded-lg bg-muted/50 border-none">
+              <h3 className="text-lg font-bold text-foreground">Customer Reviews</h3>
+              <div className="flex items-center gap-2 mt-2">
+                <div className="flex items-center">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star
+                      key={star}
+                      className={cn('w-5 h-5', averageRating >= star ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300')}
+                    />
+                  ))}
+                </div>
+                <span className="font-bold">{averageRating.toFixed(1)} out of 5</span>
+              </div>
+              <p className="text-sm text-muted-foreground mt-1">Based on {totalReviews} reviews</p>
+
+              <div className="space-y-2 mt-6">
+                {ratingDistribution.map((dist) => (
+                  <div key={dist.star} className="flex items-center gap-2">
+                    <span className="text-sm">{dist.star} star</span>
+                    <Progress value={dist.percentage} className="w-full h-2" />
+                    <span className="text-sm text-muted-foreground">{dist.percentage}%</span>
+                  </div>
                 ))}
               </div>
-              <span className="font-bold">{averageRating.toFixed(1)} out of 5</span>
-            </div>
-            <p className="text-sm text-muted-foreground mt-1">Based on {totalReviews} reviews</p>
 
-            <div className="space-y-2 mt-6">
-              {ratingDistribution.map((dist) => (
-                <div key={dist.star} className="flex items-center gap-2">
-                  <span className="text-sm">{dist.star} star</span>
-                  <Progress value={dist.percentage} className="w-full h-2" />
-                  <span className="text-sm text-muted-foreground">{dist.percentage}%</span>
-                </div>
-              ))}
-            </div>
+              <Separator className="my-6" />
 
-            <Separator className="my-6" />
-
-            <h4 className="font-semibold text-foreground">Share your thoughts</h4>
-            <p className="text-sm text-muted-foreground mt-1">
-              If you’ve used this product, share your thoughts with other customers.
-            </p>
-            <Button variant="outline" className="w-full mt-4" onClick={() => setIsReviewFormOpen(true)}>Write a review</Button>
-          </Card>
+              <h4 className="font-semibold text-foreground">Share your thoughts</h4>
+              <p className="text-sm text-muted-foreground mt-1">
+                If you’ve used this product, share your thoughts with other customers.
+              </p>
+              <Button variant="outline" className="w-full mt-4" onClick={() => setIsReviewFormOpen(true)}>Write a review</Button>
+            </Card>
+          </div>
         </div>
 
         <div className="md:col-span-8">
-          <h3 className="text-lg font-bold text-foreground mb-4">Showing {reviews.length} reviews</h3>
+          <h3 className="text-lg font-bold text-foreground mb-4">Showing {visibleReviews.length} of {reviews.length} reviews</h3>
           <div className="space-y-6">
-            {reviews.map((review) => (
+            {visibleReviews.map((review) => (
               <div key={review.id} className="flex gap-4">
                 <Avatar>
                   <AvatarImage src={review.avatar} alt={review.author} />
@@ -302,8 +310,15 @@ export function ProductReviews({ productId }: { productId: string }) {
               </div>
             ))}
           </div>
+          {visibleCount < reviews.length && (
+            <div className="mt-8 text-center">
+              <Button variant="outline" onClick={handleLoadMore}>Load More Reviews</Button>
+            </div>
+          )}
         </div>
       </div>
     </div>
   );
 }
+
+    
