@@ -55,7 +55,7 @@ export default function BlogPostPage() {
         </div>
       </section>
 
-    <div className="container mx-auto px-4 py-12 sm:py-16">
+    <div className="w-[96%] mx-auto px-4 py-12 sm:py-16">
       <article>
         <div className="prose prose-lg max-w-3xl mx-auto text-foreground/90 leading-relaxed">
           <p className="whitespace-pre-line">{blog.content}</p>
@@ -66,7 +66,7 @@ export default function BlogPostPage() {
         <h2 className="text-3xl font-bold font-headline text-center text-primary mb-12">
           You Might Also Like
         </h2>
-        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8">
           {otherPosts.map((blog) => (
               <Link key={blog.id} href={`/blogs/${blog.id}`} className="group block">
                 <Card className="flex flex-col h-full rounded-[26px] border-none bg-transparent shadow-none">
