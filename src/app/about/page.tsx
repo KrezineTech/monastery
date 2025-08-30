@@ -6,13 +6,13 @@ export default function AboutPage() {
     <>
       <section className="w-full md:pt-8 pt-7 md:mb-5 mb-3">
         <div className="w-[96%] mx-auto px-0">
-          <div className="relative w-full h-[322px] md:h-[55vh] rounded-[26px] overflow-hidden bg-muted">
+          <div className="relative w-full h-[322px] md:h-[55vh] rounded-[26px] overflow-hidden">
             <Image
-                src="https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled_design_9.png?v=1756539639"
+                src="https://cdn.shopify.com/s/files/1/0723/1376/6028/files/about.webp?v=1756540006"
                 alt="About us hero image"
                 fill
                 priority
-                className="object-contain w-full h-full"
+                className="object-cover w-full h-full"
                 data-ai-hint="team office"
             />
             <div className="absolute inset-0 bg-black/30 z-10 h-full flex flex-col justify-end items-start text-white p-12">
