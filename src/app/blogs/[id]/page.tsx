@@ -35,7 +35,7 @@ export default function BlogPostPage() {
             />
             <div className="absolute inset-0 bg-black/30 z-10 h-full flex flex-col justify-end items-start text-white p-12">
                 <div className="w-full">
-                     <h1 className="text-4xl md:text-[52px] font-extrabold font-headline">
+                     <h1 className="text-3xl md:text-4xl font-extrabold font-headline">
                         {blog.title}
                     </h1>
                      <div className="mt-6 flex items-center gap-6 text-sm">
