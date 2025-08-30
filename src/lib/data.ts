@@ -34,7 +34,7 @@ It melts in like a whisper, prepping your skin without any sting or stickiness.`
       name: 'DewDrop Evenness Boost Serum', 
       price: 999.00, 
       originalPrice: 1299.00, 
-      image: 'https://placehold.co/800x1000.png',
+      image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Serum_copy.webp?v=1754934890',
       videoUrl: 'https://cdn.shopify.com/videos/c/o/v/b3c5d81c41e84fa0a5c9bb3c2502cdb2.mp4',
       gallery: [
         'https://placehold.co/800x1000.png',
