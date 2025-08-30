@@ -135,56 +135,8 @@ export function ProductReviews({ productId }: { productId: string }) {
               </div>
             ))}
           </div>
-
-          <Separator className="my-8" />
-          
-          <div>
-            <h3 className="text-lg font-bold text-foreground mb-4">Write a review</h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="flex items-center gap-2">
-                <p className="text-sm font-medium">Your Rating:</p>
-                <div className="flex">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <Star
-                      key={star}
-                      className={cn(
-                        'w-5 h-5 cursor-pointer',
-                        (hoverRating || rating) >= star ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'
-                      )}
-                      onMouseEnter={() => setHoverRating(star)}
-                      onMouseLeave={() => setHoverRating(0)}
-                      onClick={() => setRating(star)}
-                    />
-                  ))}
-                </div>
-              </div>
-              <div>
-                <Input
-                  type="text"
-                  placeholder="Your Name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                />
-              </div>
-              <div>
-                <Textarea
-                  placeholder="Write your review here..."
-                  value={reviewText}
-                  onChange={(e) => setReviewText(e.target.value)}
-                  required
-                  rows={4}
-                />
-              </div>
-              <div>
-                <Button type="submit">Submit Review</Button>
-              </div>
-            </form>
-          </div>
         </div>
       </div>
     </div>
   );
 }
-
-    
