@@ -8,17 +8,35 @@ import { Calendar } from 'lucide-react';
 
 export default function BlogsPage() {
   return (
-    <div className="container mx-auto px-4 py-12 sm:py-16">
-      <header className="text-center mb-12">
-        <h1 className="text-4xl font-extrabold tracking-tight text-primary sm:text-5xl lg:text-6xl">
-          Island Journals
-        </h1>
-        <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
-          Your guide to skincare, self-care, and the stories behind our glow.
-        </p>
-      </header>
-      
-      <main>
+    <>
+      <section className="w-full md:pt-8 pt-7 md:mb-5 mb-3">
+        <div className="px-0">
+          <div className="relative w-full h-[322px] md:h-[55vh] rounded-[26px] overflow-hidden">
+            <Image
+                src="https://placehold.co/1920x500.png"
+                alt="Blogs hero image"
+                fill
+                priority
+                className="object-cover w-full h-full"
+                data-ai-hint="library books"
+            />
+            <div className="absolute inset-0 bg-black/30 z-10 h-full flex flex-col justify-center items-center text-center text-white">
+                <div className="container mx-auto px-8 md:px-12 lg:px-24">
+                    <div className="max-w-md md:max-w-lg mx-auto">
+                         <h2 className="text-4xl md:text-[52px] font-extrabold">
+                            Island Journals
+                        </h2>
+                        <p className="mt-4 text-lg md:text-xl">
+                            Your guide to skincare, self-care, and the stories behind our glow.
+                        </p>
+                    </div>
+                </div>
+            </div>
+         </div>
+        </div>
+      </section>
+
+      <main className="container mx-auto px-4 py-12 sm:py-16">
         <section>
           <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {allBlogs.map((blog) => (
@@ -57,6 +75,6 @@ export default function BlogsPage() {
           </div>
         </section>
       </main>
-    </div>
+    </>
   );
 }
