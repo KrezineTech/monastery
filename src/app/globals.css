@@ -105,87 +105,87 @@
 /* Mobile (up to 950px) */
 @media screen and (max-width: 949px) {
   h1, .h1.h1, .text-block.h1 > * {
-    font-size: 2.2rem !important; /* 28px */
+    font-size: 2.2rem; /* 28px */
   }
   h2, .h2.h2, .text-block.h2 > * {
-    font-size: 1.7rem !important; /* 24px */
+    font-size: 1.7rem; /* 24px */
   }
   h3, .h3.h3, .text-block.h3 > * {
-    font-size: 1.25rem !important; /* 20px */
+    font-size: 1.25rem; /* 20px */
   }
   h4, .h4.h4, .text-block.h4 > * {
-    font-size: 1.125rem !important; /* 18px */
+    font-size: 1.125rem; /* 18px */
   }
   h5, .h5.h5, .text-block.h5 > * {
-    font-size: 0.875rem !important; /* 14px */
+    font-size: 0.875rem; /* 14px */
   }
   p {
-    font-size: 0.875rem !important; /* 14px */
+    font-size: 0.875rem; /* 14px */
   }
 }
 
 /* Tablet (950px to 1023px) */
 @media screen and (min-width: 750px) and (max-width: 1023px) {
   h1, .h1.h1, .text-block.h1 > * {
-    font-size: 2.25rem !important; /* 36px */
+    font-size: 2.25rem; /* 36px */
   }
   h2, .h2.h2, .text-block.h2 > * {
-    font-size: 1.875rem !important; /* 30px */
+    font-size: 1.875rem; /* 30px */
   }
   h3, .h3.h3, .text-block.h3 > * {
-    font-size: 1.5rem !important; /* 24px */
+    font-size: 1.5rem; /* 24px */
   }
   h4, .h4.h4, .text-block.h4 > * {
-    font-size: 1.25rem !important; /* 20px */
+    font-size: 1.25rem; /* 20px */
   }
   h5, .h5.h5, .text-block.h5 > * {
-    font-size: 1.125rem !important; /* 18px */
+    font-size: 1.125rem; /* 18px */
   }
   p {
-    font-size: 1rem !important; /* 16px */
+    font-size: 1rem; /* 16px */
   }
 }
 
 /* Laptop (1024px to 1599px) */
 @media screen and (min-width: 1024px) and (max-width: 1599px) {
   h1, .h1.h1, .text-block.h1 > * {
-    font-size: 2.875rem !important; /* 46px */
+    font-size: 2.875rem; /* 46px */
   }
   h2, .h2.h2, .text-block.h2 > * {
-    font-size: 2.375rem !important; /* 38px */
+    font-size: 2.375rem; /* 38px */
   }
   h3, .h3.h3, .text-block.h3 > * {
-    font-size: 1.75rem !important; /* 28px */
+    font-size: 1.75rem; /* 28px */
   }
   h4, .h4.h4, .text-block.h4 > * {
-    font-size: 1.375rem !important; /* 22px */
+    font-size: 1.375rem; /* 22px */
   }
   h5, .h5.h5, .text-block.h5 > * {
-    font-size: 0.875rem !important; /* 14px */
+    font-size: 0.875rem; /* 14px */
   }
   p {
-    font-size: 0.875rem !important; /* 14px */
+    font-size: 0.875rem; /* 14px */
   }
 }
 
 /* Desktop (1600px and above) */
 @media screen and (min-width: 1600px) {
   h1, .h1.h1, .text-block.h1 > * {
-    font-size: 5rem !important; /* 76px */
+    font-size: 5rem; /* 76px */
   }
   h2, .h2.h2, .text-block.h2 > * {
-    font-size: 3rem !important; /* 48px */
+    font-size: 3rem; /* 48px */
   }
   h3, .h3.h3, .text-block.h3 > * {
-    font-size: 2rem !important; /* 36px */
+    font-size: 2rem; /* 36px */
   }
   h4, .h4.h4, .text-block.h4 > * {
-    font-size: 1.875rem !important; /* 30px */
+    font-size: 1.875rem; /* 30px */
   }
   h5, .h5.h5, .text-block.h5 > * {
-    font-size: 1.25rem !important; /* 20px */
+    font-size: 1.25rem; /* 20px */
   }
   p {
-    font-size: 1.25rem !important; /* 20px */
+    font-size: 1.25rem; /* 20px */
   }
 }
