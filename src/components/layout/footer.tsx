@@ -25,7 +25,7 @@ const informationLinks = [
 
 
 const socialLinks = [
-  { name: 'Instagram', href: '#', icon: Instagram },
+  { name: 'Instagram', href: 'https://www.instagram.com/islandbeauty.in/', icon: Instagram },
   { name: 'Linkedin', href: '#', icon: Linkedin },
 ]
 
@@ -101,7 +101,7 @@ export function Footer() {
         <div className="mt-12 pt-4 border-t border-primary/10 flex justify-between items-center text-xs">
           <div className="flex space-x-4">
               {socialLinks.map((social) => (
-                  <Link key={social.name} href={social.href} className="text-foreground/70 hover:text-primary transition-colors">
+                  <Link key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary transition-colors">
                       <social.icon className="h-5 w-5" />
                       <span className="sr-only">{social.name}</span>
                   </Link>

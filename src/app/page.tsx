@@ -351,12 +351,12 @@ export default function Home() {
               <p className="text-foreground/80">Tag @islandbeauty.in in your Instagram photos for a chance to be featured here.</p>
             </div>
             <Button asChild>
-              <Link href="#">FOLLOW US</Link>
+              <Link href="https://www.instagram.com/islandbeauty.in/" target="_blank" rel="noopener noreferrer">FOLLOW US</Link>
             </Button>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-4">
             {instagramPosts.map((post) => (
-              <Link href="#" key={post.id} className="group block overflow-hidden rounded-lg">
+              <Link href="https://www.instagram.com/islandbeauty.in/" target="_blank" rel="noopener noreferrer" key={post.id} className="group block overflow-hidden rounded-lg">
                 <Image
                   src={post.image}
                   alt={`Instagram post ${post.id}`}
