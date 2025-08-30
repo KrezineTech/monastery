@@ -5,7 +5,8 @@ export const allProducts: Product[] = [
     { 
       id: '1', 
       name: 'Purity in a Drop Toner & Essence', 
-      price: 1450.00, 
+      price: 999.00,
+      originalPrice: 1199.00,
       image: 'https://placehold.co/800x1000.png',
       videoUrl: 'https://cdn.shopify.com/videos/c/o/v/c319ba0f716a4c01b43fccbf4232aa13.mp4',
       gallery: [
@@ -22,7 +23,7 @@ export const allProducts: Product[] = [
       aiHint: 'toner essence bottle', 
       category: 'essence', 
       description: 'A dual-action formula that hydrates like a toner and nourishes like an essence. It purifies pores and preps the skin to absorb serums and moisturizers more effectively, leaving it soft and supple.',
-      volumes: ['250ML', '300ML', '500ML'],
+      volumes: ['100ML'],
     },
     { 
       id: '2', 
