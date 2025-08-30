@@ -20,6 +20,7 @@ import {
 import { useToast } from '@/hooks/use-toast';
 import { ProductLightbox } from '@/components/product-lightbox';
 import { ProductReviews } from '@/components/product-reviews';
+import { RelatedProducts } from '@/components/related-products';
 
 export default function ProductDetailPage() {
   const params = useParams();
@@ -273,6 +274,9 @@ export default function ProductDetailPage() {
       </div>
       <div className="mt-16 sm:mt-24">
         <ProductReviews productId={product.id as string} />
+      </div>
+       <div className="mt-16 sm:mt-24">
+        <RelatedProducts currentProductId={product.id} currentProductCategory={product.category} />
       </div>
     </div>
     <ProductLightbox 
