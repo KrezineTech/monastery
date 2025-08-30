@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -17,7 +18,7 @@ export function QuietEscapeSection() {
         <div className="relative h-full flex items-center justify-center text-center">
           <div className="max-w-2xl mx-auto px-4">
             <h2 className="text-3xl font-bold font-headline tracking-tight text-gray-800 sm:text-4xl">
-              A QUIET ESCAPE, BOTTLED.
+              A Quiet Escape, Bottled.
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-700">
               Thoughtfully made for Indian skin — where Korean simplicity meets homegrown care. 
@@ -25,7 +26,7 @@ export function QuietEscapeSection() {
               Island is your skin's reset — quiet, grounded, and deeply restorative.
             </p>
             <Button asChild size="lg" className="mt-8 bg-gray-700 hover:bg-gray-800 text-white">
-              <Link href="/shop">SHOP ISLAND</Link>
+              <Link href="/shop">Shop Island</Link>
             </Button>
           </div>
         </div>

@@ -43,7 +43,7 @@ export function ProductCard({ product, className, href }: ProductCardProps) {
               <h3 className="text-2xl font-bold font-headline">{toTitleCase(product.name.replace(/ with SPF 15/g, '').replace(/ Toner & Essence/g, '').replace(/ Boost Serum/g, ''))}</h3>
               {product.category && <p className="text-sm mt-1 capitalize">{product.category.replace(/-/g, ' ')}</p>}
               <Button variant="outline" className="mt-4 bg-transparent border-white text-white hover:bg-white hover:text-black rounded-full">
-                BUY NOW
+                Buy Now
               </Button>
             </div>
           </>
@@ -73,8 +73,7 @@ export function ProductCard({ product, className, href }: ProductCardProps) {
   );
 
   const cardContainer = (
-    <>
-      <div className={cn("flex flex-col group", className)}>
+    <div className={cn("flex flex-col group", className)}>
         <div className="relative w-full aspect-square overflow-hidden rounded-[26px]">
             {cardContent}
         </div>
@@ -109,10 +108,8 @@ export function ProductCard({ product, className, href }: ProductCardProps) {
           </div>
         </div>
       </div>
-      <QuickViewDialog open={isQuickViewOpen} onOpenChange={setIsQuickViewOpen} product={product} />
-    </>
   );
-
+  
   const videoCardContainer = (
     <div className={cn("flex flex-col group h-full", className)}>
       <div className="relative w-full h-[85vh] overflow-hidden rounded-[26px] group">
@@ -121,24 +118,20 @@ export function ProductCard({ product, className, href }: ProductCardProps) {
     </div>
   );
 
+  const finalContainer = (
+    <>
+      {product.videoUrl && product.title ? videoCardContainer : cardContainer}
+      <QuickViewDialog open={isQuickViewOpen} onOpenChange={setIsQuickViewOpen} product={product} />
+    </>
+  );
+
   if (href) {
-    if (product.videoUrl && product.title) {
-        return (
-            <Link href={href} className="block h-full">
-                {videoCardContainer}
-            </Link>
-        )
-    }
     return (
-        <Link href={href} className="block">
-           {cardContainer}
-        </Link>
+      <Link href={href} className="block h-full">
+        {finalContainer}
+      </Link>
     );
   }
 
-  if (product.videoUrl && product.title) {
-    return videoCardContainer;
-  }
-  
-  return cardContainer;
+  return finalContainer;
 }

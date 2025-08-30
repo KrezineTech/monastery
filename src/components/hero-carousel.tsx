@@ -22,7 +22,7 @@ const slides = [
     aiHint: "skincare products lifestyle",
     title: "2 for the price of 1",
     subtitle: "Hurry up! The offer is valid until April 1, 2024",
-    buttonText: "BUY NOW",
+    buttonText: "Buy Now",
     buttonLink: "/shop",
   },
   {

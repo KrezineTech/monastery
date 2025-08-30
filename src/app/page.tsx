@@ -60,12 +60,6 @@ const reels: Reel[] = [
     aiHint: 'woman skincare routine',
     product: { id: '1', name: 'Purity in a Drop Toner & Essence', price: 999.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-2.webp?v=1756537408', aiHint: 'toner essence bottle' },
   },
-    {
-    id: '3',
-    videoUrl: 'https://cdn.shopify.com/videos/c/o/v/b8286706707a485b897d7342be75d29d.mp4',
-    aiHint: 'makeup tutorial',
-    product: { id: '2', name: 'DewDrop Evenness Boost Serum', price: 999.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Serum_copy.webp?v=1754934890', aiHint: 'serum bottle' },
-  },
 ];
 
 const instagramPosts: InstagramPost[] = [
@@ -203,8 +197,8 @@ export default function Home() {
                     <div className="w-full px-4 sm:px-6 lg:px-8">
                     <div className="max-w-xl p-10 rounded-lg text-foreground bg-white/60 backdrop-blur-md">
                         <h2 className="text-3xl font-bold font-headline tracking-wider text-primary">
-                        CLEAN. AUTHENTIC. <br />
-                        RADIANT
+                        Clean. Authentic. <br />
+                        Radiant
                         </h2>
                         <div className="mt-8 space-y-6 text-foreground/80">
                             <div>
@@ -345,7 +339,7 @@ export default function Home() {
               <p className="text-foreground/80">Tag @islandbeauty.in in your Instagram photos for a chance to be featured here.</p>
             </div>
             <Button asChild>
-              <Link href="https://www.instagram.com/islandbeauty.in/" target="_blank" rel="noopener noreferrer">FOLLOW US</Link>
+              <Link href="https://www.instagram.com/islandbeauty.in/" target="_blank" rel="noopener noreferrer">Follow Us</Link>
             </Button>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-4">
