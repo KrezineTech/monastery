@@ -6,7 +6,7 @@ export default function AboutPage() {
     <>
       <section className="w-full md:pt-8 pt-7 md:mb-5 mb-3">
         <div className="w-[96%] mx-auto px-0">
-          <div className="relative w-full h-[322px] md:h-[55vh] rounded-[26px] overflow-hidden">
+          <div className="relative w-full h-[300px] md:h-[45vh] rounded-[26px] overflow-hidden">
             <Image
                 src="https://cdn.shopify.com/s/files/1/0723/1376/6028/files/about.webp?v=1756540006"
                 alt="About us hero image"
