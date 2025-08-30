@@ -306,7 +306,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {latestBlogs.map((blog) => (
               <Link key={blog.id} href={`/blogs/${blog.id}`} className="group block">
-                <Card className="flex flex-col h-full rounded-[26px] border-none shadow-none">
+                <Card className="flex flex-col h-full rounded-[26px] border-none shadow-none bg-transparent">
                   <div className="p-4">
                     <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
                         <div className="flex items-center gap-2">
