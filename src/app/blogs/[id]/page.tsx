@@ -8,6 +8,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Calendar, User } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
 
 export default function BlogPostPage() {
   const params = useParams();
@@ -17,7 +18,7 @@ export default function BlogPostPage() {
     notFound();
   }
 
-  const otherPosts = allBlogs.filter((p) => p.id !== blog.id).slice(0, 2);
+  const otherPosts = allBlogs.filter((p) => p.id !== blog.id).slice(0, 3);
 
   return (
     <div className="container mx-auto px-4 py-12 sm:py-16">
@@ -58,34 +59,44 @@ export default function BlogPostPage() {
         <h2 className="text-3xl font-bold font-headline text-center text-primary mb-12">
           You Might Also Like
         </h2>
-        <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {otherPosts.map((post) => (
-            <Link key={post.id} href={`/blogs/${post.id}`} className="block group">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
-                <div className="relative w-full aspect-[16/9] md:aspect-square rounded-lg overflow-hidden">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    data-ai-hint={post.aiHint}
-                  />
-                </div>
-                <div className="md:col-span-2">
-                  <h5 className="text-lg font-bold font-headline text-foreground mb-2 group-hover:text-primary transition-colors">
-                    {post.title}
-                  </h5>
-                   <p className="text-sm text-muted-foreground">
-                    {post.date}
-                  </p>
-                </div>
-              </div>
-            </Link>
-          ))}
+        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {otherPosts.map((blog) => (
+              <Link key={blog.id} href={`/blogs/${blog.id}`} className="group block">
+                <Card className="flex flex-col h-full rounded-[26px] border-none bg-transparent shadow-none">
+                  <div>
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+                        <div className="flex items-center gap-2">
+                            <Avatar className="h-6 w-6">
+                                <AvatarImage src={`https://i.pravatar.cc/32?u=${blog.author}`} alt={blog.author} />
+                                <AvatarFallback>{blog.author.charAt(0)}</AvatarFallback>
+                            </Avatar>
+                            <span>{blog.author}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                           <Calendar className="w-4 h-4" />
+                           <span>{blog.date}</span>
+                        </div>
+                    </div>
+                     <div className="relative w-full aspect-video rounded-[18px] overflow-hidden mb-4">
+                        <Image
+                          src={blog.image}
+                          alt={blog.title}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          data-ai-hint={blog.aiHint}
+                        />
+                      </div>
+                    <h5 className="text-lg font-bold font-headline text-foreground group-hover:text-primary transition-colors">
+                      {blog.title}
+                    </h5>
+                  </div>
+                </Card>
+              </Link>
+            ))}
         </div>
         <div className="text-center mt-12">
             <Button asChild>
-                <Link href="/blogs">View all posts</Link>
+                <Link href="/blogs">View All Posts</Link>
             </Button>
         </div>
       </aside>
