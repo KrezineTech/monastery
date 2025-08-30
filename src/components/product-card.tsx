@@ -23,7 +23,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
   const cardContent = (
     <Card className="overflow-hidden border-none shadow-none rounded-[26px] h-full">
       <div className="relative w-full h-full overflow-hidden rounded-[26px]">
-        {product.videoUrl ? (
+        {product.videoUrl && !product.image ? (
           <>
             <video
               src={product.videoUrl}
@@ -34,7 +34,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
               className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
               data-ai-hint={product.aiHint}
             />
-            <div className="absolute inset-0 bg-black/20 flex flex-col items-center justify-end text-center text-white p-4 pb-12">
+             <div className="absolute inset-0 bg-black/20 flex flex-col items-center justify-end text-center text-white p-4 pb-12">
               <h3 className="text-2xl font-bold">{product.title}</h3>
               {product.subtitle && <p className="text-sm mt-1">{product.subtitle}</p>}
               <Button variant="outline" className="mt-4 bg-white/20 border-white text-white backdrop-blur-sm hover:bg-white hover:text-black">
@@ -67,7 +67,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
     </Card>
   );
 
-  if (product.videoUrl) {
+  if (product.videoUrl && !product.image) {
     return (
       <Link href={`/shop/${product.id}`} className={cn("flex flex-col group h-full", className)}>
          <div className="relative w-full h-[85vh] overflow-hidden rounded-[26px] group">
