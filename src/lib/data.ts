@@ -82,7 +82,7 @@ Perfect under makeup or on bare skin. No greasiness, just glow.`,
       id: '4', 
       name: 'Yusuru Radiance Combo Set', 
       price: 2490.00, 
-      image: 'https://placehold.co/800x1000.png',
+      image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/22212.webp?v=1756537844',
       gallery: [
         'https://placehold.co/800x1000.png',
         'https://placehold.co/800x1001.png',
