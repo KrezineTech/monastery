@@ -15,16 +15,12 @@ export default function IngredientsPage() {
               playsInline
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/30 z-10 h-full flex flex-col justify-center items-center text-center text-white">
-                <div className="container mx-auto px-8 md:px-12 lg:px-24">
-                    <div className="max-w-md md:max-w-lg mx-auto">
-                         <h2 className="text-4xl md:text-[52px] font-extrabold">
-                            Our Ingredients
-                        </h2>
-                        <p className="mt-4 text-lg md:text-xl">
-                            Nature's finest, bottled for your skin.
-                        </p>
-                    </div>
+            <div className="absolute inset-0 bg-black/30 z-10 h-full flex flex-col justify-end items-start text-white p-12">
+                <div className="w-full">
+                     <h2 className="text-4xl md:text-[52px] font-extrabold">
+                        Our Ingredients
+                    </h2>
+                    <div className="mt-4 border-t border-white/50 w-full"></div>
                 </div>
             </div>
          </div>
