@@ -35,10 +35,7 @@ export default function BlogPostPage() {
             />
             <div className="absolute inset-0 bg-black/30 z-10 h-full flex flex-col justify-end items-start text-white p-12">
                 <div className="w-full">
-                     <h1 className="text-[32px] font-extrabold font-headline">
-                        {blog.title}
-                    </h1>
-                     <div className="mt-6 flex items-center gap-6 text-sm">
+                    <div className="mb-4 flex items-center gap-6 text-sm">
                         <div className="flex items-center gap-2">
                             <User className="w-4 h-4" />
                             <span>{blog.author}</span>
@@ -48,6 +45,9 @@ export default function BlogPostPage() {
                             <span>{blog.date}</span>
                         </div>
                     </div>
+                     <h1 className="text-[32px] font-extrabold font-headline">
+                        {blog.title}
+                    </h1>
                     <div className="mt-4 border-t border-white/50 w-full"></div>
                 </div>
             </div>
