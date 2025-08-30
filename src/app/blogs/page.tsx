@@ -2,13 +2,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { allBlogs } from '@/lib/blog-data';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Calendar } from 'lucide-react';
 
 export default function BlogsPage() {
-  const featuredPost = allBlogs[0];
-  const otherPosts = allBlogs.slice(1);
-
   return (
     <div className="container mx-auto px-4 py-12 sm:py-16">
       <header className="text-center mb-12">
@@ -21,64 +19,38 @@ export default function BlogsPage() {
       </header>
       
       <main>
-        {featuredPost && (
-            <section className="mb-16">
-                <Link href={`/blogs/${featuredPost.id}`} className="block group">
-                    <Card className="grid md:grid-cols-2 gap-8 items-center border-none overflow-hidden">
-                        <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden">
-                            <Image
-                                src={featuredPost.image}
-                                alt={featuredPost.title}
-                                fill
-                                className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                data-ai-hint={featuredPost.aiHint}
-                            />
-                        </div>
-                        <div className="p-4">
-                            <p className="text-sm text-primary font-semibold mb-2">Featured Story</p>
-                            <h2 className="text-3xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
-                                {featuredPost.title}
-                            </h2>
-                            <p className="text-muted-foreground mb-4 text-sm">
-                                By {featuredPost.author} on {featuredPost.date}
-                            </p>
-                            <p className="text-foreground/80 leading-relaxed mb-6">
-                                {featuredPost.excerpt}
-                            </p>
-                            <Button variant="link" className="p-0 text-primary">
-                                Read More
-                            </Button>
-                        </div>
-                    </Card>
-                </Link>
-            </section>
-        )}
-
         <section>
-          <h2 className="text-3xl font-bold text-center text-primary mb-12">
-            More Stories
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {otherPosts.map((post) => (
-              <Link key={post.id} href={`/blogs/${post.id}`} className="block group">
-                <Card className="overflow-hidden h-full flex flex-col border-none shadow-none rounded-[26px]">
-                  <div className="relative w-full aspect-[16/9] overflow-hidden rounded-[26px]">
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
-                      data-ai-hint={post.aiHint}
-                    />
-                  </div>
-                  <CardContent className="p-6 flex-1 flex flex-col">
-                    <h3 className="text-xl font-bold text-foreground mb-2 flex-1 group-hover:text-primary transition-colors">
-                      {post.title}
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {allBlogs.map((blog) => (
+              <Link key={blog.id} href={`/blogs/${blog.id}`} className="group block">
+                <Card className="flex flex-col h-full rounded-[26px] border-none bg-transparent shadow-none">
+                  <div>
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+                        <div className="flex items-center gap-2">
+                            <Avatar className="h-6 w-6">
+                                <AvatarImage src={`https://i.pravatar.cc/32?u=${blog.author}`} alt={blog.author} />
+                                <AvatarFallback>{blog.author.charAt(0)}</AvatarFallback>
+                            </Avatar>
+                            <span>{blog.author}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                           <Calendar className="w-4 h-4" />
+                           <span>{blog.date}</span>
+                        </div>
+                    </div>
+                     <div className="relative w-full aspect-video rounded-[18px] overflow-hidden mb-4">
+                        <Image
+                          src={blog.image}
+                          alt={blog.title}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          data-ai-hint={blog.aiHint}
+                        />
+                      </div>
+                    <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                      {blog.title}
                     </h3>
-                     <p className="text-sm text-muted-foreground mt-2">
-                        {post.date}
-                    </p>
-                  </CardContent>
+                  </div>
                 </Card>
               </Link>
             ))}
