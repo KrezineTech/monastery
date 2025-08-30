@@ -20,16 +20,12 @@ export default function BlogsPage() {
                 className="object-cover w-full h-full"
                 data-ai-hint="library books"
             />
-            <div className="absolute inset-0 bg-black/30 z-10 h-full flex flex-col justify-center items-center text-center text-white">
-                <div className="container mx-auto px-8 md:px-12 lg:px-24">
-                    <div className="max-w-md md:max-w-lg mx-auto">
-                         <h2 className="text-4xl md:text-[52px] font-extrabold">
-                            Island Journals
-                        </h2>
-                        <p className="mt-4 text-lg md:text-xl">
-                            Your guide to skincare, self-care, and the stories behind our glow.
-                        </p>
-                    </div>
+            <div className="absolute inset-0 bg-black/30 z-10 h-full flex flex-col justify-end items-start text-white p-12">
+                <div className="w-full">
+                     <h2 className="text-4xl md:text-[52px] font-extrabold">
+                        Island Journals
+                    </h2>
+                    <div className="mt-4 border-t border-white/50 w-full"></div>
                 </div>
             </div>
          </div>
