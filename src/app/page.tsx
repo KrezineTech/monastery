@@ -61,12 +61,6 @@ const reels: Reel[] = [
     product: { id: '1', name: 'Purity in a Drop Toner & Essence', price: 999.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-2.webp?v=1756537408', aiHint: 'toner essence bottle' },
   },
     {
-    id: '7',
-    videoUrl: 'https://cdn.shopify.com/videos/c/o/v/fee42022b7be464a9abd52faecb38f72.mp4',
-    aiHint: 'beach relaxation',
-    product: { id: '3', name: 'Morning Dew Moisturizer with SPF 15', price: 1300.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-1.webp?v=1754914138', aiHint: 'moisturizer bottle' },
-  },
-    {
     id: '3',
     videoUrl: 'https://cdn.shopify.com/videos/c/o/v/b8286706707a485b897d7342be75d29d.mp4',
     aiHint: 'makeup tutorial',
@@ -347,7 +341,7 @@ export default function Home() {
         <div className="w-[96%] mx-auto">
           <div className="flex justify-between items-end mb-12">
             <div>
-              <h2 className="text-3xl font-bold font-headline text-primary mb-4">ON THE GRAM</h2>
+              <h2 className="text-3xl font-bold font-headline text-primary mb-4">On The Gram</h2>
               <p className="text-foreground/80">Tag @islandbeauty.in in your Instagram photos for a chance to be featured here.</p>
             </div>
             <Button asChild>
