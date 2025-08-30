@@ -24,7 +24,7 @@ export default function BlogPostPage() {
     <>
       <section className="w-full md:pt-8 pt-7 md:mb-5 mb-3">
         <div className="w-[96%] mx-auto px-0">
-          <div className="relative w-full h-[500px] md:h-[45vh] rounded-[26px] overflow-hidden">
+          <div className="relative w-full h-[500px] md:h-[55vh] rounded-[26px] overflow-hidden">
             <Image
                 src={blog.image}
                 alt={blog.title}
