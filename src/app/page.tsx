@@ -72,6 +72,18 @@ const reels: Reel[] = [
     aiHint: 'self-care day',
     product: { id: '2', name: 'DewDrop Evenness Boost Serum', price: 999.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Serum_copy.webp?v=1754934890', aiHint: 'serum bottle' },
   },
+  {
+    id: '7',
+    videoUrl: 'https://cdn.shopify.com/videos/c/o/v/9062cc9db8eb4a1f91e1ec951209c4c2.mp4',
+    aiHint: 'product application',
+    product: { id: '1', name: 'Purity in a Drop Toner & Essence', price: 999.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-2.webp?v=1756537408', aiHint: 'toner essence bottle' },
+  },
+  {
+    id: '8',
+    videoUrl: 'https://cdn.shopify.com/videos/c/o/v/fee42022b7be464a9abd52faecb38f72.mp4',
+    aiHint: 'skincare routine',
+    product: { id: '3', name: 'Morning Dew Moisturizer with SPF 15', price: 1300.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-1.webp?v=1754914138', aiHint: 'moisturizer bottle' },
+  },
 ];
 
 const instagramPosts: InstagramPost[] = [
@@ -261,7 +273,7 @@ export default function Home() {
                         />
                         <div className="absolute bottom-0 left-0 right-0 p-2">
                           <Card className="flex items-center gap-3 p-2 rounded-[18px] bg-white/80 backdrop-blur-sm transition-all duration-300">
-                             <div className="relative w-16 h-16 shrink-0">
+                             <div className="relative w-16 h-16 shrink-0 aspect-square">
                                 <Image
                                   src={reel.product.image}
                                   alt={reel.product.name}
