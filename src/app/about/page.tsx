@@ -8,7 +8,7 @@ export default function AboutPage() {
         <div className="w-[96%] mx-auto px-0">
           <div className="relative w-full h-[322px] md:h-[55vh] rounded-[26px] overflow-hidden">
             <Image
-                src="https://placehold.co/1920x500.png"
+                src="https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled_design_9.png?v=1756539639"
                 alt="About us hero image"
                 fill
                 priority
