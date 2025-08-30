@@ -37,17 +37,29 @@ const reviewSchema = z.object({
 
 
 const initialReviews: Review[] = [
-  { id: 1, author: 'Sarah K.', avatar: '/avatars/01.png', rating: 5, date: '2 weeks ago', text: 'Absolutely love this serum! My skin has never felt smoother or looked more radiant. The texture is lightweight and absorbs instantly. Worth every penny!' },
-  { id: 2, author: 'Jessica L.', avatar: '/avatars/02.png', rating: 4, date: '1 month ago', text: 'Really good product. It has helped even out my skin tone. I took off one star because I wish it came in a larger size. Otherwise, fantastic!' },
-  { id: 3, author: 'Mike P.', avatar: '/avatars/03.png', rating: 5, date: '3 days ago', text: 'I was skeptical, but this stuff works. My skin feels hydrated all day long without being greasy. I\'ve gotten compliments on my glow!' },
+    { id: 1, author: 'Aisha K.', avatar: 'https://placehold.co/40x40.png', rating: 5, date: '3 days ago', text: 'This toner is a game-changer! My skin feels so hydrated and prepped for my serum. The Korean rice water makes it feel so luxurious.', photos: ['https://placehold.co/100x100.png', 'https://placehold.co/100x100.png'] },
+    { id: 2, author: 'Priya S.', avatar: 'https://placehold.co/40x40.png', rating: 5, date: '1 week ago', text: 'I\'m obsessed with the DewDrop serum. It has visibly evened out my skin tone and gives me a beautiful glow without feeling greasy. It sits perfectly under my makeup.'},
+    { id: 3, author: 'Neha R.', avatar: 'https://placehold.co/40x40.png', rating: 4, date: '2 weeks ago', text: 'The Morning Dew Moisturizer is my new daily essential. It\'s lightweight, non-greasy, and the SPF is a huge plus for daily protection. I just wish it had a higher SPF rating.' },
+    { id: 4, author: 'Rohan M.', avatar: 'https://placehold.co/40x40.png', rating: 5, date: '2 weeks ago', text: 'The Yusuru Radiance Combo is worth every penny. My skin has never looked better. The set has everything I need for a complete, effective routine.' },
+    { id: 5, author: 'Ananya G.', avatar: 'https://placehold.co/40x40.png', rating: 5, date: '3 weeks ago', text: 'Finally, a toner that doesn\'t strip my skin! The Purity in a Drop Toner & Essence leaves my face feeling soft and supple. I can see a visible reduction in my pores.', photos: ['https://placehold.co/100x100.png'] },
+    { id: 6, author: 'Vikram P.', avatar: 'https://placehold.co/40x40.png', rating: 4, date: '1 month ago', text: 'The evenness boost serum is really effective. My dark spots have started to fade. It absorbs quickly, which is great for my morning rush.' },
+    { id: 7, author: 'Ishita V.', avatar: 'https://placehold.co/40x40.png', rating: 5, date: '1 month ago', text: 'I love how gentle the moisturizer is. It gives my skin a lovely dewy finish without feeling heavy. It\'s the perfect base for my makeup.' },
+    { id: 8, author: 'Arjun C.', avatar: 'https://placehold.co/40x40.png', rating: 5, date: '1 month ago', text: 'The Radiance Combo is fantastic value. All the products work so well together. My skin is glowing and feels incredibly healthy. Highly recommend!', photos: ['https://placehold.co/100x100.png', 'https://placehold.co/100x100.png', 'https://placehold.co/100x100.png'] },
+    { id: 9, author: 'Meera N.', avatar: 'https://placehold.co/40x40.png', rating: 5, date: '2 months ago', text: 'This toner and essence is so refreshing! It has become a staple in both my morning and night routines. My skin drinks it up.' },
+    { id: 10, author: 'Kavya J.', avatar: 'https://placehold.co/40x40.png', rating: 5, date: '2 months ago', text: 'The boost serum has made such a difference in my skin\'s texture. It feels smoother and looks brighter. I get so many compliments on my skin now.' },
+    { id: 11, author: 'Siddharth B.', avatar: 'https://placehold.co/40x40.png', rating: 3, date: '2 months ago', text: 'The moisturizer is good, but a bit too light for my very dry skin. It works well on humid days, though. The texture is nice and it doesn\'t have a strong scent.' },
+    { id: 12, author: 'Tanvi S.', avatar: 'https://placehold.co/40x40.png', rating: 5, date: '3 months ago', text: 'I travel a lot, and the Radiance Combo is perfect. It has all the essentials in convenient sizes. My skin stays balanced and radiant no matter the climate.', photos: ['https://placehold.co/100x100.png'] },
+    { id: 13, author: 'Fatima Z.', avatar: 'https://placehold.co/40x40.png', rating: 5, date: '3 months ago', text: 'Absolutely in love with the Purity in a Drop Toner. It feels calming on the skin and has helped with occasional redness.' },
+    { id: 14, author: 'Nikhil D.', avatar: 'https://placehold.co/40x40.png', rating: 4, date: '4 months ago', text: 'The serum is great. It has helped with some post-acne marks. I took off one star because the bottle is a bit small for the price.' },
+    { id: 15, author: 'Sunita W.', avatar: 'https://placehold.co/40x40.png', rating: 5, date: '4 months ago', text: 'This is the only moisturizer with SPF that doesn\'t break me out. It\'s light, hydrating, and gives a healthy, non-shiny glow. Will definitely repurchase.' },
 ];
 
 const ratingDistribution = [
-  { star: 5, percentage: 75 },
-  { star: 4, percentage: 15 },
-  { star: 3, percentage: 5 },
-  { star: 2, percentage: 3 },
-  { star: 1, percentage: 2 },
+  { star: 5, percentage: 82 },
+  { star: 4, percentage: 12 },
+  { star: 3, percentage: 4 },
+  { star: 2, percentage: 1 },
+  { star: 1, percentage: 1 },
 ];
 
 
