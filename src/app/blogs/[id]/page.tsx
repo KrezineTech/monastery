@@ -39,7 +39,7 @@ export default function BlogPostPage() {
             </div>
         </header>
 
-        <div className="relative w-full h-[300px] md:h-[500px] rounded-lg overflow-hidden mb-12">
+        <div className="relative w-full aspect-video rounded-[18px] overflow-hidden mb-12">
           <Image
             src={blog.image}
             alt={blog.title}
