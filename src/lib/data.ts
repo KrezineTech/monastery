@@ -22,7 +22,11 @@ export const allProducts: Product[] = [
       ],
       aiHint: 'toner essence bottle', 
       category: 'essence', 
-      description: 'A dual-action formula that hydrates like a toner and nourishes like an essence. It purifies pores and preps the skin to absorb serums and moisturizers more effectively, leaving it soft and supple.',
+      description: `THE RESET RITUAL
+
+A gentle reset for your skin. This two-in-one toner and essence is your first step to clear, balanced skin - sweeping away impurities while hydrating deeply. The water-light formula is infused with rice water, glycolic acid, turmeric, and salicylic acid to visibly refine pores, even tone, and leave your skin feeling calm and softly radiant.
+
+It melts in like a whisper, prepping your skin without any sting or stickiness.`,
       volumes: ['100ML'],
     },
     { 
