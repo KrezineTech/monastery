@@ -58,7 +58,7 @@ export function StickyPromoSection() {
                   <div className="md:sticky md:top-24">
                     <Card className={`p-10 rounded-[26px] ${promo.bgColor} ${promo.textColor} border-none h-auto md:h-[40vh] flex flex-col justify-center`}>
                       <span className={`inline-block ${promo.tagBg} px-3 py-1 text-sm rounded-md mb-4 self-start`}>{promo.content.tag}</span>
-                      <h2 className="text-4xl font-bold mb-4">{promo.content.title}</h2>
+                      <h2 className="text-4xl font-bold font-headline mb-4">{promo.content.title}</h2>
                       <p className="mb-6 opacity-80">{promo.content.description}</p>
                       <Button variant="secondary" className={`${promo.buttonClasses} self-start`}>
                         Shop Now <ArrowRight className="ml-2 h-4 w-4" />
@@ -71,7 +71,7 @@ export function StickyPromoSection() {
                   <div className="md:sticky md:top-24">
                     <Card className={`p-10 rounded-[26px] ${promo.bgColor} ${promo.textColor} border-none h-auto md:h-[40vh] flex flex-col justify-center`}>
                       <span className={`inline-block ${promo.tagBg} px-3 py-1 text-sm rounded-md mb-4 self-start`}>{promo.content.tag}</span>
-                      <h2 className="text-4xl font-bold mb-4">{promo.content.title}</h2>
+                      <h2 className="text-4xl font-bold font-headline mb-4">{promo.content.title}</h2>
                       <p className="mb-6 opacity-80">{promo.content.description}</p>
                       <Button variant="secondary" className={`${promo.buttonClasses} self-start`}>
                         Shop Now <ArrowRight className="ml-2 h-4 w-4" />

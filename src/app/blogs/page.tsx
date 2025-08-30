@@ -22,7 +22,7 @@ export default function BlogsPage() {
             />
             <div className="absolute inset-0 bg-black/30 z-10 h-full flex flex-col justify-end items-start text-white p-12">
                 <div className="w-full">
-                     <h2 className="text-4xl md:text-[52px] font-extrabold">
+                     <h2 className="text-4xl md:text-[52px] font-extrabold font-headline">
                         Island Journals
                     </h2>
                     <div className="mt-4 border-t border-white/50 w-full"></div>
@@ -61,7 +61,7 @@ export default function BlogsPage() {
                           data-ai-hint={blog.aiHint}
                         />
                       </div>
-                    <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                    <h3 className="text-lg font-bold font-headline text-foreground group-hover:text-primary transition-colors">
                       {blog.title}
                     </h3>
                   </div>

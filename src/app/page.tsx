@@ -102,7 +102,7 @@ export default function Home() {
                 <div className="flex gap-3 h-[216px]">
                     <Link href="/shop" className="group relative block w-[40%] h-full">
                         <Card className="relative overflow-hidden rounded-[26px] border-none h-full">
-                            <h3 className="absolute top-6 left-6 text-xl font-semibold text-gray-800 z-10">{categories[0].name}</h3>
+                            <h3 className="absolute top-6 left-6 text-xl font-semibold font-headline text-gray-800 z-10">{categories[0].name}</h3>
                             <Image
                                 src={categories[0].mobileImage || categories[0].image}
                                 alt={categories[0].name}
@@ -114,7 +114,7 @@ export default function Home() {
                     </Link>
                     <Link href="/shop" className="group relative block w-[60%] h-full">
                         <Card className="relative overflow-hidden rounded-[26px] border-none h-full">
-                            <h3 className="absolute top-6 left-6 text-xl font-semibold text-gray-800 z-10">{categories[1].name}</h3>
+                            <h3 className="absolute top-6 left-6 text-xl font-semibold font-headline text-gray-800 z-10">{categories[1].name}</h3>
                             <Image
                                 src={categories[1].image}
                                 alt={categories[1].name}
@@ -128,7 +128,7 @@ export default function Home() {
                 <div className="h-[216px]">
                     <Link href="/shop" className="group relative block w-full h-full">
                         <Card className="relative overflow-hidden rounded-[26px] border-none h-full">
-                            <h3 className="absolute top-6 left-6 text-xl font-semibold text-gray-800 z-10">{categories[2].name}</h3>
+                            <h3 className="absolute top-6 left-6 text-xl font-semibold font-headline text-gray-800 z-10">{categories[2].name}</h3>
                             <Image
                                 src={categories[2].image}
                                 alt={categories[2].name}
@@ -146,7 +146,7 @@ export default function Home() {
             <div className="w-full md:w-[42%]">
               <Link href="/shop" className="group relative block h-[240px] md:h-[36vh]">
                 <Card className="relative overflow-hidden rounded-[26px] border-none h-full">
-                    <h3 className="absolute top-6 left-6 text-2xl font-semibold text-gray-800 z-10">{categories[0].name}</h3>
+                    <h3 className="absolute top-6 left-6 text-2xl font-semibold font-headline text-gray-800 z-10">{categories[0].name}</h3>
                   <Image
                     src={categories[0].image}
                     alt={categories[0].name}
@@ -160,7 +160,7 @@ export default function Home() {
             <div className="w-full md:w-[23%] flex flex-col gap-5">
               <Link href="/shop" className="group relative block h-[240px] md:h-[36vh]">
                 <Card className="relative overflow-hidden rounded-[26px] border-none h-full">
-                   <h3 className="absolute top-6 left-6 text-2xl font-semibold text-gray-800 z-10">{categories[1].name}</h3>
+                   <h3 className="absolute top-6 left-6 text-2xl font-semibold font-headline text-gray-800 z-10">{categories[1].name}</h3>
                   <Image
                     src={categories[1].image}
                     alt={categories[1].name}
@@ -174,7 +174,7 @@ export default function Home() {
             <div className="w-full md:w-[33%]">
               <Link href="/shop" className="group relative block h-[240px] md:h-[36vh]">
                 <Card className="relative overflow-hidden rounded-[26px] border-none h-full">
-                   <h3 className="absolute top-6 left-6 text-2xl font-semibold text-gray-800 z-10">{categories[2].name}</h3>
+                   <h3 className="absolute top-6 left-6 text-2xl font-semibold font-headline text-gray-800 z-10">{categories[2].name}</h3>
                   <Image
                     src={categories[2].image}
                     alt={categories[2].name}
@@ -208,19 +208,19 @@ export default function Home() {
                 <div className="relative z-10 flex h-full items-center justify-start text-left">
                     <div className="w-full px-4 sm:px-6 lg:px-8">
                     <div className="max-w-xl p-10 rounded-lg text-foreground bg-white/60 backdrop-blur-md">
-                        <h2 className="text-3xl font-bold tracking-wider text-primary">
+                        <h2 className="text-3xl font-bold font-headline tracking-wider text-primary">
                         CLEAN. AUTHENTIC. <br />
                         RADIANT
                         </h2>
                         <div className="mt-8 space-y-6 text-foreground/80">
                             <div>
-                            <h3 className="text-base font-semibold text-foreground">Island Beauty with Purpose</h3>
+                            <h3 className="text-base font-semibold font-headline text-foreground">Island Beauty with Purpose</h3>
                             <p className="mt-1 text-sm">
                                 At Island, skincare isn't just a routine, it's a return. A return to calm, to care, to skin that feels like home. Inspired by "this IS your LAND," we see skin as a living landscape-shaped by seasons, stories, and self. It needs less noise, more nourishment. Fewer layers, deeper rest. With nature at our core, we craft clean, gentle rituals that restore balance and bring out your skin's quiet glow.
                             </p>
                             </div>
                             <div>
-                            <h3 className="text-base font-semibold text-foreground">Korean Rice Water: A Timeless Glow</h3>
+                            <h3 className="text-base font-semibold font-headline text-foreground">Korean Rice Water: A Timeless Glow</h3>
                             <p className="mt-1 text-sm">
                                 Rooted in Joseon-era beauty, rice water has long been used for soft, clear, radiant skin. We bring that tradition from Korea to you, freshly sourced, thoughtfully paired with India's golden turmeric. A gentle union of heritage and healing - two cultures, one radiant story, written on your skin.
                             </p>
@@ -236,7 +236,7 @@ export default function Home() {
       {/* Smart Product Placement in Reels Section */}
       <section className="py-16 sm:py-24">
         <div className="w-[96%] mx-auto">
-          <h2 className="text-3xl font-bold text-center text-primary mb-12">You + Island</h2>
+          <h2 className="text-3xl font-bold font-headline text-center text-primary mb-12">You + Island</h2>
           <div className="relative group">
             <Carousel
               opts={{
@@ -270,7 +270,7 @@ export default function Home() {
                               data-ai-hint={reel.product.aiHint}
                             />
                             <div className="flex-1">
-                              <h4 className="font-semibold text-sm text-primary">{reel.product.name}</h4>
+                              <h4 className="font-semibold font-headline text-sm text-primary">{reel.product.name}</h4>
                               <p className="text-sm text-foreground/80">₹{reel.product.price.toFixed(2)}</p>
                             </div>
                           </Card>
@@ -296,7 +296,7 @@ export default function Home() {
         <div className="w-[96%] mx-auto">
           <div className="flex justify-between items-end mb-12">
             <div>
-              <h2 className="text-3xl font-bold text-primary mb-2">From the Blog</h2>
+              <h2 className="text-3xl font-bold font-headline text-primary mb-2">From the Blog</h2>
               <p className="text-foreground/80">Your guide to skincare, self-care, and the stories behind our glow.</p>
             </div>
             <Button asChild>
@@ -330,7 +330,7 @@ export default function Home() {
                           data-ai-hint={blog.aiHint}
                         />
                       </div>
-                    <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                    <h3 className="text-lg font-bold font-headline text-foreground group-hover:text-primary transition-colors">
                       {blog.title}
                     </h3>
                   </div>
@@ -346,7 +346,7 @@ export default function Home() {
         <div className="w-[96%] mx-auto">
           <div className="flex justify-between items-end mb-12">
             <div>
-              <h2 className="text-3xl font-bold text-primary mb-4">ON THE GRAM</h2>
+              <h2 className="text-3xl font-bold font-headline text-primary mb-4">ON THE GRAM</h2>
               <p className="text-foreground/80">Tag @islandbeauty.in in your Instagram photos for a chance to be featured here.</p>
             </div>
             <Button asChild>

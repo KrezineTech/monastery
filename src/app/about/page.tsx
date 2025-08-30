@@ -17,7 +17,7 @@ export default function AboutPage() {
             />
             <div className="absolute inset-0 bg-black/30 z-10 h-full flex flex-col justify-end items-start text-white p-12">
                 <div className="w-full">
-                     <h2 className="text-4xl md:text-[52px] font-extrabold">
+                     <h2 className="text-4xl md:text-[52px] font-headline font-extrabold">
                         About Island
                     </h2>
                     <div className="mt-4 border-t border-white/50 w-full"></div>
@@ -27,7 +27,7 @@ export default function AboutPage() {
         </div>
       </section>
       <div className="container py-24 text-center">
-        <h1 className="text-4xl font-bold text-primary">About Us</h1>
+        <h1 className="text-4xl font-bold font-headline text-primary">About Us</h1>
         <p className="mt-4 text-lg text-foreground/80">This page is under construction. Check back soon!</p>
       </div>
     </>

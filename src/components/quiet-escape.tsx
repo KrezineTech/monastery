@@ -16,7 +16,7 @@ export function QuietEscapeSection() {
         />
         <div className="relative h-full flex items-center justify-center text-center">
           <div className="max-w-2xl mx-auto px-4">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl">
+            <h2 className="text-3xl font-bold font-headline tracking-tight text-gray-800 sm:text-4xl">
               A QUIET ESCAPE, BOTTLED.
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-700">

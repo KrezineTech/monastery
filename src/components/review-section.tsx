@@ -36,7 +36,7 @@ export function ReviewSection() {
     <section className="py-16 sm:py-24 bg-background">
       <div className="w-[96%] mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-primary tracking-tight">Real people, real reviews.</h2>
+          <h2 className="text-4xl font-bold font-headline text-primary tracking-tight">Real people, real reviews.</h2>
           <p className="text-foreground/80 mt-4 max-w-2xl mx-auto">
             Join our global community of 50,000+ people reaching their health + confidence goals.
           </p>

@@ -21,7 +21,7 @@ export default function ShopPage() {
             />
             <div className="absolute inset-0 bg-black/30 z-10 h-full flex flex-col justify-end items-start text-white p-12">
                 <div className="w-full">
-                     <h2 className="text-4xl md:text-[52px] font-extrabold">
+                     <h2 className="text-4xl md:text-[52px] font-extrabold font-headline">
                         Shop Island
                     </h2>
                     <div className="mt-4 border-t border-white/50 w-full"></div>
@@ -34,7 +34,7 @@ export default function ShopPage() {
       <div id="products">
         <div className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-              <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">All Products</h1>
+              <h1 className="text-4xl font-bold font-headline tracking-tight text-primary sm:text-5xl">All Products</h1>
               <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
                   Explore our full collection of natural skincare.
               </p>

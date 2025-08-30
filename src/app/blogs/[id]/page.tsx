@@ -23,7 +23,7 @@ export default function BlogPostPage() {
     <div className="container mx-auto px-4 py-12 sm:py-16">
       <article>
         <header className="mb-8 text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight text-primary sm:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-extrabold font-headline tracking-tight text-primary sm:text-5xl lg:text-6xl">
                 {blog.title}
             </h1>
             <div className="mt-6 flex justify-center items-center gap-6 text-muted-foreground text-sm">
@@ -55,7 +55,7 @@ export default function BlogPostPage() {
       </article>
 
       <aside className="mt-16 pt-12 border-t">
-        <h2 className="text-3xl font-bold text-center text-primary mb-12">
+        <h2 className="text-3xl font-bold font-headline text-center text-primary mb-12">
           You might also like
         </h2>
         <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -72,7 +72,7 @@ export default function BlogPostPage() {
                   />
                 </div>
                 <div className="md:col-span-2">
-                  <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-bold font-headline text-foreground mb-2 group-hover:text-primary transition-colors">
                     {post.title}
                   </h3>
                    <p className="text-sm text-muted-foreground">

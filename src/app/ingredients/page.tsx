@@ -17,7 +17,7 @@ export default function IngredientsPage() {
             />
             <div className="absolute inset-0 bg-black/30 z-10 h-full flex flex-col justify-end items-start text-white p-12">
                 <div className="w-full">
-                     <h2 className="text-4xl md:text-[52px] font-extrabold">
+                     <h2 className="text-4xl md:text-[52px] font-extrabold font-headline">
                         Our Ingredients
                     </h2>
                     <div className="mt-4 border-t border-white/50 w-full"></div>

@@ -35,7 +35,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
               data-ai-hint={product.aiHint}
             />
              <div className="absolute inset-0 bg-black/20 flex flex-col items-center justify-end text-center text-white p-4 pb-12">
-              <h3 className="text-2xl font-bold">{product.title}</h3>
+              <h3 className="text-2xl font-bold font-headline">{product.title}</h3>
               {product.subtitle && <p className="text-sm mt-1">{product.subtitle}</p>}
               <Button variant="outline" className="mt-4 bg-white/20 border-white text-white backdrop-blur-sm hover:bg-white hover:text-black">
                 BUY NOW
@@ -86,7 +86,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
         </div>
       </Link>
       <div className="pt-4">
-        <h3 className="font-semibold text-sm text-foreground mt-1">{product.name}</h3>
+        <h3 className="font-semibold font-headline text-sm text-foreground mt-1">{product.name}</h3>
         <div className="flex items-center mt-2">
             <div className="flex items-center">
                 {[...Array(5)].map((_, i) => (

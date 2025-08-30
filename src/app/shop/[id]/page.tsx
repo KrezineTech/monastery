@@ -162,7 +162,7 @@ export default function ProductDetailPage() {
           <div>
             <p className="text-sm font-medium text-primary">Island</p>
             <div className="flex justify-between items-start mt-1">
-                <h1 className="text-3xl lg:text-4xl font-bold text-foreground">{product.name}</h1>
+                <h1 className="text-3xl lg:text-4xl font-bold font-headline text-foreground">{product.name}</h1>
                 <div className="flex items-center gap-2 flex-shrink-0">
                     <Button variant="outline" size="icon" className="rounded-[12px] border-gray-300 hover:bg-primary text-gray-600 hover:text-white hover:border-primary" onClick={handleShare}>
                         <Share2 className="w-5 h-5" />

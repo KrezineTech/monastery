@@ -63,7 +63,7 @@ export function Header() {
               <SheetContent side="right" className="w-[300px] bg-secondary p-0">
                 <div className="flex h-full flex-col">
                   <div className="flex items-center justify-between p-4 border-b">
-                     <Link href="/" className="text-xl font-bold text-primary" onClick={() => setIsMenuOpen(false)}>
+                     <Link href="/" className="text-xl font-bold font-headline text-primary" onClick={() => setIsMenuOpen(false)}>
                         glowver
                      </Link>
                     <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(false)}>

@@ -107,7 +107,7 @@ function ReviewFormDialog({ open, onOpenChange, onSubmit }: { open: boolean, onO
         <Form {...form}>
           <form onSubmit={handleSubmit(processSubmit)}>
             <DialogHeader>
-              <DialogTitle>Write a review</DialogTitle>
+              <DialogTitle className="font-headline">Write a review</DialogTitle>
               <DialogDescription>
                 Share your thoughts about the product with other customers.
               </DialogDescription>
@@ -238,7 +238,7 @@ export function ProductReviews({ productId }: { productId: string }) {
         <div className="md:col-span-4">
           <div className="md:sticky md:top-24">
             <Card className="p-6 rounded-lg bg-muted/50 border-none">
-              <h3 className="text-lg font-bold text-foreground">Customer Reviews</h3>
+              <h3 className="text-lg font-bold font-headline text-foreground">Customer Reviews</h3>
               <div className="flex items-center gap-2 mt-2">
                 <div className="flex items-center">
                   {[1, 2, 3, 4, 5].map((star) => (
@@ -264,7 +264,7 @@ export function ProductReviews({ productId }: { productId: string }) {
 
               <Separator className="my-6" />
 
-              <h4 className="font-semibold text-foreground">Share your thoughts</h4>
+              <h4 className="font-semibold font-headline text-foreground">Share your thoughts</h4>
               <p className="text-sm text-muted-foreground mt-1">
                 If you’ve used this product, share your thoughts with other customers.
               </p>
@@ -274,7 +274,7 @@ export function ProductReviews({ productId }: { productId: string }) {
         </div>
 
         <div className="md:col-span-8">
-          <h3 className="text-lg font-bold text-foreground mb-4">Showing {visibleReviews.length} of {reviews.length} reviews</h3>
+          <h3 className="text-lg font-bold font-headline text-foreground mb-4">Showing {visibleReviews.length} of {reviews.length} reviews</h3>
           <div className="space-y-6">
             {visibleReviews.map((review) => (
               <div key={review.id} className="flex gap-4">
