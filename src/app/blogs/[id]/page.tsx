@@ -45,9 +45,9 @@ export default function BlogPostPage() {
                             <span>{blog.date}</span>
                         </div>
                     </div>
-                     <h1 className="text-[32px] font-extrabold font-headline">
+                     <h2 className="text-[32px] font-extrabold font-headline">
                         {blog.title}
-                    </h1>
+                    </h2>
                     <div className="mt-4 border-t border-white/50 w-full"></div>
                 </div>
             </div>
