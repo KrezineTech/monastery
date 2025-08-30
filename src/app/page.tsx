@@ -38,39 +38,39 @@ const featuredProducts: Product[] = [
 const reels: Reel[] = [
   {
     id: '1',
-    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
+    videoUrl: 'https://cdn.shopify.com/videos/c/o/v/6daa81250e864682a3201786b32605e5.mp4',
     aiHint: 'woman skincare',
-    product: { id: '1', name: 'Glow Serum', price: 45.00, image: 'https://placehold.co/100x100.png', aiHint: 'serum bottle' },
+    product: { id: '1', name: 'Purity in a Drop Toner & Essence', price: 999.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-2.webp?v=1756537408', aiHint: 'toner essence bottle' },
   },
   {
     id: '2',
-    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
+    videoUrl: 'https://cdn.shopify.com/videos/c/o/v/f13a9e5211c846049670476fbd1bbae5.mp4',
     aiHint: 'beach relaxation',
-    product: { id: '3', name: 'Daily Moisturizer', price: 35.00, image: 'https://placehold.co/100x100.png', aiHint: 'moisturizer jar' },
+    product: { id: '3', name: 'Morning Dew Moisturizer with SPF 15', price: 1300.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-1.webp?v=1754914138', aiHint: 'moisturizer bottle' },
   },
   {
     id: '3',
-    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4',
+    videoUrl: 'https://cdn.shopify.com/videos/c/o/v/b8286706707a485b897d7342be75d29d.mp4',
     aiHint: 'makeup tutorial',
-    product: { id: '2', name: 'Sunscreen', price: 25.00, image: 'https://placehold.co/100x100.png', aiHint: 'sunscreen bottle' },
+    product: { id: '2', name: 'DewDrop Evenness Boost Serum', price: 999.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Serum_copy.webp?v=1754934890', aiHint: 'serum bottle' },
   },
   {
     id: '4',
-    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+    videoUrl: 'https://cdn.shopify.com/videos/c/o/v/0b32f300c2124dbfa056a8f4e4353478.mp4',
     aiHint: 'morning routine',
-    product: { id: '4', name: 'Hydrating Mist', price: 20.00, image: 'https://placehold.co/100x100.png', aiHint: 'mist bottle' },
+    product: { id: '4', name: 'Yusuru Radiance Combo Set', price: 2490.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/22212.webp?v=1756537844', aiHint: 'skincare combo set' },
   },
   {
     id: '5',
-    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+    videoUrl: 'https://cdn.shopify.com/videos/c/o/v/9fc98e5a0d084eb997463f23858bc2bf.mp4',
     aiHint: 'evening skincare',
-    product: { id: '5', name: 'Nourishing Toner', price: 28.00, image: 'https://placehold.co/100x100.png', aiHint: 'toner bottle' },
+    product: { id: '1', name: 'Purity in a Drop Toner & Essence', price: 999.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-2.webp?v=1756537408', aiHint: 'toner essence bottle' },
   },
    {
     id: '6',
-    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4',
+    videoUrl: 'https://cdn.shopify.com/videos/c/o/v/447e0a9c99884170bae3422569ca9ccf.mp4',
     aiHint: 'self-care day',
-    product: { id: '1', name: 'Glow Serum', price: 45.00, image: 'https://placehold.co/100x100.png', aiHint: 'serum bottle' },
+    product: { id: '2', name: 'DewDrop Evenness Boost Serum', price: 999.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Serum_copy.webp?v=1754934890', aiHint: 'serum bottle' },
   },
 ];
 
