@@ -38,8 +38,9 @@ export default function ProductDetailPage() {
   }
 
   const gallery = [
-      ...(product.videoUrl ? [{ type: 'video', src: product.videoUrl, thumbnail: product.image }] : []),
-      ...((product.gallery || [product.image]).map(src => ({ type: 'image', src, thumbnail: src })))
+    { type: 'image' as const, src: product.image, thumbnail: product.image },
+    ...(product.videoUrl ? [{ type: 'video' as const, src: product.videoUrl, thumbnail: product.image }] : []),
+    ...((product.gallery || []).map(src => ({ type: 'image' as const, src, thumbnail: src })))
   ];
   
   const [mainMedia, setMainMedia] = useState(gallery[0]);
