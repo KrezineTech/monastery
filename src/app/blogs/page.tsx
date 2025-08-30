@@ -32,7 +32,7 @@ export default function BlogsPage() {
         </div>
       </section>
 
-      <main className="container mx-auto px-4 py-12 sm:py-16">
+      <main className="w-[96%] mx-auto py-12 sm:py-16">
         <section>
           <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {allBlogs.map((blog) => (
