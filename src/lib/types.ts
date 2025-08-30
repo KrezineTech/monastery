@@ -40,3 +40,14 @@ export type ProductMedia = {
     src: string;
     thumbnail: string;
 };
+
+export interface Blog {
+  id: string;
+  title: string;
+  image: string;
+  aiHint?: string;
+  date: string;
+  author: string;
+  excerpt: string;
+  content: string; 
+}
