@@ -307,7 +307,7 @@ export default function Home() {
             {latestBlogs.map((blog) => (
               <Link key={blog.id} href={`/blogs/${blog.id}`} className="group block">
                 <Card className="flex flex-col h-full rounded-[26px] border-none bg-transparent shadow-none">
-                  <div className="p-4">
+                  <div>
                     <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
                         <div className="flex items-center gap-2">
                             <Avatar className="h-6 w-6">
