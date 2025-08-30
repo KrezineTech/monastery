@@ -26,10 +26,10 @@ const categories: Category[] = [
 ];
 
 const featuredProducts: Product[] = [
-  { id: '1', name: 'Purity in a Drop Toner & Essence', price: 1450.00, image: 'https://placehold.co/400x500.png', aiHint: 'toner essence bottle' },
-  { id: '2', name: 'DewDrop Evenness Boost Serum', price: 999.00, originalPrice: 1299.00, image: 'https://placehold.co/400x500.png', aiHint: 'serum bottle' },
-  { id: '3', name: 'Morning Dew Moisturizer with SPF 15', price: 1300.00, image: 'https://placehold.co/400x500.png', aiHint: 'moisturizer bottle' },
-  { id: '4', name: 'Yusuru Radiance Combo Set', price: 2490.00, image: 'https://placehold.co/400x500.png', aiHint: 'skincare combo set' },
+  { id: '1', name: 'Purity in a Drop Toner & Essence', price: 1450.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-2.webp?v=1756537408', aiHint: 'toner essence bottle' },
+  { id: '2', name: 'DewDrop Evenness Boost Serum', price: 999.00, originalPrice: 1299.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Serum_copy.webp?v=1754934890', aiHint: 'serum bottle' },
+  { id: '3', name: 'Morning Dew Moisturizer with SPF 15', price: 1300.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-1.webp?v=1754914138', aiHint: 'moisturizer bottle' },
+  { id: '4', name: 'Yusuru Radiance Combo Set', price: 2490.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/22212.webp?v=1756537844', aiHint: 'skincare combo set' },
 ];
 
 const reels: Reel[] = [
