@@ -23,7 +23,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
   const cardContent = (
     <Card className="overflow-hidden border-none shadow-none rounded-[26px] h-full">
       <div className="relative w-full h-full overflow-hidden rounded-[26px]">
-        {product.videoUrl && !product.image ? (
+        {product.videoUrl && product.title ? (
           <>
             <video
               src={product.videoUrl}
@@ -67,7 +67,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
     </Card>
   );
 
-  if (product.videoUrl && !product.image) {
+  if (product.videoUrl && product.title) {
     return (
       <Link href={`/shop/${product.id}`} className={cn("flex flex-col group h-full", className)}>
          <div className="relative w-full h-[85vh] overflow-hidden rounded-[26px] group">
