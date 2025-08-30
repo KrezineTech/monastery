@@ -34,10 +34,10 @@ export function ProductCard({ product, className }: ProductCardProps) {
               className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
               data-ai-hint={product.aiHint}
             />
-             <div className="absolute inset-0 bg-black/20 flex flex-col items-center justify-center text-center text-white p-4">
+             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col items-start justify-end text-left text-white p-6">
               <h3 className="text-2xl font-bold font-headline uppercase">{product.name.replace(/ with SPF 15/g, '').replace(/ Toner & Essence/g, '').replace(/ Boost Serum/g, '')}</h3>
               {product.category && <p className="text-sm mt-1 capitalize">{product.category.replace(/-/g, ' ')}</p>}
-              <Button variant="outline" className="mt-4 bg-transparent border-white text-white hover:bg-white hover:text-black">
+              <Button variant="outline" className="mt-4 bg-transparent border-white text-white hover:bg-white hover:text-black rounded-full">
                 BUY NOW
               </Button>
             </div>
