@@ -18,6 +18,9 @@ import { QuietEscapeSection } from '@/components/quiet-escape';
 import { StickyPromoSection } from '@/components/sticky-promo-section';
 import { HarmonySection } from '@/components/harmony-section';
 import { ReviewSection } from '@/components/review-section';
+import { allBlogs } from '@/lib/blog-data';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Calendar, User } from 'lucide-react';
 
 const categories: Category[] = [
   { name: 'Moisturizers', image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-1.webp?v=1754914138', mobileImage: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-1.webp?v=1754914138', aiHint: 'skincare moisturizer' },
@@ -26,7 +29,7 @@ const categories: Category[] = [
 ];
 
 const featuredProducts: Product[] = [
-  { id: '1', name: 'Purity in a Drop Toner & Essence', price: 1450.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-2.webp?v=1756537408', aiHint: 'toner essence bottle' },
+  { id: '1', name: 'Purity in a Drop Toner & Essence', price: 999.00, originalPrice: 1199.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-2.webp?v=1756537408', aiHint: 'toner essence bottle' },
   { id: '2', name: 'DewDrop Evenness Boost Serum', price: 999.00, originalPrice: 1299.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Serum_copy.webp?v=1754934890', aiHint: 'serum bottle' },
   { id: '3', name: 'Morning Dew Moisturizer with SPF 15', price: 1300.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-1.webp?v=1754914138', aiHint: 'moisturizer bottle' },
   { id: '4', name: 'Yusuru Radiance Combo Set', price: 2490.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/22212.webp?v=1756537844', aiHint: 'skincare combo set' },
@@ -79,6 +82,8 @@ const instagramPosts: InstagramPost[] = [
     { id: '5', image: 'https://placehold.co/400x400.png', aiHint: 'tropical leaves' },
     { id: '6', image: 'https://placehold.co/400x400.png', aiHint: 'skincare shelfie' },
 ];
+
+const latestBlogs = allBlogs.slice(0, 3);
 
 export default function Home() {
   return (
@@ -285,6 +290,56 @@ export default function Home() {
       <StickyPromoSection />
 
       <ReviewSection />
+
+      {/* Blog Section */}
+      <section className="py-16 sm:py-24">
+        <div className="w-[96%] mx-auto">
+          <div className="flex justify-between items-end mb-12">
+            <div>
+              <h2 className="text-3xl font-bold text-primary mb-2">From the Blog</h2>
+              <p className="text-foreground/80">Your guide to skincare, self-care, and the stories behind our glow.</p>
+            </div>
+            <Button asChild>
+              <Link href="/blogs">View All</Link>
+            </Button>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {latestBlogs.map((blog) => (
+              <Link key={blog.id} href={`/blogs/${blog.id}`} className="group block">
+                <Card className="flex flex-col h-full rounded-[26px] border-none shadow-none">
+                  <div className="p-4">
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+                        <div className="flex items-center gap-2">
+                            <Avatar className="h-6 w-6">
+                                <AvatarImage src={`https://i.pravatar.cc/32?u=${blog.author}`} alt={blog.author} />
+                                <AvatarFallback>{blog.author.charAt(0)}</AvatarFallback>
+                            </Avatar>
+                            <span>{blog.author}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                           <Calendar className="w-4 h-4" />
+                           <span>{blog.date}</span>
+                        </div>
+                    </div>
+                     <div className="relative w-full aspect-video rounded-[18px] overflow-hidden mb-4">
+                        <Image
+                          src={blog.image}
+                          alt={blog.title}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          data-ai-hint={blog.aiHint}
+                        />
+                      </div>
+                    <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                      {blog.title}
+                    </h3>
+                  </div>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Instagram Feed Section */}
       <section className="py-16 sm:py-24">
