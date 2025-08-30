@@ -13,6 +13,7 @@ import { CheckCircle, Minus, Plus, Truck, RefreshCw } from 'lucide-react';
 import type { Product } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
+import { Card } from './ui/card';
 
 interface QuickViewDialogProps {
   open: boolean;
@@ -129,17 +130,21 @@ export function QuickViewDialog({ open, onOpenChange, product }: QuickViewDialog
                 <Button size="lg" className="w-full rounded-full">Buy it now</Button>
             </div>
             
-            <div className="mt-4 flex items-center gap-4 text-sm">
-              <div className="flex items-center gap-2">
-                <Truck className="w-5 h-5 text-muted-foreground" />
-                <p>Free delivery on February 7th - 13th</p>
-              </div>
-              <div className="flex items-center gap-2">
-                <RefreshCw className="w-5 h-5 text-muted-foreground" />
-                <p>Free + easy returns</p>
-              </div>
-            </div>
-
+            <Card className="mt-4 p-4 bg-muted/50 rounded-lg">
+                <div className="flex items-center gap-4 text-sm">
+                    <div className="flex items-center gap-2">
+                        <Truck className="w-5 h-5 text-muted-foreground" />
+                        <p>Free delivery on February 7th - 13th</p>
+                    </div>
+                </div>
+                <Separator className="my-3" />
+                <div className="flex items-center gap-4 text-sm">
+                    <div className="flex items-center gap-2">
+                        <RefreshCw className="w-5 h-5 text-muted-foreground" />
+                        <p>Free + easy returns</p>
+                    </div>
+                </div>
+            </Card>
           </div>
         </div>
       </DialogContent>

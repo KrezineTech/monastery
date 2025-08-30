@@ -2,7 +2,7 @@
 'use client';
 
 import { useState } from 'react';
-import { notFound, useParams } from 'next/navigation';
+import { useParams, notFound } from 'next/navigation';
 import Image from 'next/image';
 import { allProducts } from '@/lib/data';
 import { Button } from '@/components/ui/button';
@@ -21,6 +21,7 @@ import { useToast } from '@/hooks/use-toast';
 import { ProductLightbox } from '@/components/product-lightbox';
 import { ProductReviews } from '@/components/product-reviews';
 import { RelatedProducts } from '@/components/related-products';
+import { Card } from '@/components/ui/card';
 
 export default function ProductDetailPage() {
   const params = useParams();
@@ -231,17 +232,22 @@ export default function ProductDetailPage() {
               </div>
               <Button size="lg" className="w-full rounded-full">Buy it now</Button>
           </div>
-
-          <div className="mt-4 flex items-center gap-4 text-sm">
-            <div className="flex items-center gap-2">
-              <Truck className="w-5 h-5 text-muted-foreground" />
-              <p>Free delivery on February 7th - 13th</p>
+          
+          <Card className="mt-4 p-4 bg-muted/50 rounded-lg">
+            <div className="flex items-center gap-4 text-sm">
+              <div className="flex items-center gap-2">
+                <Truck className="w-5 h-5 text-muted-foreground" />
+                <p>Free delivery on February 7th - 13th</p>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <RefreshCw className="w-5 h-5 text-muted-foreground" />
-              <p>Free + easy returns</p>
+             <Separator className="my-3" />
+             <div className="flex items-center gap-4 text-sm">
+                <div className="flex items-center gap-2">
+                <RefreshCw className="w-5 h-5 text-muted-foreground" />
+                <p>Free + easy returns</p>
+                </div>
             </div>
-          </div>
+          </Card>
 
           <div className="pt-6">
             <Accordion type="single" collapsible defaultValue="description" className="w-full">
