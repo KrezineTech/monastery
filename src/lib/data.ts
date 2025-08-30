@@ -7,7 +7,7 @@ export const allProducts: Product[] = [
       name: 'Purity in a Drop Toner & Essence', 
       price: 999.00,
       originalPrice: 1199.00,
-      image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Toner.webp?v=1754934725',
+      image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-2.webp?v=1756537408',
       videoUrl: 'https://cdn.shopify.com/videos/c/o/v/c319ba0f716a4c01b43fccbf4232aa13.mp4',
       gallery: [
         'https://placehold.co/800x1000.png',
