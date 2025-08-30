@@ -81,7 +81,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
     <>
     <div className={cn("flex flex-col group", className)}>
       <Link href={`/shop/${product.id}`} className="block w-full">
-        <div className="relative w-full h-[500px] overflow-hidden rounded-[26px]">
+        <div className="relative w-full aspect-square overflow-hidden rounded-[26px]">
             {cardContent}
         </div>
       </Link>
