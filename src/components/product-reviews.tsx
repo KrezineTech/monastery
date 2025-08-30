@@ -6,11 +6,17 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Separator } from '@/components/ui/separator';
-import { Star, User } from 'lucide-react';
+import { Star, User, Camera } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Card } from './ui/card';
 import { Progress } from './ui/progress';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from '@/components/ui/dialog';
+import { useForm, Controller } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import Image from 'next/image';
 
 interface Review {
   id: number;
@@ -19,7 +25,16 @@ interface Review {
   rating: number;
   date: string;
   text: string;
+  photos?: string[];
 }
+
+const reviewSchema = z.object({
+  name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
+  rating: z.number().min(1, { message: 'Please select a rating.' }),
+  review: z.string().min(10, { message: 'Review must be at least 10 characters.' }),
+  photos: z.any().optional(),
+});
+
 
 const initialReviews: Review[] = [
   { id: 1, author: 'Sarah K.', avatar: '/avatars/01.png', rating: 5, date: '2 weeks ago', text: 'Absolutely love this serum! My skin has never felt smoother or looked more radiant. The texture is lightweight and absorbs instantly. Worth every penny!' },
@@ -36,31 +51,159 @@ const ratingDistribution = [
 ];
 
 
+function ReviewFormDialog({ open, onOpenChange, onSubmit }: { open: boolean, onOpenChange: (open: boolean) => void, onSubmit: (data: Review) => void }) {
+  const form = useForm<z.infer<typeof reviewSchema>>({
+    resolver: zodResolver(reviewSchema),
+    defaultValues: {
+      name: '',
+      review: '',
+      rating: 0,
+    },
+  });
+  const [imagePreviews, setImagePreviews] = useState<string[]>([]);
+  const { control, handleSubmit, setValue, watch } = form;
+  const rating = watch('rating');
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files) {
+      const files = Array.from(event.target.files);
+      const newPreviews = files.map(file => URL.createObjectURL(file));
+      setImagePreviews(prev => [...prev, ...newPreviews].slice(0, 5));
+      setValue('photos', files);
+    }
+  };
+
+  const processSubmit = (data: z.infer<typeof reviewSchema>) => {
+    const newReview: Review = {
+      id: Date.now(),
+      author: data.name,
+      avatar: '',
+      rating: data.rating,
+      date: 'Just now',
+      text: data.review,
+      photos: imagePreviews,
+    };
+    onSubmit(newReview);
+    form.reset();
+    setImagePreviews([]);
+    onOpenChange(false);
+  };
+
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="sm:max-w-[480px]">
+        <Form {...form}>
+          <form onSubmit={handleSubmit(processSubmit)}>
+            <DialogHeader>
+              <DialogTitle>Write a review</DialogTitle>
+              <DialogDescription>
+                Share your thoughts about the product with other customers.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="grid gap-4 py-4">
+              <FormField
+                control={control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Your Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Enter your name" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={control}
+                name="rating"
+                render={() => (
+                   <FormItem>
+                    <FormLabel>Your Rating</FormLabel>
+                    <FormControl>
+                       <div className="flex items-center gap-1">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <Star
+                            key={star}
+                            className={cn(
+                              'w-6 h-6 cursor-pointer',
+                              rating >= star ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'
+                            )}
+                            onClick={() => setValue('rating', star, { shouldValidate: true })}
+                          />
+                        ))}
+                      </div>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={control}
+                name="review"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Your Review</FormLabel>
+                    <FormControl>
+                      <Textarea placeholder="Share your thoughts..." {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+               <FormField
+                control={control}
+                name="photos"
+                render={() => (
+                  <FormItem>
+                    <FormLabel>Upload Photos (optional)</FormLabel>
+                    <FormControl>
+                      <div className="relative border-2 border-dashed border-muted rounded-lg p-6 flex flex-col items-center justify-center">
+                        <Camera className="w-8 h-8 text-muted-foreground mb-2" />
+                        <p className="text-sm text-muted-foreground">Drag & drop or click to upload</p>
+                        <Input 
+                          type="file" 
+                          className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                          multiple
+                          accept="image/*"
+                          onChange={handleFileChange}
+                        />
+                      </div>
+                    </FormControl>
+                     {imagePreviews.length > 0 && (
+                      <div className="flex gap-2 mt-2">
+                        {imagePreviews.map((src, index) => (
+                          <Image key={index} src={src} alt={`preview ${index}`} width={64} height={64} className="rounded-md object-cover" />
+                        ))}
+                      </div>
+                    )}
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <DialogFooter>
+              <DialogClose asChild>
+                <Button type="button" variant="outline">
+                  Cancel
+                </Button>
+              </DialogClose>
+              <Button type="submit">Submit Review</Button>
+            </DialogFooter>
+          </form>
+        </Form>
+      </DialogContent>
+    </Dialog>
+  );
+}
+
+
 export function ProductReviews({ productId }: { productId: string }) {
   const [reviews, setReviews] = useState<Review[]>(initialReviews);
-  const [rating, setRating] = useState(0);
-  const [hoverRating, setHoverRating] = useState(0);
-  const [name, setName] = useState('');
-  const [reviewText, setReviewText] = useState('');
+  const [isReviewFormOpen, setIsReviewFormOpen] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (name && rating > 0 && reviewText) {
-      const newReview: Review = {
-        id: reviews.length + 1,
-        author: name,
-        avatar: '',
-        rating,
-        date: 'Just now',
-        text: reviewText,
-      };
-      setReviews([newReview, ...reviews]);
-      // Reset form
-      setName('');
-      setRating(0);
-      setHoverRating(0);
-      setReviewText('');
-    }
+  const handleAddReview = (newReview: Review) => {
+    setReviews([newReview, ...reviews]);
   };
 
   const totalReviews = reviews.length;
@@ -68,6 +211,11 @@ export function ProductReviews({ productId }: { productId: string }) {
 
   return (
     <div className="w-full">
+      <ReviewFormDialog 
+        open={isReviewFormOpen}
+        onOpenChange={setIsReviewFormOpen}
+        onSubmit={handleAddReview}
+      />
       <div className="grid md:grid-cols-12 gap-8">
         <div className="md:col-span-4">
           <Card className="p-6 rounded-lg bg-muted/50 border-none">
@@ -101,7 +249,7 @@ export function ProductReviews({ productId }: { productId: string }) {
             <p className="text-sm text-muted-foreground mt-1">
               If you’ve used this product, share your thoughts with other customers.
             </p>
-            <Button variant="outline" className="w-full mt-4">Write a review</Button>
+            <Button variant="outline" className="w-full mt-4" onClick={() => setIsReviewFormOpen(true)}>Write a review</Button>
           </Card>
         </div>
 
@@ -131,6 +279,13 @@ export function ProductReviews({ productId }: { productId: string }) {
                     ))}
                   </div>
                   <p className="text-sm text-foreground/80 mt-2 leading-relaxed">{review.text}</p>
+                   {review.photos && review.photos.length > 0 && (
+                    <div className="flex gap-2 mt-2">
+                      {review.photos.map((photo, index) => (
+                        <Image key={index} src={photo} alt={`Review photo ${index + 1}`} width={80} height={80} className="rounded-md object-cover" />
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
