@@ -19,19 +19,12 @@ export default function ShopPage() {
                 className="object-cover w-full h-full"
                 data-ai-hint="skincare products lifestyle"
             />
-            <div className="absolute inset-0 z-10 h-full flex flex-col justify-center items-center text-center text-primary">
-                <div className="container mx-auto px-8 md:px-12 lg:px-24">
-                    <div className="max-w-md md:max-w-lg mx-auto">
-                         <h2 className="text-4xl md:text-[52px] font-extrabold text-primary">
-                            Discover Your Glow
-                        </h2>
-                        <p className="mt-4 text-lg md:text-2xl text-primary/90">
-                            Thoughtfully curated for your unique skin.
-                        </p>
-                        <Button size="lg" className="mt-8 rounded-full bg-white text-primary hover:bg-white/90" asChild>
-                            <Link href="#products">Explore Products</Link>
-                        </Button>
-                    </div>
+            <div className="absolute inset-0 bg-black/30 z-10 h-full flex flex-col justify-end items-start text-white p-12">
+                <div className="w-full">
+                     <h2 className="text-4xl md:text-[52px] font-extrabold">
+                        Shop Island
+                    </h2>
+                    <div className="mt-4 border-t border-white/50 w-full"></div>
                 </div>
             </div>
          </div>
