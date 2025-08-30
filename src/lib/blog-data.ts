@@ -8,7 +8,7 @@ export const allBlogs: Blog[] = [
     image: 'https://placehold.co/1200x800.png',
     aiHint: 'rice water skincare',
     date: 'October 26, 2023',
-    author: 'Jina Kim',
+    author: 'Sakshi Jain',
     excerpt: 'For centuries, Korean women have turned to a simple, natural ingredient for luminous skin: rice water. Discover how this ancient remedy, backed by modern science, can transform your skincare routine.',
     content: `For centuries, Korean women have turned to a simple, natural ingredient for luminous skin: rice water. This milky liquid, left over from rinsing or boiling rice, is a treasure trove of vitamins, minerals, and antioxidants. At Island Beauty, we’ve harnessed this ancient wisdom, making it the heart of our formulations.
 
@@ -38,7 +38,7 @@ Experience the timeless tradition and discover your skin’s natural radiance wi
     image: 'https://placehold.co/1200x800.png',
     aiHint: 'skincare ingredients science',
     date: 'September 15, 2023',
-    author: 'Dr. Anya Sharma',
+    author: 'Sakshi Jain',
     excerpt: 'Niacinamide, or Vitamin B3, is a powerhouse ingredient that addresses a multitude of skin concerns. From minimizing pores to fighting signs of aging, here’s why it’s a non-negotiable in our DewDrop Serum.',
     content: `If there’s one ingredient that deserves a spot in nearly every skincare routine, it’s Niacinamide. Also known as Vitamin B3, this water-soluble vitamin is a true multi-tasker, delivering a host of benefits that cater to almost any skin type or concern.
 
@@ -62,7 +62,7 @@ Ready to see the difference for yourself? Add this skincare superhero to your da
     image: 'https://placehold.co/1200x800.png',
     aiHint: 'minimalist bathroom shelf',
     date: 'August 02, 2023',
-    author: 'Priya Desai',
+    author: 'Sakshi Jain',
     excerpt: 'In a world that constantly demands more, we believe your skincare routine should be a moment of calm. Discover how a few simple, effective steps can lead to your healthiest skin ever, no 10-step routine required.',
     content: `In a world that glorifies being busy, finding moments of peace can feel like a luxury. But what if your skincare routine could be one of them? At Island Beauty, we believe in the power of simplicity. A complicated, multi-step routine isn't necessary for healthy, radiant skin. In fact, sometimes, less is more.
 
