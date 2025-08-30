@@ -60,7 +60,7 @@ Perfect under makeup or on bare skin. No greasiness, just glow.`,
       id: '3', 
       name: 'Morning Dew Moisturizer with SPF 15', 
       price: 1300.00, 
-      image: 'https://placehold.co/800x1000.png',
+      image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-1.webp?v=1754914138',
       videoUrl: 'https://cdn.shopify.com/videos/c/o/v/8be0e8a971384750a438fe3622c65683.mp4',
       gallery: [
         'https://placehold.co/800x1000.png',
