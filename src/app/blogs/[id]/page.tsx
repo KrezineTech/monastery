@@ -57,7 +57,7 @@ export default function BlogPostPage() {
 
     <div className="w-[96%] mx-auto px-4 py-12 sm:py-16">
       <article>
-        <div className="prose prose-lg max-w-3xl mx-auto text-foreground/90 leading-relaxed">
+        <div className="prose prose-lg mx-auto text-foreground/90 leading-relaxed">
           <p className="whitespace-pre-line">{blog.content}</p>
         </div>
       </article>
