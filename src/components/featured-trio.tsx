@@ -49,9 +49,7 @@ export function FeaturedTrio() {
         <h2 className="text-3xl font-bold font-headline text-center text-primary mb-12">Featured Products</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {trioProducts.map((product) => (
-            <Link key={product.id} href={`/shop/${product.id}`} className="block">
-                <ProductCard product={product} />
-            </Link>
+            <ProductCard key={product.id} product={product} href={`/shop/${product.id}`} />
           ))}
         </div>
       </div>
