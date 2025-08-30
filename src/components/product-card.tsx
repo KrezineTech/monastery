@@ -20,6 +20,10 @@ export function ProductCard({ product, className }: ProductCardProps) {
   const [isQuickViewOpen, setIsQuickViewOpen] = useState(false);
   const [isWishlisted, setIsWishlisted] = useState(false);
 
+  const toTitleCase = (str: string) => {
+    return str.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+  };
+
   const cardContent = (
     <Card className="overflow-hidden border-none shadow-none rounded-[26px] h-full">
       <div className="relative w-full h-full overflow-hidden rounded-[26px]">
@@ -35,7 +39,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
               data-ai-hint={product.aiHint}
             />
              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col items-center justify-end text-center text-white p-6">
-              <h3 className="text-2xl font-bold font-headline uppercase">{product.name.replace(/ with SPF 15/g, '').replace(/ Toner & Essence/g, '').replace(/ Boost Serum/g, '')}</h3>
+              <h3 className="text-2xl font-bold font-headline">{toTitleCase(product.name.replace(/ with SPF 15/g, '').replace(/ Toner & Essence/g, '').replace(/ Boost Serum/g, ''))}</h3>
               {product.category && <p className="text-sm mt-1 capitalize">{product.category.replace(/-/g, ' ')}</p>}
               <Button variant="outline" className="mt-4 bg-transparent border-white text-white hover:bg-white hover:text-black rounded-full">
                 BUY NOW
