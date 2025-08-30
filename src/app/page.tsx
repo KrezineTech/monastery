@@ -43,12 +43,6 @@ const reels: Reel[] = [
     product: { id: '1', name: 'Purity in a Drop Toner & Essence', price: 999.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-2.webp?v=1756537408', aiHint: 'toner essence bottle' },
   },
   {
-    id: '3',
-    videoUrl: 'https://cdn.shopify.com/videos/c/o/v/b8286706707a485b897d7342be75d29d.mp4',
-    aiHint: 'makeup tutorial',
-    product: { id: '2', name: 'DewDrop Evenness Boost Serum', price: 999.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Serum_copy.webp?v=1754934890', aiHint: 'serum bottle' },
-  },
-  {
     id: '4',
     videoUrl: 'https://cdn.shopify.com/videos/c/o/v/0b32f300c2124dbfa056a8f4e4353478.mp4',
     aiHint: 'morning routine',
@@ -77,6 +71,12 @@ const reels: Reel[] = [
     videoUrl: 'https://cdn.shopify.com/videos/c/o/v/fee42022b7be464a9abd52faecb38f72.mp4',
     aiHint: 'skincare routine',
     product: { id: '3', name: 'Morning Dew Moisturizer with SPF 15', price: 1300.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-1.webp?v=1754914138', aiHint: 'moisturizer bottle' },
+  },
+  {
+    id: '3',
+    videoUrl: 'https://cdn.shopify.com/videos/c/o/v/b8286706707a485b897d7342be75d29d.mp4',
+    aiHint: 'makeup tutorial',
+    product: { id: '2', name: 'DewDrop Evenness Boost Serum', price: 999.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Serum_copy.webp?v=1754934890', aiHint: 'serum bottle' },
   },
 ];
 
