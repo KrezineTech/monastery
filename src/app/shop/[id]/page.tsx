@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { allProducts } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { Star, CheckCircle, Minus, Plus, Truck, RefreshCw, Package, Share2, Heart, PlayCircle } from 'lucide-react';
+import { Star, CheckCircle, Minus, Plus, Truck, RefreshCw, Share2, Heart, PlayCircle } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { cn } from '@/lib/utils';
 import {
@@ -230,17 +230,6 @@ export default function ProductDetailPage() {
                   <Button size="lg" variant="outline" className="flex-1 rounded-full">Add To Cart</Button>
               </div>
               <Button size="lg" className="w-full rounded-full">Buy it now</Button>
-          </div>
-
-          <div className="mt-6 p-4 bg-muted/50 rounded-lg flex items-start gap-4 text-sm">
-              <Package className="w-6 h-6 text-muted-foreground mt-1"/>
-              <div>
-                  <div className="flex justify-between items-center">
-                      <p className="font-medium">Pickup available at United State</p>
-                      <Button variant="link" className="p-0 h-auto text-xs">View store information</Button>
-                  </div>
-                  <p className="text-muted-foreground">Usually ready in 24 hours</p>
-              </div>
           </div>
 
           <div className="mt-4 flex items-center gap-4 text-sm">

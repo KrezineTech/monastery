@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { CheckCircle, Minus, Plus, Package, Truck, RefreshCw } from 'lucide-react';
+import { CheckCircle, Minus, Plus, Truck, RefreshCw } from 'lucide-react';
 import type { Product } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
@@ -129,17 +129,6 @@ export function QuickViewDialog({ open, onOpenChange, product }: QuickViewDialog
                 <Button size="lg" className="w-full rounded-full">Buy it now</Button>
             </div>
             
-            <div className="mt-6 p-4 bg-muted/50 rounded-lg flex items-start gap-4 text-sm">
-                <Package className="w-6 h-6 text-muted-foreground mt-1"/>
-                <div>
-                    <div className="flex justify-between items-center">
-                        <p className="font-medium">Pickup available at United State</p>
-                        <Button variant="link" className="p-0 h-auto text-xs">View store information</Button>
-                    </div>
-                    <p className="text-muted-foreground">Usually ready in 24 hours</p>
-                </div>
-            </div>
-
             <div className="mt-4 flex items-center gap-4 text-sm">
               <div className="flex items-center gap-2">
                 <Truck className="w-5 h-5 text-muted-foreground" />
