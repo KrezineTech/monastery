@@ -61,9 +61,9 @@ export default function BlogsPage() {
                           data-ai-hint={blog.aiHint}
                         />
                       </div>
-                    <h3 className="text-lg font-bold font-headline text-foreground group-hover:text-primary transition-colors">
+                    <h5 className="text-lg font-bold font-headline text-foreground group-hover:text-primary transition-colors">
                       {blog.title}
-                    </h3>
+                    </h5>
                   </div>
                 </Card>
               </Link>

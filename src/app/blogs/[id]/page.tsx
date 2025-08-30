@@ -56,7 +56,7 @@ export default function BlogPostPage() {
 
       <aside className="mt-16 pt-12 border-t">
         <h2 className="text-3xl font-bold font-headline text-center text-primary mb-12">
-          You might also like
+          You Might Also Like
         </h2>
         <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {otherPosts.map((post) => (
@@ -72,9 +72,9 @@ export default function BlogPostPage() {
                   />
                 </div>
                 <div className="md:col-span-2">
-                  <h3 className="text-lg font-bold font-headline text-foreground mb-2 group-hover:text-primary transition-colors">
+                  <h5 className="text-lg font-bold font-headline text-foreground mb-2 group-hover:text-primary transition-colors">
                     {post.title}
-                  </h3>
+                  </h5>
                    <p className="text-sm text-muted-foreground">
                     {post.date}
                   </p>

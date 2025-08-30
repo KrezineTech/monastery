@@ -202,7 +202,7 @@ export default function Home() {
                         </h2>
                         <div className="mt-8 space-y-6 text-foreground/80">
                             <div>
-                            <h3 className="text-base font-semibold font-headline text-foreground">Island Beauty with Purpose</h3>
+                            <h3 className="text-base font-semibold font-headline text-foreground">Island Beauty With Purpose</h3>
                             <p className="mt-1 text-sm">
                                 At Island, skincare isn't just a routine, it's a return. A return to calm, to care, to skin that feels like home. Inspired by "this IS your LAND," we see skin as a living landscape-shaped by seasons, stories, and self. It needs less noise, more nourishment. Fewer layers, deeper rest. With nature at our core, we craft clean, gentle rituals that restore balance and bring out your skin's quiet glow.
                             </p>
@@ -285,7 +285,7 @@ export default function Home() {
         <div className="w-[96%] mx-auto">
           <div className="flex justify-between items-end mb-12">
             <div>
-              <h2 className="text-3xl font-bold font-headline text-primary mb-2">From the Blog</h2>
+              <h2 className="text-3xl font-bold font-headline text-primary mb-2">From The Blog</h2>
               <p className="text-foreground/80">Your guide to skincare, self-care, and the stories behind our glow.</p>
             </div>
             <Button asChild>
@@ -319,9 +319,9 @@ export default function Home() {
                           data-ai-hint={blog.aiHint}
                         />
                       </div>
-                    <h3 className="text-lg font-bold font-headline text-foreground group-hover:text-primary transition-colors">
+                    <h5 className="text-lg font-bold font-headline text-foreground group-hover:text-primary transition-colors">
                       {blog.title}
-                    </h3>
+                    </h5>
                   </div>
                 </Card>
               </Link>
