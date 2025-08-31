@@ -141,25 +141,14 @@ export default function AboutPage() {
 
       <section className="py-16 sm:py-24">
         <div className="w-[96%] mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="md:pr-12">
-                    <h2 className="text-3xl font-bold font-headline text-primary mb-6">A Note from Our Founder</h2>
-                    <div className="text-foreground/80 space-y-4 leading-relaxed">
-                        <p>I’ve always believed skincare should feel like care - not effort. Not about chasing perfection, but about feeling at peace in your own skin. ISLAND was born from that longing. A softer space.</p>
-                        <p>Created with Sakshi, who’s walked this journey beside me, and Jinsoon, whose quiet brilliance shaped every formula, this has been a two-year labour of love. Every drop was made with intention. To bring comfort where there was discomfort. Calm where there was chaos. And a little glow, the kind that feels like you again.</p>
-                        <p>Three essentials. No clutter. No overwhelm. Just skincare that meets you where you are, and gently brings your skin back home. I’ve poured so much of myself into this. And I hope, in some quiet way, it reaches you.</p>
-                        <p className="mt-6">With love,</p>
-                        <p>Shirley</p>
-                    </div>
-                </div>
-                <div className="relative w-full aspect-square rounded-[26px] overflow-hidden">
-                    <Image
-                        src="https://www.islandbeauty.in/cdn/shop/files/founder.webp?v=1754813589"
-                        alt="Founder Shirley"
-                        fill
-                        className="object-cover"
-                        data-ai-hint="woman founder portrait"
-                    />
+            <div className="text-center max-w-3xl mx-auto">
+                <h2 className="text-3xl font-bold font-headline text-primary mb-6">A Note from Our Founder</h2>
+                <div className="text-foreground/80 space-y-4 leading-relaxed">
+                    <p>I’ve always believed skincare should feel like care - not effort. Not about chasing perfection, but about feeling at peace in your own skin. ISLAND was born from that longing. A softer space.</p>
+                    <p>Created with Sakshi, who’s walked this journey beside me, and Jinsoon, whose quiet brilliance shaped every formula, this has been a two-year labour of love. Every drop was made with intention. To bring comfort where there was discomfort. Calm where there was chaos. And a little glow, the kind that feels like you again.</p>
+                    <p>Three essentials. No clutter. No overwhelm. Just skincare that meets you where you are, and gently brings your skin back home. I’ve poured so much of myself into this. And I hope, in some quiet way, it reaches you.</p>
+                    <p className="mt-6">With love,</p>
+                    <p>Shirley</p>
                 </div>
             </div>
         </div>
