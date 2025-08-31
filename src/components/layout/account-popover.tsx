@@ -16,12 +16,12 @@ export function AccountPopover() {
 
   return (
     <div className="space-y-4">
-      <h3 className="font-medium">Account</h3>
+      <h5 className="font-medium text-center">Account</h5>
       <div className="space-y-2">
         {isLoggedIn ? (
           <Button variant="secondary" className="w-full" onClick={handleAuthAction}>Logout</Button>
         ) : (
-          <Button variant="secondary" className="w-full" onClick={handleAuthAction}>Sign In</Button>
+          <Button variant="default" className="w-full" onClick={handleAuthAction}>Sign In</Button>
         )}
       </div>
       <Separator />
