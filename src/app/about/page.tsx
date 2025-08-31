@@ -1,4 +1,8 @@
 
+'use client';
+
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -59,8 +63,57 @@ const aboutContent = [
   },
 ];
 
+function FounderCard({ founder, i, progress, range, targetScale }) {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start end', 'start start']
+  });
+
+  const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
+  const scale = useTransform(progress, range, [1, targetScale]);
+
+  return (
+    <motion.div ref={container} className="sticky top-0 h-screen flex items-center justify-center">
+      <motion.div 
+        style={{ 
+          scale,
+          top: `calc(-5vh + ${i * 25}px)`,
+        }} 
+        className="relative h-[500px] w-full rounded-2xl"
+      >
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center h-full w-full bg-card p-8 rounded-2xl border border-border/40">
+          <div className="order-2 text-center md:text-left h-full flex flex-col justify-center">
+            <h3 className="font-bold text-2xl font-headline text-primary mb-2">{founder.name}</h3>
+            <p className="text-md text-muted-foreground mb-4">{founder.role}</p>
+            <p className="text-foreground/80 italic text-base leading-relaxed">"{founder.quote}"</p>
+          </div>
+          <div className="order-1 h-full">
+            <div className="relative w-full h-full rounded-[26px] overflow-hidden">
+              <motion.div className="w-full h-full" style={{scale: imageScale}}>
+                <Image
+                  src={founder.image}
+                  alt={founder.name}
+                  fill
+                  className="w-full h-full object-cover"
+                  data-ai-hint={founder.aiHint}
+                />
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  )
+}
 
 export default function AboutPage() {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start start', 'end end']
+  });
+
   return (
     <>
       <section className="w-full md:pt-8 pt-7 md:mb-5 mb-3">
@@ -163,28 +216,23 @@ export default function AboutPage() {
         </section>
 
       <section className="pb-16 sm:pb-24">
-        <div className="w-[96%] mx-auto px-4">
-            <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold font-headline text-primary">Meet the Founders</h2>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-                {founders.map((founder) => (
-                    <Card key={founder.name} className="p-8 border-none shadow-none bg-muted/30 rounded-[26px]">
-                        <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden mb-6">
-                            <Image 
-                                src={founder.image}
-                                alt={founder.name}
-                                fill
-                                className="object-cover"
-                                data-ai-hint={founder.aiHint}
-                            />
-                        </div>
-                        <h3 className="font-bold text-lg font-headline text-foreground">{founder.name}</h3>
-                        <p className="text-sm text-muted-foreground mb-4">{founder.role}</p>
-                        <p className="text-foreground/80 italic">"{founder.quote}"</p>
-                    </Card>
-                ))}
-            </div>
+        <div className="w-[96%] mx-auto px-4 text-center mb-12">
+            <h2 className="text-3xl font-bold font-headline text-primary">Meet the Founders</h2>
+        </div>
+         <div ref={container} className="relative h-[300vh] w-[96%] mx-auto">
+            {founders.map((founder, i) => {
+            const targetScale = 1 - ((founders.length - i) * 0.05);
+            return (
+                <FounderCard 
+                    key={i} 
+                    i={i} 
+                    founder={founder} 
+                    progress={scrollYProgress} 
+                    range={[i * 0.25, 1]} 
+                    targetScale={targetScale}
+                />
+            );
+            })}
         </div>
       </section>
     </>
