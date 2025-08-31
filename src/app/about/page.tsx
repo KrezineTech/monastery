@@ -1,6 +1,8 @@
 
 import Image from 'next/image';
 import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 
 const founders = [
   {
@@ -25,6 +27,38 @@ const founders = [
     aiHint: 'woman professional'
   }
 ];
+
+const aboutContent = [
+  {
+    image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/about-1.webp?v=1754813589',
+    aiHint: 'woman applying cream',
+    textColor: 'text-stone-800',
+    bgColor: 'bg-[#D2CBBF]',
+    buttonClasses: 'bg-stone-800/20 hover:bg-stone-800/30 text-stone-800',
+    tagBg: 'bg-black/10',
+    content: {
+      tag: 'Our Philosophy',
+      title: "Real Skin, Real Results.",
+      description: "We believe skincare should be honest. We formulate for real skin concerns, using ingredients that are both gentle and effective, to deliver visible results you can count on.",
+    },
+    isImageFirst: true,
+  },
+  {
+    image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/about-2.webp?v=1754813589',
+    aiHint: 'skincare texture',
+    textColor: 'text-white',
+    bgColor: 'bg-[#C5B4E3]',
+    buttonClasses: 'bg-white/20 hover:bg-white/30 text-white',
+    tagBg: 'bg-white/20',
+    content: {
+      tag: 'Our Promise',
+      title: 'Simplicity & Transparency.',
+      description: "No complicated routines, no confusing ingredients. Just simple, effective skincare that works. We're committed to transparency in everything we do, from sourcing to formulation.",
+    },
+    isImageFirst: false,
+  },
+];
+
 
 export default function AboutPage() {
   return (
@@ -78,30 +112,55 @@ export default function AboutPage() {
         </div>
       </section>
       
-      <section className="pb-16 sm:pb-24">
+       <section className="py-16 sm:py-24">
         <div className="w-[96%] mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-8">
-                <div className="relative w-full h-[60vh] rounded-[26px] overflow-hidden">
-                    <Image 
-                        src="https://cdn.shopify.com/s/files/1/0723/1376/6028/files/about-1.webp?v=1754813589"
-                        alt="Skincare application"
+            <div className="space-y-16">
+            {aboutContent.map((promo, index) => (
+                <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                {promo.isImageFirst ? (
+                    <>
+                    <div className="relative h-[60vh] rounded-[26px] overflow-hidden">
+                        <Image
+                        src={promo.image}
+                        alt={promo.content.title}
                         fill
                         className="object-cover"
-                        data-ai-hint="woman applying cream"
-                    />
-                </div>
-                <div className="relative w-full h-[60vh] rounded-[26px] overflow-hidden">
-                    <Image 
-                        src="https://cdn.shopify.com/s/files/1/0723/1376/6028/files/about-2.webp?v=1754813589"
-                        alt="Skincare product texture"
+                        data-ai-hint={promo.aiHint}
+                        />
+                    </div>
+                    <div className="md:sticky md:top-24">
+                        <Card className={`p-10 rounded-[26px] ${promo.bgColor} ${promo.textColor} border-none h-auto md:h-auto lg:h-[40vh] flex flex-col justify-center`}>
+                        <span className={`inline-block ${promo.tagBg} px-3 py-1 text-sm rounded-md mb-4 self-start`}>{promo.content.tag}</span>
+                        <h2 className="text-4xl font-bold font-headline mb-4">{promo.content.title}</h2>
+                        <p className="mb-6 opacity-80">{promo.content.description}</p>
+                        </Card>
+                    </div>
+                    </>
+                ) : (
+                    <>
+                    <div className="md:sticky md:top-24">
+                        <Card className={`p-10 rounded-[26px] ${promo.bgColor} ${promo.textColor} border-none h-auto md:h-auto lg:h-[40vh] flex flex-col justify-center`}>
+                        <span className={`inline-block ${promo.tagBg} px-3 py-1 text-sm rounded-md mb-4 self-start`}>{promo.content.tag}</span>
+                        <h2 className="text-4xl font-bold font-headline mb-4">{promo.content.title}</h2>
+                        <p className="mb-6 opacity-80">{promo.content.description}</p>
+                        </Card>
+                    </div>
+                    <div className="relative h-[60vh] rounded-[26px] overflow-hidden">
+                        <Image
+                        src={promo.image}
+                        alt={promo.content.title}
                         fill
                         className="object-cover"
-                        data-ai-hint="skincare texture"
-                    />
+                        data-ai-hint={promo.aiHint}
+                        />
+                    </div>
+                    </>
+                )}
                 </div>
+            ))}
             </div>
         </div>
-      </section>
+        </section>
 
       <section className="pb-16 sm:pb-24">
         <div className="w-[96%] mx-auto px-4">
