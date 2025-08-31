@@ -60,7 +60,6 @@ function IngredientCard({ title, description, image, aiHint, i, progress, range,
 
   const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
   const scale = useTransform(progress, range, [1, targetScale]);
-  const opacity = useTransform(progress, range, [1, 0.2]);
 
   return (
     <div ref={container} className="sticky top-0 h-screen flex items-center justify-center">
@@ -68,7 +67,6 @@ function IngredientCard({ title, description, image, aiHint, i, progress, range,
         style={{ 
           scale,
           top: `calc(-5vh + ${i * 25}px)`,
-          opacity: i === ingredients.length - 1 ? 1 : opacity
         }} 
         className="relative h-[500px] w-full rounded-2xl"
       >
