@@ -4,23 +4,23 @@ import { Card } from '@/components/ui/card';
 
 const founders = [
   {
-    name: 'Shirley',
+    name: 'Shirley Setia',
     role: 'Co-Founder',
-    quote: "Skincare should feel like care—not effort. It's about feeling at peace in your own skin.",
+    quote: "ISLAND gave me the chance to be vulnerable. To talk about skin struggles I never really shared, and to help shape something that feels real, not aspirational. I didn’t want to just ‘lend my face’, I wanted to build something I could stand behind. My favourite part has been connecting with people who see their own story in ours.”",
     image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Rectangle_1578.webp?v=1754813589',
     aiHint: 'woman smiling'
   },
   {
-    name: 'Sakshi',
+    name: 'Sakshi Jain',
     role: 'Co-Founder',
-    quote: "Walking this journey, every formula became a piece of our story—a testament to quiet brilliance.",
+    quote: "For me, ISLAND began as a quiet rebellion against overcomplicated routines, unrealistic beauty standards, and skincare that never felt made for us. It’s been deeply fulfilling to build something from scratch that respects the Indian consumer’s intelligence and skin both. My favourite part? Turning a personal struggle into a brand that feels like home for others too.”",
     image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Rectangle_1579.webp?v=1754813589',
     aiHint: 'woman portrait'
   },
   {
-    name: 'Jinsoon',
-    role: 'Formulator',
-    quote: "With quiet brilliance, we shaped every formula to bring comfort, calm, and a little glow.",
+    name: 'Jinsoon Lee',
+    role: 'Co-Founder',
+    quote: "As a formulator, I’ve worked with many skincare brands, but ISLAND felt different from the very first conversation. It wasn’t about perfection. It was about relevance. Indian skin, Indian climate, Indian water. All of it made me rethink formulation from the ground up. My favourite part is solving for things that truly matter, and creating something that feels both modern and rooted.”",
     image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Rectangle_1580.webp?v=1754813589',
     aiHint: 'woman professional'
   }
@@ -42,7 +42,7 @@ export default function AboutPage() {
             />
             <div className="absolute inset-0 bg-black/30 z-10 h-full flex flex-col justify-end items-start text-white p-12">
                 <div className="w-full">
-                     <h2 className="text-4xl md:text-[52px] font-headline font-extrabold">
+                     <h2 className="text-4xl md:text-[52px] font-extrabold font-headline">
                         About Island
                     </h2>
                     <div className="mt-4 border-t border-white/50 w-full"></div>
