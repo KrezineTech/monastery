@@ -5,6 +5,7 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { Card } from '@/components/ui/card';
+import { Check } from 'lucide-react';
 
 const ingredients = [
   {
@@ -24,6 +25,13 @@ const ingredients = [
     description: 'A true skincare superhero, Niacinamide strengthens the skin\'s barrier, minimizes the appearance of pores, and regulates oil production. It works in harmony with our natural ingredients to visibly improve skin texture and tone for a balanced, healthy look.',
     image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/2148205096.jpg?v=1756620734',
     aiHint: 'skincare science lab',
+    benefits: [
+        "Reduces pore size and refines skin texture, giving a smoother appearance.",
+        "Brightens dark spots and evens out skin tone.",
+        "Strengthens the skin barrier, enhancing moisture retention and resilience.",
+        "Calms redness and irritation"
+    ],
+    benefitTitle: '"THE SKIN BALANCER"'
   },
 ];
 
@@ -94,6 +102,56 @@ function IngredientCard({ title, description, image, aiHint, i, progress, range,
   )
 }
 
+function IngredientCardWithList({ title, benefitTitle, benefits, image, aiHint, i, progress, range, targetScale }) {
+    const container = useRef(null);
+    const { scrollYProgress } = useScroll({
+      target: container,
+      offset: ['start end', 'start start']
+    });
+  
+    const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
+    const scale = useTransform(progress, range, [1, targetScale]);
+  
+    return (
+      <motion.div ref={container} className="sticky top-0 h-screen flex items-center justify-center">
+        <motion.div 
+          style={{ 
+            scale,
+            top: `calc(-5vh + ${i * 25}px)`,
+          }} 
+          className="relative h-[500px] w-full rounded-2xl"
+        >
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center h-full w-full bg-card p-8 rounded-2xl border border-border/40">
+            <div className="order-1">
+              <p className="text-sm font-semibold text-primary mb-2">{benefitTitle}</p>
+              <h3 className="text-2xl font-bold font-headline text-primary mb-4">{title.replace('(Vitamin B3)','')}</h3>
+              <ul className="space-y-3 text-foreground/80">
+                {benefits.map((benefit, index) => (
+                    <li key={index} className="flex items-start gap-3 border-b border-dashed pb-3">
+                        <span>{benefit}</span>
+                    </li>
+                ))}
+              </ul>
+            </div>
+            <div className="order-2 h-full">
+              <div className="relative w-full h-full rounded-[26px] overflow-hidden">
+                <motion.div className="w-full h-full" style={{scale: imageScale}}>
+                  <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    className="w-full h-full object-cover"
+                    data-ai-hint={aiHint}
+                  />
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </motion.div>
+    )
+  }
+
 export default function IngredientsPage() {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -143,6 +201,18 @@ export default function IngredientsPage() {
       <div ref={container} className="relative h-[300vh] w-[96%] mx-auto">
         {ingredients.map((ingredient, i) => {
           const targetScale = 1 - ((ingredients.length - i) * 0.05);
+          if (ingredient.benefits) {
+            return (
+                <IngredientCardWithList
+                    key={i}
+                    i={i}
+                    {...ingredient}
+                    progress={scrollYProgress}
+                    range={[i * 0.25, 1]}
+                    targetScale={targetScale}
+                />
+            )
+          }
           return (
             <IngredientCard 
               key={i} 
@@ -213,3 +283,5 @@ export default function IngredientsPage() {
     </>
   );
 }
+
+    
