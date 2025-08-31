@@ -9,6 +9,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { useState } from 'react';
 import { Input } from '../ui/input';
 import { WishlistSheet } from './wishlist-sheet';
+import { WishlistProvider } from '@/hooks/use-wishlist';
 
 const navLinks = [
     { href: '/shop', label: 'Shop' },

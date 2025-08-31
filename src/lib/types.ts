@@ -13,6 +13,8 @@ export interface Product {
   title?: string;
   subtitle?: string;
   volumes?: string[];
+  type?: string;
+  sold?: number;
 }
 
 export interface Category {

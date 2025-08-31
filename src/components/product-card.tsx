@@ -10,6 +10,7 @@ import type { Product } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { ShoppingCart, Eye, Star, Heart } from 'lucide-react';
 import { QuickViewDialog } from './quick-view-dialog';
+import { useWishlist } from '@/hooks/use-wishlist';
 
 interface ProductCardProps {
   product: Product;
@@ -19,10 +20,21 @@ interface ProductCardProps {
 
 export function ProductCard({ product, className, href }: ProductCardProps) {
   const [isQuickViewOpen, setIsQuickViewOpen] = useState(false);
-  const [isWishlisted, setIsWishlisted] = useState(false);
+  const { addToWishlist, removeFromWishlist, isWishlisted } = useWishlist();
+
+  const isProductWishlisted = isWishlisted(product.id);
 
   const toTitleCase = (str: string) => {
     return str.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+  };
+
+  const handleWishlistClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (isProductWishlisted) {
+      removeFromWishlist(product.id);
+    } else {
+      addToWishlist(product);
+    }
   };
 
   const cardContent = (
@@ -59,12 +71,9 @@ export function ProductCard({ product, className, href }: ProductCardProps) {
            <Button 
               size="icon" 
               className="absolute top-4 right-4 bg-white/80 hover:bg-white text-primary rounded-full h-10 w-10 backdrop-blur-sm"
-              onClick={(e) => {
-                e.preventDefault();
-                setIsWishlisted(!isWishlisted)
-              }}
+              onClick={handleWishlistClick}
             >
-              <Heart className={cn("w-5 h-5", isWishlisted && "fill-primary")} />
+              <Heart className={cn("w-5 h-5", isProductWishlisted && "fill-primary")} />
             </Button>
           </>
         )}
