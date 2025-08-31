@@ -43,44 +43,46 @@ export function ScrollToTopButton() {
     };
   }, []);
 
-  const circumference = 2 * Math.PI * 22; // 2 * pi * radius
+  const circumference = 2 * Math.PI * 14; // 2 * pi * radius
 
   return (
     <div className="fixed bottom-5 right-5 z-50">
       <Button
         onClick={scrollToTop}
+        variant="outline"
+        size="icon"
         className={cn(
-          'relative h-14 w-14 rounded-full bg-background p-0 text-primary shadow-lg transition-opacity duration-300 hover:bg-accent',
+          'relative h-12 w-12 rounded-full bg-background/80 text-primary shadow-lg transition-opacity duration-300 hover:bg-accent backdrop-blur-sm',
           isVisible ? 'opacity-100' : 'opacity-0'
         )}
         aria-label="Scroll to top"
       >
         <svg
-          className="h-full w-full -rotate-90"
-          viewBox="0 0 48 48"
+          className="absolute h-full w-full -rotate-90"
+          viewBox="0 0 32 32"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <circle
-            cx="24"
-            cy="24"
-            r="22"
+            cx="16"
+            cy="16"
+            r="14"
             stroke="hsl(var(--border))"
-            strokeWidth="3"
+            strokeWidth="2"
           />
           <circle
-            cx="24"
-            cy="24"
-            r="22"
+            cx="16"
+            cy="16"
+            r="14"
             stroke="hsl(var(--primary))"
-            strokeWidth="3"
+            strokeWidth="2"
             strokeLinecap="round"
             strokeDasharray={circumference}
             strokeDashoffset={circumference - (progress / 100) * circumference}
             style={{ transition: 'stroke-dashoffset 0.1s linear' }}
           />
         </svg>
-        <ChevronUp className="absolute h-6 w-6" />
+        <ChevronUp className="h-6 w-6" />
       </Button>
     </div>
   );
