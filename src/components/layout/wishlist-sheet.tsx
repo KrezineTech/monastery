@@ -3,29 +3,32 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetFooter, SheetClose } from '@/components/ui/sheet';
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+  SheetFooter,
+  SheetClose,
+} from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Heart, X } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { useWishlist } from '@/hooks/use-wishlist';
-import type { Product } from '@/lib/types';
+import { useWishlist } from '@/hooks/use-wishlist.tsx';
+import { useStore } from 'zustand';
 
 export function WishlistSheet() {
-  const { wishlist, removeFromWishlist } = useWishlist();
-  const [currentPage, setCurrentPage] = useState(0);
-  
-  const productsPerPage = 10;
-  const offset = currentPage * productsPerPage;
+  const store = useWishlist();
+  const { wishlist, removeFromWishlist } = useStore(store);
+
   const totalItems = wishlist.length;
 
-  const currentProducts = wishlist.slice(offset, offset + productsPerPage);
-  
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="ghost" size="icon">
+        <Button variant="ghost" size="icon" className="relative">
           <Heart className="h-5 w-5 text-gray-600" />
           <span className="sr-only">Wishlist</span>
           {totalItems > 0 && (
@@ -47,12 +50,12 @@ export function WishlistSheet() {
           </SheetTitle>
         </SheetHeader>
         <Separator />
-        
+
         {wishlist.length > 0 ? (
           <>
             <ScrollArea className="flex-1">
               <div className="px-6 py-4 space-y-4">
-                {currentProducts.map((product) => (
+                {wishlist.map((product) => (
                   <div key={product.id} className="flex items-center gap-4 pb-4 border-b last:border-b-0">
                     <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-md">
                       <Image

@@ -10,7 +10,9 @@ import type { Product } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { ShoppingCart, Eye, Star, Heart } from 'lucide-react';
 import { QuickViewDialog } from './quick-view-dialog';
-import { useWishlist } from '@/hooks/use-wishlist';
+import { useWishlist } from '@/hooks/use-wishlist.tsx';
+import { useStore } from 'zustand';
+import { useCart } from '@/hooks/use-cart.tsx';
 
 interface ProductCardProps {
   product: Product;
@@ -20,7 +22,12 @@ interface ProductCardProps {
 
 export function ProductCard({ product, className, href }: ProductCardProps) {
   const [isQuickViewOpen, setIsQuickViewOpen] = useState(false);
-  const { addToWishlist, removeFromWishlist, isWishlisted } = useWishlist();
+  
+  const wishlistStore = useWishlist();
+  const { addToWishlist, removeFromWishlist, isWishlisted } = useStore(wishlistStore);
+  
+  const cartStore = useCart();
+  const { addToCart } = useStore(cartStore);
 
   const isProductWishlisted = isWishlisted(product.id);
 
@@ -36,6 +43,11 @@ export function ProductCard({ product, className, href }: ProductCardProps) {
       addToWishlist(product);
     }
   };
+
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault();
+    addToCart(product);
+  }
 
   const cardContent = (
     <Card className="overflow-hidden border-none shadow-none rounded-[26px] h-full">
@@ -111,7 +123,7 @@ export function ProductCard({ product, className, href }: ProductCardProps) {
               <Eye className="w-4 h-4 mr-2" />
               Quick view
             </Button>
-            <Button variant="secondary" size="icon" className="rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/80">
+            <Button variant="secondary" size="icon" className="rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/80" onClick={handleAddToCart}>
               <ShoppingCart className="w-5 h-5" />
             </Button>
           </div>

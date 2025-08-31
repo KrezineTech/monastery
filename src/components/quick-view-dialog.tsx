@@ -14,6 +14,8 @@ import type { Product } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
 import { Card } from './ui/card';
+import { useCart } from '@/hooks/use-cart.tsx';
+import { useStore } from 'zustand';
 
 interface QuickViewDialogProps {
   open: boolean;
@@ -33,6 +35,9 @@ export function QuickViewDialog({ open, onOpenChange, product }: QuickViewDialog
   const [mainImage, setMainImage] = useState(galleryImages[0]);
   const [quantity, setQuantity] = useState(1);
   const [selectedVolume, setSelectedVolume] = useState(product.volumes?.[0] || '');
+
+  const cartStore = useCart();
+  const { addToCart } = useStore(cartStore);
 
   const handleQuantityChange = (amount: number) => {
     setQuantity((prev) => Math.max(1, prev + amount));
@@ -127,7 +132,7 @@ export function QuickViewDialog({ open, onOpenChange, product }: QuickViewDialog
                         <Plus className="w-4 h-4" />
                         </Button>
                     </div>
-                    <Button size="lg" variant="outline" className="flex-1 rounded-full">Add To Cart</Button>
+                    <Button size="lg" variant="outline" className="flex-1 rounded-full" onClick={() => addToCart({...product, quantity})}>Add To Cart</Button>
                 </div>
                 <Button size="lg" className="w-full rounded-full">Buy it now</Button>
             </div>

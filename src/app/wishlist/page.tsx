@@ -3,14 +3,16 @@
 import React, { useState } from 'react'
 import Image from 'next/image';
 import { ProductCard } from '@/components/product-card'
-import { useWishlist } from '@/hooks/use-wishlist'
+import { useWishlist } from '@/hooks/use-wishlist.tsx'
 import { Button } from '@/components/ui/button';
 import { ChevronDown, X } from 'lucide-react';
 import type { Product } from '@/lib/types';
+import { useStore } from 'zustand';
 
 
 const WishlistPage = () => {
-    const { wishlist } = useWishlist();
+    const wishlistStore = useWishlist();
+    const { wishlist } = useStore(wishlistStore);
     const [sortOption, setSortOption] = useState('');
     const [layoutCol, setLayoutCol] = useState<number | null>(4)
     const [type, setType] = useState<string | undefined>()

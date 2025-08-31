@@ -22,6 +22,8 @@ import { ProductLightbox } from '@/components/product-lightbox';
 import { ProductReviews } from '@/components/product-reviews';
 import { RelatedProducts } from '@/components/related-products';
 import { Card } from '@/components/ui/card';
+import { useCart } from '@/hooks/use-cart';
+import { useStore } from 'zustand';
 
 export default function ProductDetailPage({ params }: { params: { id: string } }) {
   const product = allProducts.find((p) => p.id === params.id);
@@ -31,7 +33,9 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [lightboxStartIndex, setLightboxStartIndex] = useState(0);
   const { toast } = useToast();
-  
+  const cartStore = useCart();
+  const { addToCart } = useStore(cartStore);
+
   if (!product) {
     notFound();
   }
@@ -77,6 +81,10 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
   const openLightbox = (index: number) => {
     setLightboxStartIndex(index);
     setIsLightboxOpen(true);
+  };
+
+  const handleAddToCart = () => {
+    addToCart({ ...product, quantity });
   };
 
   const volumes = product.volumes || [];
@@ -230,7 +238,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                       <Plus className="w-4 h-4" />
                       </Button>
                   </div>
-                  <Button size="lg" variant="outline" className="flex-1 rounded-full">Add To Cart</Button>
+                  <Button size="lg" variant="outline" className="flex-1 rounded-full" onClick={handleAddToCart}>Add To Cart</Button>
               </div>
               <Button size="lg" className="w-full rounded-full">Buy it now</Button>
           </div>

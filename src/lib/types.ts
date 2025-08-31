@@ -58,3 +58,7 @@ export interface WishlistItem {
     id: string;
     product: Product;
 }
+
+export interface CartItem extends Product {
+  quantity: number;
+}
