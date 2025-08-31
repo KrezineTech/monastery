@@ -8,7 +8,7 @@ const founders = [
   {
     name: 'Shirley Setia',
     role: 'Co-Founder',
-    quote: "ISLAND gave me the chance to be vulnerable. To talk about skin struggles I never really shared, and to help shape something that feels real, not aspirational. I didn’t want to just ‘lend my face’, I wanted to build something I could stand behind. My favourite part has been connecting with people who see their own story in ours.”",
+    quote: "ISLAND gave me the chance to be vulnerable. To talk about skin struggles I never really shared, and to help shape something that feels real, not an aspirational. I didn’t want to just ‘lend my face’, I wanted to build something I could stand behind. My favourite part has been connecting with people who see their own story in ours.”",
     image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Rectangle_1578.webp?v=1754813589',
     aiHint: 'woman smiling'
   },
@@ -38,8 +38,8 @@ const aboutContent = [
     tagBg: 'bg-black/10',
     content: {
       tag: 'Our Philosophy',
-      title: "Real Skin, Real Results.",
-      description: "We believe skincare should be honest. We formulate for real skin concerns, using ingredients that are both gentle and effective, to deliver visible results you can count on.",
+      title: "Fewer steps. Deeper results. Calm built into every layer.",
+      description: "The Power of Less, Perfected\nSkincare shouldn’t feel complicated - it should feel clear. In a world overflowing with steps, trends, and overuse, Island offers thoughtful restraint. Each product is designed to do more with less - multi-functional, sensorial, and effective. We focus on what matters: proven ingredients, intentional textures, and routines that respect your time and your skin. This is skincare that doesn’t overwhelm, it restores. Reliable, refined, and made to fit into real life beautifully.",
     },
     isImageFirst: true,
   },
@@ -52,8 +52,8 @@ const aboutContent = [
     tagBg: 'bg-white/20',
     content: {
       tag: 'Our Promise',
-      title: 'Simplicity & Transparency.',
-      description: "No complicated routines, no confusing ingredients. Just simple, effective skincare that works. We're committed to transparency in everything we do, from sourcing to formulation.",
+      title: 'Time-honored ingredients, reimagined for today’s skin.',
+      description: "Heritage, Made Modern\nIsland began with a deep respect for where we come from, and a clear vision for what skincare could be. We bring together traditional Indian ingredients like rice water and turmeric, and pair them with modern science to meet the needs of Indian skin today. Every formula is a quiet blend of culture, climate, and care - gentle, effective, and elevated. This is tradition reimagined - not as the past repeated, but as wisdom evolved.",
     },
     isImageFirst: false,
   },
@@ -132,7 +132,7 @@ export default function AboutPage() {
                         <Card className={`p-10 rounded-[26px] ${promo.bgColor} ${promo.textColor} border-none h-auto md:h-auto lg:h-[40vh] flex flex-col justify-center`}>
                         <span className={`inline-block ${promo.tagBg} px-3 py-1 text-sm rounded-md mb-4 self-start`}>{promo.content.tag}</span>
                         <h2 className="text-4xl font-bold font-headline mb-4">{promo.content.title}</h2>
-                        <p className="mb-6 opacity-80">{promo.content.description}</p>
+                        <p className="mb-6 opacity-80 whitespace-pre-line">{promo.content.description}</p>
                         </Card>
                     </div>
                     </>
@@ -142,7 +142,7 @@ export default function AboutPage() {
                         <Card className={`p-10 rounded-[26px] ${promo.bgColor} ${promo.textColor} border-none h-auto md:h-auto lg:h-[40vh] flex flex-col justify-center`}>
                         <span className={`inline-block ${promo.tagBg} px-3 py-1 text-sm rounded-md mb-4 self-start`}>{promo.content.tag}</span>
                         <h2 className="text-4xl font-bold font-headline mb-4">{promo.content.title}</h2>
-                        <p className="mb-6 opacity-80">{promo.content.description}</p>
+                        <p className="mb-6 opacity-80 whitespace-pre-line">{promo.content.description}</p>
                         </Card>
                     </div>
                     <div className="relative h-[60vh] rounded-[26px] overflow-hidden">
