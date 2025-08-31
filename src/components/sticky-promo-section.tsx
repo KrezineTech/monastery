@@ -77,7 +77,7 @@ export function StickyPromoSection() {
                       </Button>
                     </Card>
                   </div>
-                  <div className="relative h-[80vh] rounded-[26px] overflow-hidden">
+                  <div className="relative h-[60vh] rounded-[26px] overflow-hidden">
                     <Image
                       src={promo.image}
                       alt={promo.content.title}
