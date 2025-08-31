@@ -43,7 +43,8 @@ export function ScrollToTopButton() {
     };
   }, []);
 
-  const circumference = 2 * Math.PI * 14; // 2 * pi * radius
+  const radius = 14; 
+  const circumference = 2 * Math.PI * radius;
 
   return (
     <div className="fixed bottom-5 right-5 z-50">
@@ -66,14 +67,14 @@ export function ScrollToTopButton() {
           <circle
             cx="16"
             cy="16"
-            r="14"
+            r={radius}
             stroke="hsl(var(--border))"
             strokeWidth="2"
           />
           <circle
             cx="16"
             cy="16"
-            r="14"
+            r={radius}
             stroke="hsl(var(--primary))"
             strokeWidth="2"
             strokeLinecap="round"
