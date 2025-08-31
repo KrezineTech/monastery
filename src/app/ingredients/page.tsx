@@ -1,8 +1,10 @@
+
 'use client';
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
+import { Card } from '@/components/ui/card';
 
 const ingredients = [
   {
@@ -61,7 +63,7 @@ function IngredientCard({ title, description, image, aiHint, i, progress, range,
   const opacity = useTransform(progress, range, [1, 0.2]);
 
   return (
-    <motion.div ref={container} className="sticky top-0 h-screen flex items-center justify-center">
+    <div ref={container} className="sticky top-0 h-screen flex items-center justify-center">
       <motion.div 
         style={{ 
           scale,
@@ -70,7 +72,7 @@ function IngredientCard({ title, description, image, aiHint, i, progress, range,
         }} 
         className="relative h-[500px] w-full rounded-2xl"
       >
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center h-full w-full bg-[#F6F6F3] p-8 rounded-2xl border border-border/40">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center h-full w-full bg-card p-8 rounded-2xl border border-border/40">
           <div className="order-1">
             <h3 className="text-2xl font-bold font-headline text-primary mb-4">{title}</h3>
             <p className="text-foreground/80 leading-relaxed">{description}</p>
@@ -90,7 +92,7 @@ function IngredientCard({ title, description, image, aiHint, i, progress, range,
           </div>
         </div>
       </motion.div>
-    </motion.div>
+    </div>
   )
 }
 
@@ -156,7 +158,7 @@ export default function IngredientsPage() {
         })}
       </div>
 
-      <section className="py-24 bg-white mt-24">
+      <section className="py-24 bg-background mt-24">
         <div className="w-[96%] mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold font-headline text-primary">The Essential Boosters</h2>
