@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -22,7 +21,7 @@ const promoData = [
     isImageFirst: true,
   },
   {
-    image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/WEBSITE_REVAMP_DESIGNS-22.webp?v=1754620025',
+    image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/597550.jpg?v=1756620076',
     aiHint: 'woman applying face cream',
     textColor: 'text-stone-800',
     bgColor: 'bg-[#D2CBBF]',
