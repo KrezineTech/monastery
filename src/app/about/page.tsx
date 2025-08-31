@@ -38,8 +38,8 @@ const aboutContent = [
     tagBg: 'bg-black/10',
     content: {
       tag: 'Our Philosophy',
-      title: "Fewer steps. Deeper results. Calm built into every layer.",
-      description: "The Power of Less, Perfected\nSkincare shouldn’t feel complicated - it should feel clear. In a world overflowing with steps, trends, and overuse, Island offers thoughtful restraint. Each product is designed to do more with less - multi-functional, sensorial, and effective. We focus on what matters: proven ingredients, intentional textures, and routines that respect your time and your skin. This is skincare that doesn’t overwhelm, it restores. Reliable, refined, and made to fit into real life beautifully.",
+      title: "The Power of Less, Perfected",
+      description: "Skincare shouldn’t feel complicated - it should feel clear. In a world overflowing with steps, trends, and overuse, Island offers thoughtful restraint. Each product is designed to do more with less - multi-functional, sensorial, and effective. We focus on what matters: proven ingredients, intentional textures, and routines that respect your time and your skin. This is skincare that doesn’t overwhelm, it restores. Reliable, refined, and made to fit into real life beautifully.",
     },
     isImageFirst: true,
   },
@@ -52,8 +52,8 @@ const aboutContent = [
     tagBg: 'bg-white/20',
     content: {
       tag: 'Our Promise',
-      title: 'Time-honored ingredients, reimagined for today’s skin.',
-      description: "Heritage, Made Modern\nIsland began with a deep respect for where we come from, and a clear vision for what skincare could be. We bring together traditional Indian ingredients like rice water and turmeric, and pair them with modern science to meet the needs of Indian skin today. Every formula is a quiet blend of culture, climate, and care - gentle, effective, and elevated. This is tradition reimagined - not as the past repeated, but as wisdom evolved.",
+      title: 'Heritage, Made Modern',
+      description: "Island began with a deep respect for where we come from, and a clear vision for what skincare could be. We bring together traditional Indian ingredients like rice water and turmeric, and pair them with modern science to meet the needs of Indian skin today. Every formula is a quiet blend of culture, climate, and care - gentle, effective, and elevated. This is tradition reimagined - not as the past repeated, but as wisdom evolved.",
     },
     isImageFirst: false,
   },
@@ -129,7 +129,7 @@ export default function AboutPage() {
                         />
                     </div>
                     <div className="md:sticky md:top-24">
-                        <Card className={`p-10 rounded-[26px] ${promo.bgColor} ${promo.textColor} border-none h-auto md:h-auto lg:h-[40vh] flex flex-col justify-center`}>
+                        <Card className={`p-10 rounded-[26px] ${promo.bgColor} ${promo.textColor} border-none h-[60vh] flex flex-col justify-center`}>
                         <span className={`inline-block ${promo.tagBg} px-3 py-1 text-sm rounded-md mb-4 self-start`}>{promo.content.tag}</span>
                         <h2 className="text-4xl font-bold font-headline mb-4">{promo.content.title}</h2>
                         <p className="mb-6 opacity-80 whitespace-pre-line">{promo.content.description}</p>
@@ -139,7 +139,7 @@ export default function AboutPage() {
                 ) : (
                     <>
                     <div className="md:sticky md:top-24">
-                        <Card className={`p-10 rounded-[26px] ${promo.bgColor} ${promo.textColor} border-none h-auto md:h-auto lg:h-[40vh] flex flex-col justify-center`}>
+                        <Card className={`p-10 rounded-[26px] ${promo.bgColor} ${promo.textColor} border-none h-[60vh] flex flex-col justify-center`}>
                         <span className={`inline-block ${promo.tagBg} px-3 py-1 text-sm rounded-md mb-4 self-start`}>{promo.content.tag}</span>
                         <h2 className="text-4xl font-bold font-headline mb-4">{promo.content.title}</h2>
                         <p className="mb-6 opacity-80 whitespace-pre-line">{promo.content.description}</p>
