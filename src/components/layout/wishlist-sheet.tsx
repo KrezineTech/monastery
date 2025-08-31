@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -14,7 +13,7 @@ import {
 } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { Heart, X } from 'lucide-react';
+import { Heart, X, Trash2 } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { useWishlist } from '@/hooks/use-wishlist.tsx';
 import { useStore } from 'zustand';
@@ -81,11 +80,11 @@ export function WishlistSheet() {
                     </div>
                     <Button
                       variant="destructive"
-                      size="sm"
-                      className="text-sm"
+                      size="icon"
+                      className="h-8 w-8"
                       onClick={() => removeFromWishlist(product.id)}
                     >
-                      Remove
+                      <Trash2 className="h-4 w-4" />
                     </Button>
                   </div>
                 ))}
