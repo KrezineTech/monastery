@@ -4,14 +4,25 @@ import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Package, User } from "lucide-react"
 import Link from "next/link"
+import { useState } from "react"
 
 export function AccountPopover() {
+  // Simulate authentication state
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleAuthAction = () => {
+    setIsLoggedIn(!isLoggedIn);
+  }
+
   return (
     <div className="space-y-4">
       <h3 className="font-medium">Account</h3>
       <div className="space-y-2">
-        <Button className="w-full bg-primary hover:bg-primary/90">Sign in with shop</Button>
-        <Button variant="secondary" className="w-full">Other sign in options</Button>
+        {isLoggedIn ? (
+          <Button variant="secondary" className="w-full" onClick={handleAuthAction}>Logout</Button>
+        ) : (
+          <Button variant="secondary" className="w-full" onClick={handleAuthAction}>Sign In</Button>
+        )}
       </div>
       <Separator />
       <div className="grid grid-cols-2 gap-2">
