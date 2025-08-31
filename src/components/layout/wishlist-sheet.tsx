@@ -67,7 +67,7 @@ export function WishlistSheet() {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-medium text-foreground truncate">{product.name}</h3>
+                      <h3 className="font-medium text-foreground truncate text-[22px]">{product.name}</h3>
                       <div className="flex items-baseline gap-2 mt-1">
                         <p className="font-semibold text-foreground">
                           ₹{product.price.toFixed(2)}
@@ -80,8 +80,9 @@ export function WishlistSheet() {
                       </div>
                     </div>
                     <Button
-                      variant="link"
-                      className="text-sm text-destructive hover:text-destructive/80 p-0 h-auto"
+                      variant="destructive"
+                      size="sm"
+                      className="text-sm"
                       onClick={() => removeFromWishlist(product.id)}
                     >
                       Remove

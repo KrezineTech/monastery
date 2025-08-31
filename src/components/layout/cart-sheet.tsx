@@ -65,7 +65,7 @@ export function CartSheet() {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-medium text-foreground truncate">{product.name}</h3>
+                      <h3 className="font-medium text-foreground truncate text-[22px]">{product.name}</h3>
                       <p className="text-sm text-muted-foreground mt-1">₹{product.price.toFixed(2)}</p>
                       <div className="flex items-center border rounded-full w-fit mt-2">
                         <Button
