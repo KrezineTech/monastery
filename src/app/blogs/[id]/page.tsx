@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useParams, notFound } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { allBlogs } from '@/lib/blog-data';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -10,8 +10,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 
-export default function BlogPostPage() {
-  const params = useParams();
+export default function BlogPostPage({ params }: { params: { id: string } }) {
   const blog = allBlogs.find((b) => b.id === params.id);
 
   if (!blog) {

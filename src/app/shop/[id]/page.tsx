@@ -2,7 +2,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useParams, notFound } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { allProducts } from '@/lib/data';
 import { Button } from '@/components/ui/button';
@@ -23,8 +23,7 @@ import { ProductReviews } from '@/components/product-reviews';
 import { RelatedProducts } from '@/components/related-products';
 import { Card } from '@/components/ui/card';
 
-export default function ProductDetailPage() {
-  const params = useParams();
+export default function ProductDetailPage({ params }: { params: { id: string } }) {
   const product = allProducts.find((p) => p.id === params.id);
   const [quantity, setQuantity] = useState(1);
   const [selectedVolume, setSelectedVolume] = useState(product?.volumes?.[0] || '');
