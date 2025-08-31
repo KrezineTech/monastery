@@ -47,7 +47,7 @@ export function Footer() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 text-sm">
           <div>
-            <h5 className="font-semibold text-foreground mb-4">Useful Link</h5>
+            <h5 className="font-semibold text-foreground mb-4 text-sm">Useful Link</h5>
             <ul className="space-y-2">
               {usefulLinks.map((link) => (
                 <li key={link.href}>
@@ -59,7 +59,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h5 className="font-semibold text-foreground mb-4">Support</h5>
+            <h5 className="font-semibold text-foreground mb-4 text-sm">Support</h5>
             <ul className="space-y-2">
               {supportLinks.map((link) => (
                 <li key={link.label}>
@@ -71,7 +71,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h5 className="font-semibold text-foreground mb-4">Information</h5>
+            <h5 className="font-semibold text-foreground mb-4 text-sm">Information</h5>
             <ul className="space-y-2">
               {informationLinks.map((link) => (
                 <li key={link.label}>
@@ -83,7 +83,7 @@ export function Footer() {
             </ul>
           </div>
           <div className="md:col-span-2">
-            <h5 className="font-semibold text-foreground mb-4">Sign Up to Our Newsletter</h5>
+            <h5 className="font-semibold text-foreground mb-4 text-sm">Sign Up to Our Newsletter</h5>
             <p className="mb-6 text-foreground/70">Give your inbox some love with new products, tips, & more.</p>
             <form>
               <div className="relative">
