@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { ChevronDown, X } from 'lucide-react';
 import type { Product } from '@/lib/types';
 import { useStore } from 'zustand';
+import Link from 'next/link';
 
 
 const WishlistPage = () => {
@@ -196,7 +197,9 @@ const WishlistPage = () => {
 
                         <div className={`list-product grid lg:grid-cols-${layoutCol} sm:grid-cols-3 grid-cols-2 sm:gap-[30px] gap-[20px] mt-7`}>
                             {currentProducts.length > 0 ? currentProducts.map((item) => (
-                                <ProductCard key={item.id} product={item} />
+                                <Link key={item.id} href={`/shop/${item.id}`} className="group block">
+                                    <ProductCard product={item} />
+                                </Link>
                             )) : (
                                 <div className="col-span-full text-center py-20">
                                     <p className="text-lg text-muted-foreground">Your wishlist is empty or no products match the selected criteria.</p>

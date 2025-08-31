@@ -41,7 +41,9 @@ export default function ShopPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {allProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} />
+                <Link key={product.id} href={`/shop/${product.id}`} className="group block">
+                  <ProductCard product={product} />
+                </Link>
               ))}
           </div>
         </div>
