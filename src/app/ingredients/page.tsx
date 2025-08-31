@@ -171,6 +171,18 @@ export default function IngredientsPage() {
     offset: ['start start', 'end end']
   });
 
+  const renderDescription = (description: string) => {
+    const parts = description.split(' – ');
+    if (parts.length > 1) {
+      return (
+        <>
+          <strong className="font-semibold">{parts[0]}</strong> – {parts.slice(1).join(' – ')}
+        </>
+      );
+    }
+    return description;
+  };
+
   return (
     <>
       <section className="w-full md:pt-8 pt-7 md:mb-5 mb-3">
@@ -257,7 +269,7 @@ export default function IngredientsPage() {
               <div className="relative z-10">
                 <h3 className="text-lg font-bold font-headline">{boosters[0].title}</h3>
                 <p className="text-sm opacity-90 mt-4 max-w-md">
-                  {boosters[0].description}
+                  {renderDescription(boosters[0].description)}
                 </p>
               </div>
             </div>
@@ -280,7 +292,7 @@ export default function IngredientsPage() {
                   <div className="relative z-10">
                     <h3 className="text-lg font-bold font-headline">{booster.title}</h3>
                     <p className="text-sm opacity-90 mt-4 max-w-md">
-                      {booster.description}
+                      {renderDescription(booster.description)}
                     </p>
                   </div>
                 </div>
@@ -300,3 +312,4 @@ export default function IngredientsPage() {
     
 
     
+
