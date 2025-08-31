@@ -1,4 +1,5 @@
 
+import Link from 'next/link';
 import { allProducts } from '@/lib/data';
 import { ProductCard } from './product-card';
 
@@ -23,7 +24,7 @@ export function RelatedProducts({ currentProductId, currentProductCategory }: Re
             <h2 className="text-3xl font-bold font-headline text-center text-primary mb-12">You might also like</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {relatedProducts.map(product => (
-                    <ProductCard key={product.id} product={product} />
+                    <ProductCard key={product.id} product={product} href={`/shop/${product.id}`} />
                 ))}
             </div>
         </div>
