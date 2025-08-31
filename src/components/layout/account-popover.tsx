@@ -21,7 +21,9 @@ export function AccountPopover() {
         {isLoggedIn ? (
           <Button variant="secondary" className="w-full" onClick={handleAuthAction}>Logout</Button>
         ) : (
-          <Button variant="default" className="w-full" onClick={handleAuthAction}>Sign In</Button>
+          <Button asChild variant="default" className="w-full">
+            <Link href="/login">Sign In</Link>
+          </Button>
         )}
       </div>
       <Separator />
