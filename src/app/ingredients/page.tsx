@@ -59,7 +59,7 @@ const boosters = [
     name: 'Salicylic Acid',
     title: 'Salicylic Acid',
     description: 'The Blemish Fighter – Gently exfoliates inside pores, clearing oil to prevent breakouts. It reduces blackheads, refines skin texture, and soothes acne-prone skin.',
-    image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/2148227133.jpg?v=1756622306',
+    image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/682.jpg?v=1756622534',
     aiHint: 'salicylic acid serum'
   },
   {
@@ -312,5 +312,6 @@ export default function IngredientsPage() {
     
 
     
+
 
 
