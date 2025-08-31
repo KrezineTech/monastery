@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useRef } from 'react';
@@ -69,7 +68,7 @@ function IngredientCard({ title, description, image, aiHint, i, progress, range,
           top: `calc(-5vh + ${i * 25}px)`,
           opacity: i === ingredients.length - 1 ? 1 : opacity
         }} 
-        className="relative h-[500px] w-[96%] rounded-2xl"
+        className="relative h-[500px] w-full rounded-2xl"
       >
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center h-full w-full bg-[#F6F6F3] p-8 rounded-2xl border border-border/40">
           <div className="order-1">
@@ -141,7 +140,7 @@ export default function IngredientsPage() {
         </div>
       </div>
 
-      <div ref={container} className="relative h-[300vh]">
+      <div ref={container} className="relative h-[300vh] w-[96%] mx-auto">
         {ingredients.map((ingredient, i) => {
           const targetScale = 1 - ((ingredients.length - i) * 0.05);
           return (
