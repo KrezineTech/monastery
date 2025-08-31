@@ -51,3 +51,8 @@ export interface Blog {
   excerpt: string;
   content: string; 
 }
+
+export interface WishlistItem {
+    id: string;
+    product: Product;
+}

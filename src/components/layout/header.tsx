@@ -3,11 +3,12 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, Search, Heart } from 'lucide-react';
+import { Menu, X, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { useState } from 'react';
 import { Input } from '../ui/input';
+import { WishlistSheet } from './wishlist-sheet';
 
 const navLinks = [
     { href: '/shop', label: 'Shop' },
@@ -41,10 +42,7 @@ export function Header() {
              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
              <Input type="search" placeholder="Search..." className="w-full rounded-full border border-input bg-transparent pl-9 focus-visible:ring-0 focus-visible:ring-offset-0" />
            </div>
-          <Button variant="ghost" size="icon">
-            <Heart className="h-5 w-5 text-gray-600" />
-            <span className="sr-only">Wishlist</span>
-          </Button>
+          <WishlistSheet />
           <Button variant="ghost" size="icon">
             <svg clipRule="evenodd" fillRule="evenodd" height="512" strokeLinejoin="round" strokeMiterlimit="2" viewBox="0 0 48 48" width="512" xmlns="http://www.w3.org/2000/svg" id="fi_4903482" className="h-5 w-5 text-gray-600" fill="currentColor"><g transform="translate(-53 -212)"><g transform="translate(-355 -60)"><g id="ngicon"><path d="m422.519 285.5h-2.657c-1.836 0-3.36 1.419-3.491 3.251l-1.714 24c-.069.969.267 1.923.929 2.634.663.711 1.59 1.115 2.562 1.115h27.704c.972 0 1.899-.404 2.562-1.115.662-.711.998-1.665.929-2.634l-1.714-24c-.131-1.832-1.655-3.251-3.491-3.251h-2.638v-.5c0-5.247-4.253-9.5-9.5-9.5-5.055 0-9.727 4.026-9.5 9.5.007.166.013.333.019.5zm18.981 3v7.5c0 .828-.672 1.5-1.5 1.5s-1.5-.672-1.5-1.5v-7.5h-13v7.5c0 .828-.672 1.5-1.5 1.5s-1.5-.672-1.5-1.5c0 0 .13-3.505.087-7.5h-2.725c-.262 0-.48.203-.498.464 0 0-1.715 24-1.715 24-.01.139.038.275.133.377.095.101.227.159.366.159h27.704c.139 0 .271-.058.366-.159.095-.102.143-.238.133-.377l-1.715-24c-.018-.261-.236-.464-.498-.464zm-3-3v-.5c0-3.59-2.91-6.5-6.5-6.5-3.59 0-6.5 2.91-6.5 6.5v.5z"></path></g></g></g></svg>
             <span className="sr-only">Shopping Cart</span>
@@ -93,5 +91,3 @@ export function Header() {
     </header>
   );
 }
-
-    
