@@ -1,7 +1,107 @@
 
+'use client';
+
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 
+const ingredients = [
+  {
+    title: 'Pure Korean Rice Water',
+    description: 'Sourced from the pristine fields of Korea, our rice water is rich in vitamins and minerals. It gently purifies the skin, minimizes pores, and imparts a natural, healthy glow. We honor centuries of tradition by using a time-tested extraction process to preserve its potent nutrients.',
+    image: 'https://placehold.co/600x400.png',
+    aiHint: 'rice water cosmetics',
+  },
+  {
+    title: 'Golden Turmeric',
+    description: 'A timeless Indian spice celebrated for its healing properties. Turmeric is a powerful anti-inflammatory and antioxidant that soothes irritation, evens out skin tone, and protects against environmental stressors, revealing a brighter, calmer complexion.',
+    image: 'https://placehold.co/600x400.png',
+    aiHint: 'turmeric root powder',
+  },
+  {
+    title: 'Niacinamide (Vitamin B3)',
+    description: 'A true skincare superhero, Niacinamide strengthens the skin\'s barrier, minimizes the appearance of pores, and regulates oil production. It works in harmony with our natural ingredients to visibly improve skin texture and tone for a balanced, healthy look.',
+    image: 'https://placehold.co/600x400.png',
+    aiHint: 'skincare science lab',
+  },
+];
+
+const boosters = [
+  {
+    name: 'Hyaluronic Acid',
+    title: 'The Hydration Hero',
+    description: 'Holds 1,000x its weight in water, intensely hydrating and plumping the skin while improving elasticity and smoothing fine lines.',
+    image: 'https://placehold.co/600x600.png',
+    aiHint: 'hyaluronic acid serum'
+  },
+  {
+    name: 'Salicylic Acid',
+    title: 'The Blemish Fighter',
+    description: 'Gently exfoliates inside pores, clearing oil to prevent breakouts. It reduces blackheads, refines skin texture, and soothes acne-prone skin.',
+    image: 'https://placehold.co/600x600.png',
+    aiHint: 'salicylic acid serum'
+  },
+  {
+    name: 'Glycolic Acid',
+    title: 'The Skin Resurfacer',
+    description: 'Gently exfoliates to remove dead skin cells, revealing a smoother complexion. Boosts collagen production to reduce fine lines over time.',
+    image: 'https://placehold.co/600x600.png',
+    aiHint: 'glycolic acid powder'
+  }
+];
+
+function IngredientCard({ title, description, image, aiHint, i, progress, range, targetScale }) {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start end', 'start start']
+  });
+
+  const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
+  const scale = useTransform(progress, range, [1, targetScale]);
+  const opacity = useTransform(progress, range, [1, 0.2]);
+
+  return (
+    <motion.div ref={container} className="sticky top-0 h-screen flex items-center justify-center">
+      <motion.div 
+        style={{ 
+          scale,
+          top: `calc(-5vh + ${i * 25}px)`,
+          opacity: i === ingredients.length - 1 ? 1 : opacity
+        }} 
+        className="relative h-[500px] w-[96%] rounded-2xl"
+      >
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center h-full w-full bg-[#F6F6F3] p-8 rounded-2xl border border-border/40">
+          <div className="order-1">
+            <h3 className="text-2xl font-bold font-headline text-primary mb-4">{title}</h3>
+            <p className="text-foreground/80 leading-relaxed">{description}</p>
+          </div>
+          <div className="order-2 h-full">
+            <div className="relative w-full h-full rounded-[26px] overflow-hidden">
+              <motion.div className="w-full h-full" style={{scale: imageScale}}>
+                <Image
+                  src={image}
+                  alt={title}
+                  fill
+                  className="w-full h-full object-cover"
+                  data-ai-hint={aiHint}
+                />
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  )
+}
+
 export default function IngredientsPage() {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start start', 'end end']
+  });
+
   return (
     <>
       <section className="w-full md:pt-8 pt-7 md:mb-5 mb-3">
@@ -16,19 +116,101 @@ export default function IngredientsPage() {
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/30 z-10 h-full flex flex-col justify-end items-start text-white p-12">
-                <div className="w-full">
-                     <h2 className="text-4xl md:text-[52px] font-extrabold font-headline">
-                        Our Ingredients
-                    </h2>
-                    <div className="mt-4 border-t border-white/50 w-full"></div>
-                </div>
+              <div className="w-full">
+                <h2 className="text-4xl md:text-[52px] font-extrabold font-headline">
+                  Our Ingredients
+                </h2>
+                <div className="mt-4 border-t border-white/50 w-full"></div>
+              </div>
             </div>
-         </div>
+          </div>
         </div>
       </section>
-      <div className="container py-24 text-center">
-        <p className="text-lg text-foreground/80">This page is under construction. Check back soon!</p>
+      
+      <div className="w-full">
+        <div className="w-[96%] mx-auto px-4 py-12 sm:py-16">
+          <div className="max-w-none mx-auto text-left pb-16">
+            <h1 className="text-3xl font-bold font-headline text-primary mb-4">YUSURU– The Story of Rice Water</h1>
+            <h2 className="text-xl font-semibold text-foreground/90 mb-6">Centuries of Korean Tradition in Every Drop</h2>
+            <div className="prose lg:prose-lg max-w-none text-foreground/80 space-y-4">
+              <p>YUSURU or Rice Water Solution, has been a skincare secret in Korea for over 1,000 years. Traditionally, women would rinse their rice and save the milky water, using it to cleanse and hydrate their skin. This natural elixir was revered for its ability to brighten complexion, smooth texture, and deliver long-lasting hydration.</p>
+              <p>Korean beauty rituals often began and ended with YUSURU, a practice passed down through generations. Its efficacy lies in its nutrient-rich composition, containing amino acids, vitamins, and antioxidants that work together to repair the skin barrier, boost hydration, and promote an even, radiant tone.</p>
+              <p>At ISLAND, we honor this legacy by sourcing pure Korean rice water and blending it with modern skincare science to deliver transformative results.</p>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <div ref={container} className="relative h-[300vh]">
+        {ingredients.map((ingredient, i) => {
+          const targetScale = 1 - ((ingredients.length - i) * 0.05);
+          return (
+            <IngredientCard 
+              key={i} 
+              i={i} 
+              {...ingredient} 
+              progress={scrollYProgress} 
+              range={[i * .25, 1]} 
+              targetScale={targetScale}
+            />
+          );
+        })}
+      </div>
+
+      <section className="py-24 bg-white mt-24">
+        <div className="w-[96%] mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold font-headline text-primary">The Essential Boosters</h2>
+            <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">
+              Potent, targeted ingredients that amplify your skincare routine for visible results.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4">
+            {/* First big card */}
+            <div className="group relative overflow-hidden rounded-[26px] border-none text-white flex flex-col justify-end p-6 h-[78vh] md:row-span-2">
+              <Image
+                src={boosters[0].image}
+                alt={boosters[0].name}
+                fill
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                data-ai-hint={boosters[0].aiHint}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="relative z-10">
+                <h3 className="text-lg font-bold font-headline">{boosters[0].title}</h3>
+                <p className="text-sm opacity-90 mt-4 max-w-md">
+                  <span className="font-semibold uppercase tracking-widest">{boosters[0].name}</span> – {boosters[0].description}
+                </p>
+              </div>
+            </div>
+
+            {/* Right two stacked cards */}
+            <div className="flex flex-col gap-4 h-[78vh]">
+              {boosters.slice(1).map((booster, i) => (
+                <div
+                  key={i}
+                  className="group relative overflow-hidden rounded-[26px] border-none text-white flex flex-col justify-end p-6 h-[38vh]"
+                >
+                  <Image
+                    src={booster.image}
+                    alt={booster.name}
+                    fill
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    data-ai-hint={booster.aiHint}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="relative z-10">
+                    <h3 className="text-lg font-bold font-headline">{booster.title}</h3>
+                    <p className="text-sm opacity-90 mt-4 max-w-md">
+                      <span className="font-semibold uppercase tracking-widest">{booster.name}</span> – {booster.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
