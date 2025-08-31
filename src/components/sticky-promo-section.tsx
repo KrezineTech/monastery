@@ -46,7 +46,7 @@ export function StickyPromoSection() {
             <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
               {promo.isImageFirst ? (
                 <>
-                  <div className="relative h-[80vh] rounded-[26px] overflow-hidden">
+                  <div className="relative h-[60vh] rounded-[26px] overflow-hidden">
                     <Image
                       src={promo.image}
                       alt={promo.content.title}
