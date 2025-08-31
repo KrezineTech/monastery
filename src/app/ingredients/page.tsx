@@ -50,21 +50,21 @@ const ingredients = [
 const boosters = [
   {
     name: 'Hyaluronic Acid',
-    title: 'The Hydration Hero',
+    title: 'Hyaluronic Acid',
     description: 'Holds 1,000x its weight in water, intensely hydrating and plumping the skin while improving elasticity and smoothing fine lines.',
     image: 'https://placehold.co/600x600.png',
     aiHint: 'hyaluronic acid serum'
   },
   {
     name: 'Salicylic Acid',
-    title: 'The Blemish Fighter',
+    title: 'Salicylic Acid',
     description: 'Gently exfoliates inside pores, clearing oil to prevent breakouts. It reduces blackheads, refines skin texture, and soothes acne-prone skin.',
     image: 'https://placehold.co/600x600.png',
     aiHint: 'salicylic acid serum'
   },
   {
     name: 'Glycolic Acid',
-    title: 'The Skin Resurfacer',
+    title: 'Glycolic Acid',
     description: 'Gently exfoliates to remove dead skin cells, revealing a smoother complexion. Boosts collagen production to reduce fine lines over time.',
     image: 'https://placehold.co/600x600.png',
     aiHint: 'glycolic acid powder'
@@ -257,7 +257,7 @@ export default function IngredientsPage() {
               <div className="relative z-10">
                 <h3 className="text-lg font-bold font-headline">{boosters[0].title}</h3>
                 <p className="text-sm opacity-90 mt-4 max-w-md">
-                  <span className="font-semibold uppercase tracking-widest">{boosters[0].name}</span> – {boosters[0].description}
+                  {boosters[0].description}
                 </p>
               </div>
             </div>
@@ -280,7 +280,7 @@ export default function IngredientsPage() {
                   <div className="relative z-10">
                     <h3 className="text-lg font-bold font-headline">{booster.title}</h3>
                     <p className="text-sm opacity-90 mt-4 max-w-md">
-                      <span className="font-semibold uppercase tracking-widest">{booster.name}</span> – {booster.description}
+                      {booster.description}
                     </p>
                   </div>
                 </div>
@@ -296,5 +296,7 @@ export default function IngredientsPage() {
     
 
 
+
+    
 
     
