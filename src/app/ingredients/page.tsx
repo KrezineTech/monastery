@@ -13,6 +13,12 @@ const ingredients = [
     description: 'Sourced from the pristine fields of Korea, our rice water is rich in vitamins and minerals. It gently purifies the skin, minimizes pores, and imparts a natural, healthy glow. We honor centuries of tradition by using a time-tested extraction process to preserve its potent nutrients.',
     image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/freepik__expand__29450.png?v=1756620680',
     aiHint: 'rice water cosmetics',
+    benefits: [
+        'Hydrates deeply while brightening and evening skin tone.',
+        'Rich in amino acids, vitamins, and minerals that repair and nourish the skin barrier.',
+        'Proven to reduce inflammation and improve texture over time.'
+    ],
+    benefitTitle: '"THE HEART OF YUSURU"'
   },
   {
     title: 'Indian Turmeric',
