@@ -8,7 +8,7 @@ import { ArrowRight } from 'lucide-react';
 
 const promoData = [
   {
-    image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/WEBSITE_REVAMP_DESIGNS-21.webp?v=1754620025',
+    image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/freepik__expand__33890.png?v=1756619792',
     aiHint: 'woman holding cream',
     textColor: 'text-white',
     bgColor: 'bg-[#C5B4E3]',
