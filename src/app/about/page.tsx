@@ -106,7 +106,7 @@ export default function AboutPage() {
       <section className="pb-16 sm:pb-24">
         <div className="w-[96%] mx-auto px-4">
             <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold font-headline text-primary">Meet the Minds Behind Island</h2>
+                <h2 className="text-3xl font-bold font-headline text-primary">Meet the Founders</h2>
             </div>
             <div className="grid md:grid-cols-3 gap-8 text-center">
                 {founders.map((founder) => (
