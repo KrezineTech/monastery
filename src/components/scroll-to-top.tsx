@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -24,7 +25,7 @@ export function ScrollToTopButton() {
     const winHeightPx =
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
-    const scrolled = (scrollPx / winHeightPx) * 100;
+    const scrolled = winHeightPx > 0 ? (scrollPx / winHeightPx) * 100 : 0;
     setProgress(scrolled);
   };
 
@@ -55,7 +56,7 @@ export function ScrollToTopButton() {
         aria-label="Scroll to top"
       >
         <svg
-          className="h-14 w-14 -rotate-90"
+          className="h-full w-full -rotate-90"
           viewBox="0 0 48 48"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -73,8 +74,10 @@ export function ScrollToTopButton() {
             r="22"
             stroke="hsl(var(--primary))"
             strokeWidth="3"
+            strokeLinecap="round"
             strokeDasharray={circumference}
             strokeDashoffset={circumference - (progress / 100) * circumference}
+            style={{ transition: 'stroke-dashoffset 0.1s linear' }}
           />
         </svg>
         <ChevronUp className="absolute h-6 w-6" />
