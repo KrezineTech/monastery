@@ -61,10 +61,11 @@ function IngredientCard({ title, description, image, aiHint, i, progress, range,
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
-    <div ref={container} className="sticky top-0 h-screen flex items-center justify-center">
+    <motion.div ref={container} className="sticky top-0 h-screen flex items-center justify-center">
       <motion.div 
         style={{ 
           scale,
+          top: `calc(-5vh + ${i * 25}px)`,
         }} 
         className="relative h-[500px] w-full rounded-2xl"
       >
@@ -88,7 +89,7 @@ function IngredientCard({ title, description, image, aiHint, i, progress, range,
           </div>
         </div>
       </motion.div>
-    </div>
+    </motion.div>
   )
 }
 
@@ -154,7 +155,7 @@ export default function IngredientsPage() {
         })}
       </div>
 
-      <section className="pb-16 bg-background pt-[100px]">
+      <section className="bg-background pt-[100px] mb-8">
         <div className="w-[96%] mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold font-headline text-primary">The Essential Boosters</h2>
