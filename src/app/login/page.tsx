@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import Image from "next/image";
@@ -63,7 +64,7 @@ export default function LoginPage() {
                                 </div>
                             </div>
                             <div className="space-y-4 pt-4">
-                                <Button type="submit" className="w-full h-14 rounded-full bg-black text-white text-lg font-semibold hover:bg-gray-800">
+                                <Button type="submit" className="w-full h-14 rounded-full text-lg font-semibold">
                                     Sign in
                                 </Button>
                                 <p className="text-center">
