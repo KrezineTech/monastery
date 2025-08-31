@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState } from 'react';
 import Image from "next/image";
@@ -27,7 +26,7 @@ export default function SignupPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
                     <div className="relative hidden lg:block">
                         <Image
-                            src="https://placehold.co/800x800.png"
+                            src="https://cdn.shopify.com/s/files/1/0723/1376/6028/files/342230.jpg?v=1756646016"
                             alt="Woman holding a product"
                             fill
                             className="object-cover w-full h-full rounded-2xl"

@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import Image from "next/image";
@@ -25,7 +24,7 @@ export default function LoginPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
                     <div className="relative hidden lg:block">
                         <Image
-                            src="https://placehold.co/800x800.png"
+                            src="https://cdn.shopify.com/s/files/1/0723/1376/6028/files/939.jpg?v=1756645945"
                             alt="Woman applying cosmetic"
                             fill
                             className="object-cover w-full h-full rounded-2xl"
