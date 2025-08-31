@@ -51,21 +51,21 @@ const boosters = [
   {
     name: 'Hyaluronic Acid',
     title: 'Hyaluronic Acid',
-    description: 'Holds 1,000x its weight in water, intensely hydrating and plumping the skin while improving elasticity and smoothing fine lines.',
+    description: 'The Hydration Hero – Holds 1,000x its weight in water, intensely hydrating and plumping the skin while improving elasticity and smoothing fine lines.',
     image: 'https://placehold.co/600x600.png',
     aiHint: 'hyaluronic acid serum'
   },
   {
     name: 'Salicylic Acid',
     title: 'Salicylic Acid',
-    description: 'Gently exfoliates inside pores, clearing oil to prevent breakouts. It reduces blackheads, refines skin texture, and soothes acne-prone skin.',
+    description: 'The Blemish Fighter – Gently exfoliates inside pores, clearing oil to prevent breakouts. It reduces blackheads, refines skin texture, and soothes acne-prone skin.',
     image: 'https://placehold.co/600x600.png',
     aiHint: 'salicylic acid serum'
   },
   {
     name: 'Glycolic Acid',
     title: 'Glycolic Acid',
-    description: 'Gently exfoliates to remove dead skin cells, revealing a smoother complexion. Boosts collagen production to reduce fine lines over time.',
+    description: 'The Skin Resurfacer – Gently exfoliates to remove dead skin cells, revealing a smoother complexion. Boosts collagen production to reduce fine lines over time.',
     image: 'https://placehold.co/600x600.png',
     aiHint: 'glycolic acid powder'
   }
