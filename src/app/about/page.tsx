@@ -30,7 +30,7 @@ const founders = [
 
 const aboutContent = [
   {
-    image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/about-1.webp?v=1754813589',
+    image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/MODEL_SHOOT.webp?v=1756640908',
     aiHint: 'woman applying cream',
     textColor: 'text-stone-800',
     bgColor: 'bg-[#D2CBBF]',
@@ -44,7 +44,7 @@ const aboutContent = [
     isImageFirst: true,
   },
   {
-    image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/about-2.webp?v=1754813589',
+    image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/PRODUCT_SHOOT.webp?v=1756640891',
     aiHint: 'skincare texture',
     textColor: 'text-white',
     bgColor: 'bg-[#C5B4E3]',
