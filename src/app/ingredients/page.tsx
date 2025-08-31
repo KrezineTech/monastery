@@ -156,7 +156,7 @@ export default function IngredientsPage() {
         })}
       </div>
 
-      <section className="py-24 bg-background mt-24">
+      <section className="py-24 bg-background">
         <div className="w-[96%] mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold font-headline text-primary">The Essential Boosters</h2>
