@@ -67,7 +67,7 @@ export function WishlistSheet() {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-medium text-foreground truncate text-[22px]">{product.name}</h3>
+                      <h5 className="font-medium text-foreground truncate">{product.name}</h5>
                       <div className="flex items-baseline gap-2 mt-1">
                         <p className="font-semibold text-foreground">
                           ₹{product.price.toFixed(2)}
