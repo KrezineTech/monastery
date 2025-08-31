@@ -129,7 +129,7 @@ export default function AboutPage() {
                         />
                     </div>
                     <div className="md:sticky md:top-24">
-                        <Card className={`p-10 rounded-[26px] ${promo.bgColor} ${promo.textColor} border-none h-[60vh] flex flex-col justify-center`}>
+                        <Card className={`p-10 rounded-[26px] ${promo.bgColor} ${promo.textColor} border-none h-auto md:h-auto lg:h-[40vh] flex flex-col justify-center`}>
                         <span className={`inline-block ${promo.tagBg} px-3 py-1 text-sm rounded-md mb-4 self-start`}>{promo.content.tag}</span>
                         <h2 className="text-4xl font-bold font-headline mb-4">{promo.content.title}</h2>
                         <p className="mb-6 opacity-80 whitespace-pre-line">{promo.content.description}</p>
@@ -139,7 +139,7 @@ export default function AboutPage() {
                 ) : (
                     <>
                     <div className="md:sticky md:top-24">
-                        <Card className={`p-10 rounded-[26px] ${promo.bgColor} ${promo.textColor} border-none h-[60vh] flex flex-col justify-center`}>
+                        <Card className={`p-10 rounded-[26px] ${promo.bgColor} ${promo.textColor} border-none h-auto md:h-auto lg:h-[40vh] flex flex-col justify-center`}>
                         <span className={`inline-block ${promo.tagBg} px-3 py-1 text-sm rounded-md mb-4 self-start`}>{promo.content.tag}</span>
                         <h2 className="text-4xl font-bold font-headline mb-4">{promo.content.title}</h2>
                         <p className="mb-6 opacity-80 whitespace-pre-line">{promo.content.description}</p>
