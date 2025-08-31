@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -13,16 +14,23 @@ import {
 } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { Heart, X, Trash2 } from 'lucide-react';
+import { Heart, Trash2, X } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { useWishlist } from '@/hooks/use-wishlist.tsx';
 import { useStore } from 'zustand';
+import { useCart } from '@/hooks/use-cart.tsx';
 
 export function WishlistSheet() {
-  const store = useWishlist();
-  const { wishlist, removeFromWishlist } = useStore(store);
+  const wishlistStore = useWishlist();
+  const { wishlist, removeFromWishlist } = useStore(wishlistStore);
+  const cartStore = useCart();
+  const { addToCart } = useStore(cartStore);
 
   const totalItems = wishlist.length;
+
+  const handleAddAllToCart = () => {
+    wishlist.forEach(product => addToCart(product));
+  };
 
   return (
     <Sheet>
@@ -93,8 +101,8 @@ export function WishlistSheet() {
 
             <SheetFooter className="p-6 border-t bg-background">
               <div className="flex w-full flex-col gap-2">
-                <Button asChild size="lg" className="w-full">
-                  <Link href="/wishlist">View All Wish List</Link>
+                <Button size="lg" className="w-full" onClick={handleAddAllToCart}>
+                  Add All to Cart
                 </Button>
                 <SheetClose asChild>
                   <Button variant="link" className="text-sm font-medium text-muted-foreground">
