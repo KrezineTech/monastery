@@ -15,10 +15,16 @@ const ingredients = [
     aiHint: 'rice water cosmetics',
   },
   {
-    title: 'Golden Turmeric',
+    title: 'Indian Turmeric',
     description: 'A timeless Indian spice celebrated for its healing properties. Turmeric is a powerful anti-inflammatory and antioxidant that soothes irritation, evens out skin tone, and protects against environmental stressors, revealing a brighter, calmer complexion.',
     image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/218.jpg?v=1756620808',
     aiHint: 'turmeric root powder',
+    benefits: [
+        'A natural anti-inflammatory powerhouse that calms redness and irritation.',
+        'Rich in curcuminoids, it brightens skin tone and promotes collagen production.',
+        'Protects against environmental damage with strong antioxidant properties.'
+    ],
+    benefitTitle: '"THE GOLDEN GLOW"'
   },
   {
     title: 'Niacinamide (Vitamin B3)',
@@ -285,3 +291,4 @@ export default function IngredientsPage() {
 }
 
     
+
