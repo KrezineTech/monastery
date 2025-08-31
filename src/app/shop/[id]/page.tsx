@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useState, use } from 'react';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { allProducts } from '@/lib/data';
@@ -25,8 +25,9 @@ import { Card } from '@/components/ui/card';
 import { useCart } from '@/hooks/use-cart';
 import { useStore } from 'zustand';
 
-export default function ProductDetailPage({ params }: { params: { id: string } }) {
-  const product = allProducts.find((p) => p.id === params.id);
+export default function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = use(params);
+  const product = allProducts.find((p) => p.id === resolvedParams.id);
   const [quantity, setQuantity] = useState(1);
   const [selectedVolume, setSelectedVolume] = useState(product?.volumes?.[0] || '');
   const [isWishlisted, setIsWishlisted] = useState(false);
