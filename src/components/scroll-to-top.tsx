@@ -75,7 +75,6 @@ export function ScrollToTopButton() {
             strokeWidth="3"
             strokeDasharray={circumference}
             strokeDashoffset={circumference - (progress / 100) * circumference}
-            className="transition-[stroke-dashoffset] duration-300"
           />
         </svg>
         <ChevronUp className="absolute h-6 w-6" />
