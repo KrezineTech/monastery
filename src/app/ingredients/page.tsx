@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useRef } from 'react';
@@ -127,7 +128,7 @@ export default function IngredientsPage() {
       
       <div className="w-full">
         <div className="w-[96%] mx-auto px-4 py-12 sm:py-16">
-          <div className="max-w-none mx-auto text-left pb-16">
+          <div className="max-w-none mx-auto text-left">
             <h1 className="text-3xl font-bold font-headline text-primary mb-4">YUSURU– The Story of Rice Water</h1>
             <h2 className="text-xl font-semibold text-foreground/90 mb-6">Centuries of Korean Tradition in Every Drop</h2>
             <div className="prose lg:prose-lg max-w-none text-foreground/80 space-y-4">
