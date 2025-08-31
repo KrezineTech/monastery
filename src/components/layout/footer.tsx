@@ -19,12 +19,6 @@ const supportLinks = [
     { href: '#', label: 'Terms of Service' },
 ];
 
-const informationLinks = [
-    { href: '/ingredients', label: 'Ingredients' },
-    { href: '/blogs', label: 'Blog' },
-];
-
-
 const socialLinks = [
   { name: 'Instagram', href: 'https://www.instagram.com/islandbeauty.in/', icon: Instagram },
   { name: 'Linkedin', href: '#', icon: Linkedin },
@@ -45,7 +39,7 @@ export function Footer() {
                 />
             </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 text-sm">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
           <div>
             <h5 className="font-semibold text-foreground mb-4 text-base md:text-[20px]">Useful Link</h5>
             <ul className="space-y-2">
@@ -62,18 +56,6 @@ export function Footer() {
             <h5 className="font-semibold text-foreground mb-4 text-base md:text-[20px]">Support</h5>
             <ul className="space-y-2">
               {supportLinks.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="text-foreground/70 hover:text-primary transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h5 className="font-semibold text-foreground mb-4 text-base md:text-[20px]">Information</h5>
-            <ul className="space-y-2">
-              {informationLinks.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} className="text-foreground/70 hover:text-primary transition-colors">
                     {link.label}
