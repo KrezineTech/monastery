@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -10,6 +9,7 @@ import { useState } from 'react';
 import { Input } from '../ui/input';
 import { WishlistSheet } from './wishlist-sheet';
 import { CartSheet } from './cart-sheet';
+import { useRouter } from 'next/navigation';
 
 const navLinks = [
     { href: '/shop', label: 'Shop' },
@@ -20,6 +20,16 @@ const navLinks = [
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const router = useRouter();
+
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+    }
+  };
+
 
   return (
     <header className="sticky top-4 z-50 w-full">
@@ -39,10 +49,16 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
-           <div className="relative hidden md:block">
+           <form onSubmit={handleSearch} className="relative hidden md:block">
              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
-             <Input type="search" placeholder="Search..." className="w-full rounded-full border border-input bg-transparent pl-9 focus-visible:ring-0 focus-visible:ring-offset-0" />
-           </div>
+             <Input 
+                type="search" 
+                placeholder="Search..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full rounded-full border border-input bg-transparent pl-9 focus-visible:ring-0 focus-visible:ring-offset-0" 
+             />
+           </form>
           <WishlistSheet />
           <CartSheet />
           <Button variant="ghost" size="icon">
