@@ -3,224 +3,146 @@ import type { Blog } from './types';
 
 export const allBlogs: Blog[] = [
   {
-    id: 'korean-rice-water-secret',
-    title: 'The Ancient Korean Secret to Flawless Skin: Rice Water',
+    id: 'morning-vs-night-skincare-routines',
+    title: 'Morning vs. Night Skincare Routines: Who Wins?',
     image: 'https://placehold.co/1200x800.png',
-    aiHint: 'rice water skincare',
-    date: 'October 26, 2023',
+    aiHint: 'day night cycle',
+    date: 'Jul 01, 2025',
     author: 'Sakshi Jain',
-    excerpt: 'For centuries, Korean women have turned to a simple, natural ingredient for luminous skin: rice water. Discover how this ancient remedy, backed by modern science, can transform your skincare routine.',
-    content: `For centuries, Korean women have turned to a simple, natural ingredient for luminous skin: rice water. This milky liquid, left over from rinsing or boiling rice, is a treasure trove of vitamins, minerals, and antioxidants. At Island Beauty, we’ve harnessed this ancient wisdom, making it the heart of our formulations.
+    excerpt: 'Should you use the same products in the morning and at night? We break down the key differences and help you optimize both routines for healthier skin.',
+    content: `Should you use the same products in the morning and at night? We break down the key differences and help you optimize both routines for healthier skin.
 
-**What makes rice water so special?**
+**Morning Routine: Protect & Defend**
+Your AM routine should focus on protecting your skin from environmental stressors like UV rays and pollution. Key steps include a gentle cleanse, an antioxidant serum, a lightweight moisturizer, and most importantly, broad-spectrum sunscreen.
 
-The magic lies in its composition. Rice water is rich in:
-- **Inositol:** A carbohydrate that helps repair damaged skin and promotes cell growth.
-- **Ferulic Acid:** A powerful antioxidant that protects skin from environmental stressors.
-- **Vitamins B and E:** Essential for skin health, they help to brighten the complexion and improve elasticity.
-- **Amino Acids:** The building blocks of protein, they help to keep skin smooth and supple.
+**Night Routine: Repair & Regenerate**
+Your PM routine is all about repairing the day's damage and supporting your skin's natural regeneration process. This is the time for deeper cleansing, targeted treatments with active ingredients like retinoids or exfoliating acids, and a richer moisturizer to lock in hydration overnight.
 
-**The Benefits for Your Skin**
-
-Incorporating rice water into your routine can lead to remarkable results:
-1.  **Brighter, More Even Skin Tone:** The enzymes in rice water gently exfoliate, helping to fade dark spots and hyperpigmentation, revealing a more radiant complexion.
-2.  **Soothed and Calm Skin:** Its anti-inflammatory properties make it ideal for calming irritated or sensitive skin, reducing redness and inflammation.
-3.  **Tighter Pores:** Rice water acts as a natural astringent, helping to tighten pores and refine skin texture for a smoother appearance.
-4.  **Enhanced Hydration:** It provides a light layer of moisture, leaving the skin feeling soft and hydrated without any greasy residue.
-
-At Island Beauty, we combine the clarifying power of Korean rice water with the healing properties of Indian turmeric. This thoughtful fusion creates a gentle yet effective solution for modern skincare concerns. Our Purity in a Drop Toner & Essence and DewDrop Evenness Boost Serum are infused with this potent blend to bring balance, clarity, and a quiet glow to your skin.
-
-Experience the timeless tradition and discover your skin’s natural radiance with us.`,
+**The Verdict?**
+Both routines are winners and work in tandem. A protective morning routine and a restorative night routine create the perfect 24-hour cycle for happy, healthy skin.`,
   },
   {
-    id: 'why-niacinamide-is-a-must-have',
-    title: 'Niacinamide: The Skincare Superhero You Need',
+    id: 'niacinamide-mvp-of-skincare',
+    title: 'Niacinamide: The Unofficial MVP of Skincare',
     image: 'https://placehold.co/1200x800.png',
-    aiHint: 'skincare ingredients science',
-    date: 'September 15, 2023',
+    aiHint: 'skincare science lab',
+    date: 'Jul 01, 2025',
     author: 'Sakshi Jain',
-    excerpt: 'Niacinamide, or Vitamin B3, is a powerhouse ingredient that addresses a multitude of skin concerns. From minimizing pores to fighting signs of aging, here’s why it’s a non-negotiable in our DewDrop Serum.',
-    content: `If there’s one ingredient that deserves a spot in nearly every skincare routine, it’s Niacinamide. Also known as Vitamin B3, this water-soluble vitamin is a true multi-tasker, delivering a host of benefits that cater to almost any skin type or concern.
+    excerpt: 'From minimizing pores to fighting signs of aging, here’s why Niacinamide (Vitamin B3) is a non-negotiable in any effective skincare lineup.',
+    content: `If skincare ingredients were a sports team, Niacinamide would be the Most Valuable Player. This powerhouse form of Vitamin B3 is a true multitasker that addresses a wide array of concerns, making it suitable for nearly every skin type.
 
-**The Power of Niacinamide**
+**Why It's the MVP:**
+1.  **Barrier Boost:** It strengthens your skin's natural barrier, improving hydration and resilience.
+2.  **Pore Perfector:** It helps to visibly reduce the appearance of enlarged pores.
+3.  **Tone & Texture:** It smooths skin texture and helps to even out skin tone by reducing redness and fading dark spots.
+4.  **Oil Control:** It regulates sebum production, making it a hero for oily and acne-prone skin.
 
-1.  **Minimizes Pores:** Niacinamide has been shown to visibly reduce the appearance of enlarged pores by helping to normalize the pore lining and prevent debris from getting trapped.
-2.  **Improves Skin Tone:** It works to inhibit the transfer of pigment within the skin, which helps to lighten dark spots and even out overall skin tone for a more uniform complexion.
-3.  **Strengthens the Skin Barrier:** One of its most celebrated benefits is its ability to boost the production of ceramides, the natural fats that help maintain the skin’s protective barrier. A stronger barrier means better hydration and less sensitivity.
-4.  **Regulates Oil Production:** For those with oily or combination skin, Niacinamide can help regulate sebum production, leading to a more balanced and less shiny complexion over time.
-5.  **Reduces Fine Lines and Wrinkles:** It boosts collagen production, which helps to smooth out the signs of aging and improve skin’s elasticity.
-
-**Finding it in Our Products**
-
-We’ve made Niacinamide a star ingredient in our **DewDrop Evenness Boost Serum**. Paired with hydrating Korean rice water and soothing turmeric, it works to create a formula that not only brightens and evens but also strengthens and calms. It’s the perfect all-in-one solution to achieve that healthy, balanced glow.
-
-Ready to see the difference for yourself? Add this skincare superhero to your daily ritual.`,
+Our DewDrop Evenness Boost Serum is formulated with Niacinamide to deliver these incredible benefits, giving your skin the all-star treatment it deserves.`,
   },
   {
-    id: 'simple-skincare-for-busy-lives',
-    title: 'The Art of Simplicity: A Skincare Routine for Busy Lives',
+    id: 'spf-isnt-optional-even-indoors',
+    title: 'SPF Isn’t Optional, Even Indoors: Here’s Why Your Moisturizer Needs It',
+    image: 'https://placehold.co/1200x800.png',
+    aiHint: 'woman by window',
+    date: 'Jul 01, 2025',
+    author: 'Sakshi Jain',
+    excerpt: 'Think you’re safe from sun damage while working from home? Think again. We explain why daily SPF is the ultimate anti-aging secret.',
+    content: `You might think you can skip sunscreen on days you're staying inside, but UVA rays—the ones responsible for premature aging—can penetrate right through windows. This daily, incidental sun exposure adds up over time, leading to fine lines, wrinkles, and dark spots.
+
+**The Solution: SPF in Your Moisturizer**
+The easiest way to make sun protection a non-negotiable habit is to use a moisturizer with built-in SPF. It’s a simple, one-and-done step that ensures your skin is shielded from daily UV damage.
+
+Our Morning Dew Moisturizer with SPF 15 provides essential hydration while defending your skin, making it the perfect everyday base. It's lightweight, non-greasy, and ensures your skin stays protected, whether you're indoors or out.`,
+  },
+  {
+    id: 'turmeric-ancient-spice-for-skin',
+    title: 'Turmeric: The Ancient Spice Your Skin Can’t Stop Crushing On',
+    image: 'https://placehold.co/1200x800.png',
+    aiHint: 'turmeric root powder',
+    date: 'Jun 30, 2025',
+    author: 'Sakshi Jain',
+    excerpt: 'This golden spice isn’t just for lattes. Turmeric has been an Indian beauty staple for centuries thanks to its incredible anti-inflammatory and brightening properties.',
+    content: `Long before it became a trendy wellness ingredient, turmeric was the go-to skincare secret in Indian households. This golden spice is packed with curcumin, a potent antioxidant and anti-inflammatory compound that works wonders for the skin.
+
+**Golden Benefits:**
+- **Calms Redness:** Its anti-inflammatory properties help to soothe irritated and sensitive skin.
+- **Brightens Complexion:** It helps to fade dark spots and hyperpigmentation, revealing a more even and radiant skin tone.
+- **Fights Blemishes:** Its natural antiseptic and antibacterial properties can help to keep pores clean and reduce acne.
+
+At Island Beauty, we infuse our formulas with golden turmeric to bring its healing, brightening magic to your daily routine.`,
+  },
+  {
+    id: 'less-is-more-in-skincare',
+    title: 'Less Is More: Why Your Skin Will Thank You',
     image: 'https://placehold.co/1200x800.png',
     aiHint: 'minimalist bathroom shelf',
-    date: 'August 02, 2023',
+    date: 'Jun 30, 2025',
     author: 'Sakshi Jain',
-    excerpt: 'In a world that constantly demands more, we believe your skincare routine should be a moment of calm. Discover how a few simple, effective steps can lead to your healthiest skin ever, no 10-step routine required.',
-    content: `In a world that glorifies being busy, finding moments of peace can feel like a luxury. But what if your skincare routine could be one of them? At Island Beauty, we believe in the power of simplicity. A complicated, multi-step routine isn't necessary for healthy, radiant skin. In fact, sometimes, less is more.
+    excerpt: 'The 10-step skincare routine is officially over. We’re making a case for "skinimalism"—a simplified, effective approach that delivers better results with fewer products.',
+    content: `In a world obsessed with more, we're here to say that your skincare routine doesn't need to be complicated to be effective. Overloading your skin with too many products can lead to irritation and a compromised skin barrier.
 
-**The Core Four: A Foundation for Healthy Skin**
+**The "Skinimalist" Approach:**
+Focus on a core routine of high-quality, multi-tasking products:
+1.  **Gentle Cleanse:** Wash away impurities without stripping the skin.
+2.  **Hydrating Toner/Essence:** Balance and prep the skin. Our Purity in a Drop Toner & Essence does both.
+3.  **Targeted Serum:** Address your primary concerns, like our DewDrop Evenness Boost Serum for tone and texture.
+4.  **Moisturize & Protect:** Hydrate and defend with a moisturizer, preferably with SPF for daytime.
 
-You can achieve incredible results with just four core steps. This is a routine that's effective, easy to stick to, and provides a moment of mindful self-care.
-
-1.  **Cleanse:** Start with a gentle cleanser to wash away the day's impurities without stripping your skin's natural oils. This creates a clean canvas for the products to follow.
-2.  **Tone & Prep:** This is where our **Purity in a Drop Toner & Essence** comes in. A multi-tasking product like this saves time. It balances your skin's pH, provides a first layer of hydration, and preps your skin to better absorb what comes next.
-3.  **Treat:** Address your specific skin concerns with a targeted serum. Our **DewDrop Evenness Boost Serum** is perfect for this step, as it works to brighten, even skin tone, and hydrate. A few drops are all you need.
-4.  **Moisturize & Protect:** Lock in all the goodness with a moisturizer. In the morning, choose one with SPF, like our **Morning Dew Moisturizer with SPF 15**, to protect your skin from daily sun exposure. This final step ensures your skin stays hydrated and defended throughout the day.
-
-**Making it a Ritual**
-
-Transform these steps from a chore into a cherished ritual. Take a few deep breaths as you cleanse. Gently pat in your toner and serum, feeling the texture on your skin. Massage in your moisturizer with upward strokes. These small moments of mindfulness can set a positive tone for your day or help you unwind in the evening.
-
-Your skincare journey doesn't need to be complex to be effective. Embrace the quiet, embrace the simplicity, and let your skin find its balance.`,
+By simplifying your routine, you give your skin room to breathe and allow potent ingredients to work their magic without interference.`,
   },
   {
-    id: 'turmeric-golden-spice',
-    title: 'The Golden Spice: Turmeric in Skincare',
+    id: 'korean-rice-water-from-joseon-queens',
+    title: 'Korean Rice Water: From Joseon Queens to Your Skincare Routine',
     image: 'https://placehold.co/1200x800.png',
-    aiHint: 'turmeric spice powder',
-    date: 'July 20, 2023',
+    aiHint: 'rice water cosmetics',
+    date: 'Jun 30, 2025',
     author: 'Sakshi Jain',
-    excerpt: 'Turmeric has been a staple in Indian households for centuries, not just for its culinary uses but for its incredible healing properties. Learn how this golden spice can brighten and calm your skin.',
-    content: `Turmeric, the vibrant golden spice, is a cornerstone of Ayurvedic tradition. Its benefits go far beyond the kitchen. For centuries, it has been used in India for its powerful anti-inflammatory and antioxidant properties, making it a natural choice for healthy, glowing skin.
+    excerpt: 'The secret to the flawless complexions of Joseon-era royalty wasn’t a complex formula—it was the humble rice water. Discover the history and benefits of this timeless beauty elixir.',
+    content: `For centuries, Korean women, including the royal court of the Joseon Dynasty, relied on a simple, milky-white liquid to achieve their famously clear and luminous skin: rice water. This age-old tradition is rooted in the nutrient-rich properties of rice.
 
-**Why Turmeric?**
+**A Royal Treatment for Your Skin:**
+Rice water is packed with vitamins, minerals, and amino acids that provide a wealth of benefits:
+- **Gentle Cleansing:** It purifies the skin without stripping its natural moisture.
+- **Brightening Power:** It helps to even out skin tone and impart a natural glow.
+- **Texture Refinement:** It helps to minimize the appearance of pores for a smoother finish.
 
-The active compound in turmeric, curcumin, is responsible for most of its skin-loving benefits:
-- **Brightens Skin:** Curcumin helps to inhibit melanin production, which can reduce the appearance of dark spots and hyperpigmentation, leading to a brighter, more even complexion.
-- **Calms Inflammation:** Its potent anti-inflammatory properties can help to soothe redness, irritation, and conditions like acne and eczema.
-- **Fights Free Radicals:** As a powerful antioxidant, turmeric helps to protect the skin from environmental damage caused by free radicals, which can accelerate aging.
-- **Promotes Healing:** It has been shown to speed up the skin's natural healing process, making it beneficial for blemishes and minor wounds.
-
-At Island Beauty, we’ve combined the ancient wisdom of Indian turmeric with the gentle efficacy of Korean rice water. This fusion creates a synergy that calms, clarifies, and brightens the skin. You’ll find this potent combination in our core products, designed to bring a touch of tradition to your modern skincare ritual.`,
+We’ve bottled this ancient secret in our products, combining the heritage of Korean rice water with modern skincare science to give you a complexion fit for a queen.`,
   },
   {
-    id: 'understanding-spf',
-    title: 'SPF Explained: Your Guide to Sun Protection',
+    id: 'acid-trip-for-beginners',
+    title: 'Acid Trip: A Beginner’s Guide to Skincare Acids That Won’t Freak You Out',
     image: 'https://placehold.co/1200x800.png',
-    aiHint: 'sunscreen application beach',
-    date: 'June 11, 2023',
+    aiHint: 'skincare science abstract',
+    date: 'Jun 30, 2025',
     author: 'Sakshi Jain',
-    excerpt: 'Sunscreen is the most important anti-aging product you can use. But what do the numbers and labels actually mean? We break down everything you need to know about SPF.',
-    content: `Sunscreen is non-negotiable for healthy skin, but navigating the world of SPF can be confusing. What’s the difference between SPF 15, 30, and 50? What about UVA and UVB rays? Let's clear things up.
+    excerpt: 'AHAs, BHAs, PHAs—oh my! The world of skincare acids can be intimidating, but these ingredients are the key to glowing, smooth skin. Here’s a simple breakdown.',
+    content: `The word "acid" can sound scary, but when it comes to skincare, it's your fast track to a brighter, smoother complexion. Here's a quick guide to the most common types.
 
-**UVB and UVA Rays**
+**AHAs (Alpha-Hydroxy Acids): The Resurfacers**
+- **Examples:** Glycolic Acid, Lactic Acid
+- **Best for:** Dullness, uneven texture, and fine lines. They work on the skin's surface to slough off dead cells.
 
-First, it's important to understand the two types of UV rays that affect your skin:
-- **UVB (Burning):** These rays are the primary cause of sunburn and play a key role in developing skin cancer.
-- **UVA (Aging):** These rays penetrate deeper into the skin and are responsible for premature aging, like wrinkles and fine lines. They can also contribute to skin cancer.
+**BHAs (Beta-Hydroxy Acids): The Pore Cleaners**
+- **Examples:** Salicylic Acid
+- **Best for:** Oily and acne-prone skin. BHAs are oil-soluble, meaning they can get deep inside pores to clear out congestion.
 
-**What Does SPF Mean?**
-
-SPF stands for Sun Protection Factor. It primarily measures how well a sunscreen protects you from UVB rays. The number tells you how much longer it would take for your skin to redden with the sunscreen on compared to without it. For example, if you would normally burn in 10 minutes, an SPF 15 sunscreen would theoretically protect you for 150 minutes (10 x 15).
-
-**Choosing the Right SPF**
-
-- **SPF 15:** Blocks about 93% of UVB rays. Great for incidental exposure, like short walks or driving. Our **Morning Dew Moisturizer with SPF 15** is perfect for daily, casual protection.
-- **SPF 30:** Blocks about 97% of UVB rays. This is the minimum recommended for extended outdoor activities.
-- **SPF 50:** Blocks about 98% of UVB rays.
-
-No sunscreen blocks 100% of UV rays. The key is to choose a **broad-spectrum** sunscreen, which protects against both UVA and UVB rays, and to reapply it every two hours, or more frequently if you're swimming or sweating.`,
+Our Purity in a Drop Toner & Essence contains a gentle blend of Glycolic and Salicylic acid to give you the best of both worlds: surface smoothing and deep pore cleansing, all in one simple step.`,
   },
   {
-    id: 'hydration-vs-moisture',
-    title: 'Hydration vs. Moisture: What Your Skin Really Needs',
+    id: 'rice-water-vs-everything-else',
+    title: 'Rice Water vs. Everything Else: Why Your Skin Loves This OG Ingredient',
     image: 'https://placehold.co/1200x800.png',
-    aiHint: 'water splash face',
-    date: 'May 05, 2023',
+    aiHint: 'water splash nature',
+    date: 'Jun 29, 2025',
     author: 'Sakshi Jain',
-    excerpt: 'Are you hydrating or moisturizing? They might sound the same, but they address two different skin needs. Understanding the difference is key to achieving a balanced, glowing complexion.',
-    content: `In the world of skincare, "hydration" and "moisture" are often used interchangeably. However, they are two distinct concepts, and knowing the difference can help you choose the right products for your skin.
+    excerpt: 'In a sea of trendy ingredients, one ancient remedy stands the test of time: rice water. We explore why this simple, natural solution outperforms many complex modern formulas.',
+    content: `Hyaluronic acid, vitamin C, retinol—the list of must-have skincare ingredients is ever-growing. Yet, one of the most effective and time-tested ingredients is also one of the simplest: rice water.
 
-**Hydration is about Water**
+**Why Rice Water Wins:**
+- **Nutrient-Dense:** It’s naturally packed with a broad range of vitamins, minerals, and antioxidants that your skin needs.
+- **Gentle & Soothing:** Unlike some powerful active ingredients that can cause irritation, rice water is exceptionally gentle and suitable for all skin types.
+- **Multi-Benefit:** It cleanses, brightens, hydrates, and refines pores all at once.
 
-Hydration refers to the water content within your skin cells. If your skin is dehydrated, it lacks water. This can happen to any skin type, even oily skin. Dehydrated skin often looks dull, feels tight, and may show more pronounced fine lines.
-
-**How to Hydrate:**
-Look for ingredients called **humectants**, which draw water from the air or deeper layers of your skin to the surface.
-- **Hyaluronic Acid:** A superstar humectant that can hold up to 1,000 times its weight in water.
-- **Glycerin:** Another effective humectant that helps to keep skin soft and supple.
-- **Rice Water:** A natural source of hydration, featured in our products.
-
-**Moisture is about Oil**
-
-Moisture refers to the oils (or lipids) in your skin that create a protective barrier to prevent water from evaporating. If your skin is dry, it lacks oil. Dry skin can feel rough, flaky, or itchy.
-
-**How to Moisturize:**
-Look for ingredients called **emollients** and **occlusives**.
-- **Emollients:** (e.g., ceramides, shea butter) help to soften and smooth the skin.
-- **Occlusives:** (e.g., petrolatum, lanolin) form a physical barrier on the skin to lock in moisture.
-
-**The Takeaway**
-
-Most skin needs a balance of both. You need to add water (hydrate) and then seal it in (moisturize). Our **DewDrop Evenness Boost Serum** is packed with hydrating ingredients like Hyaluronic Acid and rice water, while our **Morning Dew Moisturizer** helps to lock in that hydration and protect the skin barrier.`,
-  },
-  {
-    id: 'importance-of-patch-testing',
-    title: 'Why You Should Always Patch Test New Skincare Products',
-    image: 'https://placehold.co/1200x800.png',
-    aiHint: 'applying cream on arm',
-    date: 'April 18, 2023',
-    author: 'Sakshi Jain',
-    excerpt: 'Excited to try a new product? Before you apply it all over your face, there’s one crucial step you shouldn’t skip: the patch test. Here’s why it’s so important.',
-    content: `You've just brought home a new serum or moisturizer, and you can't wait to slather it on and see the results. We get the excitement! But before you do, it's essential to perform a patch test. This simple step can save you from potential irritation, redness, or an allergic reaction.
-
-**What is a Patch Test?**
-
-A patch test is a way of testing a new product on a small, discreet area of your skin to see how it reacts before you apply it more widely.
-
-**How to Patch Test:**
-
-1.  **Choose a Spot:** Apply a small amount of the product to an area where the skin is thin and sensitive, but also easily hidden. The inside of your wrist, the crook of your elbow, or behind your ear are all good options.
-2.  **Apply a Small Amount:** Use just a tiny dab of the product.
-3.  **Wait and Observe:** Leave the product on for at least 24 hours. Some experts recommend waiting up to 72 hours, as reactions can sometimes be delayed. Do not wash the area during this time.
-4.  **Check for Reactions:** After the waiting period, check the area for any signs of irritation, such as redness, itching, burning, or breakouts.
-
-**What if I Have a Reaction?**
-
-If you experience any irritation, wash the area immediately with a gentle cleanser and cool water. Discontinue use of the product. If the reaction is severe or doesn't subside, consult a dermatologist.
-
-Even with the gentlest, most natural ingredients like those we use at Island Beauty, everyone's skin is unique. Taking the time to patch test is a simple act of self-care that ensures your skincare journey is a happy and healthy one.`,
-  },
-  {
-    id: 'skin-purging-vs-breakouts',
-    title: 'Skin Purging vs. Breakouts: How to Tell the Difference',
-    image: 'https://placehold.co/1200x800.png',
-    aiHint: 'woman looking in mirror',
-    date: 'March 22, 2023',
-    author: 'Sakshi Jain',
-    excerpt: 'Started a new skincare product and now you’re breaking out? It might be skin purging, not a typical breakout. We explain the difference and what to do about it.',
-    content: `So you've introduced a new product with active ingredients (like AHAs, BHAs, or retinoids) into your routine, and suddenly, you have a new crop of pimples. Your first instinct might be to ditch the product, but you could be experiencing "skin purging."
-
-**What is Skin Purging?**
-
-Skin purging is a temporary reaction to an ingredient that increases skin cell turnover. These ingredients, like the glycolic and salicylic acid in our **Purity in a Drop Toner & Essence**, accelerate the process of shedding dead skin cells and bringing underlying congestion (microcomedones) to the surface faster.
-
-In essence, purging is bringing pre-existing pimples to a head more quickly. It's a sign that the product is working to clear out your pores.
-
-**How to Tell the Difference**
-
-| Feature           | Skin Purging                                         | Breakout (Irritation)                                    |
-| ----------------- | ---------------------------------------------------- | -------------------------------------------------------- |
-| **Location**      | Occurs in areas where you typically get pimples.       | Can appear in new areas where you don't usually break out. |
-| **Duration**      | Clears up faster than a normal pimple (usually 1-2 weeks). | Lasts longer and may continue as long as you use the product. |
-| **Appearance**    | Often small, red bumps or pustules (whiteheads).       | Can include various types, like red, inflamed, itchy bumps. |
-| **Cause**         | Caused by active ingredients that increase cell turnover. | Caused by clogged pores, irritation, or an allergic reaction. |
-
-**What to Do If You're Purging**
-
-1.  **Be Patient:** Don't stop using the product! Purging is temporary and usually subsides within one full skin cycle (about 4-6 weeks).
-2.  **Be Gentle:** Avoid using other harsh products or exfoliants. Stick to a simple, soothing routine.
-3.  **Don't Pick:** Picking at purging pimples can lead to scarring and inflammation.
-4.  **Introduce Slowly:** When starting a new active product, it's always a good idea to introduce it slowly (e.g., every other day) to allow your skin to acclimate.
-
-If the "breakout" persists for more than 6 weeks or appears in unusual places, it's more likely to be irritation, and you should consider discontinuing the product.`,
+While other ingredients target specific problems, rice water provides holistic nourishment that supports overall skin health. It’s the foundation of all our products, delivering a quiet, restorative glow that’s both timeless and effective.`,
   },
 ];
