@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useRef } from 'react';
@@ -9,19 +10,19 @@ const ingredients = [
   {
     title: 'Pure Korean Rice Water',
     description: 'Sourced from the pristine fields of Korea, our rice water is rich in vitamins and minerals. It gently purifies the skin, minimizes pores, and imparts a natural, healthy glow. We honor centuries of tradition by using a time-tested extraction process to preserve its potent nutrients.',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/freepik__expand__29450.png?v=1756620680',
     aiHint: 'rice water cosmetics',
   },
   {
     title: 'Golden Turmeric',
     description: 'A timeless Indian spice celebrated for its healing properties. Turmeric is a powerful anti-inflammatory and antioxidant that soothes irritation, evens out skin tone, and protects against environmental stressors, revealing a brighter, calmer complexion.',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/218.jpg?v=1756620808',
     aiHint: 'turmeric root powder',
   },
   {
     title: 'Niacinamide (Vitamin B3)',
     description: 'A true skincare superhero, Niacinamide strengthens the skin\'s barrier, minimizes the appearance of pores, and regulates oil production. It works in harmony with our natural ingredients to visibly improve skin texture and tone for a balanced, healthy look.',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/2148205096.jpg?v=1756620734',
     aiHint: 'skincare science lab',
   },
 ];
