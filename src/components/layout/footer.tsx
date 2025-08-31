@@ -39,7 +39,7 @@ export function Footer() {
                 />
             </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
           <div>
             <h5 className="font-semibold text-foreground mb-4 text-base md:text-[20px]">Useful Link</h5>
             <ul className="space-y-2">
@@ -64,7 +64,7 @@ export function Footer() {
               ))}
             </ul>
           </div>
-          <div className="md:col-span-2">
+          <div>
             <h5 className="font-semibold text-foreground mb-4 text-base md:text-[20px]">Sign Up to Our Newsletter</h5>
             <p className="mb-6 text-foreground/70">Give your inbox some love with new products, tips, & more.</p>
             <form>
