@@ -9,21 +9,21 @@ const founders = [
     name: 'Shirley Setia',
     role: 'Co-Founder',
     quote: "ISLAND gave me the chance to be vulnerable. To talk about skin struggles I never really shared, and to help shape something that feels real, not an aspirational. I didn’t want to just ‘lend my face’, I wanted to build something I could stand behind. My favourite part has been connecting with people who see their own story in ours.”",
-    image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Rectangle_1578.webp?v=1754813589',
+    image: 'https://www.islandbeauty.in/cdn/shop/files/sherly.png?v=1751345977',
     aiHint: 'woman smiling'
   },
   {
     name: 'Sakshi Jain',
     role: 'Co-Founder',
     quote: "For me, ISLAND began as a quiet rebellion against overcomplicated routines, unrealistic beauty standards, and skincare that never felt made for us. It’s been deeply fulfilling to build something from scratch that respects the Indian consumer’s intelligence and skin both. My favourite part? Turning a personal struggle into a brand that feels like home for others too.”",
-    image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Rectangle_1579.webp?v=1754813589',
+    image: 'https://www.islandbeauty.in/cdn/shop/files/sakshi.png?v=1751345977',
     aiHint: 'woman portrait'
   },
   {
     name: 'Jinsoon Lee',
     role: 'Co-Founder',
     quote: "As a formulator, I’ve worked with many skincare brands, but ISLAND felt different from the very first conversation. It wasn’t about perfection. It was about relevance. Indian skin, Indian climate, Indian water. All of it made me rethink formulation from the ground up. My favourite part is solving for things that truly matter, and creating something that feels both modern and rooted.”",
-    image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Rectangle_1580.webp?v=1754813589',
+    image: 'https://www.islandbeauty.in/cdn/shop/files/Jinsoon.png?v=1751346064',
     aiHint: 'woman professional'
   }
 ];
