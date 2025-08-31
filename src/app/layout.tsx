@@ -37,7 +37,7 @@ export default function RootLayout({
               </div>
             </SmoothScroll>
             <Toaster />
-            <ScrollToTopButton />
+            {/* <ScrollToTopButton /> */}
           </CartProvider>
         </WishlistProvider>
       </body>

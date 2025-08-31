@@ -57,7 +57,7 @@ const aboutContent = [
     content: {
       tag: 'Our Promise',
       title: 'Heritage, Made Modern',
-      description: "Island began with a deep respect for where we come from, and a clear vision for what skincare could be. We bring together traditional Indian ingredients like rice water and turmeric, and pair them with modern science to meet the needs of Indian skin today. Every formula is a quiet blend of culture, climate, and care - gentle, effective, and elevated. This is tradition reimagined - not as the past repeated, but as wisdom evolved.",
+      description: "Island began with a deep respect for where we come from, and a clear vision for what skincare could be. We bring together traditional Indian ingredients like rice water and turmeric, and pair them with modern science to meet the needs of Indian skin today. Every formula is a quiet blend of culture, climate, and care - gentle, effective, and elevated. This is tradition reimagimagined - not as the past repeated, but as wisdom evolved.",
     },
     isImageFirst: false,
   },
