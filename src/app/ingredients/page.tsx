@@ -155,7 +155,7 @@ export default function IngredientsPage() {
         })}
       </div>
 
-      <section className="bg-background">
+      <section className="bg-background pb-24">
         <div className="w-[96%] mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold font-headline text-primary">The Essential Boosters</h2>
