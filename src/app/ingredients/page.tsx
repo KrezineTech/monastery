@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useRef } from 'react';
@@ -66,7 +65,6 @@ function IngredientCard({ title, description, image, aiHint, i, progress, range,
       <motion.div 
         style={{ 
           scale,
-          top: `calc(-5vh + ${i * 25}px)`,
         }} 
         className="relative h-[500px] w-full rounded-2xl"
       >
@@ -156,7 +154,7 @@ export default function IngredientsPage() {
         })}
       </div>
 
-      <section className="py-24 bg-background">
+      <section className="py-16 bg-background">
         <div className="w-[96%] mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold font-headline text-primary">The Essential Boosters</h2>
