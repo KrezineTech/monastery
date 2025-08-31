@@ -36,29 +36,47 @@ const featuredProducts: Product[] = [
 ];
 
 const reels: Reel[] = [
-    {
+  {
     id: '1',
     videoUrl: 'https://cdn.shopify.com/videos/c/o/v/6daa81250e864682a3201786b32605e5.mp4',
-    aiHint: 'woman skincare',
+    aiHint: 'woman applying skincare',
     product: { id: '1', name: 'Purity in a Drop Toner & Essence', price: 999.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-2.webp?v=1756537408', aiHint: 'toner essence bottle' },
+  },
+  {
+    id: '2',
+    videoUrl: 'https://cdn.shopify.com/videos/c/o/v/f13a9e5211c846049670476fbd1bbae5.mp4',
+    aiHint: 'skincare routine',
+    product: { id: '2', name: 'DewDrop Evenness Boost Serum', price: 999.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Serum_copy.webp?v=1754934890', aiHint: 'serum bottle' },
+  },
+  {
+    id: '3',
+    videoUrl: 'https://cdn.shopify.com/videos/c/o/v/b8286706707a485b897d7342be75d29d.mp4',
+    aiHint: 'moisturizer application',
+    product: { id: '3', name: 'Morning Dew Moisturizer with SPF 15', price: 1300.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-1.webp?v=1754914138', aiHint: 'moisturizer bottle' },
   },
   {
     id: '4',
     videoUrl: 'https://cdn.shopify.com/videos/c/o/v/0b32f300c2124dbfa056a8f4e4353478.mp4',
-    aiHint: 'morning routine',
+    aiHint: 'product set showcase',
     product: { id: '4', name: 'Yusuru Radiance Combo Set', price: 2490.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/22212.webp?v=1756537844', aiHint: 'skincare combo set' },
   },
-   {
+  {
+    id: '5',
+    videoUrl: 'https://cdn.shopify.com/videos/c/o/v/84c997d45423440184c123c92ba23ecc.mp4',
+    aiHint: 'gentle skincare',
+    product: { id: '1', name: 'Purity in a Drop Toner & Essence', price: 999.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-2.webp?v=1756537408', aiHint: 'toner essence bottle' },
+  },
+  {
     id: '6',
-    videoUrl: 'https://cdn.shopify.com/videos/c/o/v/447e0a9c99884170bae3422569ca9ccf.mp4',
-    aiHint: 'self-care day',
+    videoUrl: 'https://cdn.shopify.com/videos/c/o/v/9fc98e5a0d084eb997463f23858bc2bf.mp4',
+    aiHint: 'daily routine',
     product: { id: '2', name: 'DewDrop Evenness Boost Serum', price: 999.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Serum_copy.webp?v=1754934890', aiHint: 'serum bottle' },
   },
-    {
-    id: '2',
-    videoUrl: 'https://cdn.shopify.com/videos/c/o/v/9062cc9db8eb4a1f91e1ec951209c4c2.mp4',
-    aiHint: 'woman skincare routine',
-    product: { id: '1', name: 'Purity in a Drop Toner & Essence', price: 999.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-2.webp?v=1756537408', aiHint: 'toner essence bottle' },
+  {
+    id: '7',
+    videoUrl: 'https://cdn.shopify.com/videos/c/o/v/447e0a9c99884170bae3422569ca9ccf.mp4',
+    aiHint: 'glowing skin',
+    product: { id: '3', name: 'Morning Dew Moisturizer with SPF 15', price: 1300.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-1.webp?v=1754914138', aiHint: 'moisturizer bottle' },
   },
 ];
 
