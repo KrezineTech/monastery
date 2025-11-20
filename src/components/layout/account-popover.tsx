@@ -4,22 +4,24 @@ import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Package, User } from "lucide-react"
 import Link from "next/link"
-import { useState } from "react"
+import { useRouter } from "next/navigation"
+import { useAuth } from "@/components/auth-provider"
 
 export function AccountPopover() {
-  // Simulate authentication state
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { isAuthenticated, logout } = useAuth();
+  const router = useRouter();
 
-  const handleAuthAction = () => {
-    setIsLoggedIn(!isLoggedIn);
+  const handleLogout = () => {
+    logout();
+    router.push('/');
   }
 
   return (
     <div className="space-y-4">
       <h5 className="font-medium">Account</h5>
       <div className="space-y-2">
-        {isLoggedIn ? (
-          <Button variant="secondary" className="w-full" onClick={handleAuthAction}>Logout</Button>
+        {isAuthenticated ? (
+          <Button variant="secondary" className="w-full" onClick={handleLogout}>Logout</Button>
         ) : (
           <Button asChild variant="default" className="w-full">
             <Link href="/login">Sign In</Link>
@@ -35,7 +37,7 @@ export function AccountPopover() {
           </Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/profile">
+          <Link href="/account">
             <User className="mr-2 h-4 w-4" />
             Profile
           </Link>

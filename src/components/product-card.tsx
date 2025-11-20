@@ -17,10 +17,9 @@ import { useCart } from '@/hooks/use-cart.tsx';
 interface ProductCardProps {
   product: Product;
   className?: string;
-  href?: string;
 }
 
-export function ProductCard({ product, className, href }: ProductCardProps) {
+export function ProductCard({ product, className }: ProductCardProps) {
   const [isQuickViewOpen, setIsQuickViewOpen] = useState(false);
   
   const wishlistStore = useWishlist();
@@ -75,7 +74,7 @@ export function ProductCard({ product, className, href }: ProductCardProps) {
           <>
           <Image
             src={product.image}
-            alt={product.name}
+            alt={product.name || 'Product image'}
             fill
             className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
             data-ai-hint={product.aiHint}
@@ -94,12 +93,12 @@ export function ProductCard({ product, className, href }: ProductCardProps) {
   );
 
   const cardContainer = (
-    <div className={cn("flex flex-col group", className)}>
+    <Link href={`/shop/${product.id}`} className={cn("flex flex-col group", className)}>
         <div className="relative w-full aspect-square overflow-hidden rounded-[26px]">
             {cardContent}
         </div>
         <div className="pt-4">
-          <h3 className="font-semibold font-headline text-sm text-foreground mt-1">{product.name}</h3>
+          <h3 className="font-semibold font-headline text-base text-foreground mt-1">{product.name}</h3>
           <div className="flex items-center mt-2">
               <div className="flex items-center">
                   {[...Array(5)].map((_, i) => (
@@ -114,11 +113,10 @@ export function ProductCard({ product, className, href }: ProductCardProps) {
                   <p className="text-muted-foreground line-through text-sm">₹{product.originalPrice.toFixed(2)}</p>
               )}
           </div>
-          <div className="flex items-center gap-2 mt-4">
+          <div className="flex items-center gap-2 mt-4" onClick={(e) => e.preventDefault()}>
             <Button 
-              variant="secondary" 
-              className="rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/80 flex-1"
               onClick={() => setIsQuickViewOpen(true)}
+              className="rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/80 flex-1 h-10 px-4 py-2 inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors"
             >
               <Eye className="w-4 h-4 mr-2" />
               Quick view
@@ -128,7 +126,7 @@ export function ProductCard({ product, className, href }: ProductCardProps) {
             </Button>
           </div>
         </div>
-      </div>
+      </Link>
   );
   
   const videoCardContainer = (
@@ -139,20 +137,10 @@ export function ProductCard({ product, className, href }: ProductCardProps) {
     </div>
   );
 
-  const finalContainer = (
+  return (
     <>
       {product.videoUrl && product.title ? videoCardContainer : cardContainer}
       <QuickViewDialog open={isQuickViewOpen} onOpenChange={setIsQuickViewOpen} product={product} />
     </>
   );
-
-  if (href) {
-    return (
-      <Link href={href} className="block h-full">
-        {finalContainer}
-      </Link>
-    );
-  }
-
-  return finalContainer;
 }

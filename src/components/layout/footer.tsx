@@ -31,8 +31,8 @@ export function Footer() {
         <div className="mb-12 text-center">
             <Link href="/">
                 <Image 
-                    src="https://www.islandbeauty.in/cdn/shop/files/bog_logo.svg?v=1751106444" 
-                    alt="glowver logo" 
+                    src="https://cdn.shopify.com/s/files/1/0775/6965/5038/files/LOGO22-1.png?v=1762153721" 
+                    alt="Island Beauty logo" 
                     width={1200} 
                     height={240} 
                     className="mx-auto w-full"

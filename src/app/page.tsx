@@ -10,14 +10,17 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
   CarouselPrevious,
+  CarouselNext,
 } from '@/components/ui/carousel';
+
+
 import { FeaturedTrio } from '@/components/featured-trio';
 import { QuietEscapeSection } from '@/components/quiet-escape';
 import { StickyPromoSection } from '@/components/sticky-promo-section';
 import { HarmonySection } from '@/components/harmony-section';
 import { ReviewSection } from '@/components/review-section';
+import { FeaturedProductsSlider } from '@/components/featured-products-slider';
 import { allBlogs } from '@/lib/blog-data';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Calendar, User } from 'lucide-react';
@@ -28,12 +31,6 @@ const categories: Category[] = [
   { name: 'Essence', image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Toner.webp?v=1754934725', aiHint: 'skincare essence' },
 ];
 
-const featuredProducts: Product[] = [
-  { id: '1', name: 'Purity in a Drop Toner & Essence', price: 999.00, originalPrice: 1199.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-2.webp?v=1756537408', aiHint: 'toner essence bottle' },
-  { id: '2', name: 'DewDrop Evenness Boost Serum', price: 999.00, originalPrice: 1299.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Serum_copy.webp?v=1754934890', aiHint: 'serum bottle' },
-  { id: '3', name: 'Morning Dew Moisturizer with SPF 15', price: 1300.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/Untitled-1.webp?v=1754914138', aiHint: 'moisturizer bottle' },
-  { id: '4', name: 'Yusuru Radiance Combo Set', price: 2490.00, image: 'https://cdn.shopify.com/s/files/1/0723/1376/6028/files/22212.webp?v=1756537844', aiHint: 'skincare combo set' },
-];
 
 const reels: Reel[] = [
   {
@@ -196,7 +193,10 @@ export default function Home() {
       </section>
 
       <QuietEscapeSection />
-      <FeaturedTrio />
+      <FeaturedProductsSlider 
+        title="Our Bestsellers"
+        description="Loved by thousands. Trusted for results."
+      />
       <HarmonySection />
 
       {/* Brand Video Section */}
@@ -239,7 +239,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Smart Product Placement in Reels Section */}
       <section className="py-16 sm:py-24">
         <div className="w-[96%] mx-auto">
           <h2 className="text-3xl font-bold font-headline text-center text-primary mb-12">You + Island</h2>

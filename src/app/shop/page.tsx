@@ -1,11 +1,18 @@
-
 import { ProductCard } from '@/components/product-card';
-import { allProducts } from '@/lib/data';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import { shopifyFetch } from '@/lib/shopify';
+import { GET_ALL_PRODUCTS } from '@/lib/queries/products';
 
-export default function ShopPage() {
+export default async function ShopPage() {
+  const data = await shopifyFetch(GET_ALL_PRODUCTS);
+  const products = data.products.edges.map((edge: any) => ({
+    id: edge.node.handle,
+    name: edge.node.title,
+    price: parseFloat(edge.node.priceRange.minVariantPrice.amount),
+    image: edge.node.images.edges[0]?.node.url || '',
+    description: edge.node.description,
+  }));
   return (
     <>
       <section className="w-full md:pt-8 pt-7 md:mb-5 mb-3">
@@ -39,8 +46,8 @@ export default function ShopPage() {
                   Explore our full collection of natural skincare.
               </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {allProducts.map((product) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {products.map((product: any) => (
                 <Link key={product.id} href={`/shop/${product.id}`} className="group block">
                   <ProductCard product={product} />
                 </Link>

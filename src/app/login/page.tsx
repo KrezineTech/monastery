@@ -1,22 +1,46 @@
 
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Loader } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
+import { useAuth } from "@/components/auth-provider";
 
 export default function LoginPage() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
     const { toast } = useToast();
+    const { login } = useAuth();
+    const router = useRouter();
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        toast({
-            title: "Login Successful",
-            description: "Welcome back!",
-        });
+        setIsLoading(true);
+
+        try {
+            await login(email, password);
+            
+            toast({
+                title: "Login Successful",
+                description: "Welcome back!",
+            });
+
+            router.push('/account');
+        } catch (error) {
+            toast({
+                title: "Login Failed",
+                description: error instanceof Error ? error.message : "Invalid email or password",
+                variant: "destructive",
+            });
+        } finally {
+            setIsLoading(false);
+        }
     }
 
     return (
@@ -42,6 +66,9 @@ export default function LoginPage() {
                                     type="email"
                                     placeholder="Email"
                                     required
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    disabled={isLoading}
                                     className="rounded-full h-12 px-6"
                                 />
                             </div>
@@ -52,6 +79,9 @@ export default function LoginPage() {
                                     type="password"
                                     placeholder="Password" 
                                     required 
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    disabled={isLoading}
                                     className="rounded-full h-12 px-6"
                                 />
                                  <div className="text-right">
@@ -64,8 +94,15 @@ export default function LoginPage() {
                                 </div>
                             </div>
                             <div className="space-y-4 pt-4">
-                                <Button type="submit" className="w-full h-14 rounded-full text-lg font-semibold">
-                                    Sign in
+                                <Button type="submit" disabled={isLoading} className="w-full h-14 rounded-full text-lg font-semibold">
+                                    {isLoading ? (
+                                        <>
+                                            <Loader className="w-4 h-4 mr-2 animate-spin" />
+                                            Signing in...
+                                        </>
+                                    ) : (
+                                        'Sign in'
+                                    )}
                                 </Button>
                                 <p className="text-center">
                                     <Link href="/signup" className="text-sm underline">

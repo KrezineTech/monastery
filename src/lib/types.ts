@@ -15,6 +15,8 @@ export interface Product {
   volumes?: string[];
   type?: string;
   sold?: number;
+  shopifyVariantId?: string;
+  shopifyHandle?: string;
 }
 
 export interface Category {

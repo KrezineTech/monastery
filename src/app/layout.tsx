@@ -8,6 +8,7 @@ import { SmoothScroll } from '@/components/layout/smooth-scroll';
 import { ScrollToTopButton } from '@/components/scroll-to-top';
 import { WishlistProvider } from '@/hooks/use-wishlist.tsx';
 import { CartProvider } from '@/hooks/use-cart.tsx';
+import { AuthProvider } from '@/components/auth-provider';
 
 export const metadata: Metadata = {
   title: 'Islandbeauty',
@@ -27,19 +28,21 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased bg-background text-foreground">
-        <WishlistProvider>
-          <CartProvider>
-            <SmoothScroll>
-              <div className="flex min-h-screen flex-col">
-                <Header />
-                <main className="flex-1">{children}</main>
-                <Footer />
-              </div>
-            </SmoothScroll>
-            <Toaster />
-            {/* <ScrollToTopButton /> */}
-          </CartProvider>
-        </WishlistProvider>
+        <AuthProvider>
+          <WishlistProvider>
+            <CartProvider>
+              <SmoothScroll>
+                <div className="flex min-h-screen flex-col">
+                  <Header />
+                  <main className="flex-1">{children}</main>
+                  <Footer />
+                </div>
+              </SmoothScroll>
+              <Toaster />
+              {/* <ScrollToTopButton /> */}
+            </CartProvider>
+          </WishlistProvider>
+        </AuthProvider>
       </body>
     </html>
   );

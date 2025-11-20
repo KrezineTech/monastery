@@ -3,22 +3,49 @@
 import React, { useState } from 'react';
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Eye, EyeOff } from 'lucide-react';
+import { Eye, EyeOff, Loader } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
+import { useAuth } from "@/components/auth-provider";
 
 export default function SignupPage() {
     const [showPassword, setShowPassword] = useState(false);
+    const [fullName, setFullName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
     const { toast } = useToast();
+    const { signup } = useAuth();
+    const router = useRouter();
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        toast({
-            title: "Registration Successful",
-            description: "Your account has been created.",
-        });
+        setIsLoading(true);
+
+        try {
+            const [firstName, ...lastNameParts] = fullName.trim().split(' ');
+            const lastName = lastNameParts.join(' ') || 'User';
+
+            await signup(firstName, lastName, email, password);
+            
+            toast({
+                title: "Account Created",
+                description: "Your account has been created successfully!",
+            });
+
+            router.push('/account');
+        } catch (error) {
+            toast({
+                title: "Signup Failed",
+                description: error instanceof Error ? error.message : "Failed to create account",
+                variant: "destructive",
+            });
+        } finally {
+            setIsLoading(false);
+        }
     }
 
     return (
@@ -43,6 +70,9 @@ export default function SignupPage() {
                                     id="full-name" 
                                     placeholder="Full Name" 
                                     required 
+                                    value={fullName}
+                                    onChange={(e) => setFullName(e.target.value)}
+                                    disabled={isLoading}
                                     className="rounded-full h-12 px-6"
                                 />
                             </div>
@@ -53,6 +83,9 @@ export default function SignupPage() {
                                     type="email"
                                     placeholder="Email"
                                     required
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    disabled={isLoading}
                                     className="rounded-full h-12 px-6"
                                 />
                             </div>
@@ -64,6 +97,9 @@ export default function SignupPage() {
                                         type={showPassword ? "text" : "password"}
                                         placeholder="Password" 
                                         required 
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        disabled={isLoading}
                                         className="rounded-full h-12 px-6"
                                     />
                                     <Button
@@ -72,14 +108,22 @@ export default function SignupPage() {
                                         size="icon"
                                         className="absolute right-2 top-1/2 -translate-y-1/2 h-7 w-7 text-muted-foreground"
                                         onClick={() => setShowPassword(!showPassword)}
+                                        disabled={isLoading}
                                     >
                                         {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                                     </Button>
                                 </div>
                             </div>
                             <div className="space-y-4 pt-4">
-                                <Button type="submit" className="w-full h-14 rounded-full text-lg font-semibold">
-                                    Create Account
+                                <Button type="submit" disabled={isLoading} className="w-full h-14 rounded-full text-lg font-semibold">
+                                    {isLoading ? (
+                                        <>
+                                            <Loader className="w-4 h-4 mr-2 animate-spin" />
+                                            Creating Account...
+                                        </>
+                                    ) : (
+                                        'Create Account'
+                                    )}
                                 </Button>
                                 <p className="text-center">
                                     <Link href="/login" className="text-sm underline">

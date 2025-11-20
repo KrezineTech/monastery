@@ -1,15 +1,16 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import {
   Dialog,
   DialogContent,
+  DialogTitle,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { CheckCircle, Minus, Plus, Truck, RefreshCw } from 'lucide-react';
+import { CheckCircle, Minus, Plus, Truck, RefreshCw, Loader } from 'lucide-react';
 import type { Product } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
@@ -24,20 +25,46 @@ interface QuickViewDialogProps {
 }
 
 export function QuickViewDialog({ open, onOpenChange, product }: QuickViewDialogProps) {
-  const galleryImages = product.gallery || [
-    product.image,
-    'https://placehold.co/800x1000.png',
-    'https://placehold.co/800x1000.png',
-    'https://placehold.co/800x1000.png',
-    'https://placehold.co/800x1000.png',
-  ];
-
-  const [mainImage, setMainImage] = useState(galleryImages[0]);
+  const [galleryImages, setGalleryImages] = useState<string[]>([product.image]);
+  const [mainImage, setMainImage] = useState(product.image);
   const [quantity, setQuantity] = useState(1);
   const [selectedVolume, setSelectedVolume] = useState(product.volumes?.[0] || '');
+  const [isLoadingImages, setIsLoadingImages] = useState(false);
 
   const cartStore = useCart();
   const { addToCart } = useStore(cartStore);
+
+  // Fetch product images from Shopify if it's a Shopify product
+  useEffect(() => {
+    if (open && product.id && product.id.includes('gid://')) {
+      const fetchProductImages = async () => {
+        try {
+          setIsLoadingImages(true);
+          const response = await fetch(`/api/shopify/product-images?id=${encodeURIComponent(product.id)}`);
+          if (response.ok) {
+            const data = await response.json();
+            const images = data.product?.images?.map((img: any) => img.url) || [product.image];
+            setGalleryImages(images.length > 0 ? images : [product.image]);
+            setMainImage(images[0] || product.image);
+          } else {
+            // Fallback to product image if API fails
+            setGalleryImages(product.gallery || [product.image]);
+            setMainImage(product.image);
+          }
+        } catch (error) {
+          console.error('Error fetching product images:', error);
+          setGalleryImages(product.gallery || [product.image]);
+          setMainImage(product.image);
+        } finally {
+          setIsLoadingImages(false);
+        }
+      };
+      fetchProductImages();
+    } else {
+      setGalleryImages(product.gallery || [product.image]);
+      setMainImage(product.image);
+    }
+  }, [open, product]);
 
   const handleQuantityChange = (amount: number) => {
     setQuantity((prev) => Math.max(1, prev + amount));
@@ -48,16 +75,23 @@ export function QuickViewDialog({ open, onOpenChange, product }: QuickViewDialog
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-6xl p-0">
+        <DialogTitle className="absolute -top-full">{product.name}</DialogTitle>
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="p-8">
-            <div className="relative w-full aspect-square mb-4 rounded-lg overflow-hidden">
-              <Image
-                src={mainImage}
-                alt={product.name}
-                fill
-                className="object-cover"
-              />
-            </div>
+            {isLoadingImages ? (
+              <div className="relative w-full aspect-square mb-4 rounded-lg overflow-hidden bg-muted flex items-center justify-center">
+                <Loader className="w-8 h-8 animate-spin text-muted-foreground" />
+              </div>
+            ) : (
+              <div className="relative w-full aspect-square mb-4 rounded-lg overflow-hidden">
+                <Image
+                  src={mainImage}
+                  alt={product.name || 'Product image'}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            )}
             <Carousel opts={{ align: 'start' }} className="w-full">
               <CarouselContent className="-ml-2">
                 {galleryImages.map((img, index) => (
@@ -71,7 +105,7 @@ export function QuickViewDialog({ open, onOpenChange, product }: QuickViewDialog
                     >
                       <Image
                         src={img}
-                        alt={`${product.name} thumbnail ${index + 1}`}
+                        alt={`${product.name || 'Product'} thumbnail ${index + 1}`}
                         fill
                         className="object-cover"
                       />
@@ -84,8 +118,7 @@ export function QuickViewDialog({ open, onOpenChange, product }: QuickViewDialog
             </Carousel>
           </div>
           <div className="p-8 bg-background rounded-r-lg">
-            <p className="text-sm text-primary">Island</p>
-            <h1 className="text-3xl font-bold text-foreground mt-1">{product.name}</h1>
+            <h1 className="text-3xl font-bold font-headline text-foreground mt-1">{product.name}</h1>
             <div className="flex items-baseline gap-2 mt-4">
                 <p className="text-2xl font-semibold text-foreground">₹{product.price.toFixed(2)}</p>
                 {product.originalPrice && (
@@ -94,7 +127,7 @@ export function QuickViewDialog({ open, onOpenChange, product }: QuickViewDialog
             </div>
 
             {product.description && (
-              <p className="text-sm text-muted-foreground mt-4">{product.description}</p>
+              <p className="text-sm text-muted-foreground mt-4 line-clamp-3">{product.description}</p>
             )}
             <Separator className="my-6" />
             

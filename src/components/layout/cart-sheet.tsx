@@ -16,12 +16,54 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { useCart } from '@/hooks/use-cart.tsx';
-import { Minus, Plus, X, ShoppingCart } from 'lucide-react';
+import { Minus, Plus, X, ShoppingCart, Loader } from 'lucide-react';
 import { useStore } from 'zustand';
+import { useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
 
 export function CartSheet() {
     const store = useCart();
     const { cart, totalItems, subtotal, removeFromCart, updateQuantity } = useStore(store);
+    const [isCheckingOut, setIsCheckingOut] = useState(false);
+    const { toast } = useToast();
+
+    const handleCheckout = async () => {
+      try {
+        setIsCheckingOut(true);
+        let cartId = localStorage.getItem('shopifyCartId');
+        
+        if (!cartId) {
+          const newCart = await fetch('/api/cart', { 
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+          }).then((res) => res.json());
+          cartId = newCart.cartId;
+          localStorage.setItem('shopifyCartId', cartId);
+        }
+        
+        for (const item of cart) {
+          await fetch('/api/cart/add', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              cartId,
+              variantId: item.id,
+              quantity: item.quantity,
+            }),
+          });
+        }
+        
+        const result = await fetch(`/api/cart/${cartId}`).then((res) => res.json());
+        if (result.checkoutUrl) {
+          window.location.href = result.checkoutUrl;
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        toast({ title: 'Error processing checkout', variant: 'destructive' });
+      } finally {
+        setIsCheckingOut(false);
+      }
+    };
 
   return (
     <Sheet>
@@ -55,18 +97,20 @@ export function CartSheet() {
               <div className="px-6 py-4 space-y-4">
                 {cart.map((product) => (
                   <div key={product.id} className="flex items-center gap-4 pb-4 border-b last:border-b-0">
+                    {product.image && (
                     <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-md">
                       <Image
                         src={product.image}
-                        alt={product.name}
+                        alt={product.name || 'Product'}
                         fill
                         className="object-cover"
                         data-ai-hint={product.aiHint}
                       />
                     </div>
+                    )}
                     <div className="flex-1 min-w-0">
-                      <h5 className="font-medium text-foreground truncate">{product.name}</h5>
-                      <p className="text-sm text-muted-foreground mt-1">₹{product.price.toFixed(2)}</p>
+                      <h5 className="font-medium text-foreground truncate">{product.name || 'Product'}</h5>
+                      <p className="text-sm text-muted-foreground mt-1">₹{product.price?.toFixed(2) || '0.00'}</p>
                       <div className="flex items-center border rounded-full w-fit mt-2">
                         <Button
                           variant="ghost"
@@ -104,12 +148,19 @@ export function CartSheet() {
                 <div className="w-full space-y-4">
                     <div className="flex justify-between font-semibold">
                         <span>Subtotal</span>
-                        <span>₹{subtotal.toFixed(2)}</span>
+                        <span>₹{subtotal?.toFixed(2) || '0.00'}</span>
                     </div>
                     <p className="text-xs text-muted-foreground">Taxes and shipping calculated at checkout.</p>
                     <div className="flex w-full flex-col gap-2">
-                        <Button size="lg" className="w-full">
-                            Checkout
+                        <Button size="lg" className="w-full" onClick={handleCheckout} disabled={isCheckingOut}>
+                            {isCheckingOut ? (
+                              <>
+                                <Loader className="w-4 h-4 animate-spin mr-2" />
+                                Processing...
+                              </>
+                            ) : (
+                              'Checkout'
+                            )}
                         </Button>
                         <SheetClose asChild>
                         <Button variant="link" className="text-sm font-medium text-muted-foreground">
